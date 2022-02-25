@@ -1,0 +1,16 @@
+#library "PSXTITLE"
+#include "zcommon.acs"
+
+Int originalTitle;
+Int finalTitle;
+Int lostTitle;
+Int AbsolutionTitle;
+
+
+Script 10 Open
+{
+	originalTitle = 0;
+	finalTitle=0;
+	lostTitle = 1;
+	AbsolutionTitle = 0;
+}

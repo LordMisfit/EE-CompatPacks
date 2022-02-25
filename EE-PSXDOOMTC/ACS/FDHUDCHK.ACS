@@ -1,0 +1,46 @@
+#library "FDHUDCHK"
+#include "zcommon.acs"
+
+/* This script checks if the map belongs to PSX Final Doom. It gives an item
+	which is checked elsewhere to change the HUD status bar and the Super Shotgun's
+	sprites to the Final Doom version when on a Final Doom map. */
+
+script 997 ENTER
+{
+	int IsFinalDoom = 0;
+	int CurrentCluster = GetLevelInfo (LEVELINFO_CLUSTERNUM);
+	
+	if (CurrentCluster == 3 || CurrentCluster == 5 || CurrentCluster == 667 || CurrentCluster == 669) //Map belongs to Final Doom
+	{
+		IsFinalDoom = 1;
+	}
+	
+	if (IsFinalDoom == 1)
+	{
+		GiveInventory ("IsFinalDoom",1);
+	}
+	else
+	{
+		TakeInventory ("IsFinalDoom",1);
+	}
+}
+
+script 996 RESPAWN //For mutliplayer, need to check again in case someone dies
+{
+	int IsFinalDoom = 0;
+	int CurrentCluster = GetLevelInfo (LEVELINFO_CLUSTERNUM);
+	
+	if (CurrentCluster == 3 || CurrentCluster == 5 || CurrentCluster == 667 || CurrentCluster == 669) //Map belongs to Final Doom
+	{
+		IsFinalDoom = 1;
+	}
+	
+	if (IsFinalDoom == 1)
+	{
+		GiveInventory ("IsFinalDoom",1);
+	}
+	else
+	{
+		TakeInventory ("IsFinalDoom",1);
+	}
+}

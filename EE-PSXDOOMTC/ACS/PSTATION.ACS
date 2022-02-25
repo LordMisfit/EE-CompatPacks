@@ -1,0 +1,9 @@
+#library "PSTATION"
+#include "zcommon.acs"
+
+int PSTATION;
+
+Script 3 Open
+{
+	PSTATION = 0;
+}

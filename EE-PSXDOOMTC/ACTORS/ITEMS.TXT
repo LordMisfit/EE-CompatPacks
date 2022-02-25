@@ -1,0 +1,79 @@
+// KEYS //
+
+Actor PSXBlueCard : BlueCard Replaces BlueCard
+{
+	XScale 0.8
+	Inventory.Icon "HUDKEYS0"
+	States
+	{
+	Spawn:
+		BKEY A 12
+		BKEY B 12 Bright
+		Loop
+	}
+}
+
+Actor PSXBlueSkull : BlueSkull Replaces BlueSkull
+{
+	XScale 0.8
+	Inventory.Icon "HUDKEYS3"
+	States
+	{
+	Spawn:
+		BSKU A 12
+		BSKU B 12 Bright
+		Loop
+	}
+}
+
+Actor PSXRedCard : RedCard Replaces RedCard
+{
+	XScale 0.8
+	Inventory.Icon "HUDKEYS2"
+	States
+	{
+	Spawn:
+		RKEY A 12
+		RKEY B 12 Bright
+		Loop
+	}
+}
+
+Actor PSXRedSkull : RedSkull Replaces RedSkull
+{
+	XScale 0.8
+	Inventory.Icon "HUDKEYS5"
+	States
+	{
+	Spawn:
+		RSKU A 12
+		RSKU B 12 Bright
+		Loop
+	}
+}
+
+Actor PSXYellowCard : YellowCard Replaces YellowCard
+{
+	XScale 0.8
+	Inventory.Icon "HUDKEYS1"
+	States
+	{
+	Spawn:
+		YKEY A 12
+		YKEY B 12 Bright
+		Loop
+	}
+}
+
+Actor PSXYellowSkull : YellowSkull Replaces YellowSkull
+{
+	XScale 0.8
+	Inventory.Icon "HUDKEYS4"
+	States
+	{
+	Spawn:
+		YSKU A 12
+		YSKU B 12 Bright
+		Loop
+	}
+}

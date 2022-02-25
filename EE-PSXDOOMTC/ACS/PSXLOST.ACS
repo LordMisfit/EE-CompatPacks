@@ -1,0 +1,9 @@
+#library "PSXlost"
+#include "zcommon.acs"
+
+int LostLevels;
+
+Script 2 Open
+{
+	LostLevels = 1;
+}

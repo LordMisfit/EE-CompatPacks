@@ -1,0 +1,20 @@
+#library "reverb"
+#include "zcommon.acs"
+
+Script 998 Enter
+{
+	While (1)
+	{
+		If (CheckActorCeilingTexture(0, "F_SKY1"))
+		{
+			Thing_Deactivate(1515);
+			Thing_Activate(1516);
+		}
+		Else
+		{
+			Thing_Activate(1515);
+			Thing_Deactivate(1516);
+		}
+		Delay(1);
+	}
+}

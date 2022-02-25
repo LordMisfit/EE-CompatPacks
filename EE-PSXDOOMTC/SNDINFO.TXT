@@ -1,0 +1,197 @@
+// Miscellaneous
+
+misc/keytry dsnokey
+$limit misc/i_pkup 0
+$limit misc/k_pkup 0
+$limit misc/w_pkup 0
+$limit misc/p_pkup 0
+$limit misc/health_pkup 0
+$limit misc/armor_pkup 0
+$limit misc/ammo_pkup 0
+$limit world/barrelx 5
+$limit misc/gibbed 0
+misc/crushed dsslop
+$limit misc/crushed 2
+$limit misc/teleport 0
+
+// Menu
+
+$random menu/quit1 { player/male/death1 demon/pain grunt/pain misc/gibbed misc/teleport grunt/sight1 grunt/sight3 demon/melee }
+$random menu/quit2 { misc/p_pkup misc/gibbed skeleton/swing knight/death baby/active demon/melee  }
+
+// PSXZombieMan
+
+$random grunt/sight {grunt/sight1 grunt/sight2}
+$random grunt/death	{grunt/death1 grunt/death2}
+$limit grunt/sight 0
+$limit grunt/active 0
+$limit grunt/pain 0
+$limit grunt/death 0
+$limit grunt/attack 0
+
+// PSXShotgunGuy
+
+$random shotguy/sight {shotguy/sight1 shotguy/sight2}
+$random shotguy/death {shotguy/death1 shotguy/death2}
+$limit shotguy/sight 0
+$limit shotguy/active 0
+$limit shotguy/pain 0
+$limit shotguy/death 0
+$limit shotguy/attack 0
+
+// PSXChaingunGuy
+
+$random chainguy/sight {chainguy/sight1 chainguy/sight2}
+$random chainguy/death {chainguy/death1 chainguy/death2}
+chainguy/attack						dspistol
+$limit chainguy/sight 0
+$limit chainguy/active 0
+$limit chainguy/pain 0
+$limit chainguy/death 0
+$limit chainguy/attack 0
+
+// PSXDoomImp
+
+$limit imp/sight 0
+$limit imp/active 0
+$limit imp/pain 0
+$limit imp/death 0
+$limit imp/melee 0
+$limit imp/attack 0
+$limit imp/shotx 0
+
+// PSXDemon
+
+$limit demon/sight 0
+$limit demon/active 0
+$limit demon/pain 0
+$limit demon/death 0
+$limit demon/melee 0
+
+// PSXLostSoul
+
+$limit skull/active 0
+$limit skull/pain 0
+$limit skull/death 0
+$limit skull/melee 0
+
+// PSXCacodemon
+
+$limit caco/sight 0
+$limit caco/active 0
+$limit caco/pain 0
+$limit caco/death 0
+$limit caco/attack 0
+$limit caco/shotx 0
+
+// PSXHellKnight
+
+$limit knight/sight 0
+$limit knight/active 0
+$limit knight/pain 0
+$limit knight/death 0
+
+// PSXBaronOfHell
+
+$limit baron/sight 0
+$limit baron/active 0
+$limit baron/pain 0
+$limit baron/death 0
+$limit baron/melee 0
+$limit baron/attack 0
+$limit baron/shotx 0
+
+// PSXArachnotron
+
+$limit baby/sight 0
+$limit baby/active 0
+$limit baby/pain 0
+$limit baby/death 0
+$limit baby/walk 0
+$limit baby/attack 0
+$limit baby/shotx 0
+
+// PSXPainElemental
+
+$limit pain/sight 0
+$limit pain/active 0
+$limit pain/pain 0
+$limit pain/death 0
+$limit pain/attack 0
+
+// PSXRevenant
+
+$limit skeleton/sight 0
+$limit skeleton/active 0
+$limit skeleton/pain 0
+$limit skeleton/death 0
+$limit skeleton/swing 0
+$limit skeleton/melee 0
+$limit skeleton/attack 0
+$limit skeleton/tracex 0
+
+// PSXFatso
+
+$limit fatso/sight 0
+$limit fatso/active 0
+$limit fatso/pain 0
+$limit fatso/death 0
+$limit fatso/raiseguns 0
+$limit fatso/attack 0
+$limit fatso/shotx 0
+
+// PSXSpiderMastermind
+
+spider/attack							dspistol
+$limit spider/sight 0
+$limit spider/active 0
+$limit spider/pain 0
+$limit spider/death 0
+$limit spider/attack 0
+$limit spider/walk 0
+
+// PSXCyberdemon
+
+cyber/hoof2 dshoof2
+$limit cyber/sight 0
+$limit cyber/active 0
+$limit cyber/pain 0
+$limit cyber/death 0
+$limit cyber/hoof 0
+$limit cyber/hoof2 0
+
+// Weapons
+
+$limit weapons/sawup 0
+$limit weapons/sawidle 0
+$limit weapons/sawfull 0
+$limit weapons/sawhit 0
+$limit weapons/pistol 0
+$limit weapons/shotgf 0
+$limit weapons/sshotf 0
+$limit weapons/sshoto 0
+$limit weapons/sshotc 0
+$limit weapons/sshotl 0
+$limit weapons/chngun 0
+$limit weapons/rocklf 0
+$limit weapons/rocklx 0
+$limit weapons/plasmaf 0
+$volume weapons/plasmaf 0.82
+$limit weapons/plasmax 0
+$limit weapons/bfgf	0
+$limit weapons/bfgx	0
+
+// Player
+
+$limit *grunt 0
+$limit *usefail 0
+$limit *fist 0
+$limit *pain 0
+$limit *death 0
+$limit *xdeath 0
+$limit *gibbed 0
+
+// End Vocies
+
+misc/d5end	DSD5END
+misc/d6end	DSD6END

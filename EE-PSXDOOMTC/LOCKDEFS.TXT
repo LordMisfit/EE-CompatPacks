@@ -1,0 +1,85 @@
+ClearLocks
+
+Lock 1 Doom
+{
+   PSXRedCard
+   Message "$PD_REDC"
+   RemoteMessage "$PD_REDCO"
+}
+
+Lock 2 Doom
+{
+   PSXBlueCard
+   Message "$PD_BLUEC"
+   RemoteMessage "$PD_BLUECO"
+}
+
+Lock 3 Doom
+{
+   PSXYellowCard
+   Message "$PD_YELLOWC"
+   RemoteMessage "$PD_YELLOWCO"
+}
+
+Lock 4 Doom
+{
+   PSXRedSkull
+   Message "$PD_REDS"
+   RemoteMessage "$PD_REDSO"
+}
+
+Lock 5 Doom
+{
+   PSXBlueSkull
+   Message "$PD_BLUES"
+   RemoteMessage "$PD_BLUESO"
+}
+
+Lock 6 Doom
+{
+   PSXYellowSkull
+   Message "$PD_YELLOWS"
+   RemoteMessage "$PD_YELLOWSO"
+}
+
+Lock 129 Doom
+{
+   Any { PSXRedCard PSXRedSkull }
+   Message "$PD_REDK"
+   RemoteMessage "$PD_REDO"
+}
+
+Lock 130 Doom
+{
+   Any { PSXBlueCard PSXBlueSkull }
+   Message "$PD_BLUEK"
+   RemoteMessage "$PD_BLUEO"
+}
+
+Lock 131 Doom
+{
+   Any { PSXYellowCard PSXYellowSkull }
+   Message "$PD_YELLOWK"
+   RemoteMessage "$PD_YELLOWO"
+}
+
+Lock 132 Doom
+{
+   Any { PSXRedCard PSXRedSkull }
+   Message "$PD_REDK"
+   RemoteMessage "$PD_REDO"
+}
+
+Lock 133 Doom
+{
+   Any { PSXBlueCard PSXBlueSkull }
+   Message "$PD_BLUEK"
+   RemoteMessage "$PD_BLUEO"
+}
+
+Lock 134 Doom
+{
+   Any { PSXYellowCard PSXYellowSkull }
+   Message "$PD_YELLOWK"
+   RemoteMessage "$PD_YELLOWO"
+}

@@ -1,0 +1,9 @@
+#library "PSXNRFTL"
+#include "zcommon.acs"
+
+int NRFTL;
+
+Script 5 Open
+{
+	NRFTL = 0;
+}

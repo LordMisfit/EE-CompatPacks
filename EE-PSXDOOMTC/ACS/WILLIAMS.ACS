@@ -1,0 +1,9 @@
+#library "WILLIAMS"
+#include "zcommon.acs"
+
+int WILLIAMS;
+
+Script 4 Open
+{
+	WILLIAMS = 0;
+}

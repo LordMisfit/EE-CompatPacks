@@ -1,0 +1,393 @@
+// TECH //
+
+Actor PSXColumn : Column Replaces Column
+{
+	Xscale 0.8
+}
+
+Actor PSXBurningBarrel : BurningBarrel Replaces BurningBarrel
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		FCAN ABC 5 Bright
+		Loop
+	}
+}
+
+Actor PSXTechLamp : TechLamp Replaces TechLamp
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		TLMP ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXTechLamp2 : TechLamp2 Replaces TechLamp2
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		TLP2 ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXTechPillar : TechPillar Replaces TechPillar
+{
+	Xscale 0.8
+}
+
+// HELL //
+
+Actor PSXBigTree : BigTree Replaces BigTree
+{
+	Xscale 0.8
+}
+
+Actor PSXBlueTorch : BlueTorch Replaces BlueTorch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		TBLU ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXCandelabra : Candelabra Replaces Candelabra
+{
+	Xscale 0.8
+}
+
+Actor PSXCandlestick : Candlestick Replaces Candlestick
+{
+	Xscale 0.8
+}
+
+Actor PSXEvilEye : EvilEye Replaces EvilEye
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		CEYE ABCB 7 Bright
+		Loop
+	}	
+}
+
+Actor PSXFloatingSkull : FloatingSkull Replaces FloatingSkull
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		FSKU ABC 7 Bright
+		Loop
+	}	
+}
+
+Actor PSXGreenTorch : GreenTorch Replaces GreenTorch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		TGRN ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXHeadCandles : HeadCandles Replaces HeadCandles
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		POL3 AB 7 Bright
+		Loop
+	}
+}
+
+Actor PSXHeadOnAStick : HeadOnAStick Replaces HeadOnAStick
+{
+	Xscale 0.8
+}
+
+Actor PSXHeadsOnAStick : HeadsOnAStick Replaces HeadsOnAStick
+{
+	Xscale 0.8
+}
+
+Actor PSXHeartColumn : HeartColumn Replaces HeartColumn
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		COL5 AB 18
+		Loop
+	}
+}
+
+Actor PSXRedTorch : RedTorch Replaces RedTorch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		TRED ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXShortBlueTorch : ShortBlueTorch Replaces ShortBlueTorch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		SMBT ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXShortGreenColumn : ShortGreenColumn Replaces ShortGreenColumn
+{
+	Xscale 0.8
+}
+
+Actor PSXShortGreenTorch : ShortGreenTorch Replaces ShortGreenTorch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		SMGT ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXShortRedColumn : ShortRedColumn Replaces ShortRedColumn
+{
+	Xscale 0.8
+}
+
+Actor PSXShortRedTorch : ShortRedTorch Replaces ShortRedTorch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		SMRT ABCD 5 Bright
+		Loop
+	}
+}
+
+Actor PSXSkullColumn : SkullColumn Replaces SkullColumn
+{
+	Xscale 0.8
+}
+
+Actor PSXStalagtite : Stalagtite Replaces Stalagtite
+{
+	Xscale 0.8
+}
+
+Actor PSXTallGreenColumn : TallGreenColumn Replaces TallGreenColumn
+{
+	Xscale 0.8
+}
+
+Actor PSXTallRedColumn : TallRedColumn Replaces TallRedColumn
+{
+	Xscale 0.8
+}
+
+Actor PSXTorchTree : TorchTree Replaces TorchTree
+{
+	Xscale 0.8
+}
+
+// CORPSE //
+
+Actor PSXDeadCacodemon : DeadCacodemon Replaces DeadCacodemon
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadDemon : DeadDemon Replaces DeadDemon
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadDoomImp : DeadDoomImp Replaces DeadDoomImp
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadLostSoul : DeadLostSoul Replaces DeadLostSoul
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadMarine : DeadMarine Replaces DeadMarine
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadShotgunGuy : DeadShotgunGuy Replaces DeadShotgunGuy
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadZombieMan : DeadZombieMan Replaces DeadZombieMan
+{
+	Xscale 0.8
+}
+
+Actor PSXGibbedMarine : GibbedMarine Replaces GibbedMarine
+{
+	Xscale 0.8
+}
+
+Actor PSXGibbedMarineExtra : GibbedMarineExtra Replaces GibbedMarineExtra
+{
+	Xscale 0.8
+}
+
+Actor PSXGibs : Gibs Replaces Gibs
+{
+	Xscale 0.8
+}
+
+// GORE //
+
+Actor PSXBloodyTwitch : BloodyTwitch Replaces BloodyTwitch
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		GOR1 A 12
+		GOR1 B 17
+		GOR1 C 10
+		GOR1 B 8
+		Loop
+	}
+}
+
+Actor PSXBrainStem : BrainStem Replaces BrainStem
+{
+	Xscale 0.8
+}
+
+Actor PSXColonGibs : ColonGibs Replaces ColonGibs
+{
+	Xscale 0.8
+}
+
+Actor PSXDeadStick : DeadStick Replaces DeadStick
+{
+	Xscale 0.8
+}
+
+Actor PSXHangBNoBrain : HangBNoBrain Replaces HangBNoBrain
+{
+	Xscale 0.8
+}
+
+Actor PSXHangNoGuts : HangNoGuts Replaces HangNoGuts
+{
+	Xscale 0.8
+}
+
+Actor PSXHangTLookingDown : HangTLookingDown Replaces HangTLookingDown
+{
+	Xscale 0.8
+}
+
+Actor PSXHangTLookingUp : HangTLookingUp Replaces HangTLookingUp
+{
+	Xscale 0.8
+}
+
+Actor PSXHangTNoBrain : HangTNoBrain Replaces HangTNoBrain
+{
+	Xscale 0.8
+}
+
+Actor PSXHangTSkull : HangTSkull Replaces HangTSkull
+{
+	Xscale 0.8
+}
+
+Actor PSXLiveStick : LiveStick Replaces LiveStick
+{
+	Xscale 0.8
+	States
+	{
+	Spawn:
+		POL6 A 7
+		POL6 B 9
+		Loop
+	}
+}
+
+Actor PSXMeat2 : Meat2 Replaces Meat2
+{
+	Xscale 0.8
+}
+
+Actor PSXMeat3 : Meat3 Replaces Meat3
+{
+	Xscale 0.8
+}
+
+Actor PSXMeat4 : Meat4 Replaces Meat4
+{
+	Xscale 0.8
+}
+
+Actor PSXMeat5 : Meat5 Replaces Meat5
+{
+	Xscale 0.8
+}
+
+Actor PSXNonsolidMeat2 : NonsolidMeat2 Replaces NonsolidMeat2
+{
+	Xscale 0.8
+}
+
+Actor PSXNonsolidMeat3 : NonsolidMeat3 Replaces NonsolidMeat3
+{
+	Xscale 0.8
+}
+
+Actor PSXNonsolidMeat4 : NonsolidMeat4 Replaces NonsolidMeat4
+{
+	Xscale 0.8
+}
+
+Actor PSXNonsolidMeat5 : NonsolidMeat5 Replaces NonsolidMeat5
+{
+	Xscale 0.8
+}
+
+Actor PSXNonsolidTwitch : PSXBloodyTwitch Replaces NonsolidTwitch
+{
+	Xscale 0.8
+	Radius 20
+	-SOLID
+}
+
+Actor PSXSmallBloodPool : SmallBloodPool Replaces SmallBloodPool
+{
+	Xscale 0.8
+}

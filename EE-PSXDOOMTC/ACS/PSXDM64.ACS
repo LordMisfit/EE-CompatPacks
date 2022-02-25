@@ -1,0 +1,9 @@
+#library "PSXDM64"
+#include "zcommon.acs"
+
+int Absolution;
+
+Script 6 Open
+{
+	Absolution = 0;
+}
