@@ -1,3 +1,4 @@
 // Updated definitions and sprites from PSXDOOM_UPDATE_01.PK3 by unknownna
 #Include "ACTORS/DECORATION.TXT"
 #Include "ACTORS/ITEMS.TXT"
+#Include "ACTORS/MONSTERS.TXT"
