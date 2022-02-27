@@ -19,6 +19,7 @@ Episode MAP01
 // Remove the Archvile at the editornumber level, JUST TO BE SURE
 DoomEdNums
 {
+	3000 = NightmareSpectreSpawner
 }
 
 Automap

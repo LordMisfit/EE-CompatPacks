@@ -1,0 +1,93 @@
+/*
+class PSXDMonsterSpawner : RandomSpawner2 abstract
+{
+	int deathtimer;
+	string MonsterName;
+
+	// This function is needed for handling boss replacers 
+	// [also this is to try to fix the problem of INSTANT effects on the death of spawned "boss" monsters in maps like E2M8/E3M8 so you can try to pick up the bosses' drops before the level ends]
+	override void Tick()
+	{
+		Actor.Tick(); // Actor instead of Super in order to replace the original code added to RandomSpawner instead of adding to it.
+		DDCreature monstertype;
+		if (tracer) monstertype = DDCreature(tracer);
+		if (tracer == null)
+		{
+			A_BossDeath();
+			if (dydudebug_scriptdisplays) Console.Printf("BOSS/BOSSDEATH type RandomSpawner Self-Destroyed/nulled");
+			Destroy();
+		}
+		else
+		{
+			if (monstertype)
+			{
+				MonsterName = monstertype.GetClassName();
+				if (monstertype.bossdeathactivate)
+				{
+					A_BossDeath();
+					if (dydudebug_scriptdisplays) Console.Printf("%s [bossdeathactivate: %d]", MonsterName, monstertype.bossdeathactivate);
+					Destroy();
+				}
+			}
+			else
+			{
+				if (tracer.health <= 0)
+				{
+					A_BossDeath();
+					if (dydudebug_scriptdisplays) Console.Printf("BOSS/BOSSDEATH type RandomSpawner Self-Destroyed/nulled");
+					Destroy();
+				}
+			}
+		}
+	}
+
+	protected bool CanFitHere(Class<Actor> actorClass) 
+	{
+		let actor = Spawn(actorClass, Pos, NO_REPLACE);
+		
+		if (actor == null)
+			return false;
+		else 
+		{
+			let result = actor.TestMobjLocation();
+			actor.ClearCounters();
+			actor.Destroy();
+			return result;
+		}
+	}
+}
+*/
+class NightmareSpectreSpawner : DDMonsterSpawner
+{
+	Default
+	{
+		//$Sprite "RNMSF0"
+		Radius 30;
+		Height 56;
+	}
+
+	override Name ChooseSpawn()
+	{
+		string classname;
+		string result = "NightmareSpectre";
+		if (exex_ddafdmonstersrandom)
+		{
+			if (random(1,256) <= exex_ddafdmonsterschance)
+			{
+				if (random(1,2) == 1)
+				{
+					classname = "NightmareCentaurion";
+					if (random(1,8) <= 2) classname = "NightmareCentaurionSgt";
+					if (CanFitHere(classname)) result = classname;
+				}
+				else
+				{
+					classname = "NightmareBellefish_Fly";
+					if (CanFitHere(classname)) result = classname;
+				}
+			}
+		}
+		
+		return result;
+	}
+}
