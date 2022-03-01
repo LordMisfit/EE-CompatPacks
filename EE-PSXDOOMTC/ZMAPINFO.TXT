@@ -20,6 +20,7 @@ Episode MAP01
 DoomEdNums
 {
 	3000 = NightmareSpectreSpawner
+	3006 = LostSoulSpawner2
 }
 
 Automap
