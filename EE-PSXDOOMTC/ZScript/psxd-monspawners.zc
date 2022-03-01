@@ -69,7 +69,7 @@ class NightmareSpectreSpawner : DDMonsterSpawner
 	override Name ChooseSpawn()
 	{
 		string classname;
-		string result = "NightmareSpectre";
+		string result = "NightmareSpectreNew";
 		if (exex_ddafdmonstersrandom)
 		{
 			if (random(1,256) <= exex_ddafdmonsterschance)
