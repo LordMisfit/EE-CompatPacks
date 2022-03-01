@@ -74,16 +74,24 @@ class NightmareSpectreSpawner : DDMonsterSpawner
 		{
 			if (random(1,256) <= exex_ddafdmonsterschance)
 			{
-				if (random(1,2) == 1)
+				if (random(1,8) <= random(6,7))
 				{
-					classname = "NightmareCentaurion";
-					if (random(1,8) <= 2) classname = "NightmareCentaurionSgt";
-					if (CanFitHere(classname)) result = classname;
+					if (random(1,2) == 1)
+					{
+						classname = "NightmareCentaurion";
+						if (random(1,8) <= 2) classname = "NightmareCentaurionSgt";
+						if (CanFitHere(classname)) result = classname;
+					}
+					else
+					{
+						classname = "NightmareBellefish_Fly";
+						if (CanFitHere(classname)) result = classname;
+					}
 				}
 				else
 				{
-					classname = "NightmareBellefish_Fly";
-					if (CanFitHere(classname)) result = classname;
+					if (random(1,4) <= 3) classname = "NightmareReelHeel";
+									 else classname = "NightmareNurse";
 				}
 			}
 		}
