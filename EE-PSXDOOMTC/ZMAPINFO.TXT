@@ -785,7 +785,6 @@ Map D5END lookup "LHUSTR_1"
 	Music = "$DEND_5"
 	NoIntermission
 	NoAutoSaveHint
-	ResetHealth
 	Next = "LOST01"
 }
 
@@ -800,17 +799,6 @@ AddDefaultMap
 	//LightMode = 0				// Bright lighting w/ strong fading
 	AirControl = 0				// PSX Doom didn't use ZDoom's air control
 	Gravity = 686				// Blame Sodaholic if this is wrong!
-	// Only sets the important gameplay-effecting Compatiblity options
-	NoJump
-	NoCrouch
-	// NoFreeLook				// On second thought, I'm not in the mood to be crucified today
-	Compat_LimitPain = 1		// Limit spawned Lost Souls
-	Compat_NoPassOver = 1		// No moving over/under monsters
-	Compat_CrossDropOff = 1		// Can't blast monsters off ledges
-	Compat_Invisibility = 1		// Monsters always see invisible player
-	Compat_MissileClip = 1		// Shoot through decorative objects
-	Compat_NoTossDrops = 1		// Monsters shouldn't toss items/weapons
-	// Compat_Hitscan = 1		// PSX Doom seems to have fixed this, actually
 	LaxMonsterActivation
 }
 
