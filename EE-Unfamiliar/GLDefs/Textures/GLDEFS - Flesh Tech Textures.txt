@@ -1,0 +1,13 @@
+brightmap texture SKINTEK1 { map "brightmaps/textures/unfam/SKINTEK1.png" disablefullbright }
+brightmap texture SKINTEK2 { map "brightmaps/textures/unfam/SKINTEK2.png" disablefullbright }
+brightmap texture SKINTEK3 { map "brightmaps/textures/unfam/SKINTEK3.png" disablefullbright }
+brightmap texture SKINTEK4 { map "brightmaps/textures/unfam/SKINTEK4.png" disablefullbright }
+brightmap texture SKINTEK5 { map "brightmaps/textures/unfam/SKINTEK5.png" disablefullbright }
+brightmap texture SKINTEK6 { map "brightmaps/textures/unfam/SKINTEK6.png" disablefullbright }
+brightmap texture SKINTEK7 { map "brightmaps/textures/unfam/SKINTEK7.png" disablefullbright }
+brightmap texture SKINTEK8 { map "brightmaps/textures/unfam/SKINTEK8.png" disablefullbright }
+brightmap texture SKINTEK9 { map "brightmaps/textures/unfam/SKINTEK9.png" disablefullbright }
+brightmap texture SKNTEK10 { map "brightmaps/textures/unfam/SKNTEK10.png" disablefullbright }
+brightmap texture SKNTEK11 { map "brightmaps/textures/unfam/SKNTEK11.png" disablefullbright }
+brightmap texture SKNTEK16 { map "brightmaps/textures/unfam/OTECHBM3.png" disablefullbright }
+brightmap texture SKNTEK17 { map "brightmaps/textures/unfam/NFLESH2.png" disablefullbright }

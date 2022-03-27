@@ -1,0 +1,2 @@
+server int weather_dist = 1024;
+server int weather_amount = 2;

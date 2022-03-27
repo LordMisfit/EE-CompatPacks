@@ -1,0 +1,55 @@
+version "3.7"
+
+///MAIN///
+
+#include "ZScript/Ambience.zs"
+//#include "ZScript/Player.zs"
+
+///WEAPONS///
+/*
+#include "ZScript/Weapons/Fist.zs"
+#include "ZScript/Weapons/Chainsaw.zs"
+#include "ZScript/Weapons/Pistol.zs"
+#include "ZScript/Weapons/Shotgun.zs"
+#include "ZScript/Weapons/Super Shotgun.zs"
+#include "ZScript/Weapons/Chaingun.zs"
+#include "ZScript/Weapons/Rocket Launcher.zs"
+#include "ZScript/Weapons/Plasma Rifle.zs"
+#include "ZScript/Weapons/BFG9000.zs"
+
+///MONSTERS///
+
+#include "ZScript/Monsters/Zombieman.zs"
+#include "ZScript/Monsters/Shotgunguy.zs"
+#include "ZScript/Monsters/Chainguy.zs"
+
+#include "ZScript/Monsters/Imp.zs"
+#include "ZScript/Monsters/Spectre.zs"
+
+#include "ZScript/Monsters/Lost Soul.zs"
+#include "ZScript/Monsters/Cacodemon.zs"
+#include "ZScript/Monsters/Pain Elemental.zs"
+
+#include "ZScript/Monsters/Hell Knight.zs"
+#include "ZScript/Monsters/Baron of Hell.zs"
+
+#include "ZScript/Monsters/Revenant.zs"
+#include "ZScript/Monsters/Mancubus.zs"
+#include "ZScript/Monsters/Arachnotron.zs"
+#include "ZScript/Monsters/Archvile.zs"
+
+#include "ZScript/Monsters/Cyberdemon.zs"
+#include "ZScript/Monsters/Spider Mastermind.zs"
+*/
+///DECORATIONS///
+
+#include "ZScript/Decorations/Pillars.zs"
+#include "ZScript/Decorations/Columns.zs"
+#include "ZScript/Decorations/Stalagmites.zs"
+#include "ZScript/Decorations/Fountains.zs"
+#include "ZScript/Decorations/Fire.zs"
+#include "ZScript/Decorations/Flesh.zs"
+#include "ZScript/Decorations/Skulls.zs"
+#include "ZScript/Decorations/Trees.zs"
+#include "ZScript/Decorations/Lights.zs"
+#include "ZScript/Decorations/Spacecrafts.zs"

@@ -1,0 +1,396 @@
+Include "Doomednums.txt"
+
+Gameinfo
+{
+	Quitmessages = "Are you really that much of a coward?"
+	Borderflat = "BLACK.png"
+	Quitsound = "wrldtest.wav"
+	
+	MenuFontColor_Title 	= "White"
+	MenuFontColor_Label 	= "White"
+	MenuFontColor_Value 	= "White"
+	MenuFontColor_Action	= "White"
+	MenuFontColor_Header 	= "White"
+	MenuFontColor_Highlight = "White"
+	MenuFontColor_Selection = "White"
+	MenuSliderColor			= "White"
+}
+
+adddefaultmap
+{
+	allowfreelook
+	allowjump
+	allowcrouch
+}
+
+clearepisodes
+
+episode E1M1
+{
+	name = "Unfamiliar"
+}
+/*
+episode E2M1
+{
+	Name = "Frontier of Death"
+	picname = M_EP2
+}
+
+episode E3M1
+{
+	name = "Circles of Hell"
+	picname = M_EP3
+}
+
+clearskills
+
+skill baby
+{
+   AmmoFactor = 2
+   DamageFactor = 0.5
+   EasyBossBrain
+   SpawnFilter = Baby
+   Name = "Doomworld User"
+   PicName = "M_JKILL"
+   MustConfirm = "A perfectly fair challenge for the common Doom enthusiast."
+   Key = "i"
+}
+
+skill medium
+{
+   AmmoFactor = 1
+   DamageFactor = 1
+   SpawnFilter = Hard
+   Name = "Master of Doom"
+   PicName = "M_HURT"
+   MustConfirm = "You're in for a thoroughly ultra-violent time."
+   Key = "i"
+}
+
+skill hard
+{
+   AmmoFactor = 1
+   DamageFactor = 1
+   FastMonsters
+   SpawnFilter = Hard
+   Name = "Speed Demon"
+   PicName = "M_ULTRA"
+   MustConfirm = "A thoroughly ultra-violent time with fast monsters."
+   Key = "i"
+}
+
+skill nightmare
+{
+   AmmoFactor = 0.5
+   DamageFactor = 2
+   FastMonsters
+   DisableCheats
+   RespawnTime = 1
+   SpawnFilter = Nightmare
+   Name = "Lost Cause"
+   PicName = "M_NMARE"
+   MustConfirm = "Stop it. Get some help."
+   Key = "i"
+}
+*/
+map E1M1 "Transport Checkpoint"
+{
+next = E1M2
+sky1 = E1SKY1
+cluster = 1
+music = D_E1M1
+useplayerstartz="568"
+}
+
+map E1M2 "Nukage Dump"
+{
+next = E1M3
+sky1 = E1SKY2
+cluster = 1
+music = D_E1M2
+}
+
+map E1M3 "Mineral Refinery"
+{
+next = E1M4
+secretnext = E1M9
+sky1 = E1SKY3
+cluster = 1
+music = D_E1M3
+}
+
+map E1M4 "Industrial Compound"
+{
+next = E1M5
+sky1 = E1SKY4
+cluster = 1
+music = D_E1M4
+}
+
+map E1M5 "Alpha Labs"
+{
+next = E1M6
+sky1 = E1SKY5
+cluster = 1
+music = D_E1M5
+}
+
+map E1M6 "Atmosphere Processor"
+{
+next = E1M7
+sky1 = E1SKY6
+cluster = 1
+music = D_E1M6
+}
+
+map E1M7 "Computer Mainframe Hub"
+{
+next = E1M8
+sky1 = E1SKY7
+cluster = 1
+music = D_E1M7
+}
+
+map E1M8 "Alpha Matter Transmission Station"
+{
+next = E2M1
+sky1 = E1SKY8
+cluster = 1
+baronspecial
+specialaction_lowerfloor
+music = D_E1M8
+}
+
+map E1M9 "Engineering Array"
+{
+next = E1M4
+sky1 = BLACK
+cluster = 1
+music = D_E1M9
+}
+
+map E2M1 "Delta Matter Transmission Station"
+{
+next = E2M2
+sky1 = E2SKY1
+cluster = 2
+music =  D_E2M1
+}
+
+map E2M2 "Storage Facility"
+{
+next = E2M3
+sky1 = E2SKY2
+cluster = 2
+music = D_E2M2
+}
+
+map E2M3 "Waste Runoff Control"
+{
+next = E2M4
+sky1 = E2SKY3
+cluster = 2
+music = D_E2M3
+}
+
+map E2M4 "Delta Labs"
+{
+next = E2M5
+sky1 = BLACK
+cluster = 2
+music = D_E2M4
+}
+
+map E2M5 "Power Complex"
+{
+next = E2M6
+secretnext = E2M9
+sky1 = E2SKY5
+cluster = 2
+music = D_E2M5
+}
+
+map E2M6 "Resource Management"
+{
+next = E2M7
+sky1 = E2SKY6
+cluster = 2
+music = D_E2M6
+}
+
+map E2M7 "Chemical Processing"
+{
+next = E2M8
+sky1 = E2SKY7
+cluster = 2
+music = D_E2M7
+}
+
+map E2M8 "Control Tower"
+{
+next = E3M1
+sky1 = E2SKY8
+cluster = 2
+cyberdemonspecial
+specialaction_exitlevel
+music = D_E2M8
+}
+
+map E2M9 "Decomissioned Mining Checkpoint"
+{
+next = E2M6
+sky1 = BLACK
+cluster = 2
+music = D_E2M9
+}
+
+map E3M1 "The Temple of The Antichrist"
+{
+next = E3M2
+sky1 = E3SKY1
+cluster = 3
+baronspecial
+specialaction_lowerfloor
+music = D_E3M1
+}
+
+map E3M2 "The Caverns of The Damned"
+{
+next = E3M3
+sky1 = E3SKY2
+cluster = 3
+music = D_E3M2
+}
+
+map E3M3 "The Unholy Crematorioum"
+{
+next = E3M4
+sky1 = E3SKY3
+cluster = 3
+music = D_E3M3
+}
+
+map E3M4 "The House of Torment"
+{
+next = E3M5
+sky1 = E3SKY4
+cluster = 3
+music = D_E3M4
+}
+
+map E3M5 "The Palace of Satan"
+{
+next = E3M6
+sky1 = E3SKY5
+cluster = 3
+music = D_E3M5
+}
+
+map E3M6 "The Crater of Suffering"
+{
+next = E3M7
+secretnext = E3M9
+sky1 = E3SKY6
+cluster = 3
+music = D_E3M6
+}
+
+map E3M7 "The Tombs of Despair"
+{
+next = E3M8
+sky1 = BLACK
+cluster = 3
+music = D_E3M7
+}
+
+map E3M8 "The Lair of The Abomination"
+{
+sky1 = E3SKY8
+cluster = 3
+spidermastermindspecial
+specialaction_exitlevel
+music = D_E3M8
+}
+
+map E3M9 "The Bastille of Corruption"
+{
+next = E3M7
+sky1 = E3SKY9
+cluster = 3
+cyberdemonspecial
+specialaction_lowerfloor
+music = D_E3M9
+}
+
+cluster 1
+{
+	flat = BLACK
+	music = D_TXT
+	exittext =
+	
+"As the last vestiges of life dissipate from the",
+"ugly suckers who once stood in your way you stride",
+"triumphantly into the Matter Transmitter.",
+"",
+"When you step out the other end into the Delta colony",
+"a familiar rotting stench wafts in your direction,",
+"this time laden with malevolant ash.",
+"",
+"These guys got it even worse. Poor saps.",
+"",
+"You stop for a moment to pontificate over whether",
+"the colonists deserved their fate after so recklessly",
+"tearing apart the fabric of reality and bringing forth",
+"such destruction and suffering...",
+"",
+"...Ah, screw it. Next Stop: Olympus Mons!"
+}
+
+cluster 2
+{
+	flat = BLACK
+	music = D_TXT
+	exittext =
+
+"Damn, son! Talk about a crowning achievement.",
+"",
+"It seems the forces of Hell had to pull out all the stops",
+"and throw their biggest freaks yet your way in order to",
+"slow you down, but you've shown them who's boss and",
+"have now become the new king of Mars.",
+"",
+"Whatever that means.",
+"",
+"So how about you take this one step further",
+"and bring the fight to them?",
+"",
+"Using one of the Cyberdemon's personal teleporters,",
+"you set off to show those super creeps what a",
+"real man's invasion looks like..."
+}
+
+cluster 3
+{
+	flat = BLACK
+	music = D_TXT
+	exittext =
+	
+"Well it looks like the boss is out of a job.",
+"",
+"With the gnarly demise of that big-brained beast",
+"you've ensured that the forces of Hell's grand plan",
+"has been well and truly foiled.",
+"",
+"So...what happens now?",
+"",
+"You decide to get the heck out of dodge and return home",
+"where you can woo all of the ladies with your tale of",
+"heroism and bravery that'll surely be totally believable.",
+"",
+"After much blundering around, you enter a portal in hopes",
+"it'll take you back to the Mars colony where you can find",
+"a ride to Earth. But as fate would have it your destination",
+"ends up being far off from where you had hoped...",
+"",
+"Unfamiliar Episode IV, coming 2022!"
+}

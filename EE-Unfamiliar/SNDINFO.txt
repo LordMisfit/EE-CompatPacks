@@ -1,0 +1,234 @@
+$pitchshiftrange 3
+
+//envrionmental effects
+
+Fountain/Loop	DSWFOUNT
+$volume Fountain/Loop 0.25
+
+Steam/Loop	STEMLOOP
+$volume Steam/Loop 0.25
+
+Steam/Fire	STEMFIRE
+$volume Steam/Fire 0.50
+
+BigSteam/Loop	BSTMLOOP
+$volume BigSteam/Loop 0.25
+
+$volume World/Spark 0.5
+
+//ambient loops - mars
+
+ambient/mars/bigmachine1		"sounds/ambient/mars/bigmachine1.ogg"
+$volume ambient/mars/bigmachine1 0.6
+
+ambient/mars/bigmachine2		"sounds/ambient/mars/bigmachine2.ogg"
+$volume ambient/mars/bigmachine2 0.6
+
+ambient/mars/dronemachine1		"sounds/ambient/mars/dronemachine1.ogg"
+$volume ambient/mars/dronemachine1 0.6
+
+ambient/mars/dronemachine2		"sounds/ambient/mars/dronemachine2.ogg"
+$volume ambient/mars/dronemachine2 0.6
+
+ambient/mars/dronemachine3		"sounds/ambient/mars/dronemachine3.ogg"
+$volume ambient/mars/dronemachine3 0.6
+
+ambient/mars/genambient		"sounds/ambient/mars/genambient.ogg"
+$volume ambient/mars/genambient 0.6
+
+ambient/mars/industrial1		"sounds/ambient/mars/industrial1.ogg"
+$volume ambient/mars/industrial1 0.6
+
+ambient/mars/industrial2		"sounds/ambient/mars/industrial2.ogg"
+$volume ambient/mars/industrial2 0.6
+
+ambient/mars/industrial3		"sounds/ambient/mars/industrial3.ogg"
+$volume ambient/mars/industrial3 0.6
+
+ambient/mars/industrial4		"sounds/ambient/mars/industrial4.ogg"
+$volume ambient/mars/industrial4 0.6
+
+ambient/mars/labdrone			"sounds/ambient/mars/labdrone.ogg"
+$volume ambient/mars/labdrone 0.6
+
+ambient/mars/mechwhine			"sounds/ambient/mars/mechwhine.ogg"
+$volume ambient/mars/mechwhine 0.6
+
+ambient/mars/powercore			"sounds/ambient/mars/powercore.ogg"
+$volume ambient/mars/powercore 0.6
+
+ambient/mars/rumble1			"sounds/ambient/mars/rumble1.ogg"
+$volume ambient/mars/rumble1 1.0
+
+ambient/mars/signalgear1		"sounds/ambient/mars/signalgear1.ogg"
+$volume ambient/mars/signalgear1 0.6
+
+ambient/mars/signalgear2		"sounds/ambient/mars/signalgear2.ogg"
+$volume ambient/mars/signalgear2 0.6
+
+ambient/mars/whoopmachine		"sounds/ambient/mars/whoopmachine.ogg"
+$volume ambient/mars/whoopmachine 0.6
+
+ambient/mars/ep1wind			"sounds/ambient/mars/ep1wind.ogg"
+$volume ambient/mars/ep1wind 0.4
+
+ambient/mars/ep2wind			"sounds/ambient/mars/ep2wind.ogg"
+$volume ambient/mars/ep2wind 0.4
+
+ambient/mars/cavewind			"sounds/ambient/mars/cavewind.ogg"
+$volume ambient/mars/cavewind 0.5
+
+//ambient loops - hell
+
+ambient/hell/burning			"sounds/ambient/hell/burning.ogg"
+$volume ambient/hell/burning 0.6
+
+ambient/hell/burning1			"sounds/ambient/hell/burning1.ogg"
+$volume ambient/hell/burning1 0.6
+
+ambient/hell/burning2			"sounds/ambient/hell/burning2.ogg"
+$volume ambient/hell/burning2 0.6
+
+ambient/hell/synthchoir1			"sounds/ambient/hell/synthchoir1.ogg"
+$volume ambient/hell/synthchoir1 0.6
+
+ambient/hell/synthchoir2			"sounds/ambient/hell/synthchoir2.ogg"
+$volume ambient/hell/synthchoir2 0.6
+
+ambient/hell/synthvoices1		"sounds/ambient/hell/synthvoices1.ogg"
+$volume ambient/hell/synthvoices1 0.6
+
+ambient/hell/synthvoices2		"sounds/ambient/hell/synthvoices2.ogg"
+$volume ambient/hell/synthvoices2 0.6
+
+ambient/hell/torture1		"sounds/ambient/hell/torture1.ogg"
+$volume ambient/hell/torture1 0.6
+
+ambient/hell/torture2		"sounds/ambient/hell/torture2.ogg"
+$volume ambient/hell/torture2 0.6
+
+ambient/hell/torture3		"sounds/ambient/hell/torture3.ogg"
+$volume ambient/hell/torture3 0.6
+
+ambient/hell/weirdwind1		"sounds/ambient/hell/weirdwind1.ogg"
+$volume ambient/hell/weirdwind1 0.6
+
+ambient/hell/weirdwind2		"sounds/ambient/hell/weirdwind2.ogg"
+$volume ambient/hell/weirdwind2 0.6
+
+ambient/hell/weirdwind3		"sounds/ambient/hell/weirdwind3.ogg"
+$volume ambient/hell/weirdwind3 0.6
+
+ambient/hell/ep3wind			"sounds/ambient/hell/ep3wind.ogg"
+$volume ambient/hell/ep3wind 0.75
+
+ambient/hell/demon1		"sounds/ambient/hell/demon1.ogg"
+$volume ambient/hell/demon1 1.0
+
+ambient/hell/demon2		"sounds/ambient/hell/demon2.ogg"
+$volume ambient/hell/demon2 1.0
+
+ambient/hell/hellcave			"sounds/ambient/hell/hellcave.ogg"
+$volume ambient/hell/hellcave 0.6
+
+ambient/hell/hellflesh			"sounds/ambient/hell/hellflesh.ogg"
+$volume ambient/hell/hellflesh 0.6
+
+ambient/hell/hellvoid1			"sounds/ambient/hell/hellvoid1.ogg"
+$volume ambient/hell/hellvoid1 0.75
+
+ambient/hell/hellvoid2			"sounds/ambient/hell/hellvoid2.ogg"
+$volume ambient/hell/hellvoid2 0.75
+
+ambient/hell/hellvoid3			"sounds/ambient/hell/hellvoid3.ogg"
+$volume ambient/hell/hellvoid3 0.75
+
+ambient/hell/rumble2			"sounds/ambient/hell/rumble2.ogg"
+$volume ambient/hell/rumble2 1.0
+
+ambient/hell/rumble3			"sounds/ambient/hell/rumble3.ogg"
+$volume ambient/hell/rumble3 1.0
+
+//ambient loops - misc
+
+ambient/misc/spacecraft		"sounds/ambient/misc/spacecraft.ogg"
+$volume ambient/misc/spacecraft 2.0
+
+ambient/misc/nukage		"sounds/ambient/misc/nukage.ogg"
+$volume ambient/misc/nukage 0.5
+
+ambient/misc/sewage		"sounds/ambient/misc/sewage.ogg"
+$volume ambient/misc/sewage 0.5
+
+//ambient loops - distorted tech
+
+ambient/distortedtech/spidercomputer		"sounds/ambient/distortedtech/spidercomputer.ogg"
+$volume ambient/distortedtech/spidercomputer 1.0
+
+ambient/distortedtech/techrift1		"sounds/ambient/distortedtech/techrift1.ogg"
+$volume ambient/distortedtech/techrift1 0.6
+
+ambient/distortedtech/techrift2		"sounds/ambient/distortedtech/techrift2.ogg"
+$volume ambient/distortedtech/techrift2 0.6
+
+ambient/distortedtech/techrift3		"sounds/ambient/distortedtech/techrift3.ogg"
+$volume ambient/distortedtech/techrift3 0.6
+
+ambient/distortedtech/techrift4		"sounds/ambient/distortedtech/techrift4.ogg"
+$volume ambient/distortedtech/techrift4 0.6
+
+ambient/distortedtech/techrift5		"sounds/ambient/distortedtech/techrift5.ogg"
+$volume ambient/distortedtech/techrift5 0.6
+
+ambient/distortedtech/bigportal		"sounds/ambient/distortedtech/bigportal.ogg"
+$volume ambient/distortedtech/bigportal 1.0
+
+ambient/distortedtech/smallportal		"sounds/ambient/distortedtech/smallportal.ogg"
+$volume ambient/distortedtech/smallportal 1.0
+$attenuation ambient/distortedtech/smallportal 2.5
+
+ambient/distortedtech/badtech1		"sounds/ambient/distortedtech/badtech1.ogg"
+$volume ambient/distortedtech/badtech1 0.6
+
+ambient/distortedtech/badtech2		"sounds/ambient/distortedtech/badtech2.ogg"
+$volume ambient/distortedtech/badtech2 0.6
+
+ambient/distortedtech/badtech3		"sounds/ambient/distortedtech/badtech3.ogg"
+$volume ambient/distortedtech/badtech3 0.6
+
+ambient/distortedtech/badtech4		"sounds/ambient/distortedtech/badtech4.ogg"
+$volume ambient/distortedtech/badtech4 0.6
+
+ambient/distortedtech/badtech5		"sounds/ambient/distortedtech/badtech5.ogg"
+$volume ambient/distortedtech/badtech5 0.6
+
+//items
+
+Items/DSITEMUP				"Sounds/Items/DSITEMUP.ogg"
+$Volume Items/DSITEMUP 1.0
+
+Items/DSWPNUP				"Sounds/Items/DSWPNUP.ogg"
+$Volume Items/DSWPNUP 1.0
+
+Items/DSGETPOW				"Sounds/Items/DSGETPOW.ogg"
+$Volume Items/DSGETPOW 1.0
+
+Items/WeaponItem			"Sounds/Items/WeaponItem.ogg"
+$Volume Items/WeaponItem 1.0
+
+Items/PowerupItem			"Sounds/Items/PowerupItem.ogg"
+$Volume Items/PowerupItem 1.0
+
+Items/HealthItem			"Sounds/Items/HealthItem.ogg"
+$Volume Items/HealthItem 1.0
+
+Items/AmmoItem				"Sounds/Items/AmmoItem.ogg"
+$Volume Items/AmmoItem 1.0
+
+Items/ArmourItem			"Sounds/Items/ArmourItem.ogg"
+$Volume Items/ArmourItem 1.0
+
+//misc
+
+wrldtest			"wrldtest.ogg"
+$volume wrldtest 0

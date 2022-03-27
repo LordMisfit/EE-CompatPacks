@@ -1,0 +1,123 @@
+brightmap texture SFLR6_1 { map "brightmaps/textures/unfam/gutsn1.png" disablefullbright }
+brightmap texture SFLR6_4 { map "brightmaps/textures/unfam/gutsn1.png" disablefullbright }
+brightmap texture SFLR7_1 { map "brightmaps/textures/unfam/gutsn1.png" disablefullbright }
+brightmap texture SFLR7_4 { map "brightmaps/textures/unfam/gutsn1.png" disablefullbright }
+brightmap texture gutsn1 { map "brightmaps/textures/unfam/gutsn1.png" disablefullbright }
+
+brightmap texture DRSKY01 { map "brightmaps/textures/unfam/DRSKY01.png" disablefullbright }
+
+brightmap texture SP_FACE1 { map "brightmaps/textures/unfam/FACESN1.png" disablefullbright }
+brightmap texture FACESN1 { map "brightmaps/textures/unfam/FACESN1.png" disablefullbright }
+brightmap texture FACESN2 { map "brightmaps/textures/unfam/FACESN1.png" disablefullbright }
+
+brightmap texture SKSPINE1 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN01 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN05 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN06 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN07 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN08 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN09 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN10 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN11 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+brightmap texture DRSPIN12 { map "brightmaps/textures/unfam/DRSPIN05.png" disablefullbright }
+
+brightmap texture DRSPIN02 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN13 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN14 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN15 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN16 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN17 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN18 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN19 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+brightmap texture DRSPIN20 { map "brightmaps/textures/unfam/DRSPIN13.png" disablefullbright }
+
+brightmap texture DRSPIN04 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN21 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN22 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN23 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN24 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN25 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN26 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN27 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+brightmap texture DRSPIN28 { map "brightmaps/textures/unfam/DRSPIN21.png" disablefullbright }
+
+brightmap texture DRSPIN03 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN29 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN30 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN31 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN32 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN33 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN34 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN35 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+brightmap texture DRSPIN36 { map "brightmaps/textures/unfam/DRSPIN29.png" disablefullbright }
+
+brightmap texture NFLESH1 { map "brightmaps/textures/unfam/NFLESH1.png" disablefullbright }
+brightmap texture OFLSHH01 { map "brightmaps/textures/unfam/NFLESH1.png" disablefullbright }
+brightmap texture OFLSHH02 { map "brightmaps/textures/unfam/NFLESH1.png" disablefullbright }
+
+brightmap texture NFLESH2 { map "brightmaps/textures/unfam/NFLESH2.png" disablefullbright }
+brightmap texture OFLSHD01 { map "brightmaps/textures/unfam/NFLESH2.png" disablefullbright }
+brightmap texture NFLESH9 { map "brightmaps/textures/unfam/NFLESH2.png" disablefullbright }
+
+brightmap texture NFLESH3 { map "brightmaps/textures/unfam/NFLESH3.png" disablefullbright }
+brightmap texture OFLSHF01 { map "brightmaps/textures/unfam/NFLESH3.png" disablefullbright }
+
+brightmap texture NFLESH4 { map "brightmaps/textures/unfam/NFLESH4.png" disablefullbright }
+brightmap texture SKINHEAD { map "brightmaps/textures/unfam/NFLESH4.png" disablefullbright }
+
+brightmap texture SKSNAKE3 { map "brightmaps/textures/unfam/SKSNAKE3.png" disablefullbright }
+brightmap texture SKSNAKE4 { map "brightmaps/textures/unfam/SKSNAKE3.png" disablefullbright }
+
+brightmap texture SKY3A { map "brightmaps/textures/unfam/SKY3A.png" disablefullbright }
+brightmap texture SKY3B { map "brightmaps/textures/unfam/SKY3B.png" disablefullbright }
+
+brightmap texture SKIN2B { map "brightmaps/textures/unfam/SKIN2B.png" disablefullbright }
+brightmap texture SKIN2C { map "brightmaps/textures/unfam/SKIN2B.png" disablefullbright }
+
+brightmap texture NFLESH5 { map "brightmaps/textures/unfam/NFLESH5.png" disablefullbright }
+brightmap texture OFLSHB01 { map "brightmaps/textures/unfam/NFLESH5.png" disablefullbright }
+
+brightmap texture NFLESH6 { map "brightmaps/textures/unfam/NFLESH6.png" disablefullbright }
+brightmap texture OFLSHC01 { map "brightmaps/textures/unfam/NFLESH6.png" disablefullbright }
+
+brightmap texture NFLESH7 { map "brightmaps/textures/unfam/NFLESH7.png" disablefullbright }
+brightmap texture OFLSHG02 { map "brightmaps/textures/unfam/NFLESH7.png" disablefullbright }
+
+brightmap texture OFLSHA01 { map "brightmaps/textures/unfam/OFLSHA01.png" disablefullbright }
+
+brightmap texture OFLSHE01 { map "brightmaps/textures/unfam/OFLSHE01.png" disablefullbright }
+
+brightmap texture OFLSHG01 { map "brightmaps/textures/unfam/OFLSHG01.png" disablefullbright }
+
+brightmap texture SK_LEFT { map "brightmaps/textures/unfam/SK_LEFT.png" disablefullbright }
+brightmap texture SK_RIGHT { map "brightmaps/textures/unfam/SK_RIGHT.png" disablefullbright }
+
+brightmap texture SLOPPY1 { map "brightmaps/textures/unfam/SLOPPY1.png" disablefullbright }
+brightmap texture SLOPPY2 { map "brightmaps/textures/unfam/SLOPPY2.png" disablefullbright }
+
+brightmap texture SKSPINE2 { map "brightmaps/textures/unfam/SKSPINE2.png" disablefullbright }
+
+brightmap texture SKIN2 { map "brightmaps/textures/unfam/SKIN2.png" disablefullbright }
+
+brightmap texture SKIN2B { map "brightmaps/textures/unfam/SKIN2B.png" disablefullbright }
+brightmap texture SKIN2C { map "brightmaps/textures/unfam/SKIN2B.png" disablefullbright }
+
+brightmap texture SKINEDGE { map "brightmaps/textures/unfam/SKINEDGE.png" disablefullbright }
+brightmap texture SKINFACE { map "brightmaps/textures/unfam/SKINFACE.png" disablefullbright }
+brightmap texture SKINLOW { map "brightmaps/textures/unfam/SKINLOW.png" disablefullbright }
+
+brightmap texture SKY3A { map "brightmaps/textures/unfam/SKY3A.png" disablefullbright }
+brightmap texture SKY3B { map "brightmaps/textures/unfam/SKY3B.png" disablefullbright }
+
+brightmap texture SNAK7_1 { map "brightmaps/textures/unfam/SNAK7_1.png" disablefullbright }
+brightmap texture SNAK8_1 { map "brightmaps/textures/unfam/SNAK8_1.png" disablefullbright }
+
+brightmap texture SKINMET1 { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+brightmap texture SKINMET2 { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+brightmap texture SKINSCAB { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+brightmap texture SKINCUT { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+brightmap texture SKINSYMB { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+
+brightmap texture OSKINA01 { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+brightmap texture OSKINA02 { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }
+brightmap texture OSKINA03 { map "brightmaps/textures/unfam/SKINMET1.png" disablefullbright }

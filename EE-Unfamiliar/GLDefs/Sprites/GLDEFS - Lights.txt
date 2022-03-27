@@ -1,0 +1,515 @@
+Object TechLamp
+{
+    Frame TLMP {Light "TechLamp"}
+}
+
+Object TechLamp2
+{
+    Frame TLP2 {Light "TechLamp2"}
+}
+
+pointlight TechLamp
+{
+color 0.5 1.0 1.0
+size 125
+offset 0 75 0
+}
+
+pointlight TechLamp2
+{
+color 0.5 0.5 1.0
+size 100
+offset 0 50 0
+}
+
+Object Column
+{
+    Frame COLU {Light "Column"}
+}
+
+pointlight Column
+{
+color 1.0 1.0 0.5
+size 113
+offset 0 60 0
+}
+
+Object Candelabra
+{
+    Frame CBRA {Light "Candelabra"}
+}
+
+
+pointlight Candelabra
+{
+color 1.0 1.0 0.0
+size 100
+offset 0 70 0
+}
+
+Object RedTorch
+{
+    Frame TRED {Light "RedTorch"}
+}
+
+flickerlight2 RedTorch
+{
+    color 1.0 0.0 0.0
+    size 150
+    secondarySize 100
+    interval 0.05
+    offset 0 70 0
+}
+
+Object BlueTorch
+{
+    Frame TBLU {Light "BlueTorch"}
+}
+
+flickerlight2 BlueTorch
+{
+    color 0.5 0.0 1.0
+    size 150
+    secondarySize 100
+    interval 0.05
+    offset 0 70 0
+}
+
+Object GreenTorch
+{
+    Frame TGRN {Light "GreenTorch"}
+}
+
+flickerlight2 GreenTorch
+{
+    color 0.0 1.0 0.5
+    size 150
+    secondarySize 100
+    interval 0.05
+    offset 0 70 0
+}
+
+Object ShortRedTorch
+{
+    Frame SMRT {Light "ShortRedTorch"}
+}
+
+flickerlight2 ShortRedTorch
+{
+    color 1.0 0.0 0.0
+    size 125
+    secondarySize 50
+    interval 0.05
+    offset 0 50 0
+}
+
+Object ShortBlueTorch
+{
+    Frame SMBT {Light "ShortBlueTorch"}
+}
+
+flickerlight2 ShortBlueTorch
+{
+    color 0.5 0.0 1.0
+    size 125
+    secondarySize 50
+    interval 0.05
+    offset 0 50 0
+}
+
+Object ShortGreenTorch
+{
+    Frame SMGT {Light "ShortGreenTorch"}
+}
+
+flickerlight2 ShortGreenTorch
+{
+    color 0.0 1.0 0.5
+    size 125
+    secondarySize 50
+    interval 0.05
+    offset 0 50 0
+}
+
+Object Candlestick
+{
+    Frame CAND {Light "Candlestick"}
+}
+
+pointlight Candlestick
+{
+color 1.0 0.75 0.0
+size 25
+offset 0 0 0
+}
+
+Object BlueCandlestick
+{
+    Frame CDSB {Light "BlueCandlestick"}
+}
+
+pointlight BlueCandlestick
+{
+color 0.5 0.5 1.0
+size 25
+offset 0 0 0
+}
+
+Object WhiteCandlestick
+{
+    Frame CDSW {Light "WhiteCandlestick"}
+}
+
+pointlight WhiteCandlestick
+{
+color 0.75 0.75 0.75
+size 25
+offset 0 0 0
+}
+
+Object CandelabraGrey
+{
+    Frame CBRC {Light "CandelabraGrey"}
+}
+
+
+pointlight CandelabraGrey
+{
+color 0.75 0.75 0.75
+size 100
+offset 0 70 0
+}
+
+Object CandelabraBlue
+{
+    Frame CBRB {Light "CandelabraBlue"}
+}
+
+
+pointlight CandelabraBlue
+{
+color 0.25 0.25 1.0
+size 100
+offset 0 70 0
+}
+
+pointlight FLOORLANT
+{
+    color 1.0 1.0 1.0
+    size 50
+    offset 0 10 0
+	attenuate 1
+}
+
+object FloorLantern
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object FloorLantern_Animated
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object FloorLanternTall
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object FloorLanternTall_Animated
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object CeilingLantern
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object CeilingLantern_Animated
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object CeilingLanternTall
+{
+    frame FRLT { light FLOORLANT }
+}
+
+object CeilingLanternTall_Animated
+{
+    frame FRLT { light FLOORLANT }
+}
+
+//Candlesticks
+
+brightmap sprite canda0
+{
+	map "brightmaps/sprites/doom/canda0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite cdsba0
+{
+	map "brightmaps/sprites/doom/canda0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite cdswa0
+{
+	map "brightmaps/sprites/doom/canda0.png"
+	iwad 
+	disablefullbright
+}
+
+//Candelabras
+
+brightmap sprite cbraa0
+{
+	map "brightmaps/sprites/doom/cbraa0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite cbrba0
+{
+	map "brightmaps/sprites/doom/cbraa0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite cbrca0
+{
+	map "brightmaps/sprites/doom/cbraa0.png"
+	iwad 
+	disablefullbright
+}
+
+//Tech Lamps
+
+brightmap sprite colua0
+{
+	map "brightmaps/sprites/doom/colua0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tlmpa0
+{
+	map "brightmaps/sprites/doom2/tlmpa0.png"
+	disablefullbright
+}
+
+brightmap sprite tlmpb0
+{
+	map "brightmaps/sprites/doom2/tlmpb0.png"
+	disablefullbright
+}
+
+brightmap sprite tlmpc0
+{
+	map "brightmaps/sprites/doom2/tlmpc0.png"
+	disablefullbright
+}
+
+brightmap sprite tlmpd0
+{
+	map "brightmaps/sprites/doom2/tlmpd0.png"
+	disablefullbright
+}
+
+brightmap sprite tlp2a0
+{
+	map "brightmaps/sprites/doom2/tlp2a0.png"
+	disablefullbright
+}
+
+brightmap sprite tlp2b0
+{
+	map "brightmaps/sprites/doom2/tlp2b0.png"
+	disablefullbright
+}
+
+brightmap sprite tlp2c0
+{
+	map "brightmaps/sprites/doom2/tlp2c0.png"
+	disablefullbright
+}
+
+brightmap sprite tlp2d0
+{
+	map "brightmaps/sprites/doom2/tlp2d0.png"
+	disablefullbright
+}
+
+//Torches
+
+brightmap sprite smbta0
+{
+	map "brightmaps/sprites/doom/smbta0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smbtb0
+{
+	map "brightmaps/sprites/doom/smbtb0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smbtc0
+{
+	map "brightmaps/sprites/doom/smbtc0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smbtd0
+{
+	map "brightmaps/sprites/doom/smbtd0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smgta0
+{
+	map "brightmaps/sprites/doom/smgta0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smgtb0
+{
+	map "brightmaps/sprites/doom/smgtb0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smgtc0
+{
+	map "brightmaps/sprites/doom/smgtc0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smgtd0
+{
+	map "brightmaps/sprites/doom/smgtd0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smrta0
+{
+	map "brightmaps/sprites/doom/smrta0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smrtb0
+{
+	map "brightmaps/sprites/doom/smrtb0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smrtc0
+{
+	map "brightmaps/sprites/doom/smrtc0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite smrtd0
+{
+	map "brightmaps/sprites/doom/smrtd0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tblua0
+{
+	map "brightmaps/sprites/doom/tblua0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tblub0
+{
+	map "brightmaps/sprites/doom/tblub0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tbluc0
+{
+	map "brightmaps/sprites/doom/tbluc0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tblud0
+{
+	map "brightmaps/sprites/doom/tblud0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tgrna0
+{
+	map "brightmaps/sprites/doom/tgrna0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tgrnb0
+{
+	map "brightmaps/sprites/doom/tgrnb0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tgrnc0
+{
+	map "brightmaps/sprites/doom/tgrnc0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tgrnd0
+{
+	map "brightmaps/sprites/doom/tgrnd0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite treda0
+{
+	map "brightmaps/sprites/doom/treda0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tredb0
+{
+	map "brightmaps/sprites/doom/tredb0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tredc0
+{
+	map "brightmaps/sprites/doom/tredc0.png"
+	iwad 
+	disablefullbright
+}
+
+brightmap sprite tredd0
+{
+	map "brightmaps/sprites/doom/tredd0.png"
+	iwad 
+	disablefullbright
+}

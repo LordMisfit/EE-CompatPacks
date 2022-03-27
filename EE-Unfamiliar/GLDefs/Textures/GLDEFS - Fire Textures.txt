@@ -1,0 +1,46 @@
+brightmap texture firemag1 { map "brightmaps/textures/doom/firemag1.png" iwad }
+brightmap texture firemag2 { map "brightmaps/textures/doom/firemag2.png" iwad }
+brightmap texture firemag3 { map "brightmaps/textures/doom/firemag3.png" iwad }
+
+brightmap texture firewala { map "brightmaps/textures/doom/firewala.png" iwad }
+brightmap texture firewalb { map "brightmaps/textures/doom/firewalb.png" iwad }
+brightmap texture firewall { map "brightmaps/textures/doom/firewall.png" iwad }
+
+brightmap texture NFIRE1 { map "brightmaps/textures/unfam/OFIREBM1.png" disablefullbright }
+brightmap texture NFIRE2 { map "brightmaps/textures/unfam/OFIREBM2.png" disablefullbright }
+brightmap texture NFIRE3 { map "brightmaps/textures/unfam/OFIREBM3.png" disablefullbright }
+brightmap texture NFIRE4 { map "brightmaps/textures/unfam/OFIREBM4.png" disablefullbright }
+brightmap texture NFIRE5 { map "brightmaps/textures/unfam/OFIREBM5.png" disablefullbright }
+brightmap texture NFIRE6 { map "brightmaps/textures/unfam/OFIREBM6.png" disablefullbright }
+
+brightmap texture NFIRE7 { map "brightmaps/textures/unfam/OFIREBM1.png" disablefullbright }
+brightmap texture NFIRE8 { map "brightmaps/textures/unfam/OFIREBM2.png" disablefullbright }
+brightmap texture NFIRE9 { map "brightmaps/textures/unfam/OFIREBM3.png" disablefullbright }
+
+brightmap texture NFIRE10 { map "brightmaps/textures/unfam/OFIREBM4.png" disablefullbright }
+brightmap texture NFIRE11 { map "brightmaps/textures/unfam/OFIREBM5.png" disablefullbright }
+brightmap texture NFIRE12 { map "brightmaps/textures/unfam/OFIREBM6.png" disablefullbright }
+
+brightmap texture NFIRE13 { map "brightmaps/textures/doom/fireblu1.png" iwad }
+brightmap texture NFIRE14 { map "brightmaps/textures/doom/fireblu2.png" iwad }
+brightmap texture NFIRE15 { map "brightmaps/textures/doom/fireblu1.png" iwad }
+brightmap texture NFIRE16 { map "brightmaps/textures/doom/fireblu2.png" iwad }
+brightmap texture NFIRE17 { map "brightmaps/textures/doom/fireblu1.png" iwad }
+brightmap texture NFIRE18 { map "brightmaps/textures/doom/fireblu2.png" iwad }
+brightmap texture NFIRE19 { map "brightmaps/textures/doom/firewala.png" iwad }
+
+brightmap texture NFIRE20 { map "brightmaps/textures/doom/firewalb.png" iwad }
+brightmap texture NFIRE21 { map "brightmaps/textures/doom/firewall.png" iwad }
+brightmap texture NFIRE22 { map "brightmaps/textures/doom/firewala.png" iwad }
+brightmap texture NFIRE23 { map "brightmaps/textures/doom/firewalb.png" iwad }
+brightmap texture NFIRE24 { map "brightmaps/textures/doom/firewall.png" iwad }
+brightmap texture NFIRE25 { map "brightmaps/textures/doom/firewala.png" iwad }
+brightmap texture NFIRE26 { map "brightmaps/textures/doom/firewalb.png" iwad }
+brightmap texture NFIRE27 { map "brightmaps/textures/doom/firewall.png" iwad }
+
+brightmap texture OFIREA41 { map "brightmaps/textures/unfam/OFIREBM1.png" disablefullbright }
+brightmap texture OFIREA42 { map "brightmaps/textures/unfam/OFIREBM2.png" disablefullbright }
+brightmap texture OFIREA43 { map "brightmaps/textures/unfam/OFIREBM3.png" disablefullbright }
+brightmap texture OFIREA44 { map "brightmaps/textures/unfam/OFIREBM4.png" disablefullbright }
+brightmap texture OFIREA45 { map "brightmaps/textures/unfam/OFIREBM5.png" disablefullbright }
+brightmap texture OFIREA46 { map "brightmaps/textures/unfam/OFIREBM6.png" disablefullbright }

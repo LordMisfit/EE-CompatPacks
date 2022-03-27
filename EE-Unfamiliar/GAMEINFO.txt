@@ -1,0 +1,2 @@
+StartupTitle = "Unfamiliar Episode III - Circles of Hell"
+StartupColors = "#000000", "#DD8022"

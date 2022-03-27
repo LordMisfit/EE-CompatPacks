@@ -1,0 +1,75 @@
+brightmap flat cons1_1     { map "brightmaps/textures/doom/flats/cons1_1.png" iwad }
+brightmap flat cons1_5     { map "brightmaps/textures/doom/flats/cons1_5.png" iwad }
+brightmap flat cons1_7     { map "brightmaps/textures/doom/flats/cons1_7.png" iwad }
+
+brightmap flat flat22      { map "brightmaps/textures/doom/flats/flat22.png" iwad }
+
+brightmap texture comp2    { map "brightmaps/textures/doom/comp2.png" iwad }
+brightmap texture compblue { map "brightmaps/textures/unfam/WHITE.png" disablefullbright }
+brightmap texture compohso { map "brightmaps/textures/doom/compohso.png" iwad }
+brightmap texture compsta1 { map "brightmaps/textures/doom/compsta1.png" iwad }
+brightmap texture compsta2 { map "brightmaps/textures/doom/compsta2.png" iwad }
+brightmap texture comptall { map "brightmaps/textures/doom/comptall.png" iwad }
+brightmap texture comptile { map "brightmaps/textures/doom/comptile.png" iwad }
+brightmap texture compute1 { map "brightmaps/textures/doom/compute1.png" iwad }
+brightmap texture compute2 { map "brightmaps/textures/doom/compute2.png" iwad }
+brightmap texture compute3 { map "brightmaps/textures/doom/compute3.png" iwad }
+
+brightmap texture tekwall1 { map "brightmaps/textures/doom/tekwall1.png" iwad }
+brightmap texture tekwall2 { map "brightmaps/textures/doom/tekwall2.png" iwad }
+brightmap texture tekwall5 { map "brightmaps/textures/doom/tekwall5.png" iwad }
+
+brightmap texture silver3  { map "brightmaps/textures/doom2/silver3.png" iwad }
+
+brightmap texture comp03_1 { map "brightmaps/textures/unfam/comp03_1.png" disablefullbright }
+brightmap texture comp03_b { map "brightmaps/textures/unfam/comp03_1.png" disablefullbright }
+brightmap texture comp03_g { map "brightmaps/textures/unfam/comp03_1.png" disablefullbright }
+brightmap texture comp03_r { map "brightmaps/textures/unfam/comp03_1.png" disablefullbright }
+brightmap texture comp03_w { map "brightmaps/textures/unfam/comp03_1.png" disablefullbright }
+brightmap texture comp03_y { map "brightmaps/textures/unfam/comp03_1.png" disablefullbright }
+
+brightmap texture compn1 { map "brightmaps/textures/unfam/compn1.png" disablefullbright }
+brightmap texture compn2 { map "brightmaps/textures/unfam/compn1.png" disablefullbright }
+brightmap texture compn3 { map "brightmaps/textures/unfam/compn1.png" disablefullbright }
+brightmap texture compn4 { map "brightmaps/textures/unfam/compn1.png" disablefullbright }
+brightmap texture compn5 { map "brightmaps/textures/unfam/compn1.png" disablefullbright }
+
+brightmap texture compn6 { map "brightmaps/textures/unfam/compn6.png" disablefullbright }
+brightmap texture compn7 { map "brightmaps/textures/unfam/compn7.png" disablefullbright }
+
+brightmap texture compn8 { map "brightmaps/textures/unfam/compn8.png" disablefullbright }
+brightmap texture compn9 { map "brightmaps/textures/unfam/compn8.png" disablefullbright }
+brightmap texture compn10 { map "brightmaps/textures/unfam/compn8.png" disablefullbright }
+brightmap texture compn11 { map "brightmaps/textures/unfam/compn8.png" disablefullbright }
+brightmap texture compn12 { map "brightmaps/textures/unfam/compn8.png" disablefullbright }
+brightmap texture compn13 { map "brightmaps/textures/unfam/compn8.png" disablefullbright }
+
+brightmap texture compn14 { map "brightmaps/textures/unfam/compn14.png" disablefullbright }
+brightmap texture compn15 { map "brightmaps/textures/unfam/compn14.png" disablefullbright }
+brightmap texture compn16 { map "brightmaps/textures/unfam/compn14.png" disablefullbright }
+brightmap texture compn17 { map "brightmaps/textures/unfam/compn14.png" disablefullbright }
+brightmap texture compn18 { map "brightmaps/textures/unfam/compn14.png" disablefullbright }
+brightmap texture compn19 { map "brightmaps/textures/unfam/compn14.png" disablefullbright }
+
+brightmap texture compn20 { map "brightmaps/textures/unfam/compn20.png" disablefullbright }
+brightmap texture compn21 { map "brightmaps/textures/unfam/compn20.png" disablefullbright }
+brightmap texture compn22 { map "brightmaps/textures/unfam/compn20.png" disablefullbright }
+brightmap texture compn23 { map "brightmaps/textures/unfam/compn20.png" disablefullbright }
+brightmap texture compn24 { map "brightmaps/textures/unfam/compn20.png" disablefullbright }
+
+brightmap texture longcomp { map "brightmaps/textures/unfam/longcomp.png" disablefullbright }
+
+brightmap texture ncmp_bs { map "brightmaps/textures/unfam/ncmp_bs.png" disablefullbright }
+brightmap texture ncmp_gs { map "brightmaps/textures/unfam/ncmp_bs.png" disablefullbright }
+
+brightmap texture scrn1 { map "brightmaps/textures/unfam/scrn1.png" disablefullbright }
+brightmap texture scrn2 { map "brightmaps/textures/unfam/scrn2.png" disablefullbright }
+brightmap texture scrn3 { map "brightmaps/textures/unfam/scrn3.png" disablefullbright }
+
+brightmap texture rw32_3 { map "brightmaps/textures/unfam/rw32_3.png" disablefullbright }
+
+brightmap texture OBASEL3A { map "brightmaps/textures/unfam/OTECHBM1.png" disablefullbright }
+brightmap texture OBASEL38 { map "brightmaps/textures/unfam/OTECHBM2.png" disablefullbright }
+brightmap texture OTECHI10 { map "brightmaps/textures/unfam/OTECHBM3.png" disablefullbright }
+
+brightmap texture NTEK4 { map "brightmaps/textures/unfam/OTECHBM3.png" disablefullbright }
