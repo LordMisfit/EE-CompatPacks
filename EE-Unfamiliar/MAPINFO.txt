@@ -329,19 +329,19 @@ cluster 1
 	exittext =
 	
 "As the last vestiges of life dissipate from the",
-"ugly suckers who once stood in your way you stride",
+"ugly monsters who once stood in your way, you step",
 "triumphantly into the Matter Transmitter.",
 "",
 "When you step out the other end into the Delta colony",
 "a familiar rotting stench wafts in your direction,",
 "this time laden with malevolant ash.",
 "",
-"These guys got it even worse. Poor saps.",
+"Looks like these guys got it even worse. Poor saps.",
 "",
-"You stop for a moment to pontificate over whether",
-"the colonists deserved their fate after so recklessly",
-"tearing apart the fabric of reality and bringing forth",
-"such destruction and suffering...",
+"You stop for a moment to ponder over whether these UAC",
+"colonists deserved their fate after so recklessly tear-",
+"ing apart the fabric of reality and bringing forth such",
+"destruction and suffering...",
 "",
 "...Ah, screw it. Next Stop: Olympus Mons!"
 }
@@ -352,12 +352,12 @@ cluster 2
 	music = D_TXT
 	exittext =
 
-"Damn, son! Talk about a crowning achievement.",
+"Damn, girl! Talk about a crowning achievement.",
 "",
 "It seems the forces of Hell had to pull out all the stops",
 "and throw their biggest freaks yet your way in order to",
 "slow you down, but you've shown them who's boss and",
-"have now become the new king of Mars.",
+"have now become the new queen of Mars.",
 "",
 "Whatever that means.",
 "",
@@ -366,7 +366,7 @@ cluster 2
 "",
 "Using one of the Cyberdemon's personal teleporters,",
 "you set off to show those super creeps what a",
-"real man's invasion looks like..."
+"real duchess's invasion looks like..."
 }
 
 cluster 3
@@ -383,14 +383,11 @@ cluster 3
 "",
 "So...what happens now?",
 "",
-"You decide to get the heck out of dodge and return home",
-"where you can woo all of the ladies with your tale of",
-"heroism and bravery that'll surely be totally believable.",
-"",
 "After much blundering around, you enter a portal in hopes",
 "it'll take you back to the Mars colony where you can find",
-"a ride to Earth. But as fate would have it your destination",
-"ends up being far off from where you had hoped...",
+"a ride to Earth, or better yet, a way back to your own era.", 
+"But as fate would have it your destination ends up far off",
+"from where you had hoped...",
 "",
 "Unfamiliar Episode IV, coming 2022!"
 }
