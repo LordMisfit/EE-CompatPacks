@@ -1,0 +1,3357 @@
+actor ApprenticeSheenMode : PowerProtection
+{
+	damagefactor "normal", 0.125
+	radiusdamagefactor 0.125
+	inventory.icon ""
+	Powerup.Duration 2147483646
+}
+
+ACTOR ApprenticeNew : EECreature 30000
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Raven Style"
+	Tag "Darkmoon Grand Apprentice"
+	
+	Health 1250
+	Radius 20
+	Height 56
+	Speed 8
+	PainChance 100
+	Painchance "Fist", 150 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 250 // Kick attacks have a +150% chance of stunning an enemy
+
+	DamageFactor 0.5
+	RadiusDamageFactor 0.5
+	DamageFactor "Explosive", 0.5
+	DamageFactor "Zap", 0.5
+	MONSTER 
+	+FloorClip
+	+NoGravity
+	+Float
+	SEESOUND "wizard/sight"
+	PAINSOUND "wizard/pain"
+	DEATHSOUND "wizard/death"
+	ACTIVESOUND "wizard/active"
+	OBITUARY "%o was spooked by an Apprentice of Darkmoon."
+
+	states
+	{
+		Spawn:
+			APDP A 0 NoDelay 
+			APDP AB 10 A_Look
+			goto Spawn+1
+		See:
+			APDP A 0
+			APDP A 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_SetInventory("ApprenticeSheenMode",0);
+				A_SetTranslucent(1,0);
+			}
+			APDP AABB 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop
+		Missile:
+			TNT1 A 0
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 2 A_SetTranslucent(frandom(0.34,0.67),0)
+			APDP C 2 A_SetTranslucent(1.0,0)
+			APDP C 0 A_Jump(128,"Missile2")
+			APDP C 0 A_Jump(64,"Missile3")
+			APDP D 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_StartSound("wizard/attack");
+
+				A_SpawnProjectile("FireBlast",30,-10,-4);
+				A_SpawnProjectile("FireBlast",30,0,0);
+				A_SpawnProjectile("FireBlast",30,10,4);
+			}
+			Goto See
+		Missile2:
+			APDP CCCCCCCCC 1 { A_SetTranslucent(alpha-0.1,0); A_FaceTarget; }
+			APDP D 1 // A_SetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 1);
+				A_SetInventory("ApprenticeSheenMode",1);
+				A_SetTranslucent(0.1,0);
+			}
+			APDP CCCCCCCCCCCCCCCC 1 { A_EEWander(0,1,3,1,1); A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_StartSound("wizard/attack");
+
+				A_SpawnProjectile("FireBlast",30,-10,-4);
+				A_SpawnProjectile("FireBlast",30,0,0);
+				A_SpawnProjectile("FireBlast",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_EEWander(0,1,3,1,1); A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_StartSound("wizard/attack");
+				
+				A_SpawnProjectile("FireBlast",30,-10,-4);
+				A_SpawnProjectile("FireBlast",30,0,0);
+				A_SpawnProjectile("FireBlast",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_EEWander(0,1,3,1,1); A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_StartSound("wizard/attack");
+				
+				A_SpawnProjectile("FireBlast",30,-10,-4);
+				A_SpawnProjectile("FireBlast",30,0,0);
+				A_SpawnProjectile("FireBlast",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_EEWander(0,1,3,1,1); A_FaceTarget; }
+			APDP CCCC 2 { A_SetTranslucent(alpha+0.08,0); A_FaceTarget; }
+			APDP D 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_StartSound("wizard/attack");
+				
+				A_SpawnProjectile("FireBlast",30,-10,-4);
+				A_SpawnProjectile("FireBlast",30,0,0);
+				A_SpawnProjectile("FireBlast",30,10,4);
+			}
+			APDP CCCC 2 { A_SetTranslucent(alpha-0.08,0); A_FaceTarget; }
+			APDP CCCCCCCCCCCCCCCC 1 { A_EEWander(0,1,3,1,1); A_FaceTarget; }
+			APDP BABABABAB 1 { A_SetTranslucent(alpha+0.1,0); A_FaceTarget; }
+			APDP A 1 // A_UnsetInvulnerable
+			{
+				A_FaceTarget;
+				A_ChangeFlag("NOPAIN", 0);
+				A_SetInventory("ApprenticeSheenMode",0);
+				A_SetTranslucent(1.0,0);
+			}
+			Goto See
+		Missile3:
+			APDP D 4
+			{
+				A_FaceTarget;
+				A_StartSound("wizard/attack");
+
+				A_SpawnProjectile("SuperFireBlast",15,0,0);
+			}
+			Goto See
+		Pain:
+			APDP E 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_SetInventory("ApprenticeSheenMode",0);
+				A_SetTranslucent(1,0);
+			}
+			APDP E 2
+			APDP E 2 A_EEPain
+			Goto See
+
+		Death:
+			APDP E 0 // A_UnsetInvulnerable
+			{
+				A_ChangeFlag("NOPAIN", 0);
+				A_SetInventory("ApprenticeSheenMode",0);
+				A_SetTranslucent(1,0);
+			}
+			APDP E 4
+			APDP F 4
+			APDP G 3 A_Scream
+			APDP H 3 A_CustomMissile("AoDGhost",8,0,0)
+			APDP I 3 A_Fall
+			APDP JKL 2
+			TNT1 A 0 
+			APDP M -1
+			Stop
+		Raise:
+			APDP M 8 
+			APDP L 8 
+			APDP KJI 6 
+			Goto See
+		XDeath:
+			goto Death
+		Ice:
+			APDP E 5 A_GenericFreezeDeath
+			APDP E 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR SpiderBiteProj : EEProjectile
+{
+	Tag "Bite"
+	Damage (random(3,7))
+	PoisonDamage 2
+	Radius 1
+	Height 1
+	Speed 22
+	+DONTREFLECT
+	+ADDITIVEPOISONDURATION
+	+ADDITIVEPOISONDAMAGE
+	RENDERSTYLE NONE // ADD
+	ALPHA 0.34
+	Scale 0.125
+	PROJECTILE
+	Seesound ""
+	DeathSound ""
+	DamageType "Poison"
+	Obituary "%o was poisoned by the bite of a tiny spider"
+	States
+	{
+		Spawn:
+			FVUL AA 1 Bright 
+			stop
+		Death:
+			FVUL CDEF 1 Bright
+			stop
+	}
+}
+
+ACTOR MiniSpiderNew : EECreature 22290
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Spider [smaller]"
+	
+	health 38 // 15
+	Speed 15 // 10
+	Radius 7
+	Height 15
+	Health 15
+	Scale 0.25
+	Translation 0
+	Damage 0 
+	MeleeDamage 1
+	MONSTER
+	+FLOORCLIP
+	seesound "littlespider/sight"
+	attacksound "littlespider/attack"
+	painsound "littlespider/pain"
+	deathsound "littlespider/death"
+	activesound "littlespider/sight"
+	meleesound "littlespider/pain"
+	DamageFactor "Suck", 4
+
+
+	States
+	{
+		Spawn:
+			MNTR A 0 NoDelay 
+			MNTR AB 5 A_Look
+			goto Spawn+1
+		See:
+			MNTR A 0
+			MNTR ABCD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop
+		Melee:
+			TNT1 A 0
+			MNTR VW 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			MNTR X 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+
+				A_SpawnProjectile("SpiderBiteProj",16,0,0,CMF_CHECKTARGETDEAD,0,AAPTR_TARGET); //A_MeleeAttack;
+			}
+			Goto See
+
+		Pain:
+			Goto See
+		XDeath:
+		Death:
+			MNTS F 4
+			MNTS E 4 A_Scream
+			MNTS D 4
+			MNTS C 4 A_NoBlocking
+			MNTS B 4
+			TNT1 A 0 
+			MNTS A -1 A_BossDeath
+			Stop
+		Ice:
+			MNTR A 5 A_GenericFreezeDeath
+			MNTR A 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR SpiderBiteProj2 : SpiderBiteProj
+{
+	Tag "Bite"
+	Damage (random(10,24))
+	PoisonDamage 8
+	Speed 33
+	Obituary "%o was horribly poisoned by the bite of a giant spider"
+	States
+	{
+		Spawn:
+			FVUL AA 1 Bright 
+			stop
+		Death:
+			FVUL CDEF 1 Bright
+			stop
+	}
+}
+
+ACTOR LargeSpiderNew : EECreature 22291
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Spider [huge]"
+
+	SpawnID 221
+	Health 525 // 150
+	Speed 15
+	Damage 0 
+	Radius 14
+	Height 30
+	Health 150
+	Scale 0.50
+	Translation 1
+	MeleeDamage 2
+	MeleeRange 66
+	DamageFactor 0.75
+	RadiusDamageFactor 0.75
+	DamageFactor "Explosive", 0.75
+	MONSTER
+	+FLOORCLIP
+	seesound "littlespider/sight"
+	attacksound "littlespider/attack"
+	painsound "littlespider/pain"
+	deathsound "littlespider/death"
+	activesound "littlespider/sight"
+	meleesound "littlespider/pain"
+	DamageFactor "Suck", 4
+
+	States
+	{
+		Spawn:
+			MNTR A 0 NoDelay 
+			MNTR AB 10 A_Look
+			goto Spawn+1
+		See:
+			MNTR A 0
+			MNTR ABCD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop
+		Missile:
+			MNTR A 10 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 200) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 160) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget;
+			}
+			MNTR A 0 A_SkullAttack
+			MNTR ABCD 2
+			Goto Missile+2
+		Melee:
+			TNT1 A 0
+			MNTR VW 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			MNTR X 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+
+				A_SpawnProjectile("SpiderBiteProj2",32,0,CMF_CHECKTARGETDEAD,0,AAPTR_TARGET); //A_MeleeAttack;
+			}
+			Goto See
+
+		Pain:
+			Goto See
+		Death:
+			MNTS F 5
+			MNTS E 5 A_Scream
+			MNTS D 5
+			MNTS C 5 A_NoBlocking
+			MNTS B 5
+			TNT1 A 0 
+			MNTS A -1 A_BossDeath
+			Stop
+		Ice:
+			MNTR A 5 A_GenericFreezeDeath
+			MNTR A 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+// Bullet Tracers
+ACTOR TCOTDBulletTracer : EEProjectile // AetheriusBulletTracerZSC
+{
+	Tag "shot"
+	Damage ((Random(4,6) * Random(1,2)))
+	Damagetype "Bullet"
+	Radius 1
+	Height 1
+	Mass 5
+	Speed 160 // 80
+	PROJECTILE
+	+DONTREFLECT
+	+BLOODSPLATTER
+	+NODAMAGETHRUST
+	Renderstyle Add
+	Alpha 1.0
+	Scale 0.5
+	decal BulletChip
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay bright
+		Idle:
+			TNT1 A 1 bright //A_SpawnTracerTrail("TCOTDBulletTracerTrail",6,-2.5)
+			loop
+		XDeath:
+			TNT1 A 1 //A_SpawnItem("BulletPuff")
+			stop
+		Death:
+		Crash:
+			TNT1 A 1 A_SpawnItem("BulletPuff")
+			stop
+	}
+}
+actor TCOTDBulletTracerTrail
+{
+	Radius 1
+	Height 1
+	Speed 0
+	Damage 0
+	Projectile
+	+CLIENTSIDEONLY
+	+NOINTERACTION
+	+NOCLIP
+	+DONTSPLASH
+	Scale 0.5
+	Renderstyle Add
+	States
+	{
+		Spawn:
+			CTAC A 2 bright
+			stop
+	}
+}
+
+ACTOR TommyGunCultistNew : EECreature 29011
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Darkmoon Cultist [tommy gun]"
+
+	SpawnID 246
+	decal BloodBulletChip
+	health 125 // 40,60,80,100,125
+	radius 20
+	height 56 
+	mass 200
+	speed 4
+	fastspeed 5
+	MaxDropoffHeight 128
+	MinMissileChance 160
+	Scale 0.55
+	painchance 170
+	DamageFactor "Cricket", 1.5
+	DamageFactor "Bonk", 1.5
+	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Cricket", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Bonk", 255 // Kick attacks have a +150% chance of stunning an enemy
+	obituary "%o was made hole-y by a Fanatic"
+	MONSTER
+	+NOSPLASHALERT
+	+FLOORCLIP
+	+DONTHURTSPECIES +MISSILEMORE
+	+NOSPLASHALERT
+	+SLIDESONWALLS //+DROPOFF -NODROPOFF
+	+STRIFEDAMAGE
+	+NOINFIGHTING
+	attacksound "fanatic/attack"
+	painsound "Fanatic/pain"
+	deathsound "fanatic/death"
+	activesound "dovile"
+	seesound "zombieman/sight"
+	DropItem "Clip" 255
+	DropItem "Clip" 255
+
+	states
+	{
+		Spawn:  
+			XFAN G 0 NoDelay 
+			XFAN G 5 A_Look
+			goto Spawn+1
+			XFAN AAABBBCCCDDDFFFGGG 1 A_EEWander(0,1,3,1,1)
+			XFAN B 5 A_Look
+			goto Spawn+1
+		See:
+			XFAN A 0
+			XFAN A 0 A_ChangeFlag("DROPOFF",random(0,1))
+			XFAN AABBCCDDFF 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			XFAN A 0 A_Jump(8,"Shout")
+			loop
+		Shout:
+			XFAN A 0 A_AlertMonsters(256)
+			XFAN A 0 A_StartSound("fanatic/sight")
+			Goto See
+		Missile:
+			TNT1 A 0
+			XFAN G 2 bright
+			{
+				A_StartSound("fanatic/attack", CHAN_BODY);
+				A_FaceTarget;
+				A_CustomBulletAttack(10, 5.6, 1, (Random(4,6) * Random(1,2)), "BulletPuff2", 0, CBAF_NORANDOM);
+				//A_SpawnProjectile("TCOTDBulletTracer", 32, 12, frandom(-5.0,5.0), CMF_OFFSETPITCH|CMF_BADPITCH, frandom(-2.8,2.8));
+			}
+			XFAN H 2 A_FaceTarget
+			XFAN H 0 A_MonsterRefire(48,"See")
+			goto Missile
+
+		Frightened:
+			XFAN A 0 A_ChangeFlag("Frightened", 1)
+			XFAN AABBCCDDEEFF 3 A_EEChase("Melee","Missile",0,1,3,1,1)
+			loop
+		Pain:
+			XFAN I 3
+			XFAN I 3 A_EEPain
+			goto See
+		Death:
+			XFAN J 5 ThrustThingZ(0,10,0,0)
+			XFAN K 5 A_Scream
+			XFAN L 5 A_Fall
+			XFAN MNO 5
+			XFAN P 140
+			TNT1 A 0 
+			XFAN Q 0 A_Jump(192,"Twitch")
+			XFAN Q -1
+			stop
+		Twitch:
+			XFAN PQPQ 5
+			XFAN P 70 A_Jump(80,"Twitch")
+			XFAN Q 70 A_Jump(80,"Twitch")
+			XFAN P 70 A_Jump(80,"Twitch")
+			XFAN Q -1
+			Stop
+		Raise:
+			XFAN Q 0 A_UnHideThing
+			XFAN P 6 
+			XFAN ONMLKJ 4 
+			goto See
+		Ice:
+			XFAN I 5 A_GenericFreezeDeath
+			XFAN I 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR ShotgunCultistNew : TommyGunCultistNew 29010
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Darkmoon Cultist [shotgun]"
+
+	Health 125 // 40,60,80,100,125
+	DamageFactor "Cricket", 1.5
+	DamageFactor "Bonk", 1.5
+	painchance 170
+	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Cricket", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Bonk", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Translation "80:111=48:79" // "80:111=48:79"
+
+	states
+	{
+		See:
+			BCUL A 0
+			BCUL A 0 A_ChangeFlag("DROPOFF",random(0,1))
+			BCUL AABBCCDD 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			XFAN A 0 A_Jump(8,"Shout")
+			loop
+		Shout:
+			BCUL A 0 A_AlertMonsters(256)
+			BCUL A 0 A_StartSound("fanatic/sight")
+			Goto See
+		Missile:
+			TNT1 A 0
+			BCUL E 20
+			{
+				A_FaceTarget;
+				user_shotaccuracy = 22.5;
+				user_shotzaccuracy = 0.0;
+				if (user_charmed) { user_shotaccuracy *= 0.667; user_shotzaccuracy *= 0.667; }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(14); user_shotaccuracy = user_shotaccuracy * 13 / 19; user_shotzaccuracy = user_shotzaccuracy * 13 / 19; }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 100) { A_SetTics(15); user_shotaccuracy = user_shotaccuracy * 14 / 19; user_shotzaccuracy = user_shotzaccuracy * 14 / 19; }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(16); user_shotaccuracy = user_shotaccuracy * 15 / 19; user_shotzaccuracy = user_shotzaccuracy * 15 / 19; }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(17); user_shotaccuracy = user_shotaccuracy * 16 / 19; user_shotzaccuracy = user_shotzaccuracy * 16 / 19; }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(18); user_shotaccuracy = user_shotaccuracy * 17 / 19; user_shotzaccuracy = user_shotzaccuracy * 17 / 19; }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 20) { A_SetTics(19); user_shotaccuracy = user_shotaccuracy * 18 / 19; user_shotzaccuracy = user_shotzaccuracy * 18 / 19; }
+				user_shotaccuracy1 = user_shotaccuracy * -0.5;
+				user_shotaccuracy2 = user_shotaccuracy * 0.5;
+				user_shotzaccuracy1 = user_shotzaccuracy * -0.5;
+				user_shotzaccuracy2 = user_shotzaccuracy * 0.5;
+			}
+		Shooting:
+			BCUL F 10 BRIGHT 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget;
+				A_StartSound("shotguy/attack");
+				if (GetCVar("dvds_shotgunnerspread") == 0) { user_pelletsfired = 3; } else { user_pelletsfired = 7; }
+
+				A_CustomBulletAttack(user_shotaccuracy, user_shotzaccuracy, user_pelletsfired, Random(4,6) * Random(1,2), "BulletPuff", 0, CBAF_AIMFACING|CBAF_NORANDOM);
+			}
+			BCUL E 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(random(5,9)); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(random(6,10)); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(random(7,11)); }
+				else { A_SetTics(random(8,12)); }
+			}
+			BCUL E 0 A_MonsterRefire(48,"See")
+			loop
+		Frightened:
+			BCUL A 0 A_ChangeFlag("Frightened", 1)
+			BCUL AABBCCDD 3 A_EEChase("Melee","Missile",0,1,3,1,1)
+			loop
+		Pain:
+			BCUL G 3
+			BCUL G 3 A_EEPain
+			goto See
+
+		Death:
+			BCUL H 5 ThrustThingZ(0,10,0,0)
+			BCUL I 5 A_Scream
+			BCUL J 5 A_Fall
+			BCUL KLM 5
+			BCUL M 140
+			TNT1 A 0 
+			BCUL N 0 A_Jump(192,"Twitch")
+			BCUL N -1
+			stop
+		Twitch:
+			BCUL MNMN 5
+			BCUL M 70 A_Jump(80,"Twitch")
+			BCUL N 70 A_Jump(80,"Twitch")
+			BCUL M 70 A_Jump(80,"Twitch")
+			BCUL N -1
+			Stop
+		Raise:
+			BCUL N 0 A_UnHideThing
+			BCUL M 5 
+			BCUL LKJIH 5 
+			goto See
+		Ice:
+			BCUL G 5 A_GenericFreezeDeath
+			BCUL G 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR HellHoundNew : EECreature 30121
+{ 
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Hell Hound"
+
+	SpawnID 170
+	health 750
+	Speed 16 
+	Radius 30 
+	Height 50
+	Mass 500
+	MeleeDamage 7
+	PainChance 128
+	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Ice", 255
+	DamageFactor 0.875
+	RadiusDamageFactor 0.875
+	DamageFactor "Explosive", 0.875
+	DamageFactor "Ice", 4
+	MONSTER
+	+FloorClip
+	+FireResist
+	+DontHurtSpecies
+	OBITUARY "%o was burned alive by a hellhound."
+	HITOBITUARY "A hellhound had %o for dinner."
+	SEESOUND "monster/dogsit"
+	ATTACKSOUND "monster/dogatk"
+	MELEESOUND "monster/dogbit" 
+	PAINSOUND "monster/dogpai" 
+	DEATHSOUND "monster/dogdth" 
+	ACTIVESOUND "monster/dogact"
+
+	states 
+	{
+		ResetLevel:
+			HDOG A 1 A_Look
+			HDOG A 1 
+			HDOG A 1 
+			{
+				user_ressurrectstr += random(5,10);
+			}
+			HDOG A 1 
+			goto Spawn+1
+		Spawn: 
+			HDOG A 0 NoDelay 
+			HDOG AA 10 A_Look 
+			goto Spawn+1
+		See: 
+			HDOG A 0
+			HDOG AAAABBBBCCCCDDDDEEEEFFFF 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			loop
+		Melee: 
+			TNT1 A 0
+			HDOG GH 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+			}
+			HDOG I 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				
+				A_CustomMeleeAttack(7*random(1,8),"monster/dogbit");
+			}
+			Goto See
+		Missile:
+			TNT1 A 0 
+			{
+				user_shotsfired = 0;
+				user_shotsfiredmax = 12 + CountInv("MonsterLevel")/15;
+			}
+			HDOG G 0 A_JumpIfCloser(256,2)
+			HDOG G 0
+			Goto See
+			HDOG G 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 30) { A_SetTics(9); }
+				A_FaceTarget;
+			}
+		BreathLoop:
+			HDOG H 1 
+			{
+				A_FaceTarget;
+				
+				A_SpawnProjectile("DogFireNew",28,0,0,0,0);
+				user_shotsfired += 1;
+			}
+			HDOG H 0
+			{
+				if (user_shotsfired > user_shotsfiredmax) { return state("BreathEnd"); }
+				return state("");
+			}
+			loop
+		BreathEnd:
+			HDOG I 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+			}
+			Goto See
+		Pain: 
+			HDOG J 2 
+			HDOG J 2 A_EEPain 
+			Goto See 
+		Pain.Ice: 
+			HDOG J 2 
+			HDOG J 2 A_EEPain 
+			HDOG JJJJ 2 
+			Goto See 
+
+		Death:
+			HDOG K 8 
+			HDOG L 8 A_Scream 
+			HDOG M 4 
+			HDOG N 4 A_NoBlocking 
+			HDOG OP 4 
+			TNT1 A 0 
+			HDOG Q -1 
+			Stop 
+		Raise: 
+			HDOG Q 5 
+			HDOG PONMLK 5 
+			Goto See 
+		Ice:
+			HDOG J 5 A_GenericFreezeDeath
+			HDOG J 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR DogFireNew : EEProjectile replaces DogFire
+{
+	Tag "Hellhound FireBreath"
+	Radius 2
+	Height 4
+	Speed 16
+	Damage (1 * random(1,8))
+	PROJECTILE
+	RENDERSTYLE ADD
+	DamageType Fire
+	Alpha 0.67
+	Scale 0.67
+	SEESOUND "weapons/bigbrn"
+	DEATHSOUND "weapons/bigbrn"
+	+NODAMAGETHRUST
+	+DONTHARMSPECIES
+	+MTHRUSPECIES
+	DontHurtShooter
+	states
+	{
+		Spawn:
+			NULL A 2 BRIGHT
+			FRFX ABCD 2 BRIGHT 
+			{
+				A_Explode(random(1,3),random(6,10));
+			}
+			FRFX D 0 BRIGHT
+			{
+				A_LowGravity;
+			}
+			FRFX EFG 2 BRIGHT 
+			{
+				A_Explode(random(1,3),random(12,20));
+			}
+			goto Death
+		Death:
+			FRFX HIJ 2 BRIGHT 
+			{
+				A_Explode(random(1,3),random(24,40));
+			}
+			FRFX KLM 2 BRIGHT 
+			{
+				A_Explode(random(1,3),random(48,80));
+			}
+			FRFX NO 2 BRIGHT
+			{
+				A_Explode(random(1,3),random(24,40));
+			}
+			Stop
+	}
+}
+
+// Magic Using Cultist
+ACTOR ThrallNew : EECreature 30119
+{ 
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Raven Style"
+	Tag "Darkmoon Cultist [magician]"
+
+	health 125 // 40,60,80,100,125
+	Scale 0.90
+	Speed 8 
+	Radius 20 
+	Height 56 
+	Mass 100 
+	PainChance 200
+	DamageFactor "Cricket", 1.5
+	DamageFactor "Bonk", 1.5
+	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Cricket", 255
+	Painchance "Bonk", 255
+	DamageFactor "Zap", 0.75
+	MONSTER
+	+FLOORCLIP
+	+DONTHURTSPECIES
+	-NOGRAVITY
+	-FLOAT
+	SEESOUND "monster/culsit" 
+	ATTACKSOUND "monster/culatk" 
+	PAINSOUND "monster/culpai" 
+	DEATHSOUND "monster/culdth" 
+	ACTIVESOUND "monster/culact"
+	OBITUARY "%o was killed by a lowly Cultist."
+
+	states 
+	{
+		Spawn: 
+			CULT A 0 NoDelay 
+			CULT AB 10 A_Look 
+			goto Spawn+1
+		See: 
+			CULT A 0
+			CULT AABBCCDD 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			CULT A 0
+			{
+				if (random(1,256) <= 8)
+				{
+					A_AlertMonsters(256);
+					A_StartSound("fanatic/sight");
+				}
+			}
+			loop
+		Missile:
+			TNT1 A 0
+			CULT EE 5 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			CULT F 8 BRIGHT 
+			{
+				A_FaceTarget;
+				A_StartSound("monster/culatk");
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) 
+				{
+					A_SetTics(5); 
+					A_SpawnProjectile("ThrallShot1",42,-8,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",44,-6,0,CMF_AIMOFFSET|CMF_BADPITCH,2);
+					A_SpawnProjectile("ThrallShot1",42,-4,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",44,-2,0,CMF_AIMOFFSET|CMF_BADPITCH,2);
+					A_SpawnProjectile("ThrallShot1",42,-0,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",44,2,0,CMF_AIMOFFSET|CMF_BADPITCH,2);
+					A_SpawnProjectile("ThrallShot1",42,4,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",44,6,0,CMF_AIMOFFSET|CMF_BADPITCH,2);
+					A_SpawnProjectile("ThrallShot1",42,8,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+				}
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) 
+				{
+					A_SetTics(6); 
+					A_SpawnProjectile("ThrallShot1",42,-6,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",44,-4,0,CMF_AIMOFFSET|CMF_BADPITCH,2);
+					A_SpawnProjectile("ThrallShot1",42,-2,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",42,2,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",44,4,0,CMF_AIMOFFSET|CMF_BADPITCH,2);
+					A_SpawnProjectile("ThrallShot1",42,6,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+				}
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) 
+				{
+					A_SetTics(7); 
+					A_SpawnProjectile("ThrallShot1",42,-6,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",42,-2,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",42,2,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",42,6,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+				}
+				else
+				{
+					A_SpawnProjectile("ThrallShot1",42,-6,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+					A_SpawnProjectile("ThrallShot1",42,6,0,CMF_AIMOFFSET|CMF_BADPITCH,0);
+				}
+			}
+			Goto See
+		Pain: 
+			CULT G 2 
+			CULT G 2 A_EEPain 
+			Goto See 
+
+		Death:
+			CULT H 8 
+			CULT I 8 A_Scream 
+			CULT J 4 
+			CULT K 4 A_NoBlocking 
+			CULT L 4 
+			TNT1 A 0 
+			CULT M -1 
+			Stop
+		XDeath:
+			Goto Death
+		Raise: 
+			CULT M 5 
+			CULT LKJHI 5
+			Goto See 
+		Ice:
+			CULT G 5 A_GenericFreezeDeath
+			CULT G 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR NightmareNew : EECreature replaces KDiZDNightmare 26000
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Doom Style"
+	Tag "Nightmare"
+
+	health 175 // 100
+	PainChance 144
+	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Suck", 255
+	DamageFactor "Eldritch", 0.4
+	DamageFactor "Suck", 2.5
+	Radius 20
+	Height 56
+	Speed 15
+	MONSTER 
+	+FLOORCLIP
+	+STEALTH
+	+THRUSPECIES
+	+NOFEAR
+	+NOTARGET
+	+DONTTHRUST
+	+GHOST
+	+DONTBLAST
+	+NOINFIGHTSPECIES
+	Species "Nightmare"
+	RenderStyle Add
+	Alpha 0.01
+	SeeSound "nightmare/sight"
+	PainSound "nightmare/pain"
+	DeathSound "nightmare/death"
+	ActiveSound "nightmare/active"
+	MeleeSound "nightmare/melee"
+	HitObituary "%o was tormented by a nightmare."
+	MeleeDamage 4
+
+	states
+	{
+		Spawn:
+			NMRE A 0 NoDelay A_NightmarePhaseOut
+			NMRE AABB 5 A_Look
+			goto Spawn+1
+		See:
+			NMRE A 0
+			NMRE AABBCCDD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_NightmarePhaseOut;
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			NMRE D 0 
+			{
+				if (random (1,256) <= 32) { A_CustomMissile("NightmareWisp",0,0,0); }
+			}
+			Loop
+		Melee:
+			TNT1 A 0 
+			{
+				A_NightmarePhaseIn;
+			}
+			NMRE EF 9 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 45) { A_SetTics(8); }
+				A_NightmarePhaseIn;
+				A_FaceTarget;
+			}
+			NMRE G 9 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 45) { A_SetTics(8); }
+				//A_NightmarePhaseIn;
+				A_FaceTarget;
+				
+				A_CustomMeleeAttack(4*random(1,8),"nightmare/melee");
+			}
+			Goto See
+		Pain:
+			NMRE H 2 
+			{
+				//A_NightmarePhaseIn;
+			}
+			NMRE H 10 
+			{
+				A_NightmarePhaseIn;
+				A_EEPain;
+			}
+			Goto See
+
+		Death:
+			NMRE I 3 A_ScreamAndUnblock
+			TNT1 A 0 
+			NMRE JKLMNO 3 
+			Stop
+		Ice:
+			NMRE H 5 A_GenericFreezeDeath
+			NMRE H 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR SirenNightmareNew : NightmareNew 31111
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Doom Style"
+	Tag "MEGA Nightmare"
+
+	health 525
+	Radius 10
+	PainChance 48
+	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
+	DamageFactor 0.2
+	RadiusDamageFactor 0.2
+	DamageFactor "Explosive", 0.2
+
+	DamageFactor "Holy", 5
+	Radius 12 // 10
+	Height 36 // 30
+	Speed 30
+	Scale 1.25
+	MeleeDamage 40
+	-FloorClip
+	+LOOKALLAROUND
+	+ActivateMCross
+	SEESOUND "nightmare2/sight"
+	PAINSOUND "nightmare2/pain"
+	DEATHSOUND "nightmare2/death"
+	ACTIVESOUND "nightmare2/active"
+	MELEESOUND "nightmare2/melee"
+	HitObituary "%o should've heeded the siren..."
+	SpawnID 247
+
+	states
+	{
+		Spawn:
+			NMRE A 0 NoDelay A_NightmarePhaseOut
+			NMRE AABB 5 A_Look
+			goto Spawn+1
+		See:
+			NMRE A 0
+			NMRE AABB 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(1); }
+				A_Explode(random(12,20),24,0,0,8);
+				A_NightmarePhaseOut;
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			NMRE B 0 { if (random(1,256) <= 96) { A_CustomMissile("NightmareWisp",0,0,0); } }
+			NMRE CCDD 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(1); }
+				A_Explode(random(12,20),24,0,0,8);
+				A_NightmarePhaseOut;
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			NMRE D 0 { if (random(1,256) <= 96) { A_CustomMissile("NightmareWisp",0,0,0); } }
+			Loop
+		Melee:
+			TNT1 A 0 
+			{
+				A_NightmarePhaseIn;
+			}
+			NMRE EF 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 112) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 37) { A_SetTics(5); }
+				A_NightmarePhaseIn;
+				A_Explode(random(12,20),24,0,0,8);
+				A_FaceTarget;
+			}
+			NMRE G 6
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 112) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 37) { A_SetTics(5); }
+				A_NightmarePhaseIn;
+				A_Explode(random(12,20),24,0,0,8);
+				A_FaceTarget;
+				
+				A_CustomMeleeAttack(40*random(1,8),"nightmare2/melee");
+			}
+			Goto See
+
+		Pain:
+			NMRE H 1
+			{
+				A_NightmarePhaseIn;
+				A_Explode(random(12,20),24,0,0,8);
+			}
+			NMRE H 5 
+			{
+				A_EEPain;
+				A_NightmarePhaseIn;
+				A_Explode(random(12,20),24,0,0,8);
+			}
+			Goto See
+	}
+}
+
+ACTOR VulgarShotNew : EEProjectile
+{
+	Tag "Vulgar Poison Blast"
+	DamageType "Poison"
+	Damage (4 * random(1,8))
+	Radius 8
+	Height 16
+	Speed 10
+	RENDERSTYLE ADD
+	ALPHA 0.67
+	PROJECTILE
+	Seesound "poly/stmdr1"
+	DeathSound "weapons/bloodx"
+	States
+	{
+		Spawn:
+			FVUL AAABBB 1 Bright 
+			loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(4);
+					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			FVUL CDEF 4 Bright
+			stop
+	}
+}
+
+actor VulgarNew : DoomImpNew replaces Vulgar
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Doom Style"
+	Tag "Vulgar"
+
+	health 135 // 100
+	radius 20
+	height 56
+	mass 120
+	speed 8
+	MeleeDamage 4
+	painchance 120
+	Painchance "Lead", 240
+	Painchance "Fist", 180 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	DamageFactor "Lead", 2
+	MONSTER
+	+FLOORCLIP
+	+DONTHURTSPECIES
+	seesound "monster/vulsit"
+	painsound "monster/vulpai"
+	deathsound "monster/vuldth"
+	activesound "monster/vulact"
+	meleesound "monster/vulhit"
+	obituary "%o was poisoned by a vulgar."
+	hitobituary "A Vulgar had %o for lunch."
+
+	States
+	{
+		Spawn:
+			VULG A 0 NoDelay 
+			VULG AB 10 A_Look
+			goto Spawn+1
+		See:
+			VULG A 0
+			VULG AABBCCDD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			loop
+		Melee:
+		Missile:
+			TNT1 A 0
+			VULG E 8 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(7); }
+				A_FaceTarget;
+			}
+			VULG F 8
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(7); }
+				A_FaceTarget;
+				A_StartSound("monster/vulswg");
+			}
+			VULG G 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+				A_BasicAttack(4, "imp/melee", "VulgarShotNew", 37); // A_CustomMissile("VulgarShotNew",37,0,0,0,0);
+			}
+			goto See
+		Pain:
+			VULG H 2
+			VULG H 2 A_EEPain
+			goto See
+
+		Death:
+			VULG I 8
+			VULG J 8 A_Scream
+			VULG KL 6
+			VULG M 6 A_NoBlocking
+			TNT1 A 0 
+			VULG N -1
+			stop
+
+		XDeath:
+			VULG O 5
+			VULG P 5 A_XScream
+			VULG Q 5
+			VULG R 5 A_NoBlocking
+			VULG STU 5
+			TNT1 A 0 
+			VULG V -1
+			stop
+		Raise:
+			VULG M 8 
+			VULG L 8 
+			VULG KJI 6 
+			goto See
+		Ice:
+			VULG H 5 A_GenericFreezeDeath
+			VULG H 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+Actor ClayDevilNew : EECreature replaces ClayDevil
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Others"
+	Tag "Clay Devil"
+
+	var int user_avoidmelee;
+	var int user_avoidmeleetimer;
+	var int user_avoidmeleetimermax;
+	var int user_rswn_extra;
+	Mass 3750
+	health 200
+	radius 20
+	height 72
+	speed 5
+	fastspeed 7.5
+	scale 0.67
+	painchance 48
+	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
+	painchance "Suck", 72
+	PainChance "Fire", 255
+	PainChance "CherryBomb", 255
+	PainChance "Spinner", 255
+	PainChance "BRocket", 255
+	PainChance "Popper", 255
+
+	DamageFactor 0.25 // Quadruple Resistance to most
+	RadiusDamageFactor 0.25
+	DamageFactor "Explosive", 0.25
+
+	DamageFactor "Zap", 0.25 // Quadruple Resistance to most
+	DamageFactor "Fire", 16.0
+	DamageFactor "CherryBomb", 16.0
+	DamageFactor "Spinner", 16.0
+	DamageFactor "BRocket", 16.0
+	DamageFactor "Popper", 16.0
+	DamageFactor "Ice", 4.0
+	DamageFactor "Suck", 0.5
+	MONSTER
+	+BOSSDEATH
+	+DONTHURTSPECIES
+	+FLOORCLIP
+	+NOTARGETSWITCH
+	+AVOIDMELEE
+	+NOTARGET
+	+NOINFIGHTING
+	+DONTMORPH
+	+DONTSQUASH
+	+NOICEDEATH
+	+DONTGIB
+	obituary "%o was sent to hell by a devil made out of clay."
+	seesound "hiya3"
+	painsound "HIYA9"
+	deathsound "DEF1"
+	activesound "devilx"
+	MELEESOUND "HIYA9"
+	MeleeRange 72
+	BloodColor OrangeRed4
+	dropitem None
+
+	states
+	{
+		Pain.Charm: Goto See
+		Spawn:
+			N00B A 0 NoDelay 
+			N00B A 0 Thing_ChangeTID(0,3334)
+			N00B E 2 
+			{
+				user_avoidmelee = random(0,1);
+				user_avoidmeleetimermax = random(1,4) * random(4,5);
+				A_Look;
+			}
+			goto Spawn+1
+		See:
+			N00B A 0
+			{
+				if (user_avoidmeleetimer >= user_avoidmeleetimermax)
+				{
+					user_avoidmeleetimer = 0;
+					user_avoidmeleetimermax = random(1,4) * random(4,5);
+					if (user_avoidmelee) { user_avoidmelee = randompick(0,0,0,0,0,0,0,1); }
+													else { user_avoidmelee = randompick(1,1,1,1,1,1,1,0); }
+				}
+			}
+			N00B A 0 Thing_ChangeTID(0,3334)
+			N00B AABBCCDD 2
+			{
+				Thing_Hate(0,1001,4);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				if (user_avoidmelee) { A_ChangeFlag("AVOIDMELEE",1); } else { A_ChangeFlag("AVOIDMELEE",0); }
+				if (random(1,256) <= randompick(96,112,112,128,128,128,128,128,144,144,160)) { A_EEChase("Melee","Missile",0,1,3,1,1); } else { A_EEChase("Melee","",0,1,3,1,1); }
+				if (random(1,256) <= (8 + (CountInv("MonsterLevel")/22.5)) && specialspeed1 <= 0) { specialspeed1 = ((randompick(6,8,8,8,10) + (CountInv("MonsterLevel") / randompick(5,10,10,15,15,15))) * 1.5); }
+			}
+			N00B A 0 
+			{
+				user_avoidmeleetimer++;
+			}
+			loop
+		Melee:
+		Missile:
+			BYBR E 0 A_Jump(104,"Missile1","Missile2")
+			goto see
+		Missile1:
+			TNT1 A 0
+			N00B EF 3 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
+				A_FaceTarget;
+			}
+			N00B GH 3 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
+				A_FaceTarget;
+			}
+			N00B III 3 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
+
+				A_CustomComboAttack("ClayDevilMissile", 32, (frandom(2.4,4.8)*random(1,8)), "imp/melee");
+				A_FaceTarget;
+			}
+			goto See
+		Missile2:
+			TNT1 A 0
+			N00B EF 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
+				A_FaceTarget;
+			}
+			N00B GH 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(1); }
+				A_FaceTarget;
+			}
+			N00B I 3 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
+
+				A_CustomComboAttack("SonicFireball", 32, (frandom(7.2,14.4)*random(1,8)), "imp/melee");
+				A_FaceTarget;
+			}
+			goto See
+
+		Pain:
+			N00B J 6 A_EEPain
+			goto See
+
+		Pain.Fire:
+		Pain.CherryBomb:
+		Pain.Spinner:
+		Pain.BRocket:
+		Pain.Popper:
+			N00B J 12 A_EEPain
+			N00B JJJ 12
+			goto See
+		Pain.Ice:
+			N00B J 4 A_EEPain
+			Goto See
+
+		Death: // Clay Devils reconsitute themselves after a while like Death Incarnates [but without a way to 'Overkill' them, making them effectively immortal]
+			N00B K 5
+			N00B K 5
+			N00B L 4 A_Scream
+			N00B MNO 5 A_CustomMissile("WHSMOKE",32,0)
+			N00B P 4 A_NoBlocking
+			N00B P 0 A_SetSolid // No "nesting" these guys to prevent respawns :V
+			TNT1 A 0 
+			N00B V 0
+			{
+				user_rswn_extra = CountInv("MonsterLevel") / 22.5;
+				if (random(1,256) <= 128) { user_autorestimer = random(200,250) + random(0,user_rswn_extra*frandom(2.0,2.5)); }
+				else
+				{
+					if (random(1,256) <= 128) { user_autorestimer = random(150,200) + random(0,user_rswn_extra*frandom(1.5,2.0)); }
+					else
+					{
+						if (random(1,256) <= 128) { user_autorestimer = random(100,150) + random(0,user_rswn_extra*frandom(1.0,1.5)); }
+						else
+						{
+							user_autorestimer = random(50,100) + random(0,user_rswn_extra*frandom(0.5,1.0));
+						}
+					}
+				}
+			}
+			N00B V 250 
+			{
+				A_SetTics(user_autorestimer);
+			}
+		RegenCycle:
+			N00B V 0 CanRaise 
+			{
+				Thing_Raise(0);
+				//A_Print("RegenCycle - Attempt");
+			}      
+			N00B V 0
+			{
+				A_Wander;
+			}
+			N00B V 5 
+			loop
+
+		Death.Fire: // Dying from Fire puts it down for a longer time, but it will still get up eventually
+		Death.CherryBomb:
+		Death.Spinner:
+		Death.BRocket:
+		Death.Popper:
+			N00B K 5
+			N00B K 5
+			N00B L 4 A_Scream
+			N00B MNO 5 A_CustomMissile("WHSMOKE",32,0)
+			N00B P 4 A_NoBlocking
+			N00B P 0 A_SetSolid // No "nesting" these guys to prevent respawns :V
+			TNT1 A 0 
+			N00B V 0
+			{
+				user_rswn_extra = CountInv("MonsterLevel") / 7.5;
+				if (random(1,256) <= 128) { user_autorestimer = random(600,750) + random(0,user_rswn_extra*frandom(2.0,2.5)); }
+				else
+				{
+					if (random(1,256) <= 128) { user_autorestimer = random(450,600) + random(0,user_rswn_extra*frandom(1.5,2.0)); }
+					else
+					{
+						if (random(1,256) <= 128) { user_autorestimer = random(300,450) + random(0,user_rswn_extra*frandom(1.0,1.5)); }
+						else
+						{
+							user_autorestimer = random(150,300) + random(0,user_rswn_extra*frandom(0.5,1.0));
+						}
+					}
+				}
+			}
+			N00B V 750 
+			{
+				A_SetTics(user_autorestimer);
+			}
+		RegenFireCycle:
+			N00B V 0 CanRaise 
+			{
+				Thing_Raise(0);
+				//A_Print("RegenFireCycle - Attempt");
+			}      
+			N00B V 0
+			{
+				A_Wander;
+			}
+			N00B V 5 
+			loop
+
+		DeathFinalCheck:
+			TNT1 A 0 A_CheckFlag("FRIENDLY",2,AAPTR_DEFAULT)
+			TNT1 A 0 
+			goto Death.Final+1
+		Death.Final: // Dying and staying dead for good
+			TNT1 A 0 A_Jump(1, "DeathFinalCheck")
+			N00B K 5
+			N00B K 5
+			N00B L 4 A_Scream
+			N00B MNO 5 A_CustomMissile("WHSMOKE",32,0)
+			N00B P 4 A_NoBlocking
+			TNT1 A 0 
+			N00B V -1
+			stop
+		Raise:
+			TNT1 A 0 Thing_ChangeTID(0,3334)
+			TNT1 A 0 
+			{
+				user_ressurrectstr += (random(0,1) + (skill * randompick(0,0,0,0,0,0,0,0,1,1,1,1,1,2)));
+			}
+			N00B V 0 A_Scream
+			N00B V 0 
+			N00B VPONMLK 4
+			N00B K 0 Thing_Hate(0,1001,4)
+			goto See
+	}
+}
+
+ACTOR TCOTDAShadowNew : EECreature replaces Shadow 3126
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Doom Style"
+	Tag "Grand Shadow Creature"
+
+	Health 675
+	Radius 20
+	Height 56
+	Mass 100
+	bloodcolor "white"
+	Scale 1.5
+	RENDERSTYLE "Add"
+	Alpha 0.9
+	Speed 8
+	PainChance 128
+	PainChance "Zap", 224
+	PainChance "Chop", 192
+	PainChance "Suck", 255
+	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	DamageFactor "Chop", 1.75
+	DamageFactor "Zap", 1.75
+	DamageFactor "Suck", 2.5
+	MONSTER
+	+FLOORCLIP
+	SEESOUND "imp/sight"
+	PAINSOUND "imp/pain"
+	DEATHSOUND "imp/death"
+	ACTIVESOUND "imp/active"
+	OBITUARY "%o was assassinated by a grand shadow creature."
+	MissileType ShadowBall
+
+	states
+	{
+		ResetLevel:
+			TROX A 1 A_Look
+			TROX A 1 
+			TROX A 1 
+			{
+				user_ressurrectstr += random(5,10);
+			}
+			TROX A 1 
+			goto Spawn+1
+		Spawn:
+			TROX A 0 NoDelay 
+		See:
+			TROX A 0
+			TROX A 5
+			TROX AAA 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+			A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX A 0 A_CustomMissile("ShadowGhostA", 0, 0, 0)
+			TROX BBB 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX B 0 A_CustomMissile("ShadowGhostB", 0, 0, 0)
+			TROX CCC 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX C 0 A_CustomMissile("ShadowGhostC", 0, 0, 0)
+			TROX DDD 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX D 0 A_CustomMissile("ShadowGhostD", 0, 0, 0)
+			TROX AAA 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX A 0 A_CustomMissile("ShadowGhostA", 0, 0, 0)
+			TROX BBB 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX B 0 A_CustomMissile("ShadowGhostB", 0, 0, 0)
+			TROX CCC 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX C 0 A_CustomMissile("ShadowGhostC", 0, 0, 0)
+			TROX DDD 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TROX D 0 A_CustomMissile("ShadowGhostD", 0, 0, 0)
+			Goto See+2
+		Missile:
+			TNT1 A 0
+			TROX E 8
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 45) { A_SetTics(7); }
+				A_FaceTarget;
+			}
+			TROX F 0 A_SpidRefire
+		MissileFire:
+			TROX F 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(1); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(2); }
+			}
+			TROX G 3 BRIGHT
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(1); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(2); }
+
+				A_SpawnProjectile("ShadowBall");
+			}
+			TROX F 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(1); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(2); }
+			}
+			TROX E 12
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(9); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(11); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 45) { A_SetTics(10); }
+				A_FaceTarget;
+			}
+			TROX E 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(0); }
+			}
+			TROX E 0 A_SpidRefire
+			Goto Missile+1      
+		Pain:
+			TROX H 3
+			TROX H 3 A_EEPain
+			Goto See+2
+		Pain.Fist:
+			TROX H 3
+			TROX H 3 A_EEPain
+			TROX HH 3
+			Goto See+2
+		Pain.Kick:
+			TROX H 3
+			TROX H 3 A_EEPain
+			TROX HHHH 3
+			Goto See+2
+
+		Death:
+			TROX I 6 A_Scream
+			TROX J 5
+			TROX K 5 A_CustomMissile("Shadowtorso", 0, 0, 0)
+			TROX L 5 A_Fall
+			TROX MNO 6 
+			TNT1 A 0 
+			TROX P -1
+			Stop
+
+		XDeath:
+			TROX W 5
+			TROX X 4 A_XScream
+			TROX Y 4 
+			TROX Z 4 A_Fall
+			TROX ] 4
+			TROX [ 4
+			TNT1 A 0 
+			TROX \ -1
+			Stop
+
+		Raise:
+			TROX M 8 
+			TROX KLJI 8 
+			Goto See
+		Ice:
+			TROX H 5 A_GenericFreezeDeath
+			TROX H 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR SoulHarvesterNew : EECreature 3117
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Doom Style"
+	Tag "Soul Harvester"
+
+	Health 175 // 120
+	Radius 20
+	Height 56
+	Speed 8
+	PainChance 120
+	Painchance "Fist", 180 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Ice", 180 // Kick attacks have a +150% chance of stunning an enemy
+	DamageFactor "Ice", 1.5
+	MONSTER 
+	+FloorClip
+	SEESOUND "harvester/sight"
+	PAINSOUND "imp/pain"
+	DEATHSOUND "harvester/death"
+	ACTIVESOUND "imp/active"
+	MELEESOUND "imp/melee"
+	OBITUARY "%o couldn't evade the soul harvester's attack."
+	MissileType SoulHarvesterBall
+	MeleeDamage 3
+
+	states
+	{
+		Spawn:
+			SLHV A 0 NoDelay 
+			SLHV AB 10 A_Look
+			goto Spawn+1
+		See:
+			SLHV A 0
+			SLHV AABBCCDD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop
+		Melee:
+		Missile:
+			TNT1 A 0
+			SLHV EFG 4
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			SLHV HIJK 5 BRIGHT
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			SLHV L 8 BRIGHT 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 135) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 45) { A_SetTics(7); }
+				A_FaceTarget;
+
+				A_CustomComboAttack("SoulHarvesterBall", 32, 3*random(1,8), "imp/melee");
+			}
+			SLHV M 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 112) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 37) { A_SetTics(9); }
+				A_FaceTarget;
+			}
+			Goto See
+		Pain:
+			SLHV N 3
+			SLHV N 3 A_EEPain
+			Goto See
+		Pain.Fist:
+			SLHV N 3
+			SLHV N 3 A_EEPain
+			SLHV NN 3
+			Goto See
+		Pain.Kick:
+			SLHV N 3
+			SLHV N 3 A_EEPain
+			SLHV NNNN 3
+			Goto See
+
+		Death:
+			SLHV O 7 A_Scream
+			SLHV PQR 7 
+			SLHV S 6 A_CustomMissile("SoulHarvesterGhost", 32, 0, 0)
+			SLHV T 5 A_Fall
+			SLHV UV 5
+			TNT1 A 0 
+			SLHV W -1
+			Stop
+
+		XDeath:
+			SLHV X 6 A_XScream
+			SLHV Y 6 A_CustomMissile("SoulHarvesterGhost", 32, 0, 0)
+			SLHV Z 6
+			SLHV [ 6 A_Fall
+			SLHV ] 6
+			TNT1 A 0 
+			SLHW A -1
+			Stop
+		Raise:
+			SLHV W 5 
+			SLHV VUTSRQPO 5 
+			Goto See
+		Ice:
+			SLHV N 5 A_GenericFreezeDeath
+			SLHV N 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+ACTOR ESoulNew : EECreature 29012 // : ESoul replaces ESoul 29012
+{ 
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Doom Style"
+	Tag "Ethereal Soul"
+
+	obituary "%o's soul was leeched by the etheral soul"
+	health 230 // 150
+	radius 16
+	height 32
+	speed 5
+	damage 5
+	bloodcolor "black"
+	Alpha 0.4
+	RenderStyle Add
+	Painchance 128
+	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Cricket", 255
+	Painchance "Suck", 255
+	DamageFactor "Cricket", 2.0
+	DamageFactor "Suck", 2.5
+	MONSTER
+	+FLOAT
+	+NOGRAVITY
+	+NOICEDEATH
+	+MISSILEMORE
+	+DONTFALL
+	+NOBLOOD
+	attacksound "skull/melee"
+	PainSound "nightmare/pain"
+	DeathSound "nightmare/death"
+	ActiveSound "nightmare/active"
+
+	states
+	{
+		Spawn:
+			ETHS A 0 NoDelay 
+			ETHS ABCD 10 bright A_Look
+			goto Spawn+1
+		See:
+			ETHS A 0
+			ETHS AABBCCDD 3 bright
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			loop
+		Missile:
+			TNT1 A 0
+			ETHS C 0 bright A_Jump(128,"Missile2")
+			ETHS C 6 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(5); }
+				A_FaceTarget;
+			}
+			ETHS EFEF 4 bright
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget;
+
+				SetDamage(5+(CountInv("MonsterLevel")/60)); 
+				A_SkullAttack;
+			}
+			goto See
+		Missile2:
+			ETHS P 3 bright
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(1); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_FaceTarget;
+			}
+			ETHS Q 4 bright
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			ETHS R 5 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(5); }
+				A_FaceTarget;
+
+				A_SpawnProjectile("ShadowBall", 0, 0, 0);
+			}
+			ETHS E 4 bright
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			goto See
+		Pain:
+			ETHS G 3 bright
+			ETHS G 3 bright A_EEPain
+			goto See
+		Pain.Fist:
+			ETHS G 3 bright
+			ETHS G 3 bright A_EEPain
+			ETHS GG 3 bright
+			goto See
+		Pain.Kick:
+			ETHS G 3 bright
+			ETHS G 3 bright A_EEPain
+			ETHS GGGG 3 bright
+			goto See
+
+		Death:
+			ETHS F 3 bright
+			ETHS H 3 bright A_ScreamAndUnblock
+			ETHS IJKLMNO 3 bright
+			stop
+		Ice:
+			goto Death
+	}
+}
+
+ACTOR DEWraithNew : EECreature replaces DEWraith 30106
+{ 
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Raven Style"
+	Tag "Wraith of the Eclipse"
+
+	Health 80 // 50
+	Radius 16 
+	Height 32 
+	Mass 50 
+	Speed 10 
+	Damage 2
+	bloodcolor "darkred"
+	RENDERSTYLE ADD
+	MeleeDamage 1
+	Alpha 0.67 
+	PainChance 64 
+	Painchance "Cricket", 96
+	Painchance "Bonk", 96
+	Painchance "Suck", 160
+	Painchance "Fist", 96 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 160 // Kick attacks have a +150% chance of stunning an enemy
+	DamageFactor "Cricket", 1.5
+	DamageFactor "Bonk", 1.5
+	DamageFactor "Suck", 2.5
+	
+	MONSTER
+	+DONTGIB
+	+NOTARGET
+	+NOGRAVITY 
+	+FLOAT
+	+DONTFALL
+	+DONTHURTSPECIES
+	+THRUSPECIES
+	ATTACKSOUND "monster/sprsit"
+	MELEESOUND "monster/spratk"
+	PAINSOUND "archvile/pain" 
+	DEATHSOUND "monster/sprdth"
+	OBITUARY "A wraith spooked %o to Hell"
+	HITOBITUARY "%o got bitten by a Wraith"
+	SpawnID 176
+
+	states 
+	{
+		Spawn: 
+			WRAI A 0 NoDelay 
+			WRAI AB 10 A_Look 
+			goto Spawn+1
+		See: 
+			WRAI A 0
+			WRAI AABB 3 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_VileChase;
+			}
+			loop
+		Missile: 
+			TNT1 A 0
+			WRAI A 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 30) { A_SetTics(9); }
+				A_FaceTarget;
+			}
+			WRAI B 4
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(3); }
+
+				SetDamage(2+(CountInv("MonsterLevel")/135)); 
+				A_SkullAttack;
+			}
+			WRAI AB 4 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			Goto Missile+2
+		Melee:
+			TNT1 A 0
+			WRAI A 5 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			WRAI B 5 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+				A_FaceTarget;
+				
+				A_CustomMeleeAttack(1*random(1,8), "monster/spratk");
+			}
+			Goto See
+		Heal:
+			WRAI AB 3
+			Goto Death 
+		Pain: 
+			WRAI A 3  
+			WRAI A 3 A_EEPain 
+			Goto See 
+		Pain.Fist: 
+			WRAI A 3  
+			WRAI A 3 A_EEPain 
+			WRAI AA 3  
+			Goto See 
+		Pain.Kick: 
+			WRAI A 3  
+			WRAI A 3 A_EEPain 
+			WRAI AAAA 3  
+			Goto See 
+
+		Death:
+			WRAI E 4 A_NoBlocking
+			WRAI F 5 A_Scream 
+			WRAI GHIJ 4  
+			Stop 
+		Ice:
+			goto Death
+	}
+}
+
+actor ButcherBarfNew : EEProjectile replaces ButcherBarf
+{
+	Tag "Butcher's Barf"
+	Damage (3 * random(4,9))
+	Mass 1
+	Radius 8
+	Height 6
+	Speed 16
+	Scale 0.45
+	Alpha 0.3
+	obituary "%o was poisoned to death by the puke of a bloated butcher."
+	PROJECTILE
+	SeeSound "DSFZATK"
+	DeathSound "NONE"
+	States
+	{
+		Spawn:
+			PUKE AB 2 
+			{
+				A_SpawnItemEx("POOK",0+random(-5,5),0+random(-5,5),0+random(-5,5),0,0,1,0,128);
+			}
+			Loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(8);
+					if (random(1,user_ailmentmaxchance) <= 7 && user_canafflict)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,140)); // Poison for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			SDTH F 0 A_SpawnItemEx("POOK", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+			SDTH D 0 A_SpawnItemEx("POOK", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+			SDTH E 0 A_SpawnItemEx("POOK", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+			SDTH F 0 A_SpawnItemEx("POOK", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+			SDTH D 0 A_SpawnItemEx("POOK", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+			SDTH E 0 A_SpawnItemEx("POOK", 0, 0,0,random(-9,9),random(-9,9),random(5,9), 48, 128)
+			PUKE A 8 A_FADEOUT
+			PUKE B 6 A_FADEOUT
+			stop
+	}
+}
+
+actor CleaverNew : EEProjectile replaces Cleaver
+{ 
+	Tag "Butcher's Cleaver"
+	damage (2 * random(5,13))
+	decal GarScorch
+	radius 6
+	height 16
+	speed 12
+	seesound "BloodThrow"
+	activesound ""
+	obituary "%o was cut down by a bloated butcher."
+	PROJECTILE
+	+RANDOMIZE
+	states
+	{
+		Spawn:
+			CLVR A 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail1",0,0,0,0,0,0,0,128);
+			}
+			CLVR B 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail2",0,0,0,0,0,0,0,128);
+			}
+			CLVR C 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail3",0,0,0,0,0,0,0,128);
+			}
+			CLVR D 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail4",0,0,0,0,0,0,0,128);
+			}
+			CLVR E 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail5",0,0,0,0,0,0,0,128);
+			}
+			CLVR F 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail6",0,0,0,0,0,0,0,128);
+			}
+			CLVR G 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail7",0,0,0,0,0,0,0,128);
+			}
+			CLVR H 4 
+			{
+				A_LoopActiveSound;
+				A_SpawnItemEx("CleaverTrail8",0,0,0,0,0,0,0,128);
+			}
+			loop
+		Death:
+			TNT1 A 0 Bright
+			{
+				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
+				{
+					A_StatusEffectChecker(12);
+					if (random(1,user_ailmentmaxchance) <= 5 && user_canafflict)
+					{
+						ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(70,105)); // Deceleratle for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+					}
+				}
+				return state("");
+			}
+		Death2:
+			CLVR IIIIJJJJKKKKLLLL 1 A_FadeOut(0.05)
+			stop
+	}
+}
+
+ACTOR ButcherZombieNew : EECreature 25010
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Bloated Butcher"
+
+	Health 1090 // 308,436,630,850,1090
+	Radius 12
+	Height 56
+	Mass 1250
+	speed 3
+	painchance 4
+	meleerange 48 // 44
+	Painchance "Fist", 8 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 16 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Melee", 8
+	Painchance "Chop", 12
+
+	DamageFactor 0.95
+	RadiusDamageFactor 0.95
+	DamageFactor "Explosive", 0.95
+
+	DamageFactor "Melee", 0.80
+	DamageFactor "Stomp", 0.80
+	DamageFactor "Trample", 0.80
+	DamageFactor "Fire", 2.25
+	DamageFactor "CherryBomb", 2.25
+	DamageFactor "Spinner", 2.25
+	DamageFactor "BRocket", 2.25
+	DamageFactor "Popper", 2.25
+	DamageFactor "Chop", 3
+	obituary "%o was cut down by a bloated butcher."
+	hitobituary "%o was cut up by a bloated butcher."
+	meleesound "twix"
+	seesound "BLOATEDBUTCHER/OTHER"
+	painsound "BLOATEDBUTCHER/OTHER"
+	deathsound "BLOATEDBUTCHER/DEATH"
+	activesound "BLOATEDBUTCHER/OTHER"
+	Scale 0.6
+	MONSTER
+	+BOSSDEATH
+	+NOSPLASHALERT
+	+FLOORCLIP
+	+NOSPLASHALERT
+
+	states
+	{
+		Spawn:
+			E15W A 0 NoDelay 
+			E15W A 10 A_Look
+			goto Spawn+1
+		See:
+			E15W A 0
+			E15W AAABBBCCCDDDEEEFFF 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TNT1 A 0 A_Jump(96,"See2")
+			loop
+		See2:
+			TNT1 A 0
+			E15W A 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W A 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W A 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W B 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W B 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W B 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W C 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W C 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W C 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W D 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W D 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W D 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W E 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W E 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W E 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W F 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			E15W F 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			E15W F 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
+				A_EEChase("","",0,1,3,1,1);
+			}
+			TNT1 A 0 A_Jump(96,"See")
+			loop
+		Melee:
+			TNT1 A 0
+			E15A B 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_SkelWhoosh;
+				A_FaceTarget;
+			}
+			E15A C 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			E15A D 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+
+				A_CustomComboAttack("CleaverNew", random(34,40), 2*random(7,13), "skeleton/melee");
+			}
+			E15A EF 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			E15A F 0 { A_ScaleVelocity(0.25); }
+			goto See
+		Missile:
+			TNT1 A 0 
+			{
+				A_ScaleVelocity(0.25);
+			}
+			BYBR E 0 A_JumpIfCloser(128, "Missile1")
+			BYBR E 0 A_Jump(64,"Missile1")
+			BYBR E 0 A_Jump(256,"Missile2")
+			goto see
+		Missile1:
+			E15A B 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_SkelWhoosh;
+				A_FaceTarget;
+			}
+			E15A C 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			E15A D 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+
+				A_CustomComboAttack("CleaverNew", random(34,40), 2*random(7,13), "skeleton/melee");
+			}
+			E15A EF 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			E15A F 0 { A_ScaleVelocity(0.25); }
+			goto See
+		Missile2:
+			E15W J 0 A_FaceTarget
+			E15A GH 5
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			E15A I 5 
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(4); }
+				A_FaceTarget;
+
+				A_SpawnProjectile("ButcherBarfNew",random(44,52),0,random(-10,10),1,0);
+			}
+			E15A JIH 4
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			E15A H 0 { A_ScaleVelocity(0.25); }
+			goto See
+
+		PAIN.Shock:
+			7ZAP AAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ShockHuman",random(-1,1),random(-1,1),random(0,3))
+			7ZAP A 4 A_EEPain
+			7ZAP A 0 A_JumpIfHealthLower(20,2)
+			7ZAP A 0 A_Jump(192,"See")
+			7ZAP AAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ShockHuman",random(-1,1),random(-1,1),random(0,3))
+			Goto See
+		Pain:
+			E15A A 1
+			E15A A 1
+			goto See
+		Pain.Fist:
+			E15A A 1
+			E15A A 1
+			E15A AA 1
+			goto See
+		Pain.Kick:
+			E15A A 1
+			E15A A 1
+			E15A AAAA 1
+			goto See
+
+		Death:
+			E15D A 7 A_Scream
+			E15D B 7
+			E15D C 7
+			E15D D 7 A_NoBlocking
+			E15D D 2 A_StartSound("DSTHUUD")
+			E15D EFFFFFFFF 7
+			TNT1 A 0 
+			E15D G -1
+			stop
+		Death1:
+			BBT2 M 7 A_Scream
+			BBT2 L 0 A_Fall
+			BBT2 M 5 A_XScream
+			BBT2 LLLL 0 A_SpawnDebris ("OrganDebris")
+			BBT2 LLL 0 A_SpawnDebris ("Bloodliver")
+			BBT2 L 0 A_SpawnDebris ("Hand1")
+			BBT2 L 0 A_SpawnItemEx("EyeGuts",random(-8,8),random(-8,8),random(random(0,16),random(32,48)),random(-3,3),random(-2,2),random(-2,2))
+			BBT2 M 5 A_SpawnItemEx("FlyingBlood",random(-8,8),random(-8,8),random(random(0,16),random(32,48)),random(-3,3),random(-2,2),random(-2,2))
+			BBT2 N 5 A_SpawnItemEx("FlyingBlood",random(-8,8),random(-8,8),random(random(0,16),random(32,48)),random(-3,3),random(-2,2),random(-2,2))
+			BBT2 O 5  A_StartSound("DSTHUUD")
+			BBT2 PQRSTUV 5 A_SpawnItemEx("FlyingBlood",random(-8,8),random(-8,8),random(random(0,4),random(16,32)),random(-2,2),random(-2,2),random(-2,2))
+			BBT2 VWVWVWVWVVWVWVWVWVVWVWVWVWVVWVWVWVWV 5
+			TNT1 A 0 
+			BBT2 W -1
+			Stop
+		Raise:
+			E15D G 5 
+			E15D FDCBA 5 
+			goto See
+
+		XDeath:
+			E15X A 6 A_Scream
+			E15X B 5 A_Fall
+			E15X CDEF 4
+			E15X G 25
+			E15X HIJK 6
+			TNT1 A 0 
+			E15X L -1
+			Stop
+		Ice:
+			E15A A 5 A_GenericFreezeDeath
+			E15A A 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+actor BloodZombieNew : EECreature 31002
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Blood Style"
+	Tag "Axe Zombie"
+
+	Health 220 // 68,90,130,170,220
+	Height 56
+	Radius 12
+	scale 0.45
+	speed 4
+	meleerange 57 // 44
+	Mass 500
+	meleedamage 5
+	painchance 4
+	Painchance "Fist", 8 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 16 // Kick attacks have a +150% chance of stunning an enemy
+	Painchance "Melee", 8 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Chop", 8 // Fist attacks have a +50% chance of stunning an enemy
+
+	DamageFactor 0.75
+	RadiusDamageFactor 0.75
+	DamageFactor "Explosive", 0.75
+
+	DamageFactor "Fire", 2
+	DamageFactor "CherryBomb", 2
+	DamageFactor "Spinner", 2
+	DamageFactor "BRocket", 2
+	DamageFactor "Popper", 2
+	DamageFactor "Chop", 3
+	MONSTER
+	+BOSSDEATH
+	+FLOORCLIP
+	+DONTOVERLAP
+	+RANDOMIZE
+	+NOSPLASHALERT
+	seesound "BZOMBIEACTIVE"
+	Meleesound "TWIX"
+	painsound "ZPAIN"
+	deathsound "BZOMBIEDIE"
+	activesound "BZOMBIEACTIVE"
+	obituary "A zombie 'axed' %o a question. :V"
+	var int user_downedtime;
+	var int user_downedtimemax;
+
+	states
+	{
+		Spawn:
+			BZUM A 0 NoDelay 
+			BZUM A 10 A_Look
+			goto Spawn+1
+		See:
+			AZUM A 0
+			AZUM AAAABBBBCCCCDDDDEEEEFFFF 1
+			{
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			loop
+		Melee:
+			TNT1 A 0
+			BZUM AB 4
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(4); }
+				A_FaceTarget;
+			}
+			BZUM CDE 4
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			BZUM F 4 
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(3); }
+				A_FaceTarget;
+				A_StartSound("ZAXE");
+				
+				A_CustomMeleeAttack(2*random(5,13), "TWIX");
+			}
+			BZUM G 4
+			{
+				A_ScaleVelocity(0.25);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(3); }
+				A_FaceTarget;
+			}
+			BZUM G 0 { A_ScaleVelocity(0.25); }
+			goto See
+
+		Pain.Plasma:
+			TNT1 A 0 A_Jump(192,"Pain")
+			7ZAP A 4 A_EEPain
+			7ZAP AAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ShockHuman",random(-1,1),random(-1,1),random(0,3))
+			Goto See
+		Pain.Electric: 
+		Pain.Lightning: 
+		Pain.Thunder: 
+		Pain.Shock:
+			7ZAP AAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ShockHuman",random(-1,1),random(-1,1),random(0,3))
+			7ZAP A 4 A_EEPain
+			7ZAP A 0 A_JumpIfHealthLower(20,2)
+			7ZAP A 0 A_Jump(192,"See")
+			7ZAP AAAAAAAAAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("ShockHuman",random(-1,1),random(-1,1),random(0,3))
+			Goto See
+
+		Pain:    
+			AZUM G 0 A_Jump (24, "FallDown")
+			AZUM G 1 { if (random(1,512) <= 3) { A_EEPain; } else { return state("See"); } return state(""); }
+			goto See
+		Pain.Fist:    
+			AZUM G 0 A_Jump (32, "FallDown")
+			AZUM G 1 { if (random(1,256) <= 4) { A_EEPain; } else { return state("See"); } return state(""); }
+			AZUM GG 1
+			goto See
+		Pain.Kick:    
+			AZUM G 0 A_Jump (96, "FallDown")
+			AZUM G 1 { if (random(1,256) <= 12) { A_EEPain; } else { return state("See"); } return state(""); }
+			AZUM GGGG 1
+			goto See
+		FallDown:
+			AZUM H 5
+			{
+				A_EEPain;
+				user_downedtimemax = 5 - ((CountInv("MonsterLevel") / 45) * 1);
+				if (user_downedtimemax <= 1) { user_downedtimemax = 1; }
+				A_SetTics(user_downedtimemax);
+			}
+			AZUM H 0
+			{
+				A_UnSetShootable;
+				A_UnSetSolid;
+				A_ChangeFlag("NOTARGET",1);
+			}
+			AZUM IJKL 5
+			{
+				user_downedtimemax = 5 - ((CountInv("MonsterLevel") / 45) * 1);
+				if (user_downedtimemax <= 1) { user_downedtimemax = 1; }
+				A_SetTics(user_downedtimemax);
+			}
+			AZUM L 175
+			{
+				user_downedtimemax = 175 - ((CountInv("MonsterLevel") / 15) * 8);
+				if (user_downedtimemax <= 43) { user_downedtimemax = 43; }
+				A_SetTics(user_downedtimemax);
+			}
+		DownCycle:
+			AZUM L 20
+			{
+				user_downedtimemax = 20 - ((CountInv("MonsterLevel") / 15) * 1);
+				if (user_downedtimemax <= 5) { user_downedtimemax = 5; }
+				A_SetTics(user_downedtimemax);
+			}
+			AZUM N 0 A_JumpIfCloser (144, 2)
+			AZUM L 0 A_Jump (256, "GetUp")
+			AZUM L 0 A_Jump (64, "GetUp")
+			loop
+		GetUp:
+			AZUM L 10
+			{
+				user_downedtimemax = 10 - ((CountInv("MonsterLevel") / 30) * 1);
+				if (user_downedtimemax <= 5) { user_downedtimemax = 5; }
+				A_SetTics(user_downedtimemax);
+
+				A_RadiusThrust(256,128,0);
+				A_SetShootable;
+				A_SetSolid;
+				A_ChangeFlag("NOTARGET",0);
+			}
+			AZUM MNOPQR 5
+			{
+				user_downedtimemax = 5 - ((CountInv("MonsterLevel") / 45) * 1);
+				if (user_downedtimemax <= 1) { user_downedtimemax = 1; }
+				A_SetTics(user_downedtimemax);
+			}
+			goto See
+
+		Death:
+			AZUM H 0 A_JumpIfHealthLower (user_HPXDeathRange2, "Death2")
+			AZUM G 7 A_Scream
+			AZUM H 8
+			AZUM I 4
+			AZUM J 4 A_Fall
+			AZUM K 4
+			TNT1 A 0 
+			AZUM L -1
+			stop
+		Death2:
+			DOTD H 0
+			{
+				A_StartSound("DSBDSPRY");
+				A_Scream;
+			}
+			TNT1 A 0 A_CustomMissile("callumzombiehead",4,0,random(-200,200),2,random(10,30))
+			AZUM SSS 2 A_ThrowGrenade("FlyingBlood",5,5+random(-3,3),10+random(-4,4),0)
+			AZUM T 2 A_ThrowGrenade("FlyingBlood",5,5+random(-3,3),10+random(-4,4),0)
+			AZUM U 2 A_ThrowGrenade("FlyingBlood",0,5+random(-3,3),10+random(-4,4),0)
+			AZUM H 0 A_Fall
+			AZUM V 2 A_ThrowGrenade("FlyingBlood",-5,5+random(-3,3),10+random(-4,4),0)
+			AZUM W 2 A_ThrowGrenade("FlyingBlood",-10,5+random(-3,3),10+random(-4,4),0)
+			AZUM X 2 A_ThrowGrenade("FlyingBlood",-15,5+random(-3,3),10+random(-4,4),0)
+			AZUM Y 2 A_ThrowGrenade("FlyingBlood",-20,5+random(-3,3),10+random(-4,4),0)
+			AZUM H 0 A_StartSound("DSBDSPRY")
+			AZUM Z 2 A_ThrowGrenade("FlyingBlood",-20,5+random(-3,3),10+random(-4,4),0)
+			AZUM H 0 A_StartSound("DSBDSPRY")
+			AZUM Z 2 A_ThrowGrenade("FlyingBlood",-20,5+random(-3,3),5+random(-4,4),0)
+			TNT1 A 0 
+			AZUM Z -1
+			stop
+
+		XDeath:
+			XZUM A 0 A_Scream
+			XZUM A 6
+			XZUM L 0 A_Fall
+			XZUM BCDEFGH 3
+			TNT1 A 0 
+			XZUM I -1
+			Stop
+
+		Raise:
+			AZUM M 5 
+			AZUM NOPQR 5 
+			goto See
+		Ice:
+			AZUM G 5 A_GenericFreezeDeath
+			AZUM G 1 A_FreezeDeathChunks
+			wait
+	}
+}
+
+actor ThamuzApocalypseDefendMode : PowerProtection
+{
+	damagefactor "normal", 0.20 
+	inventory.icon ""
+	Powerup.Duration 2147483646
+}
+
+ACTOR ThamuzNew : EECreature 7228
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Boss"
+	Tag "Thamuz, The Dark God"
+
+	Radius 40
+	Height 110
+	Bloodcolor "00 aa 00"
+	Scale 1.1
+	Health 32000
+	Mass 40000
+	Speed 16
+	Scale 1.1
+	MinMissileChance 5
+	painchance 35
+	painchance "Zap", 70
+	Painchance "Fist", 52 // Fist attacks have a +50% chance of stunning an enemy
+	Painchance "Kick", 87 // Kick attacks have a +150% chance of stunning an enemy
+
+	DamageFactor 0.375
+	RadiusDamageFactor 0.375
+	DamageFactor "Explosive", 0.375
+	DamageFactor "Zap", 1.0
+	MONSTER
+	+Boss
+	+NoRadiusDMG
+	+FloorClip
+	+MISSILEEVENMORE
+	+MISSILEMORE
+	SEESOUND "Thamuz/Idlesight"
+	PAINSOUND "Thamuz/Pain"
+	DEATHSOUND "Thamuz/death"
+	ACTIVESOUND "Thamuz/Idlesight"
+	OBITUARY "%o fell before the might of Thamuz, the Dark God."
+	RenderStyle Translucent
+	Alpha 0.95
+
+	states
+	{
+		Pain.Charm: Goto See
+		ResetLevel:
+			DCYB A 1 A_Look
+			DCYB A 1 
+			DCYB A 1 { user_ressurrectstr += random(15,30); }
+			DCYB A 1 
+			goto Spawn+1
+		Spawn:
+			DCYB A 0 NoDelay 
+			DCYB A 10 A_Look
+			goto Spawn+1
+		See:
+			DCYB A 0 Thing_ChangeTID(0,1222)
+			DCYB A 0
+			DCYB AA 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("DarkCyberGhostA",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			DCYB BB 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("DarkCyberGhostB",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			DCYB CC 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("DarkCyberGhostC",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			DCYB DD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("DarkCyberGhostD",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop
+		Missile:
+			TNT1 A 0
+			DCYB A 0 A_Jump(160,"ApocalypseAtk")	//160
+			DCYB AEE 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(7); }
+				A_FaceTarget;
+			}
+			DCYB F 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget;
+
+				A_SpawnProjectile("DCBMiss1",56,-25,0);
+			}
+			DCYB E 15
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(9); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 125) { A_SetTics(10); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 100) { A_SetTics(11); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(12); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 50) { A_SetTics(13); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 25) { A_SetTics(14); }
+				A_FaceTarget;
+			}
+			Goto See
+		ApocalypseAtk:
+			DCYB A 0 A_Jump(160,"Barrage") //160
+			DCYB G 20
+			{
+				A_SetInventory("ThamuzApocalypseDefendMode",1); // A_SetInvulnerable
+				A_ChangeFlag("NOPAIN",TRUE);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(14); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 100) { A_SetTics(15); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(16); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(17); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(18); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 20) { A_SetTics(19); }
+				A_StartSound("Apocalypse/cast");
+
+				for (user_barragecounter = 0; user_barragecounter < 18; user_barragecounter++)
+				{
+					A_SpawnProjectile("DCBMiss3",50,0,user_barragecounter*20);
+				}
+			}
+			DCYB G 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+			}
+			DCYB G 0 A_Jump(64,5)
+			DCYB G 0 A_Jump(64,8)
+			DCYB GGGGGGGG 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+			}
+			DCYB G 10
+			{
+				A_ChangeFlag("NOPAIN",FALSE);
+				A_SetInventory("ThamuzApocalypseDefendMode",0); // A_UnsetInvulnerable
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+			}
+			Goto See
+		Barrage:
+			DCYB AE 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				user_barragecounter = 0;
+				user_shotsfired = 0;
+				user_shotsfiredmax = 10 + CountInv("MonsterLevel") / 20;
+			}
+		BarrageStart:
+			DCYB EF 4
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 210) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 105) { A_SetTics(3); }
+				A_FaceTarget;
+				user_barragecounter += 1;
+				if (user_barragecounter == 2) 
+				{
+					A_SpawnProjectile("DCBMiss2",56,-25,0);
+					user_barragecounter = 0; 
+					user_shotsfired += 1;
+				}
+			}
+			DCYB F 0
+			{
+				if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+				return state("");
+			}
+			loop
+
+		Pain:
+			DCYB A 0 A_SetInventory("ThamuzApocalypseDefendMode",0) // A_UnsetInvulnerable
+			DCYB G 2
+			DCYB G 2 A_EEPain
+			Goto See
+		Pain.Fist:
+			DCYB A 0 A_SetInventory("ThamuzApocalypseDefendMode",0) // A_UnsetInvulnerable
+			DCYB G 2
+			DCYB G 2 A_EEPain
+			DCYB GG 2
+			Goto See
+		Pain.Kick:
+			DCYB A 0 A_SetInventory("ThamuzApocalypseDefendMode",0) // A_UnsetInvulnerable
+			DCYB G 2
+			DCYB G 2 A_EEPain
+			DCYB GGGG 2
+			Goto See
+
+		Death:
+			DCYB H 5
+			DCYB I 5 A_Scream
+			DCYB A 0 A_CustomMissile("BDS",0,0,0)
+			DCYB JKLMNO 5
+			TNT1 A 0 
+			DCYB P -1 A_NoBlocking
+			Stop
+		Ice:
+			Goto Death
+	}
+}
+
+Actor TchernobogNew : ThamuzNew replaces Tchernobog 7258
+{
+	//$Angled
+	//$Color 12
+	//$Category "TCOTD:A Monsters/Boss"
+	Tag "Tchernobog, The One That Binds?"
+
+	Radius 40
+	Height 110
+	Health 21333
+	RenderStyle Translucent
+	Alpha 0.95
+	painchance 35
+	painchance "Zap", 52
+	painchance "Cricket", 87
+	DamageFactor 0.25
+	RadiusDamageFactor 0.25
+	DamageFactor "Explosive", 0.25
+	DamageFactor "Zap", 0.667
+	DamageFactor "Cricket", 2.5
+	Mass 80000
+	Speed 16
+	OBITUARY "%o fell before the might of The One That Binds."
+	Bloodcolor "aa 00 00"
+	states
+	{
+		Pain.Charm: Goto See
+		ResetLevel:
+			TCHR A 1 A_Look
+			TCHR A 1 
+			TCHR A 1 { user_ressurrectstr += random(15,30); }
+			TCHR A 1 
+			goto Spawn+1
+		Spawn:
+			TCHR A 0 NoDelay 
+			TCHR A 10 A_Look
+			goto Spawn+1
+		See:
+			TCHR A 0 Thing_ChangeTID(0,1222)
+			TCHR A 0
+			TCHR AA 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("TchernoGhostA",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TCHR BB 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("TchernoGhostB",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TCHR CC 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("TchernoGhostC",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			TCHR DD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_ChangeFlag("AVOIDMELEE",1); }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_SpawnItem("TchernoGhostD",0,0);
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			Loop
+		Missile:
+			TNT1 A 0
+			TCHR A 0 A_Jump(160,"ApocalypseAtk")	//160
+			TCHR AEE 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(7); }
+				A_FaceTarget;
+			}
+			TCHR F 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget;
+
+				A_SpawnProjectile("DCBMiss1",80,0,0);
+			}
+			TCHR E 15
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 150) { A_SetTics(9); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 125) { A_SetTics(10); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 100) { A_SetTics(11); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 75) { A_SetTics(12); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 50) { A_SetTics(13); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 25) { A_SetTics(14); }
+				A_FaceTarget;
+			}
+			Goto See
+		ApocalypseAtk:
+			TCHR A 0 A_Jump(160,"Barrage") //160
+			TCHR G 20
+			{
+				A_SetInventory("ThamuzApocalypseDefendMode",1); // A_SetInvulnerable
+				A_ChangeFlag("NOPAIN",TRUE);
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(14); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 100) { A_SetTics(15); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(16); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(17); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(18); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 20) { A_SetTics(19); }
+				A_StartSound("Apocalypse/cast");
+				
+				for (user_barragecounter = 0; user_barragecounter < 18; user_barragecounter++)
+				{
+					A_SpawnProjectile("DCBMiss3",36,0,user_barragecounter*20);
+				}
+			}
+			TCHR G 0 A_Jump(64,5)
+			TCHR G 0 A_Jump(64,8)
+			TCHR GGGGGGGG 10
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+			}
+			TCHR G 10
+			{
+				A_ChangeFlag("NOPAIN",FALSE);
+				A_SetInventory("ThamuzApocalypseDefendMode",0); // A_UnsetInvulnerable
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+			}
+			Goto See
+		Barrage:
+			TCHR AE 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				user_barragecounter = 0;
+				user_shotsfired = 0;
+				user_shotsfiredmax = 10 + CountInv("MonsterLevel") / 20;
+			}
+		BarrageStart:
+			TCHR FF 4
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 210) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 105) { A_SetTics(3); }
+				A_FaceTarget;
+				user_barragecounter += 1;
+				if (user_barragecounter == 2) 
+				{
+					A_SpawnProjectile("DCBMiss2",80,0,0);
+					user_barragecounter = 0; 
+					user_shotsfired += 1;
+				}
+			}
+			TCHR F 0
+			{
+				if (user_shotsfired >= user_shotsfiredmax) { return state("See"); }
+				return state("");
+			}
+			loop
+		Pain:
+			TCHR A 0 A_SetInventory("ThamuzApocalypseDefendMode",0) // A_UnsetInvulnerable
+			TCHR G 2
+			TCHR G 2 A_EEPain
+			Goto See
+		Pain.Fist:
+			TCHR A 0 A_SetInventory("ThamuzApocalypseDefendMode",0) // A_UnsetInvulnerable
+			TCHR G 2
+			TCHR G 2 A_EEPain
+			TCHR GG 2
+			Goto See
+		Pain.Kick:
+			TCHR A 0 A_SetInventory("ThamuzApocalypseDefendMode",0) // A_UnsetInvulnerable
+			TCHR G 2
+			TCHR G 2 A_EEPain
+			TCHR GGGG 2
+			Goto See
+
+		Death:
+			TCHR Q 5
+			TCHR Q 5 A_Scream
+			TCHR A 0 A_CustomMissile("BDS",0,0,0)
+			TCHR QRSTUVWX 5
+			TNT1 A 0 
+			TNT1 A -1 A_NoBlocking
+			Stop
+		Ice:
+			Goto Death
+	}
+}
