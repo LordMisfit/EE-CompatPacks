@@ -571,6 +571,12 @@ ACTOR TommyGunCultistNew : EECreature 29011
 			XFAN I 3
 			XFAN I 3 A_EEPain
 			goto See
+		Pain.Bonk:
+		Pain.Cricket:
+			XFAN I 3
+			XFAN I 3 A_EEPain
+			XFAN II 3
+			goto See
 		Death:
 			XFAN J 5 ThrustThingZ(0,10,0,0)
 			XFAN K 5 A_Scream
@@ -681,6 +687,12 @@ ACTOR ShotgunCultistNew : TommyGunCultistNew 29010
 			BCUL G 3
 			BCUL G 3 A_EEPain
 			goto See
+		Pain.Bonk:
+		Pain.Cricket:
+			BCUL G 3
+			BCUL G 3 A_EEPain
+			BCUL GG 3
+			goto See
 
 		Death:
 			BCUL H 5 ThrustThingZ(0,10,0,0)
@@ -729,6 +741,8 @@ ACTOR HellHoundNew : EECreature 30121
 	Painchance "Fist", 192 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Ice", 255
+	Painchance "Bonk", 255
+	DamageFactor "Bonk", 2.25
 	DamageFactor 0.875
 	RadiusDamageFactor 0.875
 	DamageFactor "Explosive", 0.875
@@ -828,6 +842,11 @@ ACTOR HellHoundNew : EECreature 30121
 		Pain: 
 			HDOG J 2 
 			HDOG J 2 A_EEPain 
+			Goto See 
+		Pain.Bonk:
+			HDOG J 2 
+			HDOG J 2 A_EEPain 
+			HDOG JJ 2 
 			Goto See 
 		Pain.Ice: 
 			HDOG J 2 
@@ -1018,6 +1037,12 @@ ACTOR ThrallNew : EECreature 30119
 			CULT G 2 
 			CULT G 2 A_EEPain 
 			Goto See 
+		Pain.Bonk:
+		Pain.Cricket:
+			CULT G 2
+			CULT G 2 A_EEPain
+			CULT GG 2
+			goto See
 
 		Death:
 			CULT H 8 
@@ -1127,13 +1152,25 @@ ACTOR NightmareNew : EECreature replaces KDiZDNightmare 26000
 		Pain:
 			NMRE H 2 
 			{
-				//A_NightmarePhaseIn;
+				A_NightmarePhaseIn;
 			}
 			NMRE H 10 
 			{
 				A_NightmarePhaseIn;
 				A_EEPain;
 			}
+			Goto See
+		Pain.Suck:
+			NMRE H 2 
+			{
+				A_NightmarePhaseIn;
+			}
+			NMRE H 10 
+			{
+				A_NightmarePhaseIn;
+				A_EEPain;
+			}
+			NMRE HHH 2
 			Goto See
 
 		Death:
@@ -1256,6 +1293,7 @@ ACTOR VulgarShotNew : EEProjectile
 	Tag "Vulgar Poison Blast"
 	DamageType "Poison"
 	Damage (4 * random(1,8))
+	PoisonDamage 10
 	Radius 8
 	Height 16
 	Speed 10
@@ -1270,19 +1308,6 @@ ACTOR VulgarShotNew : EEProjectile
 			FVUL AAABBB 1 Bright 
 			loop
 		Death:
-			TNT1 A 0 Bright
-			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-				{
-					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
-					{
-						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					}
-				}
-				return state("");
-			}
-		Death2:
 			FVUL CDEF 4 Bright
 			stop
 	}
@@ -1416,16 +1441,18 @@ Actor ClayDevilNew : EECreature replaces ClayDevil
 	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
 	painchance "Suck", 72
 	PainChance "Fire", 255
+	PainChance "Breakfast", 255
 	PainChance "CherryBomb", 255
 	PainChance "Spinner", 255
 	PainChance "BRocket", 255
 	PainChance "Popper", 255
+	PainChance "Breakfast", 255
 
 	DamageFactor 0.25 // Quadruple Resistance to most
 	RadiusDamageFactor 0.25
 	DamageFactor "Explosive", 0.25
 
-	DamageFactor "Zap", 0.25 // Quadruple Resistance to most
+	DamageFactor "Zap", 0.5
 	DamageFactor "Fire", 16.0
 	DamageFactor "CherryBomb", 16.0
 	DamageFactor "Spinner", 16.0
@@ -1548,6 +1575,7 @@ Actor ClayDevilNew : EECreature replaces ClayDevil
 		Pain.Spinner:
 		Pain.BRocket:
 		Pain.Popper:
+		Pain.Breakfast:
 			N00B J 12 A_EEPain
 			N00B JJJ 12
 			goto See
@@ -1602,6 +1630,7 @@ Actor ClayDevilNew : EECreature replaces ClayDevil
 		Death.Spinner:
 		Death.BRocket:
 		Death.Popper:
+		Death.Breakfast:
 			N00B K 5
 			N00B K 5
 			N00B L 4 A_Scream
@@ -1817,15 +1846,10 @@ ACTOR TCOTDAShadowNew : EECreature replaces Shadow 3126
 			TROX H 3
 			TROX H 3 A_EEPain
 			Goto See+2
-		Pain.Fist:
+		Pain.Suck:
 			TROX H 3
 			TROX H 3 A_EEPain
 			TROX HH 3
-			Goto See+2
-		Pain.Kick:
-			TROX H 3
-			TROX H 3 A_EEPain
-			TROX HHHH 3
 			Goto See+2
 
 		Death:
@@ -2963,14 +2987,14 @@ ACTOR ThamuzNew : EECreature 7228
 	Scale 1.1
 	MinMissileChance 5
 	painchance 35
-	painchance "Zap", 70
+	painchance "Zap", 140
 	Painchance "Fist", 52 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 87 // Kick attacks have a +150% chance of stunning an enemy
 
 	DamageFactor 0.375
 	RadiusDamageFactor 0.375
 	DamageFactor "Explosive", 0.375
-	DamageFactor "Zap", 1.0
+	DamageFactor "Zap", 2.0
 	MONSTER
 	+Boss
 	+NoRadiusDMG
