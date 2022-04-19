@@ -4033,6 +4033,7 @@ actor ExMark : SwitchableDecoration 31999
 actor PushPuzz 31998
 {
 	Health 2000000000
+	Mass 200
 	MONSTER
 	radius 12
 	height 48
@@ -4041,6 +4042,7 @@ actor PushPuzz 31998
 	+SOLID
 	+NOBLOOD
 	+INVULNERABLE
+	+NOTARGET
 	-COUNTKILL
 	states
 	{

@@ -1,6 +1,9 @@
 actor ApprenticeSheenMode : PowerProtection
 {
-	damagefactor "normal", 0.125
+	damagefactor "Normal", 0.125
+	damagefactor "Cricket", 0.5
+	damagefactor "Bonk", 0.5
+	damagefactor "Suck", 2.0
 	radiusdamagefactor 0.125
 	inventory.icon ""
 	Powerup.Duration 2147483646
@@ -2965,7 +2968,11 @@ actor BloodZombieNew : EECreature 31002
 
 actor ThamuzApocalypseDefendMode : PowerProtection
 {
-	damagefactor "normal", 0.20 
+	damagefactor "Normal", 0.20 
+	damagefactor "Cricket", 0.75
+	damagefactor "Bonk", 0.75
+	damagefactor "Dust", 1.0
+	damagefactor "Zap", 0.5
 	inventory.icon ""
 	Powerup.Duration 2147483646
 }
