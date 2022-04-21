@@ -3214,7 +3214,7 @@ actor bloodcorpse3 6674
 	states
 	{
 		Spawn:
-			DCCW q -1
+			DCCW Q -1
 			stop
 	}
 }
@@ -3397,13 +3397,14 @@ actor omg1 6665
 	Game Doom
 	Skip_Super
 	+NOBLOOD
+	+FLATSPRITE
 	HEALTH 30
 	DropItem None 
 	Scale 0.1
 	states
 	{
 		Spawn:
-			DCCW g -1
+			DCCW G -1
 			stop
 	}
 }
@@ -3491,16 +3492,12 @@ actor DeadBodySpawner1 : RandomSpawner2  22081
 	dropitem "pspileofheads"
 	dropitem "omg1"
 	dropitem "bosso"
-	dropitem "omg2"
 	dropitem "burntcorpse"
 	dropitem "omg3"
 	dropitem "pspileofheads2"
 	dropitem "bloodskull3"
 	dropitem "WHpileofbones"
-	dropitem "bloodskull1"
 	dropitem "bloodcorpse6"
-	dropitem "bloodcorpse0"
-	dropitem "bloodcorpse5"
 	dropitem "bloodcorpse4"
 	dropitem "bloodcorpse3"
 	dropitem "psdecapitatedscene"
@@ -3522,16 +3519,12 @@ actor DeadBodySpawner2 : RandomSpawner2 22481
 	dropitem "bloodcorpse3"
 	dropitem "pspileofheads"
 	dropitem "omg1"
-	dropitem "omg2"
 	dropitem "omg3"
 	dropitem "pspileofheads2"
 	dropitem "bloodskull3"
 	dropitem "burntcorpse"
 	dropitem "WHpileofbones"
-	dropitem "bloodskull1"
 	dropitem "bloodcorpse6"
-	dropitem "bloodcorpse0"
-	dropitem "bloodcorpse5"
 	dropitem "bloodcorpse4"
 	dropitem "bloodcorpse3"
 	dropitem "psdecapitatedscene"
