@@ -540,8 +540,8 @@ ACTOR TommyGunCultistNew : EECreature 29011
 	deathsound "fanatic/death"
 	activesound "dovile"
 	seesound "zombieman/sight"
-	DropItem "Clip" 255
-	DropItem "Clip" 255
+	DropItem "Clip" 192
+	DropItem "Clip" 12
 
 	states
 	{
@@ -640,6 +640,8 @@ ACTOR ShotgunCultistNew : TommyGunCultistNew 29010
 	Painchance "Bonk", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Breakfast", 213 // Kick attacks have a +150% chance of stunning an enemy
 	Translation "80:111=48:79" // "80:111=48:79"
+	DropItem "Shell" 192
+	DropItem "Shell" 12
 
 	states
 	{
@@ -1461,7 +1463,7 @@ Actor ClayDevilNew : EECreature replaces ClayDevil
 	painchance 48
 	Painchance "Fist", 72 // Fist attacks have a +50% chance of stunning an enemy
 	Painchance "Kick", 120 // Kick attacks have a +150% chance of stunning an enemy
-	painchance "Suck", 72
+	painchance "Suck", 12
 	PainChance "Fire", 255
 	PainChance "Breakfast", 255
 	PainChance "CherryBomb", 255
@@ -1481,7 +1483,7 @@ Actor ClayDevilNew : EECreature replaces ClayDevil
 	DamageFactor "BRocket", 16.0
 	DamageFactor "Popper", 16.0
 	DamageFactor "Ice", 4.0
-	DamageFactor "Suck", 0.5
+	DamageFactor "Suck", 0.25
 	MONSTER
 	+BOSSDEATH
 	+DONTHURTSPECIES
