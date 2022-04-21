@@ -6,7 +6,7 @@ gameinfo
 	borderflat = "FIGHT1"
 	drawreadthis = true
 	titletime = 6
-	cursorpic = "SCPTCURS"
+	cursorpic = "CBATCURS"
 }
 
 DoomEdNums

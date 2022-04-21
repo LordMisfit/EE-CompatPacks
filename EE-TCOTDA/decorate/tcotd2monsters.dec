@@ -212,7 +212,7 @@ ACTOR SpiderBiteProj : EEProjectile
 {
 	Tag "Bite"
 	Damage (random(3,7))
-	PoisonDamage 2
+	PoisonDamage 8
 	Radius 1
 	Height 1
 	Speed 22
@@ -329,7 +329,7 @@ ACTOR SpiderBiteProj2 : SpiderBiteProj
 	+ADDITIVEPOISONDAMAGE
 	Tag "Bite"
 	Damage (random(10,24))
-	PoisonDamage 8
+	PoisonDamage 32
 	Speed 33
 	Obituary "%o was horribly poisoned by the bite of a giant spider"
 	States
@@ -1313,7 +1313,7 @@ ACTOR VulgarShotNew : EEProjectile
 	Tag "Vulgar Poison Blast"
 	DamageType "Poison"
 	Damage (4 * random(1,8))
-	PoisonDamage 10
+	PoisonDamage 40
 	+ADDITIVEPOISONDURATION
 	+ADDITIVEPOISONDAMAGE
 	Radius 8
@@ -2285,7 +2285,7 @@ actor ButcherBarfNew : EEProjectile replaces ButcherBarf
 {
 	Tag "Butcher's Barf"
 	Damage (3 * random(4,9))
-	PoisonDamage 6
+	PoisonDamage 24
 	+ADDITIVEPOISONDURATION
 	+ADDITIVEPOISONDAMAGE
 	Mass 1
