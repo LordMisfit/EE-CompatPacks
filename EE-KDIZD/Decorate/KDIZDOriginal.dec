@@ -26,6 +26,7 @@ pickup Bomb
 //actor VoidDarkImpSpawner : RandomSpawner2 3101 { DropItem VoidDarkImp 255 }
 //actor STDarkImpSpawner : RandomSpawner2 3102 { DropItem STDarkImp 255 }
 //ACTOR BloodDemonSpawner : RandomSpawner2 3110 { DropItem BloodDemonClone 255 }
+ACTOR BloodDemonClone : RandomSpawner2 { DropItem BloodDemon 255 }
 //ACTOR RocketGuySpawner : RandomSpawner2 3202 { Dropitem RocketGuy 255 }
 ACTOR BruiserDemonSpawner : RandomSpawner2 { DropItem BruiserDemon 255 }
 ACTOR ChainsawZombie : RandomSpawner2 { DropItem ChainsawZombieNew 255 }
