@@ -852,31 +852,6 @@ pickup TwiceRisenLaserRifle
 	PickupMessage "Picked up the M-4000 laser cannon!"
 	PickupSound "misc/w_pkup"
 }
-
-/////////////////////////////
-//
-/// Aetherius Extras for Z1M10
-//
-/////////////////////////////
-
-actor CypressPot : FakeInventory // 6007
-{
-	//$Category EE KDIZD Unique
-	scale 0.334
-	radius 20
-	height 16
-	+FLOATBOB
-	+DONTGIB
-	Inventory.PickupMessage "You found a \cdpot lid\c- and a \cdcypress stick\c-."
-	Inventory.PickupSound "misc/i_pkup"
-	States 
-	{
-		Spawn:
-			CSPL B 4
-			CSPL B 4 bright
-			loop
-	}
-}
    
 /////////////////////////////
 //
