@@ -1171,7 +1171,6 @@ ACTOR BlankPuff
 	}
 }
 
-
 ACTOR Rifle : Weapon 31407 // replaces BFG9000
 {
 	Weapon.AmmoType "RifleAmmo"
@@ -1269,6 +1268,19 @@ ACTOR RifleBox : RifleAmmo 31409 // replaces CellPack
 			Loop
 	}
 }
+
+/*
+ACTOR RifleAmmoSpawner : RandomSpawner2 31408
+{
+	DropItem "ArmorScrapKit", 256, 31
+	DropItem "GoldApple", 256, 1
+}
+ACTOR RifleBoxSpawner : RandomSpawner2 31409
+{
+	DropItem "ArmorScrapKit", 256, 31
+	DropItem "PlatinumApple", 256, 1
+}
+*/
 
 ACTOR RifCaseSpawn : PisCaseSpawn
 {

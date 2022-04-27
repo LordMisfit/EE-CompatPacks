@@ -1097,8 +1097,6 @@ ACTOR NightmareNew : EECreature replaces KDiZDNightmare 26000
 
 	health 175 // 100
 	PainChance 144
-	Painchance "Fist", 216 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Suck", 255
 	DamageFactor "Eldritch", 0.4
 	DamageFactor "Suck", 2.5
@@ -1920,8 +1918,6 @@ ACTOR SoulHarvesterNew : EECreature 3117
 	Height 56
 	Speed 8
 	PainChance 120
-	Painchance "Fist", 180 // Fist attacks have a +50% chance of stunning an enemy
-	Painchance "Kick", 255 // Kick attacks have a +150% chance of stunning an enemy
 	Painchance "Ice", 180 // Kick attacks have a +150% chance of stunning an enemy
 	DamageFactor "Ice", 1.5
 	MONSTER 
@@ -2036,7 +2032,7 @@ ACTOR ESoulNew : EECreature 29012 // : ESoul replaces ESoul 29012
 	//$Category "TCOTD:A Monsters/Doom Style"
 	Tag "Ethereal Soul"
 
-	obituary "%o's soul was leeched by the etheral soul"
+	obituary "%o's soul was leeched by the ethereal soul"
 	health 230 // 150
 	radius 16
 	height 32
