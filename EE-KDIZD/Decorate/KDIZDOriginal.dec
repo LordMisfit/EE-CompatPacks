@@ -350,7 +350,8 @@ ACTOR SoulBallTrail
 actor Portal1 : EEProjectile
 {
 	Tag "Red Star"
-	var int user_loops; var int user_maxloops;
+	var int user_loops;
+	var int user_maxloops;
 	obituary "%o was eradicated by the Deimos Guardian."
 	health 400
 	radius 31
@@ -383,7 +384,7 @@ actor Portal1 : EEProjectile
 			PORT ABCDEF 4 Bright
 			{
 				user_loops = 0;
-				user_maxloops = 16;
+				user_maxloops = 8;
 			}
 		MissileLoop: // 8 times
 			PORT GHIJ 4 Bright 
@@ -420,9 +421,8 @@ actor Redstar : EEProjectile
 	Tag "Red Star"
 	Radius 10
 	Height 20
-	Speed 13
-	Damage (12 * random(1,8))
-	DamageType "Thunder"
+	Speed 16 // 13
+	Damage (8 * random(1,8)) // 12
 	DamageType "Dark"
 	+SEEKERMISSILE
 	PROJECTILE
@@ -458,7 +458,7 @@ ACTOR Portal2 : EEProjectile
 	Renderstyle ADD
 	alpha 0.8
 	Projectile
-	MissileType LostSoul
+	MissileType "LostSoul"
 	Missileheight 0
 	States
 	{
