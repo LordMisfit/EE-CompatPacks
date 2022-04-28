@@ -1957,6 +1957,18 @@ ACTOR Magmantis : EECreature 26660
 	Scale 1.25
 	ReactionTime 17
 	DamageFactor "Fire", 0.25
+	DamageFactor "CherryBomb", 0.25
+	DamageFactor "BRocket", 0.25
+	DamageFactor "Spinner", 0.25
+	DamageFactor "Popper", 0.5
+	DamageFactor "Dust", 0.5
+	DamageFactor "Cricket", 0.5
+	DamageFactor "Bonk", 0.5
+	DamageFactor "Lead", 1.75
+	DamageFactor "Suck", 0.0
+	DamageFactor "Zap", 1.0
+	DamageFactor "Breakfast", 0.5
+	DamageFactor "Beats", 2.5
 	DamageFactor "Ice", 1.33
 	SeeSound "magmantis/sight"
 	PainSound "magmantis/pain"
@@ -1981,7 +1993,6 @@ ACTOR Magmantis : EECreature 26660
 			DGRD H 3 A_Look
 			Wait
 		See:
-			DGRD I 0 Thing_ChangeTID(0,1222)
 			DGRD I 0
 			DGRD IJKL 8 A_EEChase("Melee","Missile",0,1,3,1,1)
 			Loop
