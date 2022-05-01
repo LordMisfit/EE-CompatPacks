@@ -534,7 +534,7 @@ ACTOR FluffyNew : EECreature replaces Fluffy2 32120
 			FLUF C 3 A_EEPain
 			Goto See 
 		Death:
-			TNT1 A 0 { user_ressurrectstr += random(2,3); }
+			TNT1 A 0 { user_ressurrectstr += random(4,5); }
 			FLUF JKLMN 10 
 			FLUF N 100
 		RegenCycle:
