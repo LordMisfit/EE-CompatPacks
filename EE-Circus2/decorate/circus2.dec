@@ -281,7 +281,7 @@ ACTOR GoreWormNew : EECreature replaces GoreWorm 30031
 	DeathSound ""
 	ActiveSound "HAND1"
 	MeleeSound "SKULBITE"
-	Obituary "Um... how the hell did %o die?!" 
+	Obituary "Um... how the hell did %o die?! o_O;" 
 
 	PainChance 200
 	Painchance "Fist", 255 // Fist attacks have a +50% chance of stunning an enemy
@@ -1852,7 +1852,12 @@ ACTOR BlackBearNew : EECreature replaces BlackBear 3191
 	DamageFactor "Beats", 5.0
 	PainChance "Beats", 256
 	MONSTER 
-	+FLOORCLIP +NOCLIP +RANDOMIZE +COUNTKILL +CANPASS +DONTOVERLAP 
+	+FLOORCLIP
+	+NOCLIP
+	+RANDOMIZE
+	+COUNTKILL
+	+CANPASS
+	+DONTOVERLAP 
 	Scale 0.75
 	MELEEDAMAGE 1
 	SeeSound ""
@@ -1886,26 +1891,31 @@ ACTOR BlackBearNew : EECreature replaces BlackBear 3191
 			BBER A 1 
 			{
 				A_FaceTarget;
-				
-				A_CustomMeleeAttack(1*random(1,10), "");
+				A_CustomMeleeAttack(3*random(1,4), "");
 			}
 			BBER A 1 A_Scream
 			BBER A 1 A_Fall
-			BBER A 1 A_Explode(11,40)
+			BBER A 1 A_Explode(11,40,0,true,20)
 			BBER A 0 A_PlaySound("splat11")
 			BBER A 1 A_CustomMissile("BSplatter", 0, 0, 0, 1)
+			BBER A 0 A_CustomMissile("BlackSplatter1", 6, 0, random(-180, 180), 2, random(0, 180))
+			BBER AAA 0 A_CustomMissile("BlackSplatter2", 6, 0, random(-180, 180), 2, random(0, 180))		
+			BBER A 1
 			Stop
 		Pain:
 			BBER B 4 A_EEPain
 			Goto See
 		Death:
+			BBER A 1 
+			{
+				A_FaceTarget;
+				A_CustomMeleeAttack(3*random(1,4), "");
+			}
 			BBER A 1 A_Scream
 			BBER A 1 A_Fall
-			BBER A 0 A_Jump(200,2) 
-			BBER A 1 A_Explode(11,40)
-			BBER A 0 
+			BBER A 1 A_Explode(11,40,0,true,20)
 			BBER A 0 A_PlaySound("splat11")
-			BBER A 0 A_CustomMissile("BSplatter", 0, 0, 0, 1)
+			BBER A 1 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			BBER A 0 A_CustomMissile("BlackSplatter1", 6, 0, random(-180, 180), 2, random(0, 180))
 			BBER AAA 0 A_CustomMissile("BlackSplatter2", 6, 0, random(-180, 180), 2, random(0, 180))		
 			BBER A 1

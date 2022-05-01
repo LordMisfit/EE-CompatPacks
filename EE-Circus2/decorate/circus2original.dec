@@ -1,3 +1,7 @@
+actor Circus2Decor
+{
+}
+
 ACTOR Clownkey1 : Key 14419
 {
 	+ALWAYSPICKUP
@@ -2428,7 +2432,7 @@ actor LampShade 3683
 			stop
 	}
 }
-actor Transformer 4114
+actor Transformer : Circus2Decor 4114
 {
 	Radius 10
 	Height 48 
@@ -2488,7 +2492,7 @@ actor LightBulb : Transformer 4176
 			LBUB D -1
 	}
 }
-actor LightBulb2 3904
+actor LightBulb2 : Circus2Decor 3904
 {
 	Radius 5
 	Height 16
@@ -2621,7 +2625,7 @@ actor Swarm 3297
 	}
 }
 /*==================================================================*/
-actor RetardDrink1 4000
+actor CannedDrink1 : Circus2Decor 4000
 {
 	Radius 6
 	Height 9
@@ -2654,7 +2658,7 @@ actor RetardDrink1 4000
 	}
 }
 /*==================================================================*/
-actor RetardDrink2 : RetardDrink1 4101
+actor CannedDrink2 : CannedDrink1 4101
 {
 	States
 	{
@@ -2675,7 +2679,7 @@ actor RetardDrink2 : RetardDrink1 4101
 	}
 }
 /*==================================================================*/
-actor RetardDrink3 : RetardDrink1  4102
+actor CannedDrink3 : CannedDrink1 4102
 {
 	States
 	{
@@ -2696,7 +2700,7 @@ actor RetardDrink3 : RetardDrink1  4102
 	}
 }
 /*==================================================================*/
-actor RetardDrink4 :  RetardDrink1 4103
+actor CannedDrink4 : CannedDrink1 4103
 {
 	States
 	{
@@ -2717,7 +2721,7 @@ actor RetardDrink4 :  RetardDrink1 4103
 	}
 }
 /*==================================================================*/
-actor TippedBottle1 4104
+actor TippedBottle1 : Circus2Decor 4104
 {
 	Radius 6
 	Height 9
@@ -2750,7 +2754,7 @@ actor TippedBottle1 4104
 	}
 }
 /*==================================================================*/
-actor StandingBottle1 4105
+actor StandingBottle1 : Circus2Decor 4105
 {
 	Radius 6
 	Height 9
@@ -2784,7 +2788,7 @@ actor StandingBottle1 4105
 			Stop
 	}
 }
-actor StandingBottle2 4108
+actor StandingBottle2 : Circus2Decor 4108
 {
 	Radius 6
 	Height 9
@@ -2818,7 +2822,7 @@ actor StandingBottle2 4108
 			Stop
 	}
 }
-actor StandingBottle3 4109
+actor StandingBottle3 : Circus2Decor 4109
 {
 	Radius 6
 	Height 9
@@ -2894,7 +2898,7 @@ actor ClownFigure3 3200
 }
 
 
-actor PennywiseToy1 4106
+actor PennywiseToy1 : Circus2Decor 4106
 {
 	HEALTH 1
 	Mass 500000
@@ -3716,7 +3720,7 @@ ACTOR FatFly 3679
 			Stop
 	}
 }
-actor TapeRecorder 29201
+actor TapeRecorder : Circus2Decor 29201
 {
 	Radius 6
 	Height 9
@@ -5390,7 +5394,7 @@ actor FloatingCandle 4811
 	}
 }
 //4829 - 4831 popcorn bags
-actor PopcornBag1 4830
+actor PopcornBag1 : Circus2Decor 4830
 {
 	Radius 9
 	Height 16
@@ -5449,8 +5453,8 @@ actor PopcornBag1 4830
 			Stop
 	}
 }
-	actor PopcornBag2 4831
-	{
+actor PopcornBag2 : Circus2Decor 4831
+{
 	Radius 9
 	Height 16
 	HEALTH 2
