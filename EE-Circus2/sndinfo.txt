@@ -1,6 +1,8 @@
 Popcorn/Pop1 popcpop1
 Popcorn/Pop2 popcpop2
 
+pwise/death pewidth1
+
 boing1 boing1
 boing2 boing2
 boing3 boing3

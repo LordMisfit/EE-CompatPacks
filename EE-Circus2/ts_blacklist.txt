@@ -24,6 +24,7 @@ GreenBalloon
 Balloon_Green
 BlueBalloon
 Balloon_Blue
+Balloon_Rotten
 GoreWorm
 GoreWormNew
 Fluffy2
@@ -34,3 +35,4 @@ Gibb2
 Gibb3
 Gibb4
 Gibb5
+FatFly
