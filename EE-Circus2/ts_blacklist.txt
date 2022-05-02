@@ -24,6 +24,7 @@ GreenBalloon
 Balloon_Green
 BlueBalloon
 Balloon_Blue
+Balloon_Black
 Balloon_Rotten
 GoreWorm
 GoreWormNew
