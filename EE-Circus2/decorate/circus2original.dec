@@ -4034,8 +4034,25 @@ ACTOR ClownGrenade : Weapon //30029
 			loop
 		Fire: 
 			GHND I 4
-			GHND G 4 A_FireCustomMissile("CGrenade", 0, 1, 0, 1)
-			GHND H 10 
+			{
+				if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) { A_SetTics(2); }
+			}
+			GHND G 4
+			{
+				if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) 
+				{
+					A_SetTics(2); 
+					A_FireCustomMissile("CGrenadeBerserk", 0, 1, 0, 1);
+				}
+				else
+				{
+					A_FireCustomMissile("CGrenade", 0, 1, 0, 1);
+				}
+			}
+			GHND H 10
+			{
+				if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) { A_SetTics(5); }
+			}
 			Goto Ready 
 	}
 }
@@ -4099,11 +4116,33 @@ ACTOR GoreBalloon : Weapon //30030
 			BLNN E 2 A_Raise(6) 
 			loop
 		Fire: 
-			BLNN A 1 
+			BLNN A 1
+			{
+				if (random(1,2) <= 1)
+				{
+					if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) { A_SetTics(0); }
+				}
+			}
 			BLNN FG 2
-			BLNN I 6 A_FireCustomMissile("GoreBalloon666", 0, 1, 4, 1)
+			{
+				if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) { A_SetTics(1); }
+			}
+			BLNN I 6
+			{
+				if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) 
+				{
+					A_SetTics(3); 
+					A_FireCustomMissile("GoreBalloon666Berserk", 0, 1, 4, 1);
+				}
+				else
+				{
+					A_FireCustomMissile("GoreBalloon666", 0, 1, 4, 1);
+				}
+			}
 			BLNN IH 6
-			BLNN A 0 
+			{
+				if (CountInv("PowerStrength") || CountInv("PowerStrengthDD")) { A_SetTics(3); }
+			}
 			Goto Select
 	}
 }
