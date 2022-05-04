@@ -40,8 +40,9 @@ ACTOR Clownkey3 : Key 14422
 	States
 	{
 		Spawn:
-			PKEY C -1
-			Stop
+			PKEY C 10
+			PKEY C 10 bright
+			Loop
 	}
 } 
 ACTOR Clownkey4 : Key 14479
@@ -54,8 +55,9 @@ ACTOR Clownkey4 : Key 14479
 	States
 	{
 		Spawn:
-			PKEY D -1
-			Stop
+			PKEY D 10
+			PKEY D 10 bright
+			Loop
 	}
 }
 Clownkey11
@@ -570,7 +572,7 @@ ACTOR JSkull_Image1
 			Stop
 			Loop
 		See:
-			JSKL ABCBABCBABCB  2 A_Chase
+			JSKL ABCBABCBABCB 2 A_Chase
 			JSKL A 0 A_CustomMissile("JSkull_Image2", 0, 0, 0) 
 			Stop
 		Melee:
@@ -595,7 +597,7 @@ ACTOR JSkull_Image2
 			Stop
 			Loop
 		See:
-			JSKL ABCBABCBABCB  2 A_Chase
+			JSKL ABCBABCBABCB 2 A_Chase
 			JSKL A 0 A_CustomMissile("JSkull_Image3", 0, 0, 0) 
 			Stop
 		Melee:
@@ -620,7 +622,7 @@ ACTOR JSkull_Image3
 			Stop
 			Loop
 		See:
-			JSKL ABCBABCBABCB  2 A_Chase
+			JSKL ABCBABCBABCB 2 A_Chase
 			Stop
 		Melee:
 			JSKL A 3 A_FaceTarget 

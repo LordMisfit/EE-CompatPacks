@@ -137,6 +137,9 @@ class TinyBingoBall : EEEffectProjectile
 		ALPHA 0.8;
 		//+SEEKERMISSILE;
 		PROJECTILE;
+		+ADDITIVEPOISONDURATION
+		+ADDITIVEPOISONDAMAGE
+		PoisonDamage 4;
 		SeeSound "TINY";
 		DeathSound "imp/shotx";
 	}
@@ -159,6 +162,7 @@ class TinyBingoBall : EEEffectProjectile
 				A_StatusEffectChecker(8);
 				if (random(1,user_ailmentmaxchance) <= 2 && user_canafflict)
 				{
+					if (master && master.player) master.player.poisoncount += random(4,8);
 					//ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(35,105)); // Poison for 1-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
 				}
 			}
