@@ -5145,27 +5145,6 @@ actor ClownSpawner2 4786
 			Loop
 	}
 }
-actor Deadlight2
-{
-	scale 2
-	Speed 1
-	RENDERSTYLE Translucent
-	ALPHA 0.05
-	PROJECTILE
-	States
-	{
-		Spawn:
-			PWHT ABCDCB 1
-			PWHT ABCDCB 2
-			PWHT ABCDCB 3
-			PWHT ABCDCB 3
-			PWHT ABCD 4	
-			Stop
-		Death:
-			PWHT ABCD 4 Bright 
-			Stop
-	}
-}
 
 actor BalloonSoul
 {
