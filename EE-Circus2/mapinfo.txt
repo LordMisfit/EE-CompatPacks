@@ -1,5 +1,6 @@
 DoomEdNums
 {
+	3672 = PennywiseBoss
 	32111 = RandomArmorSpawner
 }
 
