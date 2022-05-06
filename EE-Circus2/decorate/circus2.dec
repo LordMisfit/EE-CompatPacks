@@ -15,8 +15,16 @@ actor RedBalloon replaces Balloon_Red 3112
 	Height 40
 	HEALTH 1
 	Mass 25
-	+SHOOTABLE +NOGRAVITY +HEXENBOUNCE +PUSHABLE +FLOATBOB +SPAWNFLOAT
-	+NOLIFTDROP +DONTOVERLAP +CANNOTPUSH +NOBLOCKMONST    
+	+SHOOTABLE
+	+NOGRAVITY
+	+HEXENBOUNCE
+	+PUSHABLE
+	+FLOATBOB
+	+SPAWNFLOAT
+	+NOLIFTDROP
+	+DONTOVERLAP
+	+CANNOTPUSH
+	+NOBLOCKMONST
 	PainSound "pop1"
 	DeathSound "pop1"
 	States
@@ -3839,7 +3847,7 @@ ACTOR PopcornGunNew : Circus2Weapon replaces PopcornGun 30204
 {
 	Tag "Popcorn Gun"
 	Weapon.SelectionOrder 100
-	Inventory.PickupSound "misc/w_pkup" 
+	Inventory.PickupSound "misc/w_pkup"
 	Weapon.AmmoType "PopcornPiece" 
 	Weapon.AmmoGive 20 
 	Weapon.AmmoUse 1

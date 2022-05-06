@@ -40,21 +40,35 @@ class PennywiseBoss : EEUniqueBoss // 3672
 		PainChance "Zap", 252;
 		PainChance "Melee", 252;
 		PainChance "Deadlight", 256;
+		PainChance "Cricket", 256;
+		PainChance "Bonk", 256;
+		PainChance "Lead", 256;
+		PainChance "Zap", 256;
+		PainChance "Breakfast", 256;
+		PainChance "Beats", 256;
+		PainChance "Suck", 16;
 		DamageFactor 0.667;
 		RadiusDamageFactor 0.667;
 		DamageFactor "Explosive", 0.667;
 	
+		DamageFactor "Cricket", 2.5;
+		DamageFactor "Bonk", 2.5;
+		DamageFactor "Lead", 2.5;
 		DamageFactor "Zap", 2.5;
+		DamageFactor "Breakfast", 2.5;
+		DamageFactor "Beats", 2.5;
 		DamageFactor "Melee", 1.5;
 		DamageFactor "Stomp", 1.5;
 		DamageFactor "Trample", 1.5;
 		DamageFactor "Deadlight", 7.5;
+		DamageFactor "DashBG", 15.0;
 		+BOSS;
 		+FLOORCLIP;
 		+FULLVOLACTIVE;
 		+NOTARGET;
 		+LOOKALLAROUND;
 		+NODAMAGETHRUST;
+		+DONTHARMSPECIES;
 		-NORADIUSDMG;
 		SeeSound "";
 		PainSound "PENHURT";
@@ -65,37 +79,61 @@ class PennywiseBoss : EEUniqueBoss // 3672
 		HitObituary "%o was killed by Pennywise the Dancing Clown.";
 		MissileHeight 96;
 		MissileType "PennySeeker";
+		Species "Pennywise";
 	}
 	int regentimer;
 	int degentimer;
 	
-	override void Tick()
+	actor PWClone;
+	bool success;
+
+	action void A_SpawnPWClone(actor Clone)
 	{
-		if (!CountInv("PennywiseNotShield"))
+		if (clone)
 		{
-			if (health < (SpawnHealth() + Stamina))
+			EECreature Clone2;
+			Clone2 = EECreature(clone);
+			if (Clone2)
 			{
-				if (CountInv("PWDefenseBuff")) regentimer += 9;
-				regentimer += 3;
-				if (regentimer >= 32)
-				{
-					health++;
-					if (health > (SpawnHealth() + Stamina)) health = (SpawnHealth() + Stamina);
-					regentimer -= 32;
-				}
+				if (CountInv("PWATKBalloonBuff") > 0) Clone2.A_SetInventory("PWATKBalloonBuff",1);
+				if (CountInv("PWDefenseBuff") > 0) Clone2.A_SetInventory("PWDefenseBuff",1);
+				Clone2.Health *= frandom(0.25,0.5);
+				Clone2.Speed *= 1.5;
+				Clone2.Mass *= 1.25;
 			}
 		}
-		else
+	}
+	
+	override void Tick()
+	{
+		if (!isfrozen())
 		{
-			if (health > ((SpawnHealth() + Stamina) * 0.01))
+			if (!CountInv("PennywiseNotShield"))
 			{
-				degentimer += 12;
-				if (CountInv("PWDefenseBuff")) degentimer -= 9;
-				if (degentimer >= 32)
+				if (health < (SpawnHealth() + Stamina))
 				{
-					health--;
-					if (health < ((SpawnHealth() + Stamina) * 0.01)) health = ((SpawnHealth() + Stamina) * 0.01);
-					degentimer -= 32;
+					if (CountInv("PWDefenseBuff")) regentimer += 9;
+					regentimer += 3;
+					if (regentimer >= 32)
+					{
+						health++;
+						if (health > (SpawnHealth() + Stamina)) health = (SpawnHealth() + Stamina);
+						regentimer -= 32;
+					}
+				}
+			}
+			else
+			{
+				if (health > ((SpawnHealth() + Stamina) * 0.01))
+				{
+					degentimer += 12;
+					if (CountInv("PWDefenseBuff")) degentimer -= 9;
+					if (degentimer >= 32)
+					{
+						health--;
+						if (health < ((SpawnHealth() + Stamina) * 0.01)) health = ((SpawnHealth() + Stamina) * 0.01);
+						degentimer -= 32;
+					}
 				}
 			}
 		}
@@ -149,19 +187,19 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			{
 				A_SetInventory("PennywiseShield",0);
 				A_FaceTarget();
-				A_SpawnProjectile("SoulAttack", 80, random(-4, 4), random(-45, 45), 2, random(-20, 20));
-				if (random(1,10) <= 7) { A_SpawnProjectile("SoulAttack", 56, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
-				if (random(1,10) <= 3) { A_SpawnProjectile("SoulAttack", 24, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
-				if (random(1,20) <= 1) { A_SpawnProjectile("SoulAttack", 8, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				A_SpawnProjectile("PWSoulAttack", 80, random(-4, 4), random(-45, 45), 2, random(-20, 20));
+				if (random(1,10) <= 7) { A_SpawnProjectile("PWSoulAttack", 56, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,10) <= 3) { A_SpawnProjectile("PWSoulAttack", 24, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,20) <= 1) { A_SpawnProjectile("PWSoulAttack", 8, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
 			}
 			PENY E 1 
 			{
 				A_SetInventory("PennywiseShield",0);
 				A_FaceTarget();
-				A_SpawnProjectile("SoulAttack", 32, random(-4, 4), random(-45, 45), 2, random(-20, 20));
-				if (random(1,10) <= 7) { A_SpawnProjectile("SoulAttack", 22, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
-				if (random(1,10) <= 3) { A_SpawnProjectile("SoulAttack", 10, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
-				if (random(1,20) <= 1) { A_SpawnProjectile("SoulAttack", 3, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				A_SpawnProjectile("PWSoulAttack", 32, random(-4, 4), random(-45, 45), 2, random(-20, 20));
+				if (random(1,10) <= 7) { A_SpawnProjectile("PWSoulAttack", 22, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,10) <= 3) { A_SpawnProjectile("PWSoulAttack", 10, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,20) <= 1) { A_SpawnProjectile("PWSoulAttack", 3, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
 			}
 			Goto See2;
 		Missile:
@@ -231,6 +269,23 @@ class PennywiseBoss : EEUniqueBoss // 3672
 				return resolvestate(null);
 			}
 			Goto PainRetaliate;
+		Pain.Beats:
+		Pain.Cricket:
+		Pain.Lead:
+		Pain.Zap:
+		Pain.Suck:
+			PENY F 0
+			{
+				A_SetInventory("PennywiseShield",1);
+				A_SetInventory("PennywiseNotShield",0);
+			}
+			PENY F 8 A_EEPain(1,random(4,6),32);
+			PENY F 0 
+			{
+				if (random(1,16) <= 13) { return resolvestate("See2"); }
+				return resolvestate(null);
+			}
+			Goto PainRetaliate;
 		Pain.Deadlight:
 			PENY F 0 
 			{
@@ -271,18 +326,19 @@ class PennywiseBoss : EEUniqueBoss // 3672
 				A_SetInventory("PennywiseNotShield",0);
 				bNOPAIN = false;
 			}
+			PENY F 0 A_Jump(random(32,64),"PainStunWarp");
 			goto See2;
 		PainRetaliate:
 			PENY FFFF 5 
 			{
 				A_SetTics(randompick(4,5,5,5,5,6));
-				A_SpawnProjectile("SkullSeeker666", 96,0,random(-180, 180),1,random(-20, 20));
+				A_SpawnProjectile("PWSkullSeeker", 96,0,random(-180, 180),1,random(-20, 20));
 			}
 			PENY F 0 A_Jump(64,4);
 			PENY FFFF 5 
 			{
 				A_SetTics(randompick(4,5,5,5,5,6));
-				A_SpawnProjectile("SkullSeeker666", 96,0,random(-180, 180),1,random(-20, 20));
+				A_SpawnProjectile("PWSkullSeeker", 96,0,random(-180, 180),1,random(-20, 20));
 			}
 			PENY FFFF 0 
 			{
@@ -291,14 +347,109 @@ class PennywiseBoss : EEUniqueBoss // 3672
 				bNOPAIN = false;
 			}
 			Goto See2;
+		PainStunWarp:
+			PENY F 0
+			{
+				A_SetRenderStyle(12,1.00);
+				A_UnSetshootable();
+				A_UnsetSolid();
+			}
+			PENY F 1 A_StartSound("vokter/tele");
+			PENY F 1 A_SetTranslucent(0.67);
+			PENY F 1 A_SetTranslucent(0.33);
+			PENY F 1 A_SetTranslucent(0.0);
+			PENY F 0 
+			{
+				[success, PWClone] = A_SpawnItemEx("PennywiseFake",0,0,0,0,0,0,0,48);
+				A_SpawnPWClone(PWClone);
+			}
+			PENY FFFFFFFFFFFFFFFFFFFFFFFF 0 
+			{
+				A_SetTics(randompick(0,0,0,0,0,1,1));
+				A_Wander();
+			}
+			PENY FFFFFFFFFFF 0
+			{
+				A_SetTics(randompick(0,0,0,0,0,1,1));
+				if (random(1,2) <= 1) A_EEChase(null,null,0,1,3,1,1);
+												 else A_Wander();
+			}
+			PENY FFFFFFFFFFFF 1
+			{
+				A_SetTics(randompick(0,1,1));
+				if (random(1,2) <= 1) A_EEChase(null,null,0,1,3,1,1);
+												 else A_Wander();
+			}
+			PENY F 0 
+			{
+				[success, PWClone] = A_SpawnItemEx("PennywiseFake",0,0,0,0,0,0,0,48);
+				A_SpawnPWClone(PWClone);
+			}
+			PENY FFFFFFFFFFFFFFFFFFFFFFFF 0 
+			{
+				A_SetTics(randompick(0,0,0,0,0,1,1));
+				if (random(1,2) <= 1) A_EEChase(null,null,0,1,3,1,1);
+												 else A_Wander();
+			}
+			PENY FFFFFFFFFFF 0
+			{
+				A_SetTics(randompick(0,0,0,0,0,1,1));
+				if (random(1,2) <= 1) A_EEChase(null,null,0,1,3,1,1);
+												 else A_Wander();
+			}
+			PENY FFFFFFFFFFFF 1
+			{
+				A_SetTics(randompick(0,1,1));
+				if (random(1,2) <= 1) A_EEChase(null,null,0,1,3,1,1);
+												 else A_Wander();
+			}
+			PENY F 0 
+			{
+				[success, PWClone] = A_SpawnItemEx("PennywiseFake",0,0,0,0,0,0,0,48);
+				A_SpawnPWClone(PWClone);
+			}
+			PENY FFFFFFFFFFFFFFFFFFFFFFFF 0 
+			{
+				A_SetTics(randompick(0,0,0,0,0,1,1));
+				if (random(1,2) <= 1) A_EEChase(null,null,0,1,3,1,1);
+												 else A_Wander();
+			}
+			PENY FFFFFFFFFFF 0
+			{
+				A_SetTics(randompick(0,0,0,0,0,1,1));
+				A_EEChase(null,null,0,1,3,1,1);
+			}
+			PENY F 0 
+			{
+				[success, PWClone] = A_SpawnItemEx("PennywiseFake",0,0,0,0,0,0,0,48);
+				A_SpawnPWClone(PWClone);
+			}
+			PENY FFFFFFFFFFFF 1
+			{
+				A_SetTics(randompick(0,1,1));
+				A_EEChase(null,null,0,1,3,1,1);
+			}
+			PENY F 1 A_StartSound("vokter/tele2");
+			PENY F 1 A_SetTranslucent(0.33);
+			PENY F 1 A_SetTranslucent(0.67);
+			PENY F 1 A_SetTranslucent(1.0);
+			PENY F 0
+			{
+				A_SetSolid();
+				A_SetShootable();
+				A_SetRenderStyle(1,1.00);
+			}
+			Goto See2;
 		Death:
 			PENY G 8
 			{
 				A_QuakeEx(random(3,4),random(3,4),random(4,6),random(220,340),(randompick(1,1,1,1,1,2,2,2,2)*16),4096);
+				A_KillChildren();
 			}
 			PENY GGGG 8;
 			PENY H 8
 			{
+				A_RemoveChildren();
 				A_StopSound(CHAN_VOICE);
 				A_StopSound(CHAN_5);
 				A_StopSound(CHAN_6);
@@ -435,6 +586,203 @@ class PennywiseBoss : EEUniqueBoss // 3672
 	}
 }
 
+class PennywiseFake : EEUniqueBoss // 3672
+{
+	default
+	{
+		//$Angled
+		//$Color 12
+		//$Category "Happy Time Circus/Bosses"
+		Tag "Pennywise The Dancing Clown";
+	
+		Health 45;
+		Radius 40;
+		Height 112;
+		Speed 8;
+		MONSTER;
+		MinMissileChance 40;
+		scale 1.25;
+		Mass 1350;
+		PainChance 224;
+		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
+		PainChance "Zap", 252;
+		PainChance "Melee", 252;
+		PainChance "Deadlight", 256;
+		PainChance "Cricket", 256;
+		PainChance "Bonk", 256;
+		PainChance "Lead", 256;
+		PainChance "Zap", 256;
+		PainChance "Breakfast", 256;
+		PainChance "Beats", 256;
+		PainChance "Suck", 256;
+		PainChance "DashBG", 256;
+	
+		DamageFactor "Cricket", 5.5;
+		DamageFactor "Bonk", 5.5;
+		DamageFactor "Lead", 5.5;
+		DamageFactor "Zap", 5.5;
+		DamageFactor "Breakfast", 5.5;
+		DamageFactor "DashBG", 55.0;
+		DamageFactor "Beats", 11.0;
+		DamageFactor "Suck", 33.0;
+		DamageFactor "Melee", 3;
+		DamageFactor "Stomp", 3;
+		DamageFactor "Trample", 3;
+		DamageFactor "Deadlight", 30;
+		+BOSS;
+		+FLOORCLIP;
+		+NOTARGET;
+		+LOOKALLAROUND;
+		+NODAMAGETHRUST;
+		+DONTHARMSPECIES;
+		-NORADIUSDMG;
+		SeeSound "";
+		PainSound "PENHURT";
+		DeathSound "PENHURT";
+		ActiveSound "ITACTIVE";
+		MeleeSound "imp/melee";
+		Obituary "%o was killed by Pennywise the Dancing Clown?";
+		HitObituary "%o was killed by Pennywise the Dancing Clown?";
+		MissileHeight 96;
+		MissileType "PennySeeker";
+		Species "Pennywise";
+	}
+	int regentimer;
+	int degentimer;
+	
+	override void Tick()
+	{
+		if (!isfrozen())
+		{
+			if (health < (SpawnHealth() + Stamina))
+			{
+				if (CountInv("PWDefenseBuff")) regentimer += 3;
+				regentimer += 1;
+				if (regentimer >= 44)
+				{
+					health++;
+					if (health > (SpawnHealth() + Stamina)) health = (SpawnHealth() + Stamina);
+					regentimer -= 44;
+				}
+			}
+		}
+		
+		EEUniqueBoss.Tick();
+	}
+	
+	States
+	{
+		Spawn:
+			PENY A 0 NoDelay;
+			PENY AABB 5 A_Look();
+			goto Spawn+1;
+		See:
+			PENY AABB 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { bAVOIDMELEE = true; }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+				if (CountInv("PWDefenseBuff")) A_SetTics(2);
+			}
+			PENY CCDD 3
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { bAVOIDMELEE = true; }
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(2); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+				if (CountInv("PWDefenseBuff")) A_SetTics(2);
+			}
+			PENY A 0
+			{
+				if (CountInv("PWDefenseBuff"))
+				{
+					A_QuakeEx(random(0,1),random(0,1),random(0,2),random(5,8),0,512,"",QF_SCALEDOWN);
+				}
+			}
+			loop;
+		Melee:
+			PENY E 1  
+			{
+				A_FaceTarget();
+			}
+			PENY E 1
+			{
+				A_FaceTarget();
+				A_SpawnProjectile("PWSoulAttackFake", 80, random(-4, 4), random(-45, 45), 2, random(-20, 20));
+				if (random(1,10) <= 3) { A_SpawnProjectile("PWSoulAttackFake", 56, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,10) <= 1) { A_SpawnProjectile("PWSoulAttackFake", 24, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,40) <= 1) { A_SpawnProjectile("PWSoulAttackFake", 8, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+			}
+			PENY E 1 
+			{
+				A_FaceTarget();
+				A_SpawnProjectile("PWSoulAttackFake", 32, random(-4, 4), random(-45, 45), 2, random(-20, 20));
+				if (random(1,10) <= 3) { A_SpawnProjectile("PWSoulAttackFake", 56, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,10) <= 1) { A_SpawnProjectile("PWSoulAttackFake", 24, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+				if (random(1,40) <= 1) { A_SpawnProjectile("PWSoulAttackFake", 8, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
+			}
+			Goto See;
+		Missile:
+			PENY A 0 A_ClearShadow();
+			PENY E 9
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(8); }
+				A_FaceTarget();
+			}
+			PENY E 4 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+
+				A_SpawnProjectile("DeadlightFake", 96, 0, 0, 1);
+			}
+			PENY E 9
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(8); }
+				A_FaceTarget();
+			}
+			Goto See;  
+		Pain:
+			PENY F 8 A_EEPain(1,random(4,6),32);
+			PENY F 0 
+			{
+				if (random(1,4) == 1) { return resolvestate("See2"); }
+				return resolvestate(null);
+			}
+			PENY FFFF 5 
+			{
+				A_SetTics(randompick(4,5,5,5,5,6));
+				if (random(1,8) <= 5) A_SpawnProjectile("PWSkullSeekerFake", 96,0,random(-180, 180),1,random(-20, 20));
+			}
+			PENY F 0 A_Jump(64,4);
+			PENY FFFF 5 
+			{
+				A_SetTics(randompick(4,5,5,5,5,6));
+				if (random(1,8) <= 5) A_SpawnProjectile("PWSkullSeekerFake", 96,0,random(-180, 180),1,random(-20, 20));
+			}
+			Goto See;
+		Death:
+			PENY F 4
+			{
+				A_Scream();
+				A_SetRenderStyle((alpha-0.1112),STYLE_Translucent);
+			}
+			PENY F 4 
+			{
+				A_FadeOut(0.1112);
+			}
+			wait;
+		Ice:
+			goto Death;
+	}
+}
+
 class Deadlight : EEEffectProjectile
 {
 	default
@@ -452,7 +800,9 @@ class Deadlight : EEEffectProjectile
 		DeathSound "TRANEXP";
 		ExplosionRadius 96;
 		ExplosionDamage 12;
+		Species "Pennywise";
 	}
+	
 	States
 	{
 		Spawn:
@@ -609,6 +959,7 @@ class Deadlight2 : EEBaseZSC
 		RENDERSTYLE "Translucent";
 		ALPHA 0.05;
 		PROJECTILE;
+		Species "Pennywise";
 	}
 	
 	States
@@ -622,6 +973,270 @@ class Deadlight2 : EEBaseZSC
 			Stop;
 		Death:
 			PWHT ABCD 4 Bright A_Explode(3,24,0,0,12);
+			Stop;
+	}
+}
+
+//
+class PWSkullSeeker : EEProjectile
+{
+	default
+	{
+		Tag "Skull Seeker";
+		DamageFunction (3 * random(1,8));
+		Radius 8;
+		Height 6;
+		Speed 9;
+		Scale 1;
+		+SEEKERMISSILE;
+		PROJECTILE;
+		//RENDERSTYLE "Add";
+		//ALPHA 0.67;
+		SeeSound "";
+		DeathSound "BHIT3";
+		Species "Pennywise";
+	}
+	
+	States
+	{
+		Spawn:
+			GHST ABABABABABABABABABABAB 4 A_SeekerMissile(random(4,6),28);
+			GHST ABABABABABAB 4 A_SeekerMissile(random(4,6),28);
+			GHST ABABABABABABABABCDEFG 4 A_SeekerMissile(random(4,6),28);
+			Stop;
+		Death:
+			GHST CDEFG 4 Bright;
+			Stop;
+	}
+}
+
+//
+class PWSoulAttack : EEProjectile
+{  
+	default
+	{
+		Tag "Soul Strike";
+		DamageFunction (5 * random(1,8));
+		RenderStyle "Add";
+		Radius 6;
+		Height 10;
+		Speed 12;
+		+Missile;
+		+lowgravity;
+		+NoBlockmap;
+		+NoTeleport;
+		+NODAMAGETHRUST;
+		RENDERSTYLE "Translucent";
+		ALPHA 0.5;
+		SCALE 0.6;
+		Species "Pennywise";
+	}
+	States
+	{
+		Spawn:
+			SEEK AAAAAAAAAAAAAAAAAAAAAA 2 Bright
+			{
+				A_ScaleVelocity(1.01);
+			}
+			GLOB B 1 Bright 
+			{
+				A_ScaleVelocity(1.01);
+			}
+			GLOB A 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Scream();
+			}
+			GLOB H 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Fall();
+			}
+			Stop;
+		Death:
+			GLOB B 1 Bright 
+			{
+				A_ScaleVelocity(1.01);
+			}
+			GLOB A 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Scream();
+			}
+			GLOB H 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Fall();
+			}
+			Stop;
+	}
+} 
+
+class PWSoulAttackFake : PWSoulAttack
+{  
+	default
+	{
+		Tag "Soul Strike";
+		DamageFunction (random(1,5) * random(1,random(4,8)));
+		RenderStyle "Add";
+		Radius 6;
+		Height 10;
+		Speed 12;
+		+Missile;
+		+lowgravity;
+		+NoBlockmap;
+		+NoTeleport;
+		+NODAMAGETHRUST;
+		RENDERSTYLE "Translucent";
+		ALPHA 0.5;
+		SCALE 0.6;
+		Species "Pennywise";
+	}
+	States
+	{
+		Spawn:
+			SEEK AAAAAAAAAAAAAAAAAAAAAA 2 Bright
+			{
+				A_ScaleVelocity(1.01);
+			}
+			GLOB B 1 Bright 
+			{
+				A_ScaleVelocity(1.01);
+			}
+			GLOB A 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Scream();
+			}
+			GLOB H 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Fall();
+			}
+			Stop;
+		Death:
+			GLOB B 1 Bright 
+			{
+				A_ScaleVelocity(1.01);
+			}
+			GLOB A 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Scream();
+			}
+			GLOB H 3 Bright 
+			{
+				A_ScaleVelocity(1.01);
+				A_Fall();
+			}
+			Stop;
+	}
+} 
+
+class PWSkullSeekerFake : PWSkullSeeker
+{
+	default
+	{
+		Tag "Skull Seeker";
+		DamageFunction (random(1,3) * random(1,random(4,8)));
+		Radius 8;
+		Height 6;
+		Speed 9;
+		Scale 1;
+		+SEEKERMISSILE;
+		PROJECTILE;
+		//RENDERSTYLE "Add";
+		//ALPHA 0.67;
+		SeeSound "";
+		DeathSound "BHIT3";
+		Species "Pennywise";
+	}
+	
+	States
+	{
+		Spawn:
+			GHST ABABABABABABABABABABAB 4 A_SeekerMissile(random(3,5),16);
+			GHST ABABABABABAB 4 A_SeekerMissile(random(3,5),16);
+			GHST ABABABABABABABABCDEFG 4 A_SeekerMissile(random(3,5),16);
+			Stop;
+		Death:
+			GHST CDEFG 4 Bright;
+			Stop;
+	}
+}
+
+class DeadlightFake : Deadlight
+{
+	default
+	{
+		Tag "Deadlight Shot";
+		DamageFunction (0);
+		DamageType "DeadLight";
+		Radius 8;
+		Height 6;
+		Speed 14;
+		Scale 1;
+		+SEEKERMISSILE;
+		PROJECTILE;
+		SeeSound "";
+		DeathSound "TRANEXP";
+		ExplosionRadius 0;
+		ExplosionDamage 0;
+		Species "Pennywise";
+	}
+	
+	States
+	{
+		Spawn:
+			PWT2 A 1 
+			{
+				if (random(1,16) > 1) { A_SeekerMissile(30,40); A_ScaleVelocity(1.0125); }
+			}
+			PWT2 B 1 
+			{
+				if (random(1,16) == 1) { A_SeekerMissile(30,40); A_ScaleVelocity(1.0125); }
+				A_SpawnProjectile("Deadlight2Fake",0, 0, 0);
+			}
+			PWT2 CDABCD 1
+			{
+				if (random(1,16) == 1) { A_SeekerMissile(30,40); A_ScaleVelocity(1.0125); }
+			}
+			Loop;
+		Death:
+			PWT2 E 4 Bright;
+			PWT2 EEEEEEEEEEEEEEEEEEEE 0 A_SpawnProjectile("Sparkles", 8, 0, random(-180, 180), 2, random(-180, 180));
+			PWT2 F 4 Bright;
+			PWT2 FFFFFFFFFFFFFFFFFFFF 0 A_SpawnProjectile("Sparkles", 8, 0, random(-180, 180), 2, random(-180, 180));
+			PWT2 GGGGGGGGGGGGGGGGGGGG 0 A_SpawnProjectile("Sparkles", 8, 0, random(-180, 180), 2, random(-180, 180));
+			PWT2 GHI 4 Bright;
+			PWH4 JKL 4 Bright;
+			Stop;
+	}
+}
+
+class Deadlight2Fake : Deadlight2
+{
+	default
+	{
+		scale 2;
+		Speed 1;
+		RENDERSTYLE "Translucent";
+		ALPHA 0.05;
+		PROJECTILE;
+		Species "Pennywise";
+	}
+	
+	States
+	{
+		Spawn:
+			PWHT ABCDCB 1;
+			PWHT ABCDCB 2;
+			PWHT ABCDCB 3;
+			PWHT ABCDCB 3;
+			PWHT ABCD 4;
+			Stop;
+		Death:
+			PWHT ABCD 4 Bright;
 			Stop;
 	}
 }
