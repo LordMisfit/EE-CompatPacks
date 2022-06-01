@@ -178,13 +178,19 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			loop;
 		Melee:
+			PENY E 0
+			{
+				A_DynamicMusic();
+			}
 			PENY E 1  
 			{
+				A_DynamicMusic();
 				A_SetInventory("PennywiseShield",0);
 				A_FaceTarget();
 			}
 			PENY E 1
 			{
+				A_DynamicMusic();
 				A_SetInventory("PennywiseShield",0);
 				A_FaceTarget();
 				A_SpawnProjectile("PWSoulAttack", 80, random(-4, 4), random(-45, 45), 2, random(-20, 20));
@@ -194,6 +200,7 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			PENY E 1 
 			{
+				A_DynamicMusic();
 				A_SetInventory("PennywiseShield",0);
 				A_FaceTarget();
 				A_SpawnProjectile("PWSoulAttack", 32, random(-4, 4), random(-45, 45), 2, random(-20, 20));
@@ -203,11 +210,16 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			Goto See2;
 		Missile:
-			PENY A 0 A_ClearShadow();
+			PENY E 0
+			{
+				A_DynamicMusic();
+				A_ClearShadow();
+			}
 			PENY E 0 A_SetInventory("PennywiseShield",0);
 			PENY A 0 A_Jump(32,"Missile2");
 			PENY E 9
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
@@ -216,6 +228,7 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			PENY E 4 
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
 
@@ -223,6 +236,7 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			PENY E 9
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
@@ -233,6 +247,7 @@ class PennywiseBoss : EEUniqueBoss // 3672
 		Missile2:
 			PENY E 9
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
@@ -241,6 +256,7 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			PENY E 4 
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
 
@@ -249,6 +265,7 @@ class PennywiseBoss : EEUniqueBoss // 3672
 			}
 			PENY E 9
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
@@ -701,12 +718,18 @@ class PennywiseFake : EEUniqueBoss // 3672
 			}
 			loop;
 		Melee:
+			PENY E 0
+			{
+				A_DynamicMusic();
+			}
 			PENY E 1  
 			{
 				A_FaceTarget();
+				A_DynamicMusic();
 			}
 			PENY E 1
 			{
+				A_DynamicMusic();
 				A_FaceTarget();
 				A_SpawnProjectile("PWSoulAttackFake", 80, random(-4, 4), random(-45, 45), 2, random(-20, 20));
 				if (random(1,10) <= 3) { A_SpawnProjectile("PWSoulAttackFake", 56, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
@@ -715,6 +738,7 @@ class PennywiseFake : EEUniqueBoss // 3672
 			}
 			PENY E 1 
 			{
+				A_DynamicMusic();
 				A_FaceTarget();
 				A_SpawnProjectile("PWSoulAttackFake", 32, random(-4, 4), random(-45, 45), 2, random(-20, 20));
 				if (random(1,10) <= 3) { A_SpawnProjectile("PWSoulAttackFake", 56, random(-4, 4), random(-45, 45), 2, random(-20, 20)); }
@@ -723,9 +747,14 @@ class PennywiseFake : EEUniqueBoss // 3672
 			}
 			Goto See;
 		Missile:
-			PENY A 0 A_ClearShadow();
+			PENY A 0 
+			{
+				A_ClearShadow();
+				A_DynamicMusic();
+			}
 			PENY E 9
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
@@ -734,6 +763,7 @@ class PennywiseFake : EEUniqueBoss // 3672
 			}
 			PENY E 4 
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
 
@@ -741,6 +771,7 @@ class PennywiseFake : EEUniqueBoss // 3672
 			}
 			PENY E 9
 			{
+				A_DynamicMusic();
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(5); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(6); }
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
@@ -1238,5 +1269,377 @@ class Deadlight2Fake : Deadlight2
 		Death:
 			PWHT ABCD 4 Bright;
 			Stop;
+	}
+}
+
+// Monsters
+class GoreWormNew : EECreature
+{
+	default
+	{
+		//$Angled;
+		//$Color 12;
+		//$Category "Happy Time Circus/Monsters";
+		Tag "Gore Worm";
+		Health 20;
+		Radius 8;
+		Height 4;
+		Speed 3;
+		Mass 20;
+		MONSTER;
+		+FLOORCLIP;
+		+RANDOMIZE;
+		Scale 0.75;
+		MeleeDamage 1;
+		SeeSound "HSEE";
+		PainSound "HAND1";
+		DeathSound "";
+		ActiveSound "HAND1";
+		MeleeSound "SKULBITE";
+		Obituary "Um... how the hell did %o die?! o_O;";
+		
+		PainChance 200;
+		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
+	}
+
+	States
+	{
+		Spawn:
+			WORM A 0 NoDelay;
+			WORM A 20 A_UnSetShootable();
+			WORM A 4 A_SetShootable();
+			WORM A 4 A_Look();
+			Goto Spawn+1;
+		See:   
+			WORM A 0;
+			WORM ABCB 3 A_EEWander(0,1,3,1,1);
+			WORM A 0 A_JumpIfHealthLower(6,2);
+			Loop;
+			WORM A 0;
+			WORM A 0 A_Jump(64,1);
+			WORM ABCB 1 A_EEWander(0,1,3,1,1);
+			Goto See;
+		Melee:
+			WORM C 0;
+			Goto Death;
+		Pain:
+			WORM A 8 A_EEPain();
+			Goto See ;
+		Death:
+			WORM A 5 A_SpawnProjectile("ZGut2", 0, 0, 30);
+			WORM B 2 A_StartSound("splat11",CHAN_BODY);
+			WORM B 2 A_TossGib();
+			WORM B 3 A_Scream();
+			WORM C 2 A_TossGib();
+			WORM C 1 A_SpawnProjectile("BSplatter", 0, 0, 0, 1);
+			WORM C 5 A_SpawnProjectile("ZGut3", 0, 0, -40);
+			Stop;
+	}
+}
+
+class FluffyNew : EECreature
+{
+	int user_res;
+	default
+	{
+		//$Angled;
+		//$Color 12;
+		//$Category "Happy Time Circus/Monsters";
+		Tag "Fluffy";
+
+		Health 1000;
+		Radius 25;
+		Height 56;
+		Speed 40;
+		Mass 250;
+		PainChance 80;
+		Painchance "Fist", 120; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 200; // Kick attacks have a +150% chance of stunning an enemy
+		DamageFactor "Zap", 1.25;
+		Painchance "Zap", 100;
+		DamageFactor "Cricket", 0.25;
+		Painchance "Cricket", 20;
+		DamageFactor "Bonk", 0.25;
+		Painchance "Bonk", 20;
+		DamageFactor "Breakfast", 0.25;
+		Painchance "Breakfast", 20;
+		DamageFactor "CherryBomb", 0.25;
+		Painchance "CherryBomb", 20;
+		DamageFactor "Spinner", 0.25;
+		Painchance "Spinner", 20;
+		DamageFactor "Ice", 0.25;
+		Painchance "Ice", 20;
+		DamageFactor "BRocket", 2.5;
+		Painchance "BRocket", 200;
+		DamageFactor "Popper", 1.75;
+		Painchance "Popper", 140;
+		DamageFactor "Beats", 0.25;
+		Painchance "Beats", 256;
+		DamageFactor "Suck", 0.0;
+		Painchance "Suck", 0;
+		MONSTER;
+		+FLOORCLIP;
+		+NOCLIP;
+		+GHOST;
+		+NOLIFTDROP;
+		MELEEDAMAGE 7;
+		SeeSound "BHIT1";
+		PainSound "BHIT5";
+		DeathSound "BTALK3";
+		ActiveSound "BTALK7";
+		MeleeSound "BCHOMP";
+		HitObituary "%o was playing with Fluffy!";
+		MissileHeight 12;
+		MissileType "SkullSeeker";
+
+		dropitem "KnightGown3", 256;
+		dropitem "KnightGown4", 64;
+		dropitem "GoldApple", 128;
+		dropitem "GoldApple", 128;
+		dropitem "GoldApple", 64;
+		dropitem "GoldApple", 64;
+		dropitem "GoldApple", 64;
+		dropitem "GoldApple", 64;
+		dropitem "GoldApple", 32;
+		dropitem "GoldApple", 32;
+		dropitem "GoldApple", 32;
+		dropitem "GoldApple", 32;
+	}
+
+	States 
+	{
+		Spawn:
+			FLUF A 0 NoDelay;
+			FLUF A 2 A_Look();
+			goto Spawn+1;
+		See:
+			FLUF A 0;
+			FLUF ABCBJ 2
+			{
+				if (user_res && random(1,16) <= (3+(user_res*1.5))) { A_SetTics(1); }
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			FLUF KL 1;
+			FLUF M 1 
+			{
+				if (user_res && random(1,16) <= (3+(user_res*1.5))) { A_SetTics(1); }
+				A_SpawnProjectile("ZGut", 0, 0, 0, 0);
+			}
+			FLUF M 1 A_StartSound("SPLAT5");
+			FLUF LK 1;
+			FLUF J 1 A_Jump((124+(user_res*16)),2);
+			GoTo See;
+			FLUF K 0;
+			FLUF K 0; 
+			FLUF K 0 A_SpawnProjectile("JSkull_Image1", 0, 0, 0, 1); 
+			GoTo See;
+		Missile:   
+			TNT1 A 0;
+			FLUF A 0 A_Jump(124,8);
+			FLUF A 0 A_Jump(156,2);
+			FLUF A 0 A_Jump(99,10);
+			FLUF AB 4
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget();
+			}
+			FLUF C 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(5); }
+				A_FaceTarget();
+
+				A_CustomComboAttack("SkullSeeker", 28, (7*random((1+(user_res * 1.5)),10)*(user_res * 1.5)), "BCHOMP");
+			}
+			Goto See;
+			FLUF AB 2 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+				A_FaceTarget();
+			}
+			FLUF C 4 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+
+				A_SpawnProjectile("SkullSeeker", 28, -4, 0, 1);
+			}
+			Goto See;
+			FLUF AB 2 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+				A_FaceTarget();
+			}
+			FLUF C 2
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+
+				A_SpawnProjectile("SkullSeeker", 28, -12, -60, 1);
+			}
+			FLUF B 4 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget();
+			}
+			FLUF C 2 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+
+				A_SpawnProjectile("SkullSeeker", 28, -4, 60, 1);
+			}
+			Goto See;
+			FLUF AB 2 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(1); }
+				A_FaceTarget();
+			}
+			FLUF C 4 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+
+				A_SpawnProjectile("SkullSeeker", 28, 12, 0, 1);
+			}
+			Goto See;
+		Melee:
+			TNT1 A 0;
+			FLUF ABC 4  
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget();
+			}
+			FLUF B 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(5); }
+				A_FaceTarget();
+				
+				A_CustomMeleeAttack((7*random((1+(user_res * 1.5)),10)*(user_res * 1.5)),"BCHOMP");
+			}
+			Goto See;
+		Pain:
+			FLUF C 2;
+			FLUF C 3 A_EEPain();
+			Goto See ;
+		Death:
+			TNT1 A 0 { user_ressurrectstr += random(4,5); }
+			FLUF JKLMN 10;
+			FLUF N 100;
+		RegenCycle:
+			FLUF N 0 CanRaise Thing_Raise(0);
+			FLUF N 5;
+			loop;
+		Raise:
+			FLUF M 10 
+			{
+				user_res++;
+				A_MonsterStatsHP_ATK_DEF_SPD(0,3); // multiplies the level of the Resurrected Fluffy by 16
+				bNOPAIN = true;
+			}
+			FLUF LKJ 10;
+			GoTo See;
+		Ice:
+			goto Death;
+	}
+}
+
+class MiniFluffyNew : EECreature
+{
+	default
+	{
+		Tag "Mini Fluffy";
+		//$Angled;
+		//$Color 12;
+		//$Category "Happy Time Circus/Monsters";
+		Health 60;
+		Radius 8;
+		Height 25;
+		Speed 6;
+		Mass 40;
+		PainChance 80;
+		Painchance "Fist", 120; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 200; // Kick attacks have a +150% chance of stunning an enemy
+		DamageFactor "Zap", 1.25;
+		Painchance "Zap", 100;
+		MONSTER;
+		+FLOORCLIP;
+		MELEEDAMAGE 1;
+		SeeSound "BHIT1";
+		PainSound "BHIT5";
+		DeathSound "BTALK3";
+		ActiveSound "BTALK7";
+		MeleeSound "BCHOMP";
+		HitObituary "%o was playing with Fluffy!";
+
+		dropitem "GreenArmor", 2;
+		dropitem "BlueArmor", 2;
+		dropitem "HealthBonus", 2;
+		dropitem "HealthBonus", 2;
+		dropitem "HealthBonus", 2;
+		dropitem "ArmorBonus", 2;
+		dropitem "ArmorBonus", 2;
+		dropitem "ArmorBonus", 2;
+	}
+	
+	States 
+	{
+		Spawn:
+			RAIN B 0 NoDelay; 
+			RAIN B 5 A_Look();
+			goto Spawn+1;
+		See:
+			SBUN H 0;
+			SBUN HHHHIIIJJ 3;
+		See2:
+			SBUN ABCCB 1
+			{
+				A_EEChase("Melee","Missile",0,1,3,1,1);
+			}
+			loop;
+		Melee:
+			TNT1 A 0;
+			SBUN ABC 4
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_FaceTarget();
+			}
+			SBUN B 6 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(4); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(5); }
+				A_FaceTarget();
+				
+				A_CustomMeleeAttack(1*random(1,10),"BCHOMP");
+			}
+			Goto See2;
+		Pain:
+			SBUN D 8 A_EEPain();
+			SBUN E 8 A_UnSetShootable();
+			SBUN F 100;
+			SBUN F 0 A_Jump(128,3);
+			SBUN E 8;
+			SBUN D 8 A_SetShootable();
+			Goto See2;
+			SBUN F 8 A_UnSetShootable();
+			SBUN F 100;  
+			SBUN E 8 A_SetShootable();
+			Goto See2;
+		Death:
+			TNT1 A 0;
+			SBUN DEF 8;
+			SBUN G -1;
+			Stop;
+		Ice:
+			SBUN D 5 A_GenericFreezeDeath();
+			SBUN D 1 A_FreezeDeathChunks();
+			wait;
 	}
 }

@@ -1,7 +1,10 @@
 DoomEdNums
 {
+	3194 = MiniFluffyNew
 	3672 = PennywiseBoss
+	30031 = GoreWormNew
 	32111 = RandomArmorSpawner
+	32120 = FluffyNew
 }
 
 map MAP01 "Happy Time Circus part ]["

@@ -100,7 +100,7 @@ ACTOR ClownSouls : Ammo 30201
 			Loop
 	}
 }
-ACTOR GoreWorm //30031
+ACTOR GoreWorm
 {
 	Health 20
 	Radius 8
@@ -140,7 +140,7 @@ ACTOR GoreWorm //30031
 			Goto Death
 		Death:
 			WORM A 5 A_CustomMissile("ZGut2", 0, 0, 30) 
-			WORM B 2 A_PlaySound("splat11")
+			WORM B 2 A_StartSound("splat11")
 			WORM B 2 A_TossGib
 			WORM B 3 A_Scream 
 			WORM C 2 A_TossGib
@@ -324,7 +324,7 @@ ACTOR Fluffy2 //32120
 			FLUF ABCBJ 2 A_Chase
 			FLUF KL 1   
 			FLUF M 1 A_CustomMissile("ZGut", 0, 0, 0,0)
-			FLUF M 1 A_PlaySound("SPLAT5")
+			FLUF M 1 A_StartSound("SPLAT5")
 			FLUF LK 1
 			FLUF J 1 A_Jump(124,2) 
 			Goto See
@@ -659,7 +659,7 @@ ACTOR Bingo //4110
 			CHED A 10  A_Look 
 			loop
 		See: 
-			CHED A 2 A_PlaySound("DRONE")
+			CHED A 2 A_StartSound("DRONE")
 			CHED A 2 A_CustomMissile("RFlame", -8, 0, 0, 1)  
 			CHED A 2   A_FastChase
 			CHED A 2 A_CustomMissile("RFlame", -8, 0, 0, 1)  
@@ -867,7 +867,7 @@ actor ClownGhost //32128
 			GHOS B 1 A_Scream 
 			GHOS F 8 A_NoBlocking 
 			GHOS E 8 //A_CustomMissile("ClownSoulFloat1", 8, random(-15, 15), random(-180, 180), 2, random(80, 100))
-			GHOS D 8 A_PlaySound("BOONBITE")
+			GHOS D 8 A_StartSound("BOONBITE")
 			GHOS C 0 A_CustomMissile("Balloon_Black", 8, 0, 0, 1)
 			Stop 
 	}
@@ -1077,13 +1077,13 @@ actor Bulby //3906
 			LDEM G 3 A_Jump(88,6)
 			LDEM G 3 A_FaceTarget 
 			LDEM H 3 A_FaceTarget 
-			LDEM I 0 A_PlaySound("BULBEXP2")
+			LDEM I 0 A_StartSound("BULBEXP2")
 			LDEM I 2 Bright A_CustomMissile("BulbyBall", 12, -4, 0, 1)
 			LDEM H 4 
 			Goto See + 10
 			LDEM G 4 A_FaceTarget 
 			LDEM H 4 A_FaceTarget 
-			LDEM I 1 A_PlaySound("BULBEXP2")
+			LDEM I 1 A_StartSound("BULBEXP2")
 			LDEM I 3 Bright A_CustomMissile("BulbyBall2", 12, -4, 0, 1)
 			LDEM H 4 
 			Goto See + 10
@@ -1095,7 +1095,7 @@ actor Bulby //3906
 			LDEM K 1 A_TossGib
 			LDEM K 1 A_CustomMissile("BSplatter", 0, 0, 0, 1) 
 			LDEM K 1 A_TossGib
-			LDEM K 2 A_PlaySound("splat11")
+			LDEM K 2 A_StartSound("splat11")
 			LDEM K 2 A_CustomMissile("BulbyGib1", 24, 16, 60, 1)
 			LDEM K 2 A_TossGib
 			LDEM L 2 A_CustomMissile("BSplatter", 40, -16, -32, 1)
@@ -1152,7 +1152,7 @@ actor MegaBulby : Bulby //3989
 			LDEM G 3 A_Jump(5,5)
 			LDEM G 3 A_FaceTarget 
 			LDEM H 3 A_FaceTarget 
-			LDEM I 0 A_PlaySound("BULBEXP2")
+			LDEM I 0 A_StartSound("BULBEXP2")
 			LDEM I 2 Bright A_CustomMissile("BulbyBall3", 24, -4,0, 1)
 			LDEM H 4 
 			Goto See + 2
@@ -1168,7 +1168,7 @@ actor MegaBulby : Bulby //3989
 			LDEM J 1 A_Scream 
 			LDEM K 1 A_CustomMissile("BSplatter", 0, 0, 0, 1) 
 			LDEM K 1 A_TossGib
-			LDEM K 1 A_PlaySound("GHSTPAIN")
+			LDEM K 1 A_StartSound("GHSTPAIN")
 			LDEM K 1 A_TossGib
 			LDEM K 2 A_CustomMissile("BulbyGib1", 24, 20, 60, 1)
 			LDEM K 2 A_TossGib
@@ -1302,7 +1302,7 @@ actor Beefy //4333
 			CIMP G 1 A_TossGib
 			CIMP G 1 A_CustomMissile("Gibb2", 14, 2, -10, 1)
 			CIMP G 0 A_TossGib
-			CIMP G 1 A_PlaySound("splat11")
+			CIMP G 1 A_StartSound("splat11")
 			CIMP G 1 A_CustomMissile("BSplatter", 14, 0, 0, 1)
 			CIMP H 1 A_CustomMissile("Gibb4", 12, 3, 32, 1)
 			CIMP H 1 A_TossGib
@@ -1329,7 +1329,7 @@ actor Beefy //4333
 			CIMP G 1 A_TossGib
 			CIMP G 1 A_CustomMissile("Gibb2", 14, 0, -30, 1)
 			CIMP G 1 A_TossGib
-			CIMP G 1 A_PlaySound("splat11")
+			CIMP G 1 A_StartSound("splat11")
 			CIMP G 0 A_TossGib
 			CIMP G 1 A_CustomMissile("BSplatter", 24, 0, 0, 1)
 			CIMP H 1 A_TossGib
@@ -1383,7 +1383,7 @@ ACTOR BlackBear //3191
 			BBER A 1 A_Scream
 			BBER A 1 A_Fall
 			BBER A 1 A_Explode  
-			BBER A 0 A_PlaySound("splat11")
+			BBER A 0 A_StartSound("splat11")
 			BBER A 1 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			Stop
 		Death:
@@ -1392,7 +1392,7 @@ ACTOR BlackBear //3191
 			BBER A 0 A_Jump(200,2) 
 			BBER A 1 A_Explode
 			BBER A 0 
-			BBER A 0 A_PlaySound("splat11")
+			BBER A 0 A_StartSound("splat11")
 			BBER A 0 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			BBER A 0 A_CustomMissile("BlackSplatter1", 6, 0, random(-180, 180), 2, random(0, 180))
 			BBER AAA 0 A_CustomMissile("BlackSplatter2", 6, 0, random(-180, 180), 2, random(0, 180))		
@@ -1578,7 +1578,7 @@ Actor BeefyHead : EECustomGib 3977
 		Death:
 			RAIN A 2 A_Jump(200,2)
 			RAIN A 2 
-			RAIN A 2 A_PlaySound("splat11")
+			RAIN A 2 A_StartSound("splat11")
 			RAIN A 2 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			RAIN A 0 A_Scream
 			RAIN B 0 A_Fall 
@@ -1613,7 +1613,7 @@ actor Gibb1 : EECustomGib 3978
 			METT B 6 
 			GoTo Spawn + 10
 		Death:
-			RAIN A 2 A_PlaySound("splat11")
+			RAIN A 2 A_StartSound("splat11")
 			RAIN A 2 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			RAIN A 0 A_Scream
 			RAIN B 0 A_Fall 
@@ -1650,7 +1650,7 @@ actor Gibb2 : EECustomGib 3979
 			GoTo Spawn + 10
 			
 		Death:
-			RAIN A 2 A_PlaySound("splat11")
+			RAIN A 2 A_StartSound("splat11")
 			RAIN A 2 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			RAIN A 0 A_Scream
 			RAIN B 0 A_Fall 
@@ -1686,7 +1686,7 @@ actor Gibb3 : EECustomGib 3980
 			GoTo Spawn + 10
 			
 		Death:
-			RAIN A 2 A_PlaySound("splat11")
+			RAIN A 2 A_StartSound("splat11")
 			RAIN A 2 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			RAIN A 0 A_Scream
 			RAIN B 0 A_Fall 
@@ -1722,7 +1722,7 @@ actor Gibb4 : EECustomGib 3981
 			GoTo Spawn + 10
 			
 		Death:
-			RAIN A 2 A_PlaySound("splat11")
+			RAIN A 2 A_StartSound("splat11")
 			RAIN A 2 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			RAIN A 0 A_Scream
 			RAIN B 0 A_Fall 
@@ -1758,7 +1758,7 @@ actor Gibb5 : EECustomGib 3982
 			GoTo Spawn + 10
 			
 		Death:
-			RAIN A 2 A_PlaySound("splat11")
+			RAIN A 2 A_StartSound("splat11")
 			RAIN A 2 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			RAIN A 0 A_Scream
 			RAIN B 0 A_Fall 
@@ -2049,7 +2049,7 @@ actor Balloon_Rotten 4787
 			Goto See
 		Death:
 			BROT B 2 A_Scream
-			BROT C 2 A_PlaySound("BHIT5")
+			BROT C 2 A_StartSound("BHIT5")
 			BROT D 3 A_Fall  
 			Stop
 	}
@@ -3484,7 +3484,7 @@ ACTOR EvilDeadHand //32212
 			Goto See 
 		Death:
 			HAND D 5 A_CustomMissile("ZGut2", 0, 0, 30) 
-			HAND E 2 A_PlaySound("splat11")
+			HAND E 2 A_StartSound("splat11")
 			HAND E 3 A_Scream 
 			HAND F 0 A_CustomMissile("BSplatter", 0, 0, 0, 1)
 			HAND F 5 A_CustomMissile("ZGut3", 0, 0, -40)   
@@ -3593,7 +3593,7 @@ ACTOR Chunky 3647
 			RAIN B 1 A_CustomMissile("Gibb1", 16, -24, -20, 1)
 			RAIN B 1 A_CustomMissile("BSplatter", 38,0,0, 1)
 			RAIN B 2 A_CustomMissile("Gibb2", 14, 20, 30, 1)
-			RAIN B 1 A_PlaySound("splat11")
+			RAIN B 1 A_StartSound("splat11")
 			RAIN B 2 A_CustomMissile("BSplatter", 24, 0, 0, 1)
 			RAIN B 1 A_CustomMissile("Gibb4", 22, 30, 32, 1)
 			RAIN B 1 A_CustomMissile("Gibb5", 20, 32, 0, 1)
@@ -3607,7 +3607,7 @@ ACTOR Chunky 3647
 			RAIN B 1 A_CustomMissile("Gibb1", 16, -24, -20, 1)
 			RAIN B 1 A_CustomMissile("BSplatter", 38,0,0, 1)
 			RAIN B 2 A_CustomMissile("Gibb2", 14, 20, 30, 1)
-			RAIN B 1 A_PlaySound("splat11")
+			RAIN B 1 A_StartSound("splat11")
 			RAIN B 2 A_CustomMissile("BSplatter", 24, 0, 0, 1)
 			RAIN B 1 A_CustomMissile("Gibb4", 22, 30, 32, 1)
 			RAIN B 1 A_CustomMissile("Gibb5", 20, 32, 0, 1)
@@ -3622,7 +3622,7 @@ ACTOR Chunky 3647
 			RAIN B 1 A_CustomMissile("Gibb1", 16, -24, -20, 1)
 			RAIN B 1 A_CustomMissile("BSplatter", 38,0,0, 1)
 			RAIN B 2 A_CustomMissile("Gibb2", 14, 20, 30, 1)
-			RAIN B 1 A_PlaySound("splat11")
+			RAIN B 1 A_StartSound("splat11")
 			RAIN B 2 A_CustomMissile("BSplatter", 24, 0, 0, 1)
 			RAIN B 1 A_CustomMissile("Gibb4", 22, 30, 32, 1)
 			RAIN B 1 A_CustomMissile("Gibb5", 20, 32, 0, 1)
@@ -3991,7 +3991,7 @@ ACTOR GutFlinger : Weapon //30028
 			loop
 		Fire: 
 			CCCC A 1 A_JumpIfNoAmmo(8) 
-			CCCC B 0 A_PlaySound("GUTFIRE") 
+			CCCC B 0 A_StartSound("GUTFIRE") 
 			CCCC B 1 A_FireCustomMissile("FlyingGut", 0, 2, 5, 1)
 			CCCC E 1
 			CCCC EDCB 3
@@ -4205,7 +4205,7 @@ ACTOR GasRocketLauncher : Weapon //30203
 		Fire: 
 			PRCK G 0 
 			PRCK W 4 A_FireCustomMissile("RevRocket2", 0, 1, 4, 1)
-			PRCK A 4 A_PlaySound("RRELOAD")
+			PRCK A 4 A_StartSound("RRELOAD")
 			PRCK BCDE 4
 			PRCK F 4 
 			PRCK G 4  
@@ -4231,7 +4231,7 @@ actor RevRocket
 		Spawn:
 			RRCK A 1 A_SeekerMissile (30,40)
 			RRCK A 1 A_CustomMissile("RevTrail",0, 0, 0)
-			RRCK A 1 A_PlaySound("HISS")
+			RRCK A 1 A_StartSound("HISS")
 			RRCK A 0 A_CustomMissile("ClownSpark", 8, 0, random(-180, 180), 2, random(-180, 180))
 			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)  
 			RRCK A 1 A_CustomMissile("RevTrail", 0, 0, 0, 1)
@@ -4298,31 +4298,31 @@ ACTOR PopcornGun : Weapon //30204
 			loop
 		Fire:   
 			PGUN A 0 A_Jump (200,5)
-			PGUN A 0 A_PlaySound("POPFIRE")
+			PGUN A 0 A_StartSound("POPFIRE")
 			PGUN A 4 A_FireCustomMissile("Popcorn1", -1, 1, 4, 1)
 			PGUN A 0 A_FireCustomMissile("Popcorn2", 0, 0, 6, 1)
 			PGUN B 2 A_FireCustomMissile("Popcorn3", 1, 0, 5, 1)
 			PGUN A 0 A_Jump (144,5)
-			PGUN A 0 A_PlaySound("POPFIRE")
+			PGUN A 0 A_StartSound("POPFIRE")
 			PGUN A 2 A_FireCustomMissile("Popcorn11", -1, 0, 4, 2)
 			PGUN A 0 A_FireCustomMissile("Popcorn2", -4, 1, 5, 1)
 			PGUN A 0 A_FireCustomMissile("Popcorn1", 2, 0, 4, 1)
 			PGUN A 0 A_Jump (128,5)
-			PGUN A 0 A_PlaySound("POPFIRE")
+			PGUN A 0 A_StartSound("POPFIRE")
 			PGUN A 4 A_FireCustomMissile("Popcorn3", -2, 0, 3, 1)
 			PGUN B 2 A_FireCustomMissile("Popcorn2", -2, 1, 4, -2)
 			PGUN A 0 A_FireCustomMissile("Popcorn2", 4, 0, 0, 1)
 			PGUN A 0 A_Jump (96,4)
 			PGUN A 0 A_FireCustomMissile("Popcorn2", -3, 0, 4, 1)
-			PGUN A 0 A_PlaySound("POPFIRE")
+			PGUN A 0 A_StartSound("POPFIRE")
 			PGUN A 0 A_FireCustomMissile("Popcorn3", 3, 0, 0, 1)
 			PGUN A 0 A_Jump (96,5)
 			PGUN A 2 A_FireCustomMissile("Popcorn1", 2, 0, 5, 1)
 			PGUN A 0 A_FireCustomMissile("Popcorn2", 0, 0, 0, 1)
-			PGUN A 0 A_PlaySound("POPFIRE")
+			PGUN A 0 A_StartSound("POPFIRE")
 			PGUN B 1 A_FireCustomMissile("Popcorn3", -2, 1, 0, 1)
 			PGUN A 0 A_Jump (64,4)
-			PGUN A 0 A_PlaySound("POPFIRE")
+			PGUN A 0 A_StartSound("POPFIRE")
 			PGUN A 4 A_FireCustomMissile("Popcorn3", -1, 0, 4, 1)
 			PGUN A 2 A_FireCustomMissile("Popcorn2", 1, 0, 0, 1)
 			PGUN A 0 A_Jump (64,4)
@@ -4640,7 +4640,7 @@ actor SuperBertha //14768
 			BBTH A 0 
 			Goto See
 			BBTH A 0 A_FaceTarget  
-			BBTH B 1 //A_PlaySound("BEAT667")
+			BBTH B 1 //A_StartSound("BEAT667")
 			BBTH B 0 A_CustomMissile("SoulAttack", 45, 0, random(-45, 45), 2, random(-20, 20))
 			BBTH B 1 A_FaceTarget 
 			BBTH B 0 A_CustomMissile("SoulAttack", 45, 0, random(-45, 45), 2, random(-20, 20))
@@ -4730,7 +4730,7 @@ ACTOR BouncingClown //4822
 			BCWN B 4
 			BCWN A 0 A_JumpIfCloser(1024,1)
 			Loop
-			BCWN A 0 A_PlaySound("GAURD13")
+			BCWN A 0 A_StartSound("GAURD13")
 			BCWN A 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(0, 90))
 			BCWN A 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(0, 90))
 			BCWN A 0 A_CustomMissile("BloodSpeck1", 8, 0, random(-180, 180), 2, random(0, 90))
@@ -4813,11 +4813,11 @@ ACTOR BabyClown //4823
 			Goto See
 		Melee:
 			BCWN A 3 A_FaceTarget 
-			BCWN B 0 A_PlaySound("CLWNBITE")
+			BCWN B 0 A_StartSound("CLWNBITE")
 			BCWN B 3 A_FaceTarget
 			BCWN C 4 A_MeleeAttack
 			BCWN B 3 A_FaceTarget
-			BCWN B 0 A_PlaySound("CLWNBITE")
+			BCWN B 0 A_StartSound("CLWNBITE")
 			Goto See
 		Death:
 			BCWN D 5 A_Scream
@@ -4872,11 +4872,11 @@ ACTOR BabyClown2 //4825
 			Goto See + 4
 		Melee:
 			BCWN A 3 A_FaceTarget 
-			BCWN B 0 A_PlaySound("CLWNBITE")
+			BCWN B 0 A_StartSound("CLWNBITE")
 			BCWN B 3 A_FaceTarget
 			BCWN C 4 A_MeleeAttack
 			BCWN B 3 A_FaceTarget
-			BCWN B 0 A_PlaySound("CLWNBITE")
+			BCWN B 0 A_StartSound("CLWNBITE")
 			Goto See + 4
 		Death:
 			BCWN D 5 A_Scream
@@ -5628,7 +5628,7 @@ actor CrazyBallAlive 4838
 			CRZY O 0 A_CustomMissile("CrazyBalls", 12, 0, random(-180, 180), 2, random(-10, 180))
 			CRZY D 0 A_CustomMissile("CrazyBalls", 14, 0, random(-180, 180), 2, random(-10, 180))
 			CRZY D 0 A_CustomMissile("CrazyBalls", 6, 0, random(-180, 180), 2, random(0, 180))
-			CRZY D 0 A_PlaySound("CRZ") 
+			CRZY D 0 A_StartSound("CRZ") 
 			Loop
 	}
 }
