@@ -1,10 +1,16 @@
 DoomEdNums
 {
+	3115 = PossessedBalloon
 	3194 = MiniFluffyNew
+	3646 = JumpingSkull2New
 	3672 = PennywiseBoss
+	4110 = BingoNew
+	4179 = TinyBingoNew
+	
 	30031 = GoreWormNew
 	32111 = RandomArmorSpawner
 	32120 = FluffyNew
+	32121 = JumpingSkullNew
 }
 
 map MAP01 "Happy Time Circus part ]["
