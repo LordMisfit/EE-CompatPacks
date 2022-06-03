@@ -20,6 +20,7 @@ DoomEdNums
 	29011 = TommyGunCultistNew
 	30000 = ApprenticeNew
 	30119 = ThrallNew
+	30121 = HellHoundNew
 	31002 = BloodZombieNew
 }
 
