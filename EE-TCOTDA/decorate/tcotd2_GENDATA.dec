@@ -3475,7 +3475,7 @@ actor VulgarClaySpawner : RandomSpawner2 30127
 	//$Color 12
 	//$Category "TCOTD:A Monsters/Special"
 	DropItem "VulgarNew", 256, 20
-	DropItem "ClayDevil", 256, 2
+	DropItem "ClayDevilNew", 256, 2
 
 	Alpha 0.0
 	RenderStyle Add 

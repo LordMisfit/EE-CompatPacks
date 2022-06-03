@@ -593,7 +593,7 @@ class ButcherZombieNew : EECreature
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > random(37,38)) { A_SetTics(4); }
 				A_FaceTarget();
 
-				A_CustomComboAttack("CleaverNew", random(34,40), 2*random(7,13), "skeleton/melee");
+				A_CustomComboAttack("CleaverNew", random(34,40), (2*random(7,13)), "skeleton/melee");
 			}
 			E15A EF 5
 			{
@@ -638,7 +638,7 @@ class ButcherZombieNew : EECreature
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > random(37,38)) { A_SetTics(4); }
 				A_FaceTarget();
 
-				A_CustomComboAttack("CleaverNew", random(34,40), 2*random(7,13), "skeleton/melee");
+				A_CustomComboAttack("CleaverNew", random(34,40), (2*random(7,13)), "skeleton/melee");
 			}
 			E15A EF 5
 			{
@@ -1806,11 +1806,10 @@ class ClayDevilNew : EECreature // replaces ClayDevil
 			loop;
 		Melee:
 		Missile:
-			TNT1 A 0 A_DynamicMusic();
 			BYBR E 0 A_Jump(104,"Missile1","Missile2");
 			goto See;
 		Missile1:
-			TNT1 A 0;
+			TNT1 A 0 A_DynamicMusic();
 			N00B EF 3 
 			{
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(2); }
@@ -1830,7 +1829,7 @@ class ClayDevilNew : EECreature // replaces ClayDevil
 			}
 			goto See;
 		Missile2:
-			TNT1 A 0;
+			TNT1 A 0 A_DynamicMusic();
 			N00B EF 3
 			{
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 60) { A_SetTics(2); }
