@@ -1,0 +1,3 @@
+version "4.7"
+
+#include "zscript/tcotd2monsters.zc"

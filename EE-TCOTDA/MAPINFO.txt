@@ -11,6 +11,9 @@ gameinfo
 
 DoomEdNums
 {
+	7228 = ThamuzNew
+	7258 = TchernobogNew
+	30000 = ApprenticeNew
 }
 
 clearepisodes
