@@ -1,0 +1,396 @@
+// Base Circus 2 Weapon Class
+class Circus2Weapon : DinahWeapon
+{
+	default
+	{
+		Weapon.Kickback 100;
+	}
+}
+
+// Weapons
+class PopcornGunNew : Circus2Weapon
+{
+	default
+	{
+		Tag "Popcorn Gun: Shoots a volley of weaponized popcorn shrapnel at foes.";
+		Weapon.SelectionOrder 100;
+		Inventory.Pickupsound "Dinah/GetWeapon";
+		DDWeapon.PickupVoice true;
+		DDWeapon.PickupSound2 "misc/w_pkup";
+		DDWeapon.PickupVoice2 false;
+		Weapon.AmmoType "PopcornPiece";
+		Weapon.AmmoGive 20;
+		Weapon.AmmoUse 1;
+		Inventory.Pickupmessage "You got the \cjPopcorn Gun\c-! Don't eat the popcorn... \cx[Slot 7]\c-";
+		Obituary "%o ate some of %k's popcorn.";
+		AttackSound "";
+		Scale 0.75;
+	}
+	
+	States 
+	{
+		Spawn: 
+			PPPG A -1;
+			loop;
+		Ready: 
+			PGUN AAACCCDDDEEEFFFGGG 1 A_WeaponReady(WRF_ALLOWUSER4);
+			loop;
+		Deselect: 
+			PGUN A 1  
+			{
+				A_Lower(12);
+			}
+			loop;
+		Select: 
+			PGUN A 1
+			{
+				A_Raise(12);
+			}
+			loop;
+		Fire:
+			PGUN A 0 A_Jump (200,"FirePhase2");
+			PGUN A 4
+			{
+				A_StartSound("POPFIRE");
+				A_FireProjectile("Popcorn1",-1,1,4,1,0,0);
+				A_FireProjectile("Popcorn2",0,0,6,1,0,0);
+			}
+			PGUN B 2 
+			{
+				A_FireProjectile("Popcorn3",1,0,5,1,0,0);
+			}
+		FirePhase2:
+			PGUN A 0 A_Jump (144,"FirePhase3");
+			PGUN A 2
+			{
+				A_StartSound("POPFIRE");
+				A_FireProjectile("Popcorn11",-1,0,4,2,0,0);
+				A_FireProjectile("Popcorn2",-4,1,5,1,0,0);
+				A_FireProjectile("Popcorn1",2,0,4,1,0,0);
+			}
+		FirePhase3:
+			PGUN A 0 A_Jump (128,"FirePhase4");
+			PGUN A 4 
+			{
+				A_StartSound("POPFIRE");
+				A_FireProjectile("Popcorn3",-2,0,3,1,0,0);
+			}
+			PGUN B 2 
+			{
+				A_FireProjectile("Popcorn2",-2,1,4,-2,0,0);
+				A_FireProjectile("Popcorn2",4,0,0,1,0,0);
+			}
+		FirePhase4:
+			PGUN A 0 A_Jump (96,"FirePhase5");
+			PGUN A 0 
+			{
+				A_StartSound("POPFIRE");
+				A_FireProjectile("Popcorn2",-3,0,4,1,0,0);
+				A_FireProjectile("Popcorn3",3,0,0,1,0,0);
+			}
+		FirePhase5:
+			PGUN A 0 A_Jump (96,"FirePhase6");
+			PGUN A 2 
+			{
+				A_FireProjectile("Popcorn1",3,0,5,1,0,0);
+			}
+			PGUN B 1 
+			{
+				A_StartSound("POPFIRE");
+				A_FireProjectile("Popcorn2",0,0,0,1,0,0);
+				A_FireProjectile("Popcorn3",-2,1,0,1,0,0);
+			}
+		FirePhase6:
+			PGUN A 0 A_Jump (64,"FirePhase7");
+			PGUN A 4 
+			{
+				A_StartSound("POPFIRE");
+				A_FireProjectile("Popcorn3",-1,0,4,1,0,0);
+			}
+			PGUN A 2 
+			{
+				A_FireProjectile("Popcorn2",1,0,4,1,0,0);
+			}
+		FirePhase7:
+			PGUN A 0 A_Jump (64,"FirePhase8");
+			PGUN B 1
+			{
+				A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
+			}
+		FirePhase8:
+			PGUN A 0 A_Jump (128,"FirePhaseEnd");
+			PGUN A 1
+			{
+				A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
+			}
+		FirePhaseEnd:
+			PGUN A 0;
+			Goto Ready;
+	}
+}
+
+class GoreBalloonNew : Circus2Weapon
+{
+	default
+	{
+		Tag "Explosive Gore Balloon: Releases a bloody red balloon packed with explosive viscera at enemies. The released viscera can deal self-AOE, so beware.";
+		Weapon.SelectionOrder 1500;
+		Inventory.Pickupsound "Dinah/GetWeapon";
+		DDWeapon.PickupVoice true;
+		DDWeapon.PickupSound2 "misc/w_pkup";
+		DDWeapon.PickupVoice2 false;
+		Weapon.AmmoType "GoreBalloons";
+		Weapon.AmmoGive 5;
+		Weapon.AmmoUse 1;
+		Inventory.Pickupmessage "You got some \cjgore balloons\c-! \cx[Slot 4]\c-";
+		Obituary "%o wanted %k's balloon.";
+		Scale 0.75;
+	}
+	States 
+	{
+		Spawn: 
+			BLNN J -1;
+			loop;
+		Ready: 
+			BLND ABCD 6 A_WeaponReady(WRF_ALLOWUSER4);
+			loop;
+		Deselect: 
+			BLND E 1
+			{
+				A_Lower(12);
+			}
+			Loop;
+		Select: 
+			BLND E 1
+			{
+				A_Raise(12);
+			}
+			Loop;
+		Fire: 
+			BLND A 1 
+			{
+			}
+			BLND F 2
+			{
+			}
+			BLND G 2
+			{
+			}
+			TNT1 A 0
+			{
+				A_FireProjectile("GoreBalloon666",0,1,4,1,0,0);
+			}
+			BLND I 6
+			{
+			}
+			BLND I 6
+			{
+			}
+			BLND H 6
+			{
+			}
+			TNT1 A 0;
+			Goto Select;
+	}
+}
+
+class ClownGrenadeNew : Circus2Weapon
+{
+	default
+	{
+		Tag "Clownish Grenade: Throws a grenade that deals no self-AOE. Will explode on contact with a shootable target.";
+		Weapon.SelectionOrder 1400;
+		Inventory.Pickupsound "Dinah/GetWeapon";
+		DDWeapon.PickupVoice true;
+		DDWeapon.PickupSound2 "misc/w_pkup";
+		DDWeapon.PickupVoice2 false;
+		Weapon.AmmoType "CGrenadeAmmo" ;
+		Weapon.AmmoGive 5;
+		Weapon.AmmoUse 1;
+		Inventory.Pickupmessage "You picked up some \cjclown grenades\c- \cx[Slot 6]\c-";
+		AttackSound "";
+		+FloatBob;
+		Scale 0.3;
+	}
+	States 
+	{
+		Spawn: 
+			CGRD ABCDEFGHIJKL 3;
+			loop;
+		Ready: 
+			GHND ABCDEFFFFFEDCBAA 1 A_WeaponReady(WRF_ALLOWUSER4);
+			loop;
+		Deselect: 
+			GHND A 1
+			{
+				A_Lower(12);
+			}
+			loop;
+		Select: 
+			GHND A 1 
+			{
+				A_Raise(12);
+			}
+			loop;
+		Fire: 
+			GHND I 4
+			{
+				A_FireProjectile("CGrenade",0,1,0,1,0,0);
+			}
+			GHND G 4 
+			{
+			}
+			GHND H 10 
+			{
+			}
+			Goto Ready;
+	}
+}
+
+class GutFlingerNew : Circus2Weapon
+{
+	default
+	{
+		Tag "Gut-Flinger: Fires a single explosive gut at foes. <ALT-FIRE> quick-shoots a less accurate burst of guts. Shots can deal self-AOE, so beware!";
+		Weapon.SelectionOrder 1150;
+		Inventory.Pickupsound "Dinah/GetWeapon";
+		DDWeapon.PickupVoice true;
+		DDWeapon.PickupSound2 "misc/w_pkup";
+		DDWeapon.PickupVoice2 false;
+		Weapon.AmmoType "ClownSouls";
+		Weapon.AmmoType2 "ClownSouls";
+		Weapon.AmmoGive 5;
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoUse2 1;
+		Inventory.Pickupmessage "You got the \cjGut Flinger\c-! \cx[Slot 2]\c-";
+		AttackSound "";
+		Scale 1;
+	}
+	
+	States 
+	{
+		Spawn: 
+			CCCC F -1;
+			loop;
+		Ready: 
+			CCCC A 1 A_WeaponReady(WRF_ALLOWUSER4);
+			loop;
+		Deselect: 
+			CCCC A 1 
+			{
+				A_Lower(12);
+			}
+			loop;
+		Select: 
+			CCCC A 1 
+			{
+				A_Raise(12);
+			}
+			loop;
+		Fire:
+			CCCC A 1 A_JumpIfNoAmmo("FireNoAmmo");
+			CCCC B 1
+			{
+				A_StartSound("GUTFIRE");
+				A_FireProjectile("FlyingGut",0,1,5.0,1,0,0);
+			}
+			CCCC E 1;
+			CCCC EDCB 3;
+			Goto Ready;
+		FireNoAmmo:
+			CCCC E 0;
+			Goto Deselect;
+		AltFire:
+			CCCC A 1
+			{
+				if (CountInv("ClownSouls") <= 0)
+				{
+					return resolvestate("AltFireNoAmmo");
+				}
+				return resolvestate(null);
+			}
+			CCCC B 1
+			{
+				A_StartSound("GUTFIRE");
+				A_FireProjectile("FlyingGut",frandom(-(A_GetHitScanXSpread(16)),(A_GetHitScanXSpread(16))),1,5.0,1,0,frandom(-(A_GetHitScanYSpread(16)),(A_GetHitScanYSpread(16))));
+			}
+			CCCC E 1;
+			CCCC E 1;
+			CCCC D 1;
+			CCCC C 1;
+			Goto Ready;
+		AltFireNoAmmo:
+			CCCC E 0;
+			Goto Ready;
+	}
+} 
+
+class GasRocketLauncherNew : Circus2Weapon
+{
+	default
+	{
+		Tag "Bingo's Gas Rocket Launcher: Launches a rocket that explodes into a expanding spread of psychedelic gas clouds. <ALT-FIRE> allows a more inaccurate quick-fire mode. The clouds of your rockets do NOT deal self-AOE, so you can safe move through them.";
+		Weapon.SelectionOrder 1050;
+		Inventory.Pickupsound "Dinah/GetWeapon";
+		DDWeapon.PickupVoice true;
+		DDWeapon.PickupSound2 "misc/w_pkup";
+		DDWeapon.PickupVoice2 false;
+		Weapon.AmmoType "ClownSouls";
+		Weapon.AmmoType2 "ClownSouls"; 
+		Weapon.AmmoGive 20;
+		Weapon.AmmoUse1 5;
+		Weapon.AmmoUse2 5;
+		Inventory.Pickupmessage "You got the \cjGas Rocket Launcher\c-! \cx[Slot 5]\c-";
+		Obituary "%o choked on %k's gas.";
+		AttackSound "";
+		Scale 0.75;
+	}
+	
+	States 
+	{
+		Spawn: 
+			PRCK V -1;
+			loop;
+		Ready: 
+			PRCK G 1 A_WeaponReady(WRF_ALLOWUSER4);
+			loop;
+		Deselect: 
+			PRCK G 1 
+			{
+				A_Lower(12);
+			}
+			loop;
+		Select: 
+			PRCK D 1
+			{
+				A_Raise(12);
+			}
+			loop;
+		Fire:
+			PRCK G 0 
+			{
+				A_FireProjectile("RevRocket2",0,5,4,1,0,0);
+			}
+			PRCK W 4;
+			PRCK A 4 A_StartSound("RRELOAD");
+			PRCK BCDEFG 4;
+			Goto Ready;
+		AltFire:
+			PRCK G 0 
+			{
+				if (CountInv("ClownSouls") <= 4)
+				{
+					return resolvestate("Ready");
+				}
+				return resolvestate(null);
+			}
+			PRCK G 0 
+			{
+				A_FireProjectile("RevRocket2",frandom(-(A_GetHitScanXSpread(17)),(A_GetHitScanXSpread(17))),5,4,1,0,frandom(-(A_GetHitScanYSpread(17)),(A_GetHitScanYSpread(17))));
+			}
+			PRCK W 1;
+			PRCK A 1 A_StartSound("RRELOAD");
+			PRCK BCDEFG 1;
+			Goto Ready;
+	}
+} 

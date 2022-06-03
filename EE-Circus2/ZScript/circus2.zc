@@ -1,12 +1,3 @@
-// Base Circus 2 Weapon Class
-class Circus2Weapon : DinahWeapon
-{
-	default
-	{
-		Weapon.Kickback 100;
-	}
-}
-
 class MyBall2 : EEEffectProjectile
 {
 	default

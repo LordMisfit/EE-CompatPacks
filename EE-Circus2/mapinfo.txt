@@ -17,7 +17,13 @@ DoomEdNums
 	4333 = BeefyNew
 	14421 = PennywiseHead2New
 	14768 = SuperBerthaNew
+	30028 = GutFlingerNew
+	30029 = ClownGrenadeNew
+	30030 = GoreBalloonNew
 	30031 = GoreWormNew
+	
+	30203 = GasRocketLauncherNew
+	30204 = PopcornGunNew
 	31211 = ClownGhost2New
 	32111 = RandomArmorSpawner
 	32120 = FluffyNew
