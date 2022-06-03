@@ -15,7 +15,10 @@ DoomEdNums
 	7258 = TchernobogNew
 	22290 = MiniSpiderNew
 	22291 = LargeSpiderNew
+	29010 = ShotgunCultistNew
+	29011 = TommyGunCultistNew
 	30000 = ApprenticeNew
+	30119 = ThrallNew
 }
 
 clearepisodes
