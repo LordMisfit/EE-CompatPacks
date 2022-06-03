@@ -13,6 +13,8 @@ DoomEdNums
 {
 	7228 = ThamuzNew
 	7258 = TchernobogNew
+	22290 = MiniSpiderNew
+	22291 = LargeSpiderNew
 	30000 = ApprenticeNew
 }
 
