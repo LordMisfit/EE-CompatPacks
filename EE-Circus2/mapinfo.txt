@@ -15,6 +15,7 @@ DoomEdNums
 	4110 = BingoNew
 	4179 = TinyBingoNew
 	4333 = BeefyNew
+	14421 = PennywiseHead2New
 	14768 = SuperBerthaNew
 	30031 = GoreWormNew
 	31211 = ClownGhost2New
