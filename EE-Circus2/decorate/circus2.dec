@@ -483,6 +483,7 @@ actor BeefyBall1 : EEEffectProjectile
 	+CANBOUNCEWATER
 	+USEBOUNCESTATE
 	+MTHRUSPECIES
+	+DONTHARMSPECIES
 	Species "Beefy"
 	BounceType "Hexen"
 	BounceFactor 1.0
@@ -552,6 +553,7 @@ actor BeefyBall2 : BeefyBall1
 	+SEEKERMISSILE
 	+USEBOUNCESTATE
 	+MTHRUSPECIES
+	+DONTHARMSPECIES
 	Species "Beefy"
 	PROJECTILE
 	ALPHA 0.8

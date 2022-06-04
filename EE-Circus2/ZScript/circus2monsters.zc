@@ -2342,6 +2342,7 @@ class BeefyNew : EECreature
 		PainChance "Cricket", 256;
 		MONSTER;
 		+FLOORCLIP;
+		+DONTHARMSPECIES;
 		SeeSound "BEEFSEE";
 		PainSound "GHS2PAN";
 		DeathSound "GHS2PAN";
