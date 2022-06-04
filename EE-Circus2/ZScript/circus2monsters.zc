@@ -3382,7 +3382,7 @@ class BigBertha2New : EECreature
 		ActiveSound "BIRTHA2";
 		Obituary "%o touched big birtha's puke.";
 		MissileHeight 12;
-		MissileType "BlackBear";
+		MissileType "BlackBearNew";
 		
 		dropitem "GreenArmor", 2;
 		dropitem "GreenArmor", 2;

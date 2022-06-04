@@ -1478,7 +1478,7 @@ ACTOR BigBertha2 //3192
 	ActiveSound "BIRTHA2"
 	Obituary "%o touched big birtha's puke." 
 	MissileHeight 12
-	MissileType BlackBear
+	MissileType BlackBearNew
 	States 
 	{
 		Spawn: 
@@ -1556,7 +1556,7 @@ ACTOR BlackBlob
 			Loop
 		See:
 			BSPN ABCD 2 A_Chase
-			BSPN D 0 A_SpawnItemEx("BlackBear") // A_SpawnProjectile("BlackBear", 0, 0, 0) 
+			BSPN D 0 A_SpawnItemEx("BlackBearNew") // A_SpawnProjectile("BlackBear", 0, 0, 0) 
 			Stop
 	}
 }
