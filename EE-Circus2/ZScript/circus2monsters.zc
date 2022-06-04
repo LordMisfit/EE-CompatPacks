@@ -2060,7 +2060,7 @@ class BingoNew : EECreature
 		Obituary "%o got blasted by a freaky clown head.";
 		MissileHeight 12;
 		MissileType "RevRocket";
-		DropItem "GasRocketLauncher", 255;
+		DropItem "GasRocketLauncherNew", 255;
 		DropItem "ClownSouls", 64;
 
 		dropitem "GreenArmor", 2;

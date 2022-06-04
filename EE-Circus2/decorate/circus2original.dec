@@ -641,7 +641,7 @@ ACTOR Bingo //4110
 	Meleedamage 1 
 	REACTIONTIME 8 
 	MONSTER
-	DropItem GasRocketLauncher 255
+	DropItem GasRocketLauncherNew 255
 	DropItem ClownSouls 75
 	+FLOORCLIP +NOGRAVITY +FLOAT +PUSHABLE +NORADIUSDMG 
 	+FloatBob +SpawnFLOAT 
