@@ -43,8 +43,9 @@ actor RedBalloon replaces Balloon_Red 3112
 			stop
 		Spawn:
 			TNT1 A 0 NoDelay A_Jump(16,"SpawnGreen","SpawnBlue","SpawnYellow")
-			BOON A 4 A_Look
-			goto Spawn+1
+		Idle:
+			BOON A -1
+			loop
 		See:
 			BOON A 4 A_Chase
 			Loop
@@ -120,8 +121,9 @@ actor YellowBalloon replaces Balloon_Yellow 3113
 			stop
 		Spawn:
 			TNT1 A 0 NoDelay A_Jump(16,"SpawnGreen","SpawnBlue","SpawnRed")
-			BNYL A 4 
-			Loop
+		Idle:
+			BNYL A -1
+			stop
 		See:
 			BNYL A 4 
 			Loop
@@ -194,8 +196,9 @@ actor GreenBalloon replaces Balloon_Green 3116
 			stop
 		Spawn:
 			TNT1 A 0 NoDelay A_Jump(16,"SpawnBlue","SpawnYellow","SpawnRed")
-			GBON A 4 
-			goto Spawn+1
+		Idle:
+			GBON A -1
+			stop
 		See:
 			GBON A 4 
 			Loop
@@ -253,8 +256,9 @@ actor BlueBalloon replaces Balloon_Blue 3193
 			stop
 		Spawn:
 			TNT1 A 0 NoDelay A_Jump(16,"SpawnGreen","SpawnYellow","SpawnRed")
-			BLUB A 4 
-			goto Spawn+1
+		Idle:
+			BLUB A -1
+			stop
 		See:
 			BLUB A 4 
 			Loop

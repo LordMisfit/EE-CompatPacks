@@ -14,9 +14,30 @@ DoomEdNums
 
 	4110 = BingoNew
 	4179 = TinyBingoNew
+	
+	4200 = Newspaper1
+	4201 = Newspaper2
+	
 	4333 = BeefyNew
+	
+	9401 = Toy_Teddy1
+	9402 = Toy_Teddy2
+	9403 = Toy_Teddy3
+	9404 = Flower1
+	9405 = Flower3
+	9406 = Kid_Chair1
+	9407 = Kid_Chair1a
+	9408 = Book
+	
 	14421 = PennywiseHead2New
 	14768 = SuperBerthaNew
+	
+	20001 = Web3
+	20013 = Web2
+	
+	29202 = GoreSkull
+	29203 = GoreBone
+	29204 = ClownCandle
 	30028 = GutFlingerNew
 	30029 = ClownGrenadeNew
 	30030 = GoreBalloonNew

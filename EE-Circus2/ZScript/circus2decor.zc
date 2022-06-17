@@ -1,0 +1,238 @@
+class Web2 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 20;
+		+SpawnCEILING;
+		+NOINTERACTION;
+		+NOGRAVITY;
+		RENDERSTYLE "Add";
+		ALPHA 0.35;
+		Mass 5;
+	}
+	States
+	{
+		Spawn:
+			WEB3 A -1 ;
+			Stop;
+	}
+}
+
+class Web3 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 20;
+		RENDERSTYLE "Add";
+		ALPHA 0.35;
+		+SpawnCEILING;
+		+NOINTERACTION;
+		+NOGRAVITY;
+		Mass 5;
+	}
+	
+	States
+	{
+		Spawn:
+			WEB2 A -1;
+			Stop;
+	}
+}
+
+class Flower1 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			FLOW A -1;
+			Stop;
+	}
+}
+
+
+class Flower3 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			FLOW B -1;
+			Stop;
+	}
+}
+
+class Toy_Teddy1 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		Scale 0.3;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			TEDD A -1;
+			Stop;
+	}
+}
+
+class Toy_Teddy2 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		Scale 0.3;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			TEDD B -1;
+			Stop;
+	}
+}
+
+class Toy_Teddy3 : SingleTickDecoration
+{
+	default
+	{
+		Radius 8;
+		Height 8;
+		Scale 0.3;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			TEDD C -1;
+			Stop;
+	}
+}
+
+class Book : SingleTickDecoration
+{
+	default
+	{
+		Radius 16;
+		Height 8;
+		Scale 0.5;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			BOOK A -1;
+			Stop;
+	}
+}
+
+class GoreSkull : SingleTickDecoration
+{
+	default
+	{
+		+NOINTERACTION;
+		scale 0.5;
+		Radius 16;
+		Height 32;
+	}
+	
+	states
+	{
+		Spawn:
+			GBNN A -1;
+			stop;
+	}
+}
+class GoreBone : SingleTickDecoration
+{
+	default
+	{
+		+NOINTERACTION;
+		scale 0.5;
+		Radius 16;
+		Height 32;
+	}
+	
+	states
+	{
+		Spawn:
+			GBNN B -1;
+			stop;
+	}
+}
+
+class ClownCandle : SingleTickDecoration
+{
+	default
+	{
+		+NOINTERACTION;
+		scale 0.5;
+		Radius 8;
+		Height 16;
+	}
+	
+	states
+	{
+		Spawn:
+			PCAN ABC 6;
+			loop;
+	}
+}
+
+class Newspaper1 : SingleTickDecoration
+{
+	default
+	{
+		Scale 0.5;
+		Radius 8;
+		Height 8;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			NEWS A -1;
+			Stop;
+	}
+}
+
+class Newspaper2 : SingleTickDecoration
+{
+	default
+	{
+		Scale 0.5;
+		Radius 8;
+		Height 8;
+		+NOINTERACTION;
+	}
+	
+	States
+	{
+		Spawn:
+			NEWS B -1;
+			Stop;
+	}
+}

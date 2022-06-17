@@ -2310,38 +2310,6 @@ actor GardenStalk2 4178
 	}
 }
 //=============================MISC=============================================
-actor Web2 20013
-{
-	Radius 8
-	Height 20
-	+SpawnCEILING 
-	+NOGRAVITY
-	RENDERSTYLE ADD
-	ALPHA 0.35
-	Mass 5
-	States
-	{
-		Spawn:
-			WEB3 A -1 
-			Stop
-	}
-}
-actor Web3 20001
-{
-	Radius 8
-	Height 20
-	RENDERSTYLE ADD
-	ALPHA 0.35
-	+SpawnCEILING 
-	+NOGRAVITY
-	Mass 5
-	States
-	{
-		Spawn:
-			WEB2 A -1  
-			Stop
-	}
-}
 
 actor OldDesklamp 4111
 {
@@ -2356,6 +2324,7 @@ actor OldDesklamp 4111
 			stop
 	}
 }
+
 actor Lamp2 3899
 {
 	+SOLID
@@ -3125,30 +3094,6 @@ actor big5 : big1
 			Stop
 	}
 }
-actor Newspaper1 4200
-{
-	Scale 0.5
-	Radius 8
-	Height 8
-	States
-	{
-		Spawn:
-			NEWS A -1
-			Stop
-	}
-}
-actor Newspaper2 4201
-{
-	Scale 0.5
-	Radius 8
-	Height 8
-	States
-	{
-		Spawn:
-			NEWS B -1
-			Stop
-	}
-}
 //==============================================================================
 actor BSplatter
 {   
@@ -3494,49 +3439,6 @@ ACTOR EvilDeadHand //32212
 	}
 }
 
-Flower1
-{
-	DoomEdNum 9404
-	Sprite FLOW
-	Frames "10:A"
-	Radius 8
-	Height 8
-}
-Flower3
-{
-	DoomEdNum 9405
-	Sprite FLOW
-	Frames "10:B"
-	Radius 8
-	Height 8
-}
-Toy_Teddy1
-{
-	DoomEdNum 9401
-	Sprite TEDD
-	Frames "10:A"
-	Radius 8
-	Height 8
-	Scale 0.3
-}
-Toy_Teddy2
-{
-	DoomEdNum 9402
-	Sprite TEDD
-	Frames "10:B"
-	Radius 8
-	Height 8
-	Scale 0.3
-}
-Toy_Teddy3
-{
-	DoomEdNum 9403
-	Sprite TEDD
-	Frames "10:C"
-	Radius 8
-	Height 8
-	Scale 0.3
-}
 Kid_Chair1
 {
 	DoomEdNum 9406
@@ -3557,15 +3459,7 @@ Kid_Chair1a
 	Radius 16
 	Height 8
 }
-Book1
-{
-	DoomEdNum 9408
-	Sprite BOOK
-	Frames "10:A"
-	scale 0.5
-	Radius 16
-	Height 8
-}
+
 ACTOR Chunky 3647
 {
 	Health 2
@@ -3747,44 +3641,6 @@ actor TapeRecorder : Circus2Decor 29201
 			RECD A 4 A_Fall
 			RECD A -1
 			Stop
-	}
-}
-actor GoreSkull 29202
-{
-	+NOINTERACTION
-	scale 0.5 
-	Radius 16
-	Height 32
-	states
-	{
-		Spawn:
-			GBNN A -1
-			stop
-	}
-}
-actor GoreBone 29203
-{
-	+NOINTERACTION
-	scale 0.5 
-	Radius 16
-	Height 32
-	states
-	{
-		Spawn:
-			GBNN B -1
-			stop
-	}
-}
-actor ClownCandle 29204
-{
-	scale 0.5
-	Radius 8
-	Height 16
-	states
-	{
-		Spawn:
-			PCAN ABC 6
-			loop
 	}
 }
 actor CottonCandy1 29205
