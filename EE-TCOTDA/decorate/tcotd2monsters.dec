@@ -1,11 +1,11 @@
 // Bullet Tracers
-ACTOR TCOTDBulletTracer : EEProjectile // AetheriusBulletTracerZSC
+ACTOR TCOTDBulletTracer : EEBulletTracer
 {
 	Tag "shot"
 	Damage ((Random(4,6) * Random(1,2)))
-	Damagetype "Bullet"
-	Radius 1
-	Height 1
+	Damagetype "Hitscan"
+	Radius 2
+	Height 2
 	Mass 5
 	Speed 160 // 80
 	PROJECTILE
@@ -15,13 +15,14 @@ ACTOR TCOTDBulletTracer : EEProjectile // AetheriusBulletTracerZSC
 	Renderstyle Add
 	Alpha 1.0
 	Scale 0.5
-	decal BulletChip
+	decal "BulletChip"
+	
 	States
 	{
 		Spawn:
 			TNT1 A 0 NoDelay bright
 		Idle:
-			TNT1 A 1 bright //A_SpawnTracerTrail("TCOTDBulletTracerTrail",6,-2.5)
+			TNT1 A 1 bright A_SpawnTracerTrail("TCOTDBulletTracerTrail",6,-2.5)
 			loop
 		XDeath:
 			TNT1 A 1 //A_SpawnItem("BulletPuff")
