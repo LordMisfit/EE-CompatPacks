@@ -12,7 +12,9 @@ class PopcornGunNew : Circus2Weapon
 {
 	default
 	{
-		Tag "Popcorn Gun: Shoots a volley of weaponized popcorn shrapnel at foes.";
+		Weapon.SlotNumber 7;
+		Weapon.SlotPriority 2.0;
+		Tag "Popcorn Gun: \c[purple]<FIRE>\c- shoots a volley of weaponized popcorn shrapnel at foes.";
 		Weapon.SelectionOrder 100;
 		Inventory.Pickupsound "Dinah/GetWeapon";
 		DDWeapon.PickupVoice true;
@@ -21,7 +23,7 @@ class PopcornGunNew : Circus2Weapon
 		Weapon.AmmoType "PopcornPiece";
 		Weapon.AmmoGive 20;
 		Weapon.AmmoUse 1;
-		Inventory.Pickupmessage "You got the \cjPopcorn Gun\c-! Don't eat the popcorn... \cx[Slot 7]\c-";
+		Inventory.Pickupmessage "\c[gold]Does... this thing shoot this popcorn I'm finding as ammo? Better save up then... \cx[Slot 7]\c-";
 		Obituary "%o ate some of %k's popcorn.";
 		AttackSound "";
 		Scale 0.75;
@@ -133,7 +135,9 @@ class GoreBalloonNew : Circus2Weapon
 {
 	default
 	{
-		Tag "Explosive Gore Balloon: Releases a bloody red balloon packed with explosive viscera at enemies. The released viscera can deal self-AOE, so beware.";
+		Weapon.SlotNumber 4;
+		Weapon.SlotPriority 2.0;
+		Tag "Explosive Gore Balloon: \c[purple]<FIRE>\c- releases a bloody red balloon packed with explosive viscera at enemies. The released viscera can deal self-AOE, so beware.";
 		Weapon.SelectionOrder 1500;
 		Inventory.Pickupsound "Dinah/GetWeapon";
 		DDWeapon.PickupVoice true;
@@ -142,7 +146,7 @@ class GoreBalloonNew : Circus2Weapon
 		Weapon.AmmoType "GoreBalloons";
 		Weapon.AmmoGive 5;
 		Weapon.AmmoUse 1;
-		Inventory.Pickupmessage "You got some \cjgore balloons\c-! \cx[Slot 4]\c-";
+		Inventory.Pickupmessage "\c[gold]Urgh! These balloons are heavy, almost like... wait... is there flaggin' BLOOD inside of these!? \cx[Slot 4]\c-";
 		Obituary "%o wanted %k's balloon.";
 		Scale 0.75;
 	}
@@ -198,7 +202,9 @@ class ClownGrenadeNew : Circus2Weapon
 {
 	default
 	{
-		Tag "Clownish Grenade: Throws a grenade that deals no self-AOE. Will explode on contact with a shootable target.";
+		Weapon.SlotNumber 6;
+		Weapon.SlotPriority 2.0;
+		Tag "Clownish Grenade: \c[purple]<FIRE>\c- throws a grenade that deals no self-AOE. Will explode on contact with a shootable target.";
 		Weapon.SelectionOrder 1400;
 		Inventory.Pickupsound "Dinah/GetWeapon";
 		DDWeapon.PickupVoice true;
@@ -207,7 +213,7 @@ class ClownGrenadeNew : Circus2Weapon
 		Weapon.AmmoType "CGrenadeAmmo" ;
 		Weapon.AmmoGive 5;
 		Weapon.AmmoUse 1;
-		Inventory.Pickupmessage "You picked up some \cjclown grenades\c- \cx[Slot 6]\c-";
+		Inventory.Pickupmessage "\c[gold]These look like some kind of odd canister grenades... \cx[Slot 6]\c-";
 		AttackSound "";
 		+FloatBob;
 		Scale 0.3;
@@ -251,7 +257,9 @@ class GutFlingerNew : Circus2Weapon
 {
 	default
 	{
-		Tag "Gut-Flinger: Fires a single explosive gut at foes. <ALT-FIRE> quick-shoots a less accurate burst of guts. Shots can deal self-AOE, so beware!";
+		Weapon.SlotNumber 2;
+		Weapon.SlotPriority 2.0;
+		Tag "Gut-Flinger: \c[purple]<FIRE>\c- shoots a single explosive gut at foes. \c[purple]<ALT-FIRE>\c- quick-shoots a less accurate burst of guts. Shots can deal self-AOE, so beware!";
 		Weapon.SelectionOrder 1150;
 		Inventory.Pickupsound "Dinah/GetWeapon";
 		DDWeapon.PickupVoice true;
@@ -262,7 +270,7 @@ class GutFlingerNew : Circus2Weapon
 		Weapon.AmmoGive 5;
 		Weapon.AmmoUse1 1;
 		Weapon.AmmoUse2 1;
-		Inventory.Pickupmessage "You got the \cjGut Flinger\c-! \cx[Slot 2]\c-";
+		Inventory.Pickupmessage "\c[gold]What in Heaven's name is this weird contraption? I'm getting bad vibes from it... \cx[Slot 2]\c-";
 		AttackSound "";
 		Scale 1;
 	}
@@ -329,7 +337,9 @@ class GasRocketLauncherNew : Circus2Weapon
 {
 	default
 	{
-		Tag "Bingo's Gas Rocket Launcher: Launches a rocket that explodes into a expanding spread of psychedelic gas clouds. <ALT-FIRE> allows a more inaccurate quick-fire mode. The clouds of your rockets do NOT deal self-AOE, so you can safe move through them.";
+		Weapon.SlotNumber 5;
+		Weapon.SlotPriority 2.0;
+		Tag "Bingo's Gas Rocket Launcher: \c[purple]<FIRE>\c- Launches a rocket that explodes into a expanding spread of psychedelic gas clouds. \c[purple]<ALT-FIRE>\c- allows a more inaccurate quick-fire mode. The clouds of your rockets do NOT deal self-AOE, so\c- \c[green]you can safely move through them.\c-";
 		Weapon.SelectionOrder 1050;
 		Inventory.Pickupsound "Dinah/GetWeapon";
 		DDWeapon.PickupVoice true;
@@ -340,7 +350,7 @@ class GasRocketLauncherNew : Circus2Weapon
 		Weapon.AmmoGive 20;
 		Weapon.AmmoUse1 5;
 		Weapon.AmmoUse2 5;
-		Inventory.Pickupmessage "You got the \cjGas Rocket Launcher\c-! \cx[Slot 5]\c-";
+		Inventory.Pickupmessage "\c[gold]Some kind of garish missile or rocket shooting weapon... \cx[Slot 5]\c-";
 		Obituary "%o choked on %k's gas.";
 		AttackSound "";
 		Scale 0.75;

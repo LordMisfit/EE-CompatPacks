@@ -1,9 +1,0 @@
-weaponsection Circu667
-
-addslotdefault 7 PopcornGunNew
-addslotdefault 4 GoreBalloonNew
-addslotdefault 5 GasRocketLauncherNew
-addslotdefault 2 GutFlingerNew
-addslotdefault 6 ClownGrenadeNew
-
-addkeysection "Circu667" Circu667_keysection

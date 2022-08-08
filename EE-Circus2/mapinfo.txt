@@ -1,6 +1,6 @@
 DoomEdNums
 {
-	3115 = PossessedBalloon
+	3115 = PossessedBalloonNew
 	3191 = BlackBearNew
 	3192 = BigBertha2New
 	3194 = MiniFluffyNew
