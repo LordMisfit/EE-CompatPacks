@@ -1,7 +1,7 @@
 ACTOR RocketGuy : EECreature 3202
 { 
 	//$Category Monsters
-	Health 50 
+	Health 50
 	Radius 20 
 	Height 56 
 	Mass 100 
@@ -1087,7 +1087,7 @@ ACTOR NightmareNew : EECreature 26000
 	}
 }
 
-ACTOR RapidFireTrooper : EECreature 3201
+ACTOR RapidFireTrooper : ZombiemanNew 3201
 {
 	//$Angled
 	//$Color 12
@@ -1158,7 +1158,7 @@ ACTOR RapidFireTrooper : EECreature 3201
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
 				A_PlaySound ("grunt/attack");
 
-				A_CustomBulletAttack(user_shotaccuracy, user_shotzaccuracy, 1, random(1,5) * 3, "BulletPuff", 0, CBAF_NORANDOM);
+				A_PosAttack();
 			}
 			RFTR E 5 
 			{
