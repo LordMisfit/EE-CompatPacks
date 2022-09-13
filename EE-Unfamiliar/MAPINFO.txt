@@ -104,7 +104,7 @@ next = E1M2
 sky1 = E1SKY1
 cluster = 1
 music = D_E1M1
-useplayerstartz="568"
+useplayerstartz = "568"
 }
 
 map E1M2 "Nukage Dump"
@@ -201,7 +201,7 @@ music = D_E2M3
 map E2M4 "Delta Labs"
 {
 next = E2M5
-sky1 = BLACK
+sky1 = E2SKY4
 cluster = 2
 music = D_E2M4
 }
@@ -303,7 +303,7 @@ music = D_E3M6
 map E3M7 "The Tombs of Despair"
 {
 next = E3M8
-sky1 = BLACK
+sky1 = E3SKY7
 cluster = 3
 music = D_E3M7
 }
