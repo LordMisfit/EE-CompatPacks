@@ -8,7 +8,6 @@ class UnfamiliarBFG9000 : Weapon REPLACES BFG9000
 		Weapon.AmmoGive 50;
 		Weapon.AmmoType "Cell";
 		Inventory.PickupMessage "You got the BIG FUCKING GUN!";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		Tag "The Big Fucking Gun";
 		+WEAPON.NOAUTOFIRE
 	}

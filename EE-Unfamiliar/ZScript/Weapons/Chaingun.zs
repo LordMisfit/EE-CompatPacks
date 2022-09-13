@@ -7,7 +7,6 @@ class UnfamiliarChaingun : Weapon REPLACES Chaingun
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "Clip";
 		Inventory.PickupMessage "You got a UAC Commando's Chaingun.";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		Tag "UAC Commando's Chaingun";
 	}
 

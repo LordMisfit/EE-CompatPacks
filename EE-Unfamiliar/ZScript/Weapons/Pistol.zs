@@ -7,7 +7,6 @@ class UnfamiliarPistol : Weapon REPLACES Pistol
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "Clip";
 		Inventory.Pickupmessage "You got a UAC Security Guard's Pistol.";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		Tag "UAC Security Guard's Pistol";
 		+WEAPON.WIMPY_WEAPON
 	}

@@ -1,6 +1,6 @@
 $pitchshiftrange 3
 
-//envrionmental effects
+//environmental effects
 
 Fountain/Loop	DSWFOUNT
 $volume Fountain/Loop 0.25
@@ -202,6 +202,35 @@ $volume ambient/distortedtech/badtech4 0.6
 ambient/distortedtech/badtech5		"sounds/ambient/distortedtech/badtech5.ogg"
 $volume ambient/distortedtech/badtech5 0.6
 
+//ambient loops - everglade
+
+ambient/water/waterlake		"sounds/ambient/water/waterlake.ogg"
+$volume ambient/water/waterlake 0.5
+
+ambient/water/waterfall1		"sounds/ambient/water/waterfall1.ogg"
+$volume ambient/water/waterfall1 0.25
+
+ambient/water/waterfall2		"sounds/ambient/water/waterfall2.ogg"
+$volume ambient/water/waterfall2 0.25
+
+ambient/water/waterdrip		"sounds/ambient/water/waterdrip.ogg"
+$volume ambient/water/waterdrip 0.5
+
+ambient/water/interiorwater		"sounds/ambient/water/interiorwater.ogg"
+$volume ambient/water/interiorwater 0.25
+
+ambient/nature/wind1		"sounds/ambient/nature/wind1.ogg"
+$volume ambient/nature/wind1 0.5
+
+ambient/nature/wind2		"sounds/ambient/nature/wind2.ogg"
+$volume ambient/nature/wind2 0.5
+
+ambient/nature/wind3		"sounds/ambient/nature/wind3.ogg"
+$volume ambient/nature/wind3 0.15
+
+ambient/nature/wind4		"sounds/ambient/nature/wind4.ogg"
+$volume ambient/nature/wind4 0.15
+
 //items
 
 Items/DSITEMUP				"Sounds/Items/DSITEMUP.ogg"
@@ -212,21 +241,6 @@ $Volume Items/DSWPNUP 1.0
 
 Items/DSGETPOW				"Sounds/Items/DSGETPOW.ogg"
 $Volume Items/DSGETPOW 1.0
-
-Items/WeaponItem			"Sounds/Items/WeaponItem.ogg"
-$Volume Items/WeaponItem 1.0
-
-Items/PowerupItem			"Sounds/Items/PowerupItem.ogg"
-$Volume Items/PowerupItem 1.0
-
-Items/HealthItem			"Sounds/Items/HealthItem.ogg"
-$Volume Items/HealthItem 1.0
-
-Items/AmmoItem				"Sounds/Items/AmmoItem.ogg"
-$Volume Items/AmmoItem 1.0
-
-Items/ArmourItem			"Sounds/Items/ArmourItem.ogg"
-$Volume Items/ArmourItem 1.0
 
 //misc
 

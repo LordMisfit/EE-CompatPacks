@@ -120,3 +120,83 @@ class FleshTree3 : FleshTree1
 			Stop;
 	}
 }
+
+class SmallTree1 : Actor
+{
+	Default
+	{
+		Radius 19;
+		Height 61;
+		Mass 5000;
+		Scale 0.8;
+
+		+SOLID
+	}
+
+	States
+	{
+		Spawn:
+			TREN A -1;
+			Wait;
+	}
+}
+
+class SmallTree2 : Actor
+{
+	Default
+	{
+		Radius 19;
+		Height 61;
+		Mass 5000;
+		Scale 0.8;
+
+		+SOLID
+	}
+
+	States
+	{
+		Spawn:
+			TREN B -1;
+			Wait;
+	}
+}
+
+class SmallBush1 : Actor
+{
+	Default
+	{
+		Radius 19;
+		Height 61;
+		Mass 5000;
+		Scale 0.8;
+
+		+SOLID
+	}
+
+	States
+	{
+		Spawn:
+			BUSN A -1;
+			Wait;
+	}
+}
+
+class SmallBush2 : Actor
+{
+	Default
+	{
+		Radius 19;
+		Height 61;
+		Mass 5000;
+		Scale 0.8;
+
+		+SOLID
+	}
+
+	States
+	{
+		Spawn:
+			BUSN B -1;
+			Wait;
+	}
+}

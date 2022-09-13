@@ -6,7 +6,6 @@ class UnfamiliarFist : Weapon REPLACES Fist
 		Weapon.Kickback 100;
 		Tag "A Desire to Brawl";
 		Inventory.PickupMessage "You got the desire to brawl.";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		+WEAPON.WIMPY_WEAPON
 		+WEAPON.MELEEWEAPON
 	}

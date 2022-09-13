@@ -29,6 +29,11 @@ episode E1M1
 {
 	name = "Unfamiliar"
 }
+episode E4M1
+{
+	name = "The Eternal Everglade [Bonus Levels]"
+	picname = M_EP4
+}
 /*
 episode E2M1
 {
@@ -322,6 +327,24 @@ specialaction_lowerfloor
 music = D_E3M9
 }
 
+map E4M1 "Everglade Part I"
+{
+next = E4M2
+sky1 = E4SKY1
+cluster = 4
+music = D_E4M1
+}
+
+map E4M2 "Everglade Part II"
+{
+next = EndTitle
+sky1 = E4SKY2
+cluster = 4
+music = D_E4M2
+cyberdemonspecial
+specialaction_lowerfloor
+}
+
 cluster 1
 {
 	flat = BLACK
@@ -389,5 +412,28 @@ cluster 3
 "But as fate would have it your destination ends up far off",
 "from where you had hoped...",
 "",
-"Unfamiliar Episode IV, coming 2022!"
+"But that is another story..."
+}
+
+cluster 4
+{
+	flat = BLACK
+	music = D_TXT
+	exittext =
+	
+"All is quiet as night falls upon the Everglade.",
+"",
+"The twin Cyberdemons who had led this demonic task force",
+"have been defeated, and the spawn of darkness no longer",
+"disturbs the quaint and cherished island.",
+"",
+"As quickly as you arrived, you are then plucked out of",
+"this vast place by another force, probably those 'Powers",
+"That Be' again...",
+"",
+"You know the addage 'no rest for the wicked'? Well, you",
+"don't think there's rest for anyone at this point,",
+"really... You're not a saintess, but you're no demoness",
+"either, yet they're still sending you all over the blast-",
+"ed place... Oh well... Guess you're off yet again!"
 }

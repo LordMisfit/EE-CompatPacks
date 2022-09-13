@@ -4,18 +4,6 @@ PIC LFALL2 TICS 5
 PIC LFALL3 TICS 5
 PIC LFALL4 TICS 5
 
-TEXTURE HFALL1
-PIC HFALL1 TICS 5
-PIC HFALL2 TICS 5
-PIC HFALL3 TICS 5
-PIC HFALL4 TICS 5
-
-TEXTURE HWATER1
-PIC HWATER1 TICS 5
-PIC HWATER2 TICS 5
-PIC HWATER3 TICS 5
-PIC HWATER4 TICS 5
-
 TEXTURE WALL57_2
 PIC WALL57_2 TICS 5
 PIC WALL57_3 TICS 5
@@ -313,13 +301,6 @@ warp texture FWATER2 0.125
 warp texture FWATER3 0.125
 warp texture FWATER4 0.125
 
-//healing water
-
-warp texture HWATER1 0.25
-warp texture HWATER2 0.25
-warp texture HWATER3 0.25
-warp texture HWATER4 0.25
-
 //orange lava
 
 warp texture LAVA1 0.25
@@ -352,3 +333,14 @@ warp texture SLIME05 0.25
 warp texture SLIME06 0.25
 warp texture SLIME07 0.25
 warp texture SLIME08 0.25
+
+//plutonia nature
+
+Texture AROCK1
+	allowdecals
+	pic AROCK1 tics 8
+	pic AROCK2 tics 8
+	pic AROCK3 tics 8
+	pic AROCK4 tics 8
+	pic AROCK5 tics 8
+	pic AROCK6 tics 8

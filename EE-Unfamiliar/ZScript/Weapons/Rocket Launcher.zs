@@ -7,7 +7,6 @@ class UnfamiliarRocketLauncher : Weapon REPLACES RocketLauncher
 		Weapon.AmmoGive 2;
 		Weapon.AmmoType "RocketAmmo";
 		Inventory.PickupMessage "You got a UAC Mining Rocket Launcher.";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		Tag "UAC Mining Rocket Launcher";
 		+WEAPON.NOAUTOFIRE
 	}

@@ -16,7 +16,7 @@ class FountainWaterNoisy : Actor
 	States
 	{
 		Spawn:
-			WFOU ABCD 3 A_StartSound("Fountain/Loop", flags: CHANF_LOOPING, attenuation: ATTN_IDLE);
+			EFOU ABCD 3 A_StartSound("Fountain/Loop", flags: CHANF_LOOPING, attenuation: ATTN_IDLE);
 			Loop;
 	}
 }
@@ -29,7 +29,6 @@ class FountainNukageNoisy : FountainWaterNoisy
 		Scale 0.5;
 		Alpha 1.0;
 		
-		+BRIGHT
 	}
 
 	States
@@ -46,6 +45,16 @@ class FountainBloodNoisy : FountainWaterNoisy
 	{
 		Spawn:
 			BFOU ABCD 3 A_StartSound("Fountain/Loop", flags: CHANF_LOOPING, attenuation: ATTN_IDLE);
+			Loop;
+	}
+}
+
+class FountainEvergladeNoisy : FountainWaterNoisy
+{
+	States
+	{
+		Spawn:
+			EFOU ABCD 3 A_StartSound("Fountain/Loop", flags: CHANF_LOOPING, attenuation: ATTN_IDLE);
 			Loop;
 	}
 }

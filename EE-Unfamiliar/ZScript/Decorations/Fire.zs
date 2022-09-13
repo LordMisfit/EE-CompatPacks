@@ -7,7 +7,7 @@ class LavaFireBlue : Actor
 
 		+NOBLOCKMAP
 		+NOCLIP
-		+BRIGHT
+		//+BRIGHT
 	}
 
 	States

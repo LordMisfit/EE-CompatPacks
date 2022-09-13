@@ -23,6 +23,7 @@ DoomEdNums
 	13003 = FountainWaterNoisy
 	13004 = FountainNukageNoisy
 	13005 = FountainBloodNoisy
+	13006 = FountainEvergladeNoisy
 	
 	16000 = FleshPillarPink
 	16001 = FleshPillarTan
@@ -30,6 +31,11 @@ DoomEdNums
 	16003 = FleshDanglingTan
 	
 	17321 = AmbientLoop
+	
+	17400 = SmallBush1
+	17401 = SmallBush2
+	17402 = SmallTree1
+	17403 = SmallTree2
 	
 	20001 = SparkWhite
 	20002 = SparkRed

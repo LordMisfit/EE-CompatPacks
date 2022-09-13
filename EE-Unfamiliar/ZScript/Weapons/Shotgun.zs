@@ -7,7 +7,6 @@ class UnfamiliarShotgun : Weapon REPLACES Shotgun
 		Weapon.AmmoGive 8;
 		Weapon.AmmoType "Shell";
 		Inventory.PickupMessage "You got a UAC Sargeant's Shotgun.";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		Tag "UAC Sargeant's Shotgun";
 	}
 

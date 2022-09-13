@@ -1,37 +1,37 @@
-brightmap flat ceil1_2     { map "brightmaps/textures/doom/flats/ceil1_2.png" iwad }
-brightmap flat ceil1_3     { map "brightmaps/textures/doom/flats/ceil1_3.png" iwad }
+brightmap flat ceil1_2     { map "brightmaps/textures/doom/flats/ceil1_2.png" disablefullbright }
+brightmap flat ceil1_3     { map "brightmaps/textures/doom/flats/ceil1_3.png" disablefullbright }
 
-brightmap texture doorblu  { map "brightmaps/textures/doom/doorblu.png" iwad }
-brightmap texture doorred  { map "brightmaps/textures/doom/doorblu.png" iwad }
-brightmap texture dooryel  { map "brightmaps/textures/doom/doorblu.png" iwad }
+brightmap texture doorblu  { map "brightmaps/textures/doom/doorblu.png" disablefullbright }
+brightmap texture doorred  { map "brightmaps/textures/doom/doorblu.png" disablefullbright }
+brightmap texture dooryel  { map "brightmaps/textures/doom/doorblu.png" disablefullbright }
 
-brightmap texture exitdoor { map "brightmaps/textures/doom/exitdoor.png" iwad }
-brightmap texture exitsign { map "brightmaps/textures/doom/exitsign.png" iwad }
+brightmap texture exitdoor { map "brightmaps/textures/doom/exitdoor.png" disablefullbright }
+brightmap texture exitsign { map "brightmaps/textures/doom/exitsign.png" disablefullbright }
 
-brightmap texture sladrip1 { map "brightmaps/textures/doom/sladrip1.png" iwad }
-brightmap texture sladrip2 { map "brightmaps/textures/doom/sladrip2.png" iwad }
-brightmap texture sladrip3 { map "brightmaps/textures/doom/sladrip3.png" iwad }
-brightmap texture sladskul { map "brightmaps/textures/doom/sladskul.png" iwad }
+brightmap texture sladrip1 { map "brightmaps/textures/doom/sladrip1.png" disablefullbright }
+brightmap texture sladrip2 { map "brightmaps/textures/doom/sladrip2.png" disablefullbright }
+brightmap texture sladrip3 { map "brightmaps/textures/doom/sladrip3.png" disablefullbright }
+brightmap texture sladskul { map "brightmaps/textures/doom/sladskul.png" disablefullbright }
 
-brightmap texture bronze4  { map "brightmaps/textures/doom2/bronze4.png" iwad }
+brightmap texture bronze4  { map "brightmaps/textures/doom2/bronze4.png" disablefullbright }
 
-brightmap texture metal3   { map "brightmaps/textures/doom2/metal3.png" iwad }
-brightmap texture metal6   { map "brightmaps/textures/doom2/metal6.png" iwad }
-brightmap texture metal7   { map "brightmaps/textures/doom2/metal7.png" iwad }
+brightmap texture metal3   { map "brightmaps/textures/doom2/metal3.png" disablefullbright }
+brightmap texture metal6   { map "brightmaps/textures/doom2/metal6.png" disablefullbright }
+brightmap texture metal7   { map "brightmaps/textures/doom2/metal7.png" disablefullbright }
 
-brightmap texture pipewal1 { map "brightmaps/textures/doom2/pipewal1.png" iwad }
+brightmap texture pipewal1 { map "brightmaps/textures/doom2/pipewal1.png" disablefullbright }
 
-brightmap texture spcdoor1 { map "brightmaps/textures/doom2/spcdoor1.png" iwad }
-brightmap texture spcdoor3 { map "brightmaps/textures/doom2/spcdoor3.png" iwad }
-brightmap texture spcdoor4 { map "brightmaps/textures/doom2/spcdoor4.png" iwad }
+brightmap texture spcdoor1 { map "brightmaps/textures/doom2/spcdoor1.png" disablefullbright }
+brightmap texture spcdoor3 { map "brightmaps/textures/doom2/spcdoor3.png" disablefullbright }
+brightmap texture spcdoor4 { map "brightmaps/textures/doom2/spcdoor4.png" disablefullbright }
 
 brightmap texture tekbron2 { map "brightmaps/textures/doom2/tekbron2.png" disablefullbright }
 brightmap texture tekgren1 { map "brightmaps/textures/doom2/tekgren1.png" disablefullbright }
 brightmap texture tekgren3 { map "brightmaps/textures/unfam/blwl2.png" disablefullbright }
 brightmap texture tekgren5 { map "brightmaps/textures/doom2/metal6.png" disablefullbright }
 
-brightmap texture teklite  { map "brightmaps/textures/doom2/teklite.png" iwad }
-brightmap texture teklite2 { map "brightmaps/textures/doom2/teklite2.png" iwad }
+brightmap texture teklite  { map "brightmaps/textures/doom2/teklite.png" disablefullbright }
+brightmap texture teklite2 { map "brightmaps/textures/doom2/teklite2.png" disablefullbright }
 
 brightmap texture blackw1   { map "brightmaps/textures/doom2/metal3.png" disablefullbright }
 brightmap texture blackw5   { map "brightmaps/textures/doom2/metal6.png" disablefullbright }
@@ -53,14 +53,18 @@ brightmap texture rwall2   { map "brightmaps/textures/doom2/metal3.png" disablef
 brightmap texture rwall3   { map "brightmaps/textures/doom2/metal7.png" disablefullbright }
 brightmap texture rwall4   { map "brightmaps/textures/doom2/metal6.png" disablefullbright }
 
-brightmap texture rtek1 { map "brightmaps/textures/doom2/teklite2.png" iwad }
-brightmap texture rtek2  { map "brightmaps/textures/doom2/teklite.png" iwad }
+brightmap texture rtek1 { map "brightmaps/textures/doom2/teklite2.png" disablefullbright }
+brightmap texture rtek2  { map "brightmaps/textures/doom2/teklite.png" disablefullbright }
+
+brightmap texture ptek1 { map "brightmaps/textures/doom2/teklite2.png" disablefullbright }
+brightmap texture ptek2  { map "brightmaps/textures/doom2/teklite.png" disablefullbright }
 
 brightmap texture doorn { map "brightmaps/textures/unfam/doorn.png" disablefullbright }
 brightmap texture doorn1 { map "brightmaps/textures/unfam/doorn.png" disablefullbright }
 brightmap texture doorn2 { map "brightmaps/textures/unfam/doorn.png" disablefullbright }
 brightmap texture doorn3 { map "brightmaps/textures/unfam/doorn.png" disablefullbright }
 brightmap texture doorn4 { map "brightmaps/textures/unfam/doorn.png" disablefullbright }
+brightmap texture doorn24 { map "brightmaps/textures/unfam/doorn.png" disablefullbright }
 brightmap texture doorn5 { map "brightmaps/textures/unfam/doorn5.png" disablefullbright }
 
 brightmap texture WSTEP { map "brightmaps/textures/unfam/BSTP3.png" disablefullbright }
@@ -69,3 +73,4 @@ brightmap texture GSTEP { map "brightmaps/textures/unfam/BSTP3.png" disablefullb
 brightmap texture RSTEP3 { map "brightmaps/textures/unfam/BSTP3.png" disablefullbright }
 brightmap texture STEP04 { map "brightmaps/textures/unfam/BSTP3.png" disablefullbright }
 brightmap texture YSTEP { map "brightmaps/textures/unfam/BSTP3.png" disablefullbright }
+brightmap texture PSTEP { map "brightmaps/textures/unfam/BSTP3.png" disablefullbright }

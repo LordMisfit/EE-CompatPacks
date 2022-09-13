@@ -1,4 +1,3 @@
-/*
 Object UnfamiliarChainsaw
 {
     Frame CSAW {Light "UnfamiliarChainsaw"}
@@ -94,7 +93,7 @@ color 0 1 0
 size 20
 offset 0 0 0
 }
-*/
+
 //Pistol
 
 brightmap sprite pisfa0

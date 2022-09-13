@@ -7,7 +7,6 @@ class UnfamiliarPlasmaRifle : Weapon REPLACES PlasmaRifle
 		Weapon.AmmoGive 40;
 		Weapon.AmmoType "Cell";
 		Inventory.PickupMessage "You got a UAC Prototype Plasma Rifle.";
-		//Inventory.PickupSound "Items/DSWPNUP.ogg";
 		Tag "UAC Prototype Plasma Rifle";
 	}
 
