@@ -310,6 +310,7 @@ music = D_E3M7
 
 map E3M8 "The Lair of The Abomination"
 {
+next = E4M1
 sky1 = E3SKY8
 cluster = 3
 spidermastermindspecial
