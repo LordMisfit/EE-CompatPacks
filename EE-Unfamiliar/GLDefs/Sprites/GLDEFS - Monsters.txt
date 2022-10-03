@@ -1,3 +1,4 @@
+/*
 Object UnfamiliarLostSoul
 {
     Frame SKUL {Light "UnfamiliarLostSoul"}
@@ -9,7 +10,7 @@ color 1 0.5 0
 size 24
 offset 0 0 0
 }
-
+*/
 //Baron
 
 brightmap sprite bossa1

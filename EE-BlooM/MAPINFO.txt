@@ -1,0 +1,50 @@
+GameInfo
+{
+	PlayerClasses = "DinahPlayer"
+	AddEventHandlers = "DD_EventHandler", "DD_StaticEventHandler"
+	statusbarclass = "DDStatusBarMain"
+	StatScreen_Single = "DDStatScreen_SP"
+	QuitMessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7", "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11"
+}
+
+DamageType Falling
+{
+	NoArmor
+}
+
+clearskills
+skill baby
+{
+	SpawnFilter = Baby
+	Name = "Sissy Sparkler Show"
+	Key = "s"
+}
+
+skill easy
+{
+	SpawnFilter = Easy
+	Name = "Lit Bag of Snakes"
+	Key = "l"
+}
+
+skill normal
+{
+	DefaultSkill
+	SpawnFilter = Normal
+	Name = "Roman Candle Skirmish"
+	Key = "r"
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "Cherry Bomb in the Toilet"
+	Key = "c"
+}
+
+skill nightmare
+{
+	SpawnFilter = Nightmare
+	Name = "Basically Illegal Explosives"
+	Key = "b"
+}
