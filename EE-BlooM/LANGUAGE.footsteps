@@ -10,7 +10,27 @@
 // Items are separated by a colon ( : )
 // If a flat/texture is not present in this list, then only the default sound will be
 // played when it is walked on.
-STEP_FLATS = "";
+STEP_FLATSBLOOM = "XTEX0249:XTEX0264:XTEX0287:XTEX0353:XTEX0366:"
+									"XTEX0269:XTEX042:YTEX9Y51:XTEX0652:ZTEXTA15:"
+									"XTEX021:XTEX035:XTEX0527:"
+									"ZIMMER7:MTEXT2:";
 
 // Sounds
-// STEP_DEFAULT = "step/default";
+STEP_XTEX0249 = "step/hard";
+STEP_XTEX0264 = "step/dirt";
+STEP_XTEX0287 = "step/tile/a";
+STEP_XTEX0353 = "step/grass";
+STEP_XTEX0366 = "step/hard";
+
+STEP_XTEX0269 = "step/gravel";
+STEP_XTEX042 = "step/dirt";
+STEP_YTEX9Y51 = "step/metal/a";
+STEP_XTEX0652 = "step/carpet";
+STEP_ZTEXTA15 = "step/hard";
+
+STEP_XTEX021 = "step/wood";
+STEP_XTEX035 = "step/wood";
+STEP_XTEX0527 = ""; // step/piano
+
+STEP_ZIMMER7 = "step/dirt";
+STEP_MTEXT2 = "step/metal/b";

@@ -1,5 +1,5 @@
 [default]
-// BlooM Footsteps
+// TCOTD:A Footsteps
 // Language Definitions
 
 // This is where the footstep sounds for each texture are defined.
@@ -10,7 +10,7 @@
 // Items are separated by a colon ( : )
 // If a flat/texture is not present in this list, then only the default sound will be
 // played when it is walked on.
-STEP_FLATS = "";
+STEP_FLATSTCOTDA = "";
 
 // Sounds
 // STEP_DEFAULT = "step/default";
