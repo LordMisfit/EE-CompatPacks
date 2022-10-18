@@ -10,7 +10,9 @@
 // Items are separated by a colon ( : )
 // If a flat/texture is not present in this list, then only the default sound will be
 // played when it is walked on.
-STEP_FLATSBLOOM = "BLD241:BLD242:BLD243:BLD244:BLD245:"
+STEP_FLATSBLOOM = "BL4_001:BL4_002:BL4_003:BL4_004:BL4_005:BL4_006:BL4_007:BL4_008:BL4_009:BL4_010:"
+									"BL4_011:BL4_012:BL4_013:BL4_014:BL4_015:BL4_016:BL4_017:BL4_018:BL4_019:BL4_020:"
+									"BLD241:BLD242:BLD243:BLD244:BLD245:"
 									"PLUM06:"
 									"XTEX0100:XTEX0101:XTEX0102:XTEX0103:XTEX0104:XTEX0105:XTEX0106:XTEX0107:XTEX0108:XTEX0109:"
 									"XTEX0110:XTEX0111:XTEX0112:XTEX0113:XTEX0114:XTEX0115:XTEX0116:XTEX0117:XTEX0118:XTEX0119:"
@@ -43,6 +45,26 @@ STEP_FLATSBLOOM = "BLD241:BLD242:BLD243:BLD244:BLD245:"
 									"BLAKWAL2:";
 
 // Sounds
+STEP_BL4_001 = "step/hard":
+STEP_BL4_002 = "step/hard":
+STEP_BL4_003 = "step/hard":
+STEP_BL4_004 = "step/hard":
+STEP_BL4_005 = "step/hard":
+STEP_BL4_006 = "step/hard":
+STEP_BL4_007 = "step/hard":
+STEP_BL4_008 = "step/hard":
+STEP_BL4_009 = "step/hard":
+STEP_BL4_010 = "step/hard":
+STEP_BL4_011 = "step/slimy":
+STEP_BL4_012 = "step/slimy":
+STEP_BL4_013 = "step/slimy":
+STEP_BL4_014 = "step/slimy":
+STEP_BL4_015 = "step/slimy":
+STEP_BL4_016 = "step/slimy":
+STEP_BL4_017 = "step/slimy":
+STEP_BL4_018 = "step/slimy":
+STEP_BL4_019 = "step/slimy":
+STEP_BL4_020 = "step/slimy":
 STEP_BLD241 = "step/grate";
 STEP_BLD242 = "step/grate";
 STEP_BLD243 = "step/grate";
