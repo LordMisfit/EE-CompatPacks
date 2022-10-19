@@ -14,7 +14,8 @@ Actor BerserkBLOOM : RandomSpawner Replaces Berserk_
 
 Actor GunsAkimboBLOOM : RandomSpawner Replaces GunsAkimbo
 {
-	DropItem "BerserkNew", 256, 230
+	DropItem "BerserkNew", 256, 204
+	DropItem "CrazyBallDD", 256, 52
 }
 
 Actor BlunderAxeBloom : RandomSpawner Replaces Shotgun_
@@ -130,24 +131,28 @@ Actor CellPackSpawnerBLOOM : RandomSpawner2 replaces CellPack_
 
 Actor FrostGunReplacerBLOOM : RandomSpawner2 replaces FrostGun_
 {
-		DropItem "CandleAmmoBig", 256, 3
+		DropItem "CandleAmmoBig", 256, 224
+		DropItem "CrazyBallDD", 256, 32
 }
 
 Actor IceSpawnerBLOOM : RandomSpawner2 replaces FrostAmmo
 {
-		DropItem "CandleAmmo", 256, 3
-		DropItem "CandleAmmoBig", 256, 1
+		DropItem "CandleAmmo", 256, 255
+		DropItem "CandleAmmoBig", 256, 85
+		DropItem "CrazyBallDD", 256, 1
 }
 
 Actor IcePackPackSpawnerBLOOM : RandomSpawner2 replaces BigFrostAmmo
 {
-		DropItem "CandleAmmo", 256, 3
-		DropItem "CandleAmmoBig", 256, 1
+		DropItem "CandleAmmo", 256, 255
+		DropItem "CandleAmmoBig", 256, 85
+		DropItem "CrazyBallDD", 256, 1
 }
 
 Actor FlameThrowerReplacerBloom : RandomSpawner Replaces Flamethrower_
 {
 	DropItem "WizardPike", 256, 100
+	DropItem "CrazyBallDD", 256, 15
 }
 
 Actor FlameSpawnerBLOOM : RandomSpawner2 replaces FlameGas
