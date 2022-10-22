@@ -101,6 +101,8 @@ HangingExHybridBaron
 Balloon
 MerryGargovileStatue
 LivingGargovileStatue
+MerryGargStatue
+LivingGargStatue
 RedBrain
 GreenBrain
 CacoyleBall
