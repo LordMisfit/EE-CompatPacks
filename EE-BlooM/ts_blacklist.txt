@@ -120,3 +120,4 @@ WingDestroyable
 GargHed
 LovingMemory
 MoronTrap
+DeadBrownCultist
