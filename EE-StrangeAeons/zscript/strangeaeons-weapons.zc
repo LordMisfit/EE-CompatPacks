@@ -19,6 +19,7 @@ class ScepterOfSouls : DinahWeapon
 		Obituary "%k sucked out %o's soul";
 		Tag "Scepter of Souls";
 		Weapon.AmmoType "PikeAmmo";
+		Weapon.AmmoGive 1;
 		Weapon.SelectionOrder 2400;
 		Weapon.Slotnumber 0;
 		Weapon.SlotPriority 2;
@@ -290,6 +291,7 @@ class DualScepterOfSouls : ScepterOfSouls
 		Obituary "%k sucked out %o's soul";
 		Tag "Dual Scepters of Souls";
 		Weapon.AmmoType "PikeAmmo";
+		Weapon.AmmoGive 1;
 		Weapon.SelectionOrder 2400;
 		Weapon.Slotnumber 0;
 		Weapon.SlotPriority 2;
@@ -567,6 +569,7 @@ class ImpalerXBow : DinahWeapon replaces Chainsaw
 		Inventory.PickupMessage "You got the \cjImpaler\c-! \cx[Slot 5]\c-";
 		Tag "Impaler Crossbow";
 		Weapon.AmmoType "PikeAmmo";
+		Weapon.AmmoGive 1;
 		Weapon.UpSound "Weapon/XBowLoad";
 		Weapon.KickBack 20;
 		Weapon.SelectionOrder 2500;
@@ -817,6 +820,7 @@ class DualImpalerXBow : ImpalerXBow
 		Tag "Dual Impaler Crossbows";
 		Weapon.UpSound "Weapon/XBowLoad";
 		Weapon.AmmoType "PikeAmmo";
+		Weapon.AmmoGive 1;
 		Weapon.KickBack 20;
 		Weapon.SelectionOrder 2500;
 		Weapon.Slotnumber 5;
