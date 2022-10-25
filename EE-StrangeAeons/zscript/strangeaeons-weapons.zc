@@ -557,7 +557,7 @@ class ImpalerBowZoom : PlaceholderItem
 }
 class ImpalerBowFakeReady : PlaceholderItem { } // Checks to see if your current selected weapon is "Hellcore Class" [for HUD displays]
 class ImpalerBowRealReady : PlaceholderItem { } // Checks to see if your current selected weapon is "Hellcore Class" [for HUD displays]
-class ImpalerXBow : DinahWeapon // replaces Chainsaw
+class ImpalerXBow : DinahWeapon replaces Chainsaw
 {
 	int bowenergy;
 	int bowenergybits;
@@ -653,7 +653,7 @@ class ImpalerXBow : DinahWeapon // replaces Chainsaw
 						{
 							invoker.bowenergy = 0;
 							if (MiscItem) MiscItem.Temp1Charge = invoker.bowenergy;
-							return resolvestate("Ready");
+							return resolvestate("FakeReady");
 						}
 						if (MiscItem) MiscItem.Temp1Charge = invoker.bowenergy;
 						return resolvestate(null);
@@ -725,7 +725,7 @@ class ImpalerXBow : DinahWeapon // replaces Chainsaw
 						{
 							invoker.bowenergy = 0;
 							if (MiscItem) MiscItem.Temp1Charge = invoker.bowenergy;
-							return resolvestate("Ready");
+							return resolvestate("FakeReady");
 						}
 						if (MiscItem) MiscItem.Temp1Charge = invoker.bowenergy;
 						return resolvestate(null);
@@ -903,7 +903,7 @@ class DualImpalerXBow : ImpalerXBow
 						{
 							invoker.bowenergy = 0;
 							MiscItem.Temp1Charge = invoker.bowenergy;
-							return resolvestate("Ready");
+							return resolvestate("FakeReady");
 						}
 						MiscItem.Temp1Charge = invoker.bowenergy;
 						return resolvestate(null);
@@ -980,7 +980,7 @@ class DualImpalerXBow : ImpalerXBow
 						{
 							invoker.bowenergy = 0;
 							MiscItem.Temp1Charge = invoker.bowenergy;
-							return resolvestate("Ready");
+							return resolvestate("FakeReady");
 						}
 						MiscItem.Temp1Charge = invoker.bowenergy;
 						return resolvestate(null);

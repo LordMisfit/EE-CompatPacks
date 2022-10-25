@@ -250,26 +250,6 @@ Actor AmmoSphere : PowerupGiver 21468
 	}
 }
 
-ACTOR RageSphere : PowerupGiver 12572
-{
-	//$Category Powerups
-	+COUNTITEM
-	+INVENTORY.AUTOACTIVATE
-	+INVENTORY.ALWAYSPICKUP
-	+INVENTORY.BIGPOWERUP
-	Inventory.MaxAmount 0
-	Powerup.Duration -60
-	Powerup.Color 255, 0, 0, 0.125
-	Inventory.PickupMessage "Double fire rate!"
-	Powerup.Type "PowerDoubleFiringSpeed"
-	States
-	{
-		Spawn:
-			BLDS ABCDCB 6 Bright
-			Loop
-	}
-}
-
 //SPHERE ITEM
 Actor MutantSphere : CustomInventoryExt // 13365
 {

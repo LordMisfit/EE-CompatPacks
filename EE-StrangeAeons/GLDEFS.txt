@@ -2022,19 +2022,6 @@ Object AmmoSphere
 	Frame AMSP { Light AmmoSphereLight }
 }
 
-PulseLight RAGESPHERE
-{
-Color 1.0 0.0 0.0
-Size 40
-SecondarySize 42
-interval 2.0
-Offset 0 16 0
-}
-
-Object RageSphere
-{
-Frame BLDS { Light RAGESPHERE }
-}
 
 Pulselight MUSPlight
 {
