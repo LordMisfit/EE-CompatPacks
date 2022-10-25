@@ -1,0 +1,371 @@
+Actor AK47Checker : CustomInventoryExt replaces AK47
+{
+	//$Sprite "MGUNA0"
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay
+			{
+				A_SpawnItemEx("CandleWhip",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0,tid);
+				A_SpawnItemEx("CandleWhip",frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,SXF_NOCHECKPOSITION,128);
+				A_SpawnItemEx("CandleWhip",frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,SXF_NOCHECKPOSITION,64);
+				A_SpawnItemEx("CandleWhip",frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,SXF_NOCHECKPOSITION,32);
+				A_FadeOut(1.0);
+			}
+		Idle:
+			TNT1 A 1
+			stop
+	}
+}
+
+ACTOR SonicNail : SingleDamageFastRipper
+{
+	Tag "Impaler Bolt"
+	damage (16 + random(-8,8))
+	Scale 0.7
+	Speed 150 // 75
+	radius 2
+	height 4
+	Seesound "Weapon/XBowFire"
+	deathsound "Nailhit"
+	Decal "RailScorchLower"
+	DamageType "Zap"
+	Missiletype ""
+	+NOPAIN
+	+RIPPER
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_ChangeFlag("NOPAIN",Random(1,FRandom(0.25,2.0)))//otherwise the ripping would make it very OP
+		SpawnLoop:
+			BLAD AAAAAABBBBBB 1 Bright 
+			{
+				A_SpawnItemEX("SonicNailSmoke");
+			}
+			loop
+		Death:
+			TNT1 A 0 
+			{
+				A_SpawnItemEX("NailSpark");
+				A_Explode((16 + random(-8,8)),32,0,0,16);
+			}
+			SPLS CDEFGHI 2 Bright A_SetTranslucent(0.85,1)
+			stop
+	}
+}
+
+ACTOR SonicNailSmoke : MageWandSmoke
+{
+	Alpha 0.5
+	Scale 0.25
+	States
+	{
+		Spawn:
+			SNIC BCDEF 2 A_Fadeout(0.016)
+			Stop
+	}
+}
+
+ACTOR NailSpark : MageWandSmoke
+{
+	Scale 0.7
+	States
+	{
+		Spawn:
+			FX57 ABCDEFGHIJ 2 bright A_SetTranslucent(0.85,1)
+			Stop
+	}
+}
+
+Actor DivinationSphereSpawner : RandomSpawner2 13365
+{
+	//$Sprite "DVASA0"
+	DropItem "DivinationSphere", 256
+}
+
+Actor YithGunReplacer : RandomSpawner2 replaces Yithgun
+{
+	DropItem "ScepterofSouls", 256, 4
+	DropItem "SuperVac", 256, 4
+	DropItem "EvilWarriorShield", 256, 4
+	DropItem "Grimophone", 256, 4
+}
+
+
+Actor SoulScepterPuff : EEPuff
+{
+	Tag "Soul Scepter"
+	Radius 3
+	Height 3
+	+NoClip
+	+AlwaysPuff
+	+PuffOnActors
+	+NoGravity
+	+BloodlessImpact
+	-BloodSplatter
+	+DontSplash
+	DamageType "Eldritch"
+	States
+	{
+		Spawn:
+		Melee:
+		Crash:
+			SSPF ABCD 3 Bright
+			Stop
+	}
+}
+
+Actor DualSoulScepterPuff : EEPuff
+{
+	Tag "Soul Scepter"
+	Radius 3
+	Height 3
+	+NoClip
+	+AlwaysPuff
+	+PuffOnActors
+	+NoGravity
+	+BloodlessImpact
+	-BloodSplatter
+	+DontSplash
+	DamageType "Eldritch"
+	States
+	{
+		Spawn:
+		Melee:
+		Crash:
+			SSPF ABCD 3 Bright
+			Stop
+	}
+}
+
+Actor SoulScepterPuff2 : EEPuff
+{
+	Tag "Soul Scepter"
+	Radius 1
+	Height 1
+	+NoInteraction
+	DamageType "Eldritch"
+	States
+	{
+		Spawn:
+			SSPF A 0 Bright
+			SSPF A 0 Bright ThrustThingZ(0, Random(2, 6), 0, 0)
+			SSPF ABCD 3 Bright
+			Stop
+	}
+}
+
+Actor SoulScepterPowerPuff : EEPuff
+{
+	Tag "Soul Scepter"
+	Radius 3
+	Height 3
+	+NoClip
+	+AlwaysPuff
+	+PuffOnActors
+	+NoGravity
+	+BloodlessImpact
+	-BloodSplatter
+	+DontSplash
+	+PuffGetsOwner
+	DamageType "Eldritch"
+	States
+	{
+		Spawn:
+		Crash:
+		Melee:
+			TNT1 A 0
+			TNT1 AAAA 0 A_SpawnItemEx("SoulScepterPuff2", Random(0, 32), 0, 0, 0, 0, 0, Random(0, 360), 128)
+			TNT1 A 1 A_Explode((3 * random(1,3)), 32, 0, 0, 24)
+			Stop
+	}
+}
+
+Actor DualSoulScepterPowerPuff : EEPuff
+{
+	Tag "Soul Scepter"
+	Radius 3
+	Height 3
+	+NoClip
+	+AlwaysPuff
+	+PuffOnActors
+	+NoGravity
+	+BloodlessImpact
+	-BloodSplatter
+	+DontSplash
+	+PuffGetsOwner
+	DamageType "Eldritch"
+	States
+	{
+		Spawn:
+		Crash:
+		Melee:
+			TNT1 A 0
+			TNT1 AAAA 0 A_SpawnItemEx("SoulScepterPuff2", Random(0, 32), 0, 0, 0, 0, 0, Random(0, 360), 128)
+			TNT1 A 1 A_Explode((3 * random(1,3)), 32, 0, 0, 24)
+			Stop
+	}
+}
+
+Actor SoulScepterHealthBonus : Health
+{
+	-CountItem
+	+Inventory.AutoActivate
+	Inventory.Amount 1
+	Inventory.MaxAmount 100
+	Inventory.PickupMessage ""
+	Inventory.PickupSound ""
+	States
+	{
+		Spawn:
+			TNT1 A 1
+			Stop
+	}
+}
+
+Actor SoulFragment
+{
+	Radius 1
+	Height 1
+	Damage (0)
+	Projectile
+	+DontSplash
+	+NoClip
+	RenderStyle Add
+	Alpha 0.15
+	Scale 0.7
+	States
+	{
+		Spawn:
+			SSPS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 Bright A_SpawnItemEx("SoulFragmentTrail", 0, Random(-1, 1), Random(1, -1), 0, 0, 0, 0, 128)
+		FadeOut:
+			SSPS A 1 A_SpawnItemEx("SoulFragmentTrail", 0, Random(-1, 1), Random(1, -1), 0, 0, 0, 0, 128)
+			SSPS A 0 A_FadeOut(0.02)
+			Loop
+		Death:
+			TNT1 A 1
+			Stop
+	}
+}
+
+Actor SoulFragmentTrail
+{
+	Radius 1
+	Height 1
+	Damage (0)
+	Projectile
+	+DontSplash
+	+NoClip
+	RenderStyle Add
+	Alpha 0.15
+	Scale 0.7
+	States
+	{
+		Spawn:
+			SSPS BCD 3 Bright
+			Stop
+	}
+}
+
+actor StoneTabletBase : FakeInventory
+{
+	+DONTGIB
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	Inventory.PickupSound "misc/p_pkup"
+}
+
+actor StoneTablet1 : StoneTabletBase 7301
+{
+	//$Category Strange Aeons Decorations
+	Tag "Stone Tablet [1]"
+	Scale 0.125
+	Height 37
+	Radius 15
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	States
+	{
+		Spawn:
+			TABL A -1
+			Loop
+	}
+}
+
+actor StoneTablet2 : StoneTabletBase 7302
+{
+	//$Category Strange Aeons Decorations
+	Tag "Stone Tablet [2]"
+	Scale 0.25
+	Height 40
+	Radius 20
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	States
+	{
+		Spawn:
+			TABL B -1
+			Loop
+	}
+}
+
+actor StoneTablet3 : StoneTabletBase 7303
+{
+	//$Category Strange Aeons Decorations
+	Tag "Stone Tablet [3]"
+	Scale 0.125
+	Height 21
+	Radius 18
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	States
+	{
+		Spawn:
+			TABL C -1
+			Loop
+	}
+}
+
+actor StoneTablet4 : StoneTabletBase 7304
+{
+	//$Category Strange Aeons Decorations
+	Tag "Stone Tablet [4]"
+	Scale 0.125
+	Height 21
+	Radius 18
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	States
+	{
+		Spawn:
+			TABL D -1
+			Loop
+	}
+}
+
+actor StoneTablet5 : StoneTabletBase 7305
+{
+	//$Category Strange Aeons Decorations
+	Tag "Stone Tablet [5]"
+	Scale 0.25
+	Height 59
+	Radius 20
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	States
+	{
+		Spawn:
+			TABL E -1
+			Loop
+	}
+}
+
+actor StoneTablet6 : StoneTabletBase 7306
+{
+	//$Category Strange Aeons Decorations
+	Tag "Stone Tablet [6]"
+	Scale 0.125
+	Height 27
+	Radius 12
+	Inventory.PickupMessage "You found a \cdStone Tablet\c-."
+	States
+	{
+		Spawn:
+			TABL F -1
+			Loop
+	}
+}

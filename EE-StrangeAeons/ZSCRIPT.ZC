@@ -1,0 +1,4 @@
+version "4.1"
+
+#include "zscript/strangeaeons-monsters.zc"
+#include "zscript/strangeaeons-weapons.zc"
