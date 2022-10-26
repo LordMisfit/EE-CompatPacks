@@ -34,7 +34,7 @@ DoomEdNums
 	30123 = ShadowBeast
 	2112 = BeamRevenant
 	11300 = StarSpawn
-	13365 = DivinationSphereSpawner	
+	13365 = HarmonySphereSpawner	
 	30127 = VulgarNew
 	10558 = Fleshspawn
 	9494 = Dhole

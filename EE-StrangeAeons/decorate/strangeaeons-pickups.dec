@@ -77,10 +77,10 @@ ACTOR NailSpark : MageWandSmoke
 	}
 }
 
-Actor DivinationSphereSpawner : RandomSpawner2 13365
+Actor HarmonySphereSpawner : RandomSpawner2 13365
 {
 	//$Sprite "DVASA0"
-	DropItem "DivinationSphere", 256
+	DropItem "HarmonySphere", 256
 }
 
 Actor YithGunReplacer : RandomSpawner2 replaces Yithgun
