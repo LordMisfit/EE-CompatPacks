@@ -1,0 +1,135 @@
+class StoneTabletBase : Inventory
+{
+	default
+	{
+		+DONTGIB;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+		Inventory.PickupSound "misc/p_pkup";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 1;
+		+Inventory.PERSISTENTPOWER;
+		+Inventory.UNDROPPABLE;
+		+Inventory.UNTOSSABLE;
+		+Inventory.UNCLEARABLE;
+	}
+}
+
+class StoneTablet1 : StoneTabletBase
+{
+	default
+	{
+		//$Category Strange Aeons Decorations
+		Tag "Stone Tablet [1]";
+		Scale 0.125;
+		Height 37;
+		Radius 15;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+	}
+	
+	States
+	{
+		Spawn:
+			TABL A -1;
+			Loop;
+	}
+}
+
+class StoneTablet2 : StoneTabletBase
+{
+	default
+	{
+		//$Category Strange Aeons Decorations
+		Tag "Stone Tablet [2]";
+		Scale 0.25;
+		Height 40;
+		Radius 20;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+	}
+	
+	States
+	{
+		Spawn:
+			TABL B -1;
+			Loop;
+	}
+}
+
+class StoneTablet3 : StoneTabletBase
+{
+	default
+	{
+		//$Category Strange Aeons Decorations
+		Tag "Stone Tablet [3]";
+		Scale 0.125;
+		Height 21;
+		Radius 18;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+	}
+	
+	States
+	{
+		Spawn:
+			TABL C -1;
+			Loop;
+	}
+}
+
+class StoneTablet4 : StoneTabletBase
+{
+	default
+	{
+		//$Category Strange Aeons Decorations
+		Tag "Stone Tablet [4]";
+		Scale 0.125;
+		Height 21;
+		Radius 18;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+	}
+	
+	States
+	{
+		Spawn:
+			TABL D -1;
+			Loop;
+	}
+}
+
+class StoneTablet5 : StoneTabletBase
+{
+	default
+	{
+		//$Category Strange Aeons Decorations
+		Tag "Stone Tablet [5]";
+		Scale 0.25;
+		Height 59;
+		Radius 20;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+	}
+	
+	States
+	{
+		Spawn:
+			TABL E -1;
+			Loop;
+	}
+}
+
+class StoneTablet6 : StoneTabletBase
+{
+	default
+	{
+		//$Category Strange Aeons Decorations
+		Tag "Stone Tablet [6]";
+		Scale 0.125;
+		Height 27;
+		Radius 12;
+		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
+	}
+	
+	States
+	{
+		Spawn:
+			TABL F -1;
+			Loop;
+	}
+}

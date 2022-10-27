@@ -9,35 +9,41 @@ episode E1M1
 
 DoomEdNums
 {
+	2112 = BeamRevenant
+	3118 = GlaakiSpawn
+	3201 = RapidFireTrooper
+	7301 = StoneTablet1
+	7302 = StoneTablet2
+	7303 = StoneTablet3
+	7304 = StoneTablet4
+	7305 = StoneTablet5
+	7306 = StoneTablet6
 	7801 = Nyarlathotep	
 	7802 = NyarlathotepLesser
+	9494 = Dhole
+	10077 = DShambler
+	10558 = Fleshspawn
+	10560 = Grell
 	11111 = ScepterOfSouls
 	11112 = DualScepterOfSouls
-	31893 = PurpleTentacle
-	31995 = Skeleton
-	26001 = StarVampire
-	19998 = LengSpiderling
-	19999 = LengSpider
-	29998 = SpiderGodling	
-	29999 = SpiderGod	
-	10077 = DShambler
-	30128 = Roach
-	30120 = DevilImp
-	3201 = RapidFireTrooper
-	15488 = UndeadPriest
-	15489 = UndeadHunter
-	10560 = Grell
-	26000 = NightmareNew
-	31994 = SlimeWorm
-	31997 = DemonWizard
-	3118 = GlaakiSpawn
-	30123 = ShadowBeast
-	2112 = BeamRevenant
 	11300 = StarSpawn
 	13365 = HarmonySphereSpawner	
+	15488 = UndeadPriest
+	15489 = UndeadHunter
+	19998 = LengSpiderling
+	19999 = LengSpider
+	26000 = NightmareNew
+	26001 = StarVampire
+	29998 = SpiderGodling	
+	29999 = SpiderGod	
+	30120 = DevilImp
+	30123 = ShadowBeast
 	30127 = VulgarNew
-	10558 = Fleshspawn
-	9494 = Dhole
+	30128 = Roach
+	31893 = PurpleTentacle
+	31994 = SlimeWorm
+	31995 = Skeleton
+	31997 = DemonWizard
 }
 
 Gameinfo
