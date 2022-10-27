@@ -10,10 +10,12 @@
 // Items are separated by a colon ( : )
 // If a flat/texture is not present in this list, then only the default sound will be
 // played when it is walked on.
-STEP_FLATSSTAEONS = "07_A_1:07_A_2:07_A_3:07_A_4:07_ALI_0:07_ALI_1:07_ALI_2:07_TEX_0:"
+STEP_FLATSSTAEONS = "05_AL_01:05_AL_02:05_AL_03:05_AL_04:05_AL_05:05_AL_06:05_AL_07:05_AL_08:05_AL_09:05_AL_10:05_AL_11:05_AL_12:05_AL_13:05_AL_14:05_AL_15:05GROUND:"
+										"07_A_1:07_A_2:07_A_3:07_A_4:07_ALI_0:07_ALI_1:07_ALI_2:07_TEX_0:"
+										"029A:037A:037B:038A:"
 										"16_HEART:"
 										"ASAS1:"
-										"BRED01:BRED02:BRED03:BRED04:BRED05:BRED06:"
+										"BRED01:BRED02:BRED03:BRED04:BRED05:BRED06:BRICK01:BRICK02:BRICK03:BRICKW:BRICKW1:BRICKW2:BRIKW01:BRIKW02:BRIKW03:BRK01:BRK02:BRK03:"
 										"F_0000:F_0001:F_0002:F_0003:F_0004:F_0005:F_0006:F_0007:F_0008:F_0009:"
 										"F_0010:F_0011:F_0012:F_0012:F_0014:F_0015:F_0016:F_0017:F_0018:F_0019:"
 										"F_0020:F_0021:F_0022:F_0023:F_0024:F_0025:F_0026:F_0027:F_0028:F_0029:"
@@ -26,11 +28,11 @@ STEP_FLATSSTAEONS = "07_A_1:07_A_2:07_A_3:07_A_4:07_ALI_0:07_ALI_1:07_ALI_2:07_T
 										"F_0093:F_0098:F_0099:"
 										"F_0100:F_0101:F_0102:F_0103:F_0104:F_0105:F_0106:F_0107:F_0108:F_0109:"
 										"F_0110:F_0111:F_0112:F_0113:F_0114:F_0115:F_0116:F_0117:F_0118:F_0119:"
-										"F_0120:"
+										"F_0120:F_0121:F_0122:F_0123:F_0124:F_0125:F_0126:F_0127:F_0128:F_0129:"
 										"F_0130:F_0131:F_0132:F_0133:F_0134:F_0135:F_0136:F_0137:F_0138:F_0139:"
 										"F_0140:F_0141:"
-										
-										"F_0167:F_0168:F_0169:"
+										"F_0150:F_0151:F_0152:F_0153:F_0154:F_0155:F_0156:F_0157:F_0158:F_0159:"
+										"F_0160:F_0161:F_0162:F_0163:F_0164:F_0165:F_0166:F_0167:F_0168:F_0169:"
 										"F_0170:F_0171:F_0172:F_0173:F_0174:F_0175:F_0176:F_0177:F_0178:F_0179:"
 										"F_0180:F_0181:F_0182:F_0183:F_0184:F_0185:F_0186:F_0187:F_0188:F_0189:"
 										"F_0190:F_0191:F_0192:F_0193:F_0194:F_0195:F_0196:F_0197:F_0198:F_0199:"
@@ -39,10 +41,31 @@ STEP_FLATSSTAEONS = "07_A_1:07_A_2:07_A_3:07_A_4:07_ALI_0:07_ALI_1:07_ALI_2:07_T
 										"F_0220:F_0221:F_0222:F_0223:F_0224:F_0225:F_0226:F_0227:F_0228:F_0229:"
 										"F_0230:F_0231:"
 										
+										"MDOOR01:"
+										
+										"PYR_ST:PYR1:PYR1A:PYR2:PYR2A:PYR3:PYR3A:PYR4:PYR5:PYR6:PYR7:PYR8:PYR9:PYR10:PYR11:PYR12:PYR13:PYR14:PYR15:PYR16:PYR17:"
+										
 										"SAMOCVET:SARAY64:SARAY128:SARAYDOR:SARIN64:SARIN128:SARINWIN:"
 										"WOOD:WOOD_01:WOOD_02:WOOD_03:WOOD_04:";
 
 // Sounds
+STEP_05_AL_01 = "step/metal/a";
+STEP_05_AL_02 = "step/metal/a";
+STEP_05_AL_03 = "step/metal/a";
+STEP_05_AL_04 = "step/metal/a";
+STEP_05_AL_05 = "step/metal/a";
+STEP_05_AL_06 = "step/metal/a";
+STEP_05_AL_07 = "step/metal/a";
+STEP_05_AL_08 = "step/metal/a";
+STEP_05_AL_09 = "step/metal/a";
+STEP_05_AL_10 = "step/metal/a";
+STEP_05_AL_11 = "step/metal/a";
+STEP_05_AL_12 = "step/metal/a";
+STEP_05_AL_13 = "step/metal/a";
+STEP_05_AL_14 = "step/metal/a";
+STEP_05_AL_15 = "step/metal/a";
+STEP_05GROUND = "step/metal/b";
+
 STEP_07_A_1 = "step/metal/a";
 STEP_07_A_2 = "step/metal/a";
 STEP_07_A_3 = "step/metal/a";
@@ -51,6 +74,11 @@ STEP_07_ALI_0 = "step/metal/a";
 STEP_07_ALI_1 = "step/metal/a";
 STEP_07_ALI_2 = "step/metal/a";
 STEP_07_TEX_0 = "step/metal/a";
+
+STEP_029A = "step/hard";
+STEP_037A = "step/metal/a";
+STEP_037B = "step/metal/a";
+STEP_038B = "step/metal/a";
 
 STEP_16_HEART = "step/slimy";
 
@@ -62,6 +90,18 @@ STEP_BRED03 = "step/hard";
 STEP_BRED04 = "step/hard";
 STEP_BRED05 = "step/hard";
 STEP_BRED06 = "step/hard";
+STEP_BRICK01 = "step/hard";
+STEP_BRICK02 = "step/hard";
+STEP_BRICK03 = "step/hard";
+STEP_BRICKW = "step/hard";
+STEP_BRICKW1 = "step/hard";
+STEP_BRICKW2 = "step/hard";
+STEP_BRIKW01 = "step/hard";
+STEP_BRIKW02 = "step/hard";
+STEP_BRIKW03 = "step/hard";
+STEP_BRK01 = "step/hard";
+STEP_BRK02 = "step/hard";
+STEP_BRK03 = "step/hard";
 
 STEP_F_0000 = "step/hard";
 STEP_F_0001 = "step/hard";
@@ -183,6 +223,15 @@ STEP_F_0118 = "step/hard";
 STEP_F_0119 = "step/hard";
 
 STEP_F_0120 = "step/hard";
+STEP_F_0121 = "step/hard";
+STEP_F_0122 = "step/hard";
+STEP_F_0123 = "step/tile/b";
+STEP_F_0124 = "step/metal/a";
+STEP_F_0125 = "step/metal/a";
+STEP_F_0126 = "step/metal/a";
+STEP_F_0127 = "step/metal/a";
+STEP_F_0128 = "step/metal/a";
+STEP_F_0129 = "step/metal/a";
 
 STEP_F_0130 = "step/carpet";
 STEP_F_0131 = "step/carpet";
@@ -198,6 +247,24 @@ STEP_F_0139 = "step/metal/a";
 STEP_F_0140 = "step/dirt";
 STEP_F_0141 = "step/dirt";
 
+STEP_F_0150 = "step/hard";
+STEP_F_0151 = "step/hard";
+STEP_F_0152 = "step/hard";
+STEP_F_0153 = "step/hard";
+STEP_F_0154 = "step/hard";
+STEP_F_0155 = "step/hard";
+STEP_F_0156 = "step/hard";
+STEP_F_0157 = "step/dirt";
+STEP_F_0158 = "step/dirt";
+STEP_F_0159 = "step/dirt";
+
+STEP_F_0160 = "step/dirt";
+STEP_F_0161 = "step/metal/b";
+STEP_F_0162 = "step/metal/b";
+STEP_F_0163 = "step/metal/b";
+STEP_F_0164 = "step/metal/b";
+STEP_F_0165 = "step/metal/b";
+STEP_F_0166 = "step/metal/b";
 STEP_F_0167 = "step/dirt";
 STEP_F_0168 = "step/hard";
 STEP_F_0169 = "step/metal/a";
@@ -269,6 +336,30 @@ STEP_F_0229 = "step/metal/a";
 
 STEP_F_0230 = "step/rock";
 STEP_F_0231 = "step/lava";
+
+STEP_MDOOR01 = "step/metal";
+
+STEP_PYR_ST = "step/rock";
+STEP_PYR1 = "step/rock";
+STEP_PYR1A = "step/rock";
+STEP_PYR2 = "step/rock";
+STEP_PYR2A = "step/rock";
+STEP_PYR3 = "step/rock";
+STEP_PYR3A = "step/rock";
+STEP_PYR4 = "step/rock";
+STEP_PYR5 = "step/rock";
+STEP_PYR6 = "step/rock";
+STEP_PYR7 = "step/rock";
+STEP_PYR8 = "step/rock";
+STEP_PYR9 = "step/rock";
+STEP_PYR10 = "step/rock";
+STEP_PYR11 = "step/rock";
+STEP_PYR12 = "step/rock";
+STEP_PYR13 = "step/rock";
+STEP_PYR14 = "step/rock";
+STEP_PYR15 = "step/rock";
+STEP_PYR16 = "step/rock";
+STEP_PYR17 = "step/rock";
 
 STEP_SAMOCVET = "step/hard";
 STEP_SARAY64 = "step/hard";
