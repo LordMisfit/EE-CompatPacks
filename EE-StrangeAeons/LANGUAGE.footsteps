@@ -12,10 +12,10 @@
 // played when it is walked on.
 STEP_FLATSSTAEONS = "05_AL_01:05_AL_02:05_AL_03:05_AL_04:05_AL_05:05_AL_06:05_AL_07:05_AL_08:05_AL_09:05_AL_10:05_AL_11:05_AL_12:05_AL_13:05_AL_14:05_AL_15:05GROUND:"
 										"07_A_1:07_A_2:07_A_3:07_A_4:07_ALI_0:07_ALI_1:07_ALI_2:07_TEX_0:"
-										"029A:037A:037B:038A:"
-										"16_HEART:"
-										"ASAS1:"
-										"BRED01:BRED02:BRED03:BRED04:BRED05:BRED06:BRICK01:BRICK02:BRICK03:BRICKW:BRICKW1:BRICKW2:BRIKW01:BRIKW02:BRIKW03:BRK01:BRK02:BRK03:"
+										"001A:002A:002B:002D:002F:005A:005D:029A:037A:037B:038A:"
+										"16_WL_1:16_HEART:"
+										"ADEL_D13:ADEL_N26:ADEL_P61:ADELY00A:ADELY00B:ASAS1:"
+										"BOX_01:BOX_02:BOX_05:BOX_1:BOX_3:BOX_4:BOX01:BOX02:BRED01:BRED02:BRED03:BRED04:BRED05:BRED06:BRICK01:BRICK02:BRICK03:BRICKW:BRICKW1:BRICKW2:BRIKW01:BRIKW02:BRIKW03:BRK01:BRK02:BRK03:"
 										"DOORPUB:"
 										"F_0000:F_0001:F_0002:F_0003:F_0004:F_0005:F_0006:F_0007:F_0008:F_0009:"
 										"F_0010:F_0011:F_0012:F_0012:F_0014:F_0015:F_0016:F_0017:F_0018:F_0019:"
@@ -41,13 +41,17 @@ STEP_FLATSSTAEONS = "05_AL_01:05_AL_02:05_AL_03:05_AL_04:05_AL_05:05_AL_06:05_AL
 										"F_0210:F_0211:F_0212:F_0213:F_0214:F_0215:F_0216:F_0217:F_0218:F_0219:"
 										"F_0220:F_0221:F_0222:F_0223:F_0224:F_0225:F_0226:F_0227:F_0228:F_0229:"
 										"F_0230:F_0231:"
-										
+										"GFSAND:GROUND:GROUND1:GTSTON02:GTSTON03:"
 										"MDOOR01:"
-										
+										"NBRICK3:NDUN_1:NDUN_2:NDUN_3:NDUN_4:NDUN_5:NDUN_6:NDUN_7:NDUN_8:NDUN_9:"
 										"PYR_ST:PYR1:PYR1A:PYR2:PYR2A:PYR3:PYR3A:PYR4:PYR5:PYR6:PYR7:PYR8:PYR9:PYR10:PYR11:PYR12:PYR13:PYR14:PYR15:PYR16:PYR17:"
-										
+										"ROCKRED1:"
 										"SAMOCVET:SARAY64:SARAY128:SARAYDOR:SARIN64:SARIN128:SARINWIN:"
-										"WOOD:WOOD_01:WOOD_02:WOOD_03:WOOD_04:";
+										"SCFLAT01:SCFLAT02:SCFLAT03:SCFLAT04:SCROCKG1:SCSTONB1:SCSTONB2:SCSTONC0:SCSTOND0:SCSTONE0:SCSTONF1:SCSTONG0:SCSTONJ0:"
+										"SNOW1:"
+										"WFALL1:WFALL2:WFALL3:WFALL4:"
+										"WOOD:WOOD_01:WOOD_02:WOOD_03:WOOD_04:"
+										"WSTN011:WSTN021:";
 
 // Sounds
 STEP_05_AL_01 = "step/metal/a";
@@ -76,15 +80,36 @@ STEP_07_ALI_1 = "step/metal/a";
 STEP_07_ALI_2 = "step/metal/a";
 STEP_07_TEX_0 = "step/metal/a";
 
+STEP_001A = "step/metal/b";
+STEP_002A = "step/metal/b";
+STEP_002B = "step/metal/b";
+STEP_002D = "step/metal/b";
+STEP_002F = "step/metal/b";
+STEP_005A = "step/metal/b";
+STEP_005D = "step/metal/b";
 STEP_029A = "step/hard";
 STEP_037A = "step/metal/a";
 STEP_037B = "step/metal/a";
 STEP_038B = "step/metal/a";
 
+STEP_16_WL_1 = "step/metal/b";
 STEP_16_HEART = "step/slimy";
 
+STEP_ADEL_D13 = "step/grate";
+STEP_ADEL_N26 = "step/grate";
+STEP_ADEL_P61 = "step/hard";
+STEP_ADELY00A = "step/metal/a";
+STEP_ADELY00B = "step/metal/b";
 STEP_ASAS1 = "step/dirt";
 
+STEP_BOX_01 = "step/wood";
+STEP_BOX_02 = "step/wood";
+STEP_BOX_05 = "step/wood";
+STEP_BOX_1 = "step/wood";
+STEP_BOX_3 = "step/wood";
+STEP_BOX_4 = "step/wood";
+STEP_BOX01 = "step/wood";
+STEP_BOX02 = "step/wood";
 STEP_BRED01 = "step/hard";
 STEP_BRED02 = "step/hard";
 STEP_BRED03 = "step/hard";
@@ -361,7 +386,24 @@ STEP_F_0229 = "step/metal/a";
 STEP_F_0230 = "step/rock";
 STEP_F_0231 = "step/lava";
 
+STEP_GFSAND = "step/gravel";
+STEP_GROUND = "step/metal";
+STEP_GROUND1 = "step/metal";
+STEP_GTSTON02 = "step/rock";
+STEP_GTSTON03 = "step/rock";
+
 STEP_MDOOR01 = "step/metal";
+
+STEP_NBRICK3 = "step/hard";
+STEP_NDUN_1 = "step/wood";
+STEP_NDUN_2 = "step/hard";
+STEP_NDUN_3 = "step/hard";
+STEP_NDUN_4 = "step/hard";
+STEP_NDUN_5 = "step/hard";
+STEP_NDUN_6 = "step/wood";
+STEP_NDUN_7 = "step/wood";
+STEP_NDUN_8 = "step/hard";
+STEP_NDUN_9 = "step/hard";
 
 STEP_PYR_ST = "step/rock";
 STEP_PYR1 = "step/rock";
@@ -385,6 +427,8 @@ STEP_PYR15 = "step/rock";
 STEP_PYR16 = "step/rock";
 STEP_PYR17 = "step/rock";
 
+STEP_ROCKRED1 = "step/rock";
+
 STEP_SAMOCVET = "step/hard";
 STEP_SARAY64 = "step/hard";
 STEP_SARAY128 = "step/hard";
@@ -392,10 +436,33 @@ STEP_SARAYDOR = "step/wood";
 STEP_SARIN64 = "step/wood";
 STEP_SARIN128 = "step/wood";
 STEP_SARINWIN = "step/wood";
+STEP_SCFLAT01 = "step/tile/a";
+STEP_SCFLAT02 = "step/tile/b";
+STEP_SCFLAT03 = "step/tile/b";
+STEP_SCFLAT04 = "step/tile/a";
+STEP_SCROCKG1 = "step/rock";
+STEP_SCSTONB1 = "step/rock";
+STEP_SCSTONB2 = "step/rock";
+STEP_SCSTONC0 = "step/rock";
+STEP_SCSTOND0 = "step/rock";
+STEP_SCSTONE0 = "step/rock";
+STEP_SCSTONF1 = "step/rock";
+STEP_SCSTONG0 = "step/rock";
+STEP_SCSTONJ0 = "step/rock";
+
+STEP_SNOW1 = "step/snow";
+
+STEP_WFALL1 = "step/water";
+STEP_WFALL2 = "step/water";
+STEP_WFALL3 = "step/water";
+STEP_WFALL4 = "step/water";
 
 STEP_WOOD = "step/wood";
 STEP_WOOD_01 = "step/wood";
 STEP_WOOD_02 = "step/wood";
 STEP_WOOD_03 = "step/wood";
 STEP_WOOD_04 = "step/wood";
+
+STEP_WSTN011 = "step/rock";
+STEP_WSTN021 = "step/rock";
 
