@@ -325,7 +325,7 @@ Actor GrowFlash
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 50 A_PlaySound ("mutantsphere/grow")
+			TNT1 A 50 A_StartSound("mutantsphere/grow")
 			stop
 	}
 }
@@ -337,7 +337,7 @@ Actor UnGrowFlash
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 50 A_PlaySound ("mutantsphere/ungrow")
+			TNT1 A 50 A_StartSound("mutantsphere/ungrow")
 			stop
 	}
 }
