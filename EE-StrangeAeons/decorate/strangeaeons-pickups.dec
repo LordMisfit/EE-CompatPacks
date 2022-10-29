@@ -18,12 +18,6 @@ Actor AK47Checker : CustomInventoryExt replaces AK47
 	}
 }
 
-Actor HarmonySphereSpawner : RandomSpawner2 13365
-{
-	//$Sprite "DVASA0"
-	DropItem "HarmonySphere", 256
-}
-
 Actor YithGunReplacer : RandomSpawner2 replaces Yithgun
 {
 	DropItem "ScepterofSouls", 256, 4
