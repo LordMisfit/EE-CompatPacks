@@ -431,14 +431,14 @@ Actor MutantFist : Fist
 			MUPX B 1 A_Raise
 			Loop
 		Fire:
-			MUPX B 4 //A_Playsound("mutantsphere/oof")
+			MUPX B 4 //A_StartSound("mutantsphere/oof")
 			MUPR C 4 A_Punch
 			MUPR D 5
 			MUPR C 4
 			MUPX B 4 A_ReFire ("Fire2")
 			Goto Ready
 		Fire2:
-			MUPX B 4 //A_Playsound("mutantsphere/oof")
+			MUPX B 4 //A_StartSound("mutantsphere/oof")
 			MUPL C 4 A_Punch
 			MUPL D 5
 			MUPL C 4
@@ -955,7 +955,7 @@ ACTOR StoneTorch : SwitchableDecoration 12320
 	States
 	{
 		Active:
-			STOR A 0 Bright A_PlaySound("Ignite")
+			STOR A 0 Bright A_StartSound("Ignite")
 		Spawn:
 			STOR ABCDEFGHI 4 Bright
 			Loop

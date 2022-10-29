@@ -685,7 +685,7 @@ class ImpalerXBow : DinahWeapon replaces Chainsaw
 			}
 			CBOW C 8 
 			{
-				A_PlaySound("Weapon/XBowLoad", CHAN_WEAPON);
+				A_StartSound("Weapon/XBowLoad", CHAN_WEAPON);
 			}
 			CBOW D 5
 			{
@@ -764,7 +764,7 @@ class ImpalerXBow : DinahWeapon replaces Chainsaw
 			}
 			CBOW C 8 
 			{
-				A_PlaySound("Weapon/XBowLoad", CHAN_WEAPON);
+				A_StartSound("Weapon/XBowLoad", CHAN_WEAPON);
 			}
 			CBOW D 5
 			{
@@ -940,8 +940,8 @@ class DualImpalerXBow : ImpalerXBow
 			}
 			DCRB C 8 
 			{
-				A_PlaySound("Weapon/XBowLoad", CHAN_WEAPON);
-				A_PlaySound("Weapon/XBowLoad", CHAN_WEAPON);
+				A_StartSound("Weapon/XBowLoad", CHAN_WEAPON);
+				A_StartSound("Weapon/XBowLoad", CHAN_WEAPON);
 			}
 			DCRB D 5
 			{
@@ -1032,8 +1032,8 @@ class DualImpalerXBow : ImpalerXBow
 			DCRB C 8 
 			{
 
-				A_PlaySound("Weapon/XBowLoad", CHAN_WEAPON);
-				A_PlaySound("Weapon/XBowLoad", CHAN_BODY);
+				A_StartSound("Weapon/XBowLoad", CHAN_WEAPON);
+				A_StartSound("Weapon/XBowLoad", CHAN_BODY);
 			}
 			DCRB D 5
 			{
