@@ -88,7 +88,7 @@ actor YithGun : Weapon replaces PlasmaRifle
 			ETRG A 1 A_Raise
 			Loop
 		Fire:
-		ETRG B 0 A_PlayWeaponSound("electrogun/charge")
+			ETRG B 0 A_StartSound("electrogun/charge",CHAN_WEAPON)
 			ETRG A 2 A_GunFlash 
 			ETRF A 2 A_FireCustomMissile("ElectroBlast")
 			ETRG B 20 A_ReFire
