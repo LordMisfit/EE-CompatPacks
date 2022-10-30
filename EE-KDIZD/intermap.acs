@@ -43,11 +43,11 @@ int mapstat[8];
 
 script 800 ENTER
 {
-	pasthealth[playernumber()] = CheckInventory("Health");	
-	pastarmor[playernumber()] = CheckInventory("Armor");	
-	pastbullets[playernumber()] = CheckInventory("Clip");	
-	pastshells[playernumber()] = CheckInventory("Shell");	
-	pastrockets[playernumber()] = CheckInventory("RocketAmmo");	
+	pasthealth[playernumber()] = CheckInventory("Health");
+	pastarmor[playernumber()] = CheckInventory("Armor");
+	pastbullets[playernumber()] = CheckInventory("Clip");
+	pastshells[playernumber()] = CheckInventory("Shell");
+	pastrockets[playernumber()] = CheckInventory("RocketAmmo");
 	pastcells[playernumber()] = CheckInventory("RifleAmmo");
 	playerstat[playernumber()][s_exists] = 1;
 	playerreporting[playernumber()] = 1;

@@ -2024,9 +2024,13 @@ class NightmareNew : EECreature // replaces KDiZDNightmare
 
 		health 175; // 100
 		PainChance 144;
-		Painchance "Suck", 255;
+		Painchance "Fist", 216; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 256; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Suck", 256;
 		DamageFactor "Eldritch", 0.4;
 		DamageFactor "Suck", 2.5;
+		DamageFactor "Fist", 1.67;
+		DamageFactor "Kick", 1.67;
 		Radius 20;
 		Height 56;
 		Speed 15;
