@@ -3808,20 +3808,20 @@ class StarSpawn : EECreature replaces BaronofHell
 		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Crush", 0.003125; // 0.025
 		DamageFactor "Bonk", 1.0;
-		DamageFactor "Chop", 1.0;
-		DamageFactor "Suck", 1.0;
-		DamageFactor "Cricket", 1.0;
-		DamageFactor "Lead", 1.0;
-		DamageFactor "Breakfast", 1.0;
-		DamageFactor "Zap", 1.0;
-		DamageFactor "Dust", 1.0;
-		DamageFactor "Beats", 1.0;
-		DamageFactor "Fire", 1.0;
-		DamageFactor "Ice", 1.0;
-		DamageFactor "CherryBomb", 1.0;
-		DamageFactor "Spinner", 1.0;
-		DamageFactor "BRocket", 1.0;
-		DamageFactor "Popper", 1.0;
+		DamageFactor "Chop", 8.0;
+		DamageFactor "Suck", 0.125;
+		DamageFactor "Cricket", 5.0;
+		DamageFactor "Lead", 2.0;
+		DamageFactor "Breakfast", 0.5;
+		DamageFactor "Zap", 0.4;
+		DamageFactor "Dust", 2.5;
+		DamageFactor "Beats", 10.0;
+		DamageFactor "Fire", 0.1;
+		DamageFactor "Ice", 0.1;
+		DamageFactor "CherryBomb", 0.55;
+		DamageFactor "Spinner", 0.55;
+		DamageFactor "BRocket", 0.55;
+		DamageFactor "Popper", 10.0;
 		meleedamage 50;
 		meleerange 64;
 		seesound "deepone/sight";
@@ -3911,6 +3911,13 @@ class StarSpawn : EECreature replaces BaronofHell
 			CUTH L 0 A_TakeInventory("squidinviso", 255);
 			CUTH L 2 { bSTEALTH = false; }
 			CUTH L 2 A_EEPain();
+			goto See;
+		Pain.Beats:
+		Pain.Cricket:
+			CUTH L 0 A_TakeInventory("squidinviso", 255);
+			CUTH L 2;
+			CUTH L 2 A_EEPain();
+			CUTH LLLLLL 2;
 			goto See;
 		Pain.Eldritch:
 			CUTH L 0 A_TakeInventory("squidinviso", 255);
@@ -4687,26 +4694,25 @@ class Nyarlathotep : EECreature
 		DamageFactor "Crush", 0.25; // 2.0
 		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Holy", 5.0;
-
-		DamageFactor "Bonk", 1.0;
-		DamageFactor "Chop", 1.0;
-		DamageFactor "Suck", 1.0;
-		DamageFactor "Cricket", 1.0;
+		DamageFactor "Bonk", 0.25;
+		DamageFactor "Chop", 0.125;
+		DamageFactor "Suck", 0.5;
+		DamageFactor "Cricket", 10.0;
 		DamageFactor "Lead", 25.0;
-		DamageFactor "Breakfast", 1.0;
-		DamageFactor "Zap", 1.0;
-		DamageFactor "Dust", 1.0;
-		DamageFactor "Beats", 1.0;
-		DamageFactor "Fire", 1.0;
-		DamageFactor "Ice", 1.0;
-		DamageFactor "CherryBomb", 1.0;
-		DamageFactor "Spinner", 1.0;
-		DamageFactor "BRocket", 1.0;
-		DamageFactor "Popper", 1.0;
-		SEESOUND "wizard/sight";
-		painsound "wizard/pain";
-		deathsound "wizard/death";
-		activesound "wizard/active";
+		DamageFactor "Breakfast", 5.0;
+		DamageFactor "Zap", 0.5;
+		DamageFactor "Dust", 10.0;
+		DamageFactor "Beats", 5.0;
+		DamageFactor "Fire", 0.0;
+		DamageFactor "Ice", 0.0;
+		DamageFactor "CherryBomb", 0.5;
+		DamageFactor "Spinner", 0.5;
+		DamageFactor "BRocket", 0.5;
+		DamageFactor "Popper", 3.75;
+		SeeSound "wizard/sight";
+		PainSound "wizard/pain";
+		DeathSound "wizard/death";
+		ActiveSound "wizard/active";
 		MONSTER;
 		+FLOAT;
 		+NOGRAVITY;
@@ -4860,10 +4866,18 @@ class Nyarlathotep : EECreature
 			LMWZ I 5 A_EEPain();
 			LMWZ I 0 A_StartSound("wizard/tele");
 			Goto See;
-		Pain.Lead:
+		Pain.Beats:
 			LMWZ I 3;
 			LMWZ I 5 A_EEPain();
-			LMWZ IIII 3;
+			LMWZ II 3;
+			LMWZ I 0 A_StartSound("wizard/tele");
+			Goto See;
+		Pain.Lead:
+		Pain.Cricket:
+		Pain.Dust:
+			LMWZ I 3;
+			LMWZ I 5 A_EEPain();
+			LMWZ IIIIII 3;
 			LMWZ I 0 A_StartSound("wizard/tele");
 			Goto See;
 		Pain.Eldritch:
@@ -4894,28 +4908,28 @@ class NyarlathotepLesser : Nyarlathotep
 		Alpha 0.8;
 		RenderStyle "Add";
 		painchance 200;
-		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
-		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Fist", 150; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 250; // Kick attacks have a +150% chance of stunning an enemy
 		Painchance "Eldritch", 255;
 		Painchance "Holy", 255;
 		Painchance "Lead", 255;
 		DamageFactor "Crush", 0.25; // 2.0
 		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Holy", 5.0;
-		DamageFactor "Bonk", 1.0;
-		DamageFactor "Chop", 1.0;
+		DamageFactor "Bonk", 0.5;
+		DamageFactor "Chop", 0.25;
 		DamageFactor "Suck", 1.0;
-		DamageFactor "Cricket", 1.0;
+		DamageFactor "Cricket", 10.0;
 		DamageFactor "Lead", 25.0;
-		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Breakfast", 5.0;
 		DamageFactor "Zap", 1.0;
-		DamageFactor "Dust", 1.0;
-		DamageFactor "Beats", 1.0;
-		DamageFactor "Fire", 1.0;
-		DamageFactor "Ice", 1.0;
-		DamageFactor "CherryBomb", 1.0;
-		DamageFactor "Spinner", 1.0;
-		DamageFactor "BRocket", 1.0;
-		DamageFactor "Popper", 1.0;
+		DamageFactor "Dust", 10.0;
+		DamageFactor "Beats", 5.0;
+		DamageFactor "Fire", 0.25;
+		DamageFactor "Ice", 0.25;
+		DamageFactor "CherryBomb", 0.625;
+		DamageFactor "Spinner", 0.625;
+		DamageFactor "BRocket", 0.625;
+		DamageFactor "Popper", 3.75;
 	}
 }
