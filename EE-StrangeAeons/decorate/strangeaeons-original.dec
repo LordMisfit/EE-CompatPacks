@@ -31,130 +31,6 @@ Actor NewMummy : Mummy replaces Mummy //This is just a demo for the soul-sucking
 	}
 }
 
-Actor AK47 : Weapon replaces Chaingun
-{
-	obituary "%o was perforated by %k's AK47."
-	attacksound "Weapons/AK47FIR"
-	inventory.pickupmessage "You got the AK47 assault rifle!"
-	weapon.selectionorder 700
-	Weapon.SlotNumber 4
-	weapon.kickback 100
-	weapon.ammotype "Clip"
-	weapon.ammouse 1
-	weapon.ammogive 20
-	Decal "BulletChip"
-	States
-	{
-		Ready:
-			AK47 A 1 A_WeaponReady
-			Loop
-		Deselect:
-			AK47 A 1 A_Lower
-			Loop
-		Select:
-			AK47 A 1 A_Raise
-			Loop
-		Fire:
-			AK4F A 1 bright A_FireBullets (2,2.5,1,5,"BulletPuff")
-			AK47 B 2 Radius_Quake (1,2,0,1,0)
-			AK47 B 0 A_ReFire
-			Goto Ready
-		Flash:
-			TNT1 A 2 bright
-			Stop
-		Spawn:
-			AK4I A -1
-			Stop
-	}
-}
-
-actor YithGun : Weapon replaces PlasmaRifle
-{
-	Weapon.SelectionOrder 90
-	Weapon.AmmoUse 1
-	Weapon.AmmoGive 40
-	Weapon.AmmoType "Cell"
-	Weapon.SlotNumber 6
-	Inventory.PickupMessage "You got a Yithian Lightning Gun!"
-	States
-	{
-		Ready:
-			ETRG A 1 A_WeaponReady
-			Loop
-		Deselect:
-			ETRG A 1 A_Lower
-			Loop
-		Select:
-			ETRG A 1 A_Raise
-			Loop
-		Fire:
-			ETRG B 0 A_StartSound("electrogun/charge",CHAN_WEAPON)
-			ETRG A 2 A_GunFlash 
-			ETRF A 2 A_FireCustomMissile("ElectroBlast")
-			ETRG B 20 A_ReFire
-			Goto Ready
-		Flash:
-			ETRF A 2 Bright A_Light1
-			ETRF B 2 Bright A_Light1
-			Goto LightDone
-		Spawn:
-			ETRO A -1
-			Stop
-	}
-}
-
-actor ElectroBlast : FastProjectile
-{
-	Tag "Electro Blast"
-	Radius 13
-	Height 8
-	Speed 100
-	Damage 5
-	Projectile
-	DamageType Disintegrate
-	Scale 0.75
-	+RANDOMIZE
-	+BLOODLESSIMPACT
-	RenderStyle Add
-	Alpha 0.75
-	SeeSound "electrogun/shoot"
-	DeathSound "electrogun/hit"
-	Obituary "%o was shocked by %k's yithian lightning gun."
-	States
-	{
-		Spawn:
-			EBLT GH 0 bright A_SpawnItem("ElectroBlastTrail")
-			EBLT GH 2 bright
-			loop
-		Death:
-			EBLT IJK 3 bright
-			stop
-	}
-}
-
-actor ElectroBlastTrail
-{
-	Radius 13
-	Height 8
-	Speed 20
-	Damage 1
-	Projectile
-	+RANDOMIZE
-	RenderStyle Add
-	Alpha 0.75
-	States
-	{
-		Spawn:
-			EBLT ABC 3 bright A_BishopMissileWeave
-			goto death
-		Death:
-			EBLT DEF 4 bright A_FadeOut(0.5)
-			loop
-	}
-}
-
-
-
 //Place the RainDropSpawner on your map, and use values set on the specials tab to modify it
 
 //The first argument controls it's area. 128, for example makes it a 256x256 square or 256-radius circle (See fourth argument)
@@ -448,7 +324,6 @@ Actor MutantFist : Fist
 }
 
 //Necrodome trees
-
 ACTOR PalmTree1 10600
 {
 	Radius 16
@@ -490,7 +365,6 @@ ACTOR PalmTree3 10602
 
 
 //Powerslave tree
-
 ACTOR PalmTree4 10603
 {
 	Radius 16
