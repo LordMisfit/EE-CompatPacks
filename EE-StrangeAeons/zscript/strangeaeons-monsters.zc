@@ -2490,21 +2490,35 @@ class DevilImp : EECreature
 		height 56;
 		mass 120;
 		speed 10;
+		painchance 160;
+		DamageFactor "Fire", 0.4;
+		Painchance "Fire", 64;
+		DamageFactor "Ice", 2.5;
+		Painchance "Ice", 256;
+		DamageFactor "CherryBomb", 0.6;
+		Painchance "CherryBomb", 96;
+		DamageFactor "BRocket", 1.125;
+		Painchance "BRocket", 256;
+		DamageFactor "Spinner", 0.8;
+		Painchance "Spinner", 128;
+		DamageFactor "Popper", 2.5;
+		Painchance "Popper", 256;
+		DamageFactor "Chop", 1.5;
+		Painchance "Chop", 240;
 		DamageFactor "Crush", 0.8; // 6.4
-		DamageFactor "Fire", 0.5; // Imps = -50% Fire Damage
-		Painchance "Fire", 80; // Imps = -50% Pain Chance
 		DamageFactor "Holy", 1.5; // Imps = +50% Holy Damage
 		Painchance "Holy", 240; // Imps = +50% Pain Chance
-		painchance 160;
 		Painchance "Fist", 240; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
-		+DontHarmClass
+		+DontHarmClass;
 		seesound "monster/dvlsit";
 		painsound "monster/dvlpai";
 		deathsound "monster/dvldth";
 		activesound "monster/dvlact";
 		MONSTER;
 		+FLOORCLIP
+		Species "Imp";
+		+DONTHARMSPECIES;
 	}
 
 	states
