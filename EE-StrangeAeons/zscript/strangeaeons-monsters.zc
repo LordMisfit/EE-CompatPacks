@@ -582,6 +582,24 @@ class SlimeWorm : EECreature
 		Tag "Flayworm";
 		health 120;
 		painchance 90;
+		DamageFactor "Fire", 1.5;
+		Painchance "Fire", 135;
+		DamageFactor "Ice", 1.625;
+		Painchance "Ice", 147;
+		DamageFactor "Suck", 0.5;
+		Painchance "Suck", 45;
+		DamageFactor "CherryBomb", 1.25;
+		Painchance "CherryBomb", 113;
+		DamageFactor "Chop", 1.25;
+		Painchance "Chop", 113;
+		DamageFactor "Breakfast", 0.4;
+		Painchance "Breakfast", 36;
+		DamageFactor "Bonk", 0.875;
+		Painchance "Bonk", 79;
+		DamageFactor "Cricket", 1.5;
+		Painchance "Cricket", 240;
+		DamageFactor "Dust", 1.5;
+		Painchance "Dust", 240;
 		Painchance "Fist", 135; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 225; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.7; // 5.6
@@ -670,6 +688,24 @@ class StarVampire : EECreature
 		mass 250;
 		Speed 15;
 		PainChance 144;
+		DamageFactor "Fire", 1.5;
+		Painchance "Fire", 216;
+		DamageFactor "Ice", 1.625;
+		Painchance "Ice", 234;
+		DamageFactor "Suck", 0.5;
+		Painchance "Suck", 72;
+		DamageFactor "CherryBomb", 1.25;
+		Painchance "CherryBomb", 180;
+		DamageFactor "Chop", 1.25;
+		Painchance "Chop", 180;
+		DamageFactor "Breakfast", 0.4;
+		Painchance "Breakfast", 58;
+		DamageFactor "Bonk", 0.875;
+		Painchance "Bonk", 126;
+		DamageFactor "Cricket", 1.5;
+		Painchance "Cricket", 216;
+		DamageFactor "Dust", 1.5;
+		Painchance "Dust", 216;
 		Painchance "Fist", 216; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.7; // 5.6
@@ -757,16 +793,28 @@ class Spiderbaby : RailArachnotron replaces RailArachnotron
 		Height 64;
 		Mass 300; // 600
 		Speed 10; // 12
-		Damagefactor "Crush", 0.65;
+		PainChance 50;
 		DamageFactor "Fire", 0.75;
-		DamageFactor "Thunder", 1.75;
+		Painchance "Fire", 38;
+		DamageFactor "Ice", 1.334;
+		Painchance "Ice", 67;
+		DamageFactor "CherryBomb", 0.875;
+		Painchance "CherryBomb", 44;
+		DamageFactor "Bonk", 0.625;
+		Painchance "Bonk", 31;
+		DamageFactor "Cricket", 0.5;
+		Painchance "Cricket", 25;
+		DamageFactor "Breakfast", 1.5;
+		Painchance "Breakfast", 75;
+		DamageFactor "Suck", 0.25;
+		Painchance "Suck", 13;
+		DamageFactor "Zap", 1.5;
+		Painchance "Zap", 75;
 		DamageFactor "Holy", 2; // Demons = +200% Holy Damage
 		Painchance "Holy", 150; // Demons = +300% Pain Chance
-		PainChance 50;
+		Damagefactor "Crush", 0.65;
 		Painchance "Fist", 75; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 125; // Kick attacks have a +150% chance of stunning an enemy
-		Painchance "Fire", 37;
-		Painchance "Thunder", 87;
 		Damage 30;
 		Monster;
 		+FLOORCLIP;
@@ -809,6 +857,36 @@ class DemonWizard : EECreature
 		Height 60;
 		Speed 12;
 		PainChance 64;
+		DamageFactor "Fire", 1.75;
+		Painchance "Fire", 112;
+		DamageFactor "Ice", 0.75;
+		Painchance "Ice", 48;
+		DamageFactor "CherryBomb", 1.375;
+		Painchance "CherryBomb", 88;
+		DamageFactor "Bonk", 1.25;
+		Painchance "Bonk", 80;
+		DamageFactor "Cricket", 0.75;
+		Painchance "Cricket", 48;
+		DamageFactor "Lead", 1.0;
+		Painchance "Lead", 64;
+		DamageFactor "Chop", 2.0;
+		Painchance "Chop", 128;
+		DamageFactor "Breakfast", 1.75;
+		Painchance "Breakfast", 112;
+		DamageFactor "Suck", 2.00;
+		Painchance "Suck", 128;
+		DamageFactor "Dust", 1.25;
+		Painchance "Dust", 80;
+		DamageFactor "Zap", 0.625;
+		Painchance "Zap", 40;
+		DamageFactor "BRocket", 0.75;
+		Painchance "BRocket", 48;
+		DamageFactor "Popper", 2.0;
+		Painchance "Popper", 128;
+		DamageFactor "Spinner", 0.75;
+		Painchance "Spinner", 48;
+		DamageFactor "Beats", 2.0;
+		Painchance "Beats", 128;
 		Painchance "Fist", 96; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 160; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.8; // 6.4
@@ -929,8 +1007,24 @@ class DemonWizard : EECreature
 	}
 }
 
-class GlaakiPeekDefense : PowerProtection { default { damagefactor "normal", 0.40; inventory.icon ""; Powerup.Duration 2147483646; } }
-class GlaakiBiteVulnerability : PowerProtection { default { damagefactor "normal", 2.5; inventory.icon ""; Powerup.Duration 2147483646; } }
+class GlaakiPeekDefense : PowerProtection
+{
+	default
+	{
+		damagefactor "normal", 0.40;
+		inventory.icon "";
+		Powerup.Duration 2147483646;
+	} 
+}
+class GlaakiBiteVulnerability : PowerProtection 
+{
+	default
+	{
+		damagefactor "normal", 2.5;
+		inventory.icon "";
+		Powerup.Duration 2147483646; 
+	} 
+}
 class GlaakiSpawn : EECreature
 {
 	default
@@ -943,7 +1037,23 @@ class GlaakiSpawn : EECreature
 		Radius 16;
 		Height 29;
 		Mass 4000;
+		Painchance 0;
 		DamageFactor "Crush", 0.0; // 0.0
+		DamageFactor "Bonk", 0.25;
+		DamageFactor "Chop", 4.0;
+		DamageFactor "Suck", 0.5;
+		DamageFactor "Cricket", 2.0;
+		DamageFactor "Lead", 2.0;
+		DamageFactor "Breakfast", 0.5;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 0.4;
+		DamageFactor "Beats", 2.5;
+		DamageFactor "Fire", 2.0;
+		DamageFactor "Ice", 0.5;
+		DamageFactor "CherryBomb", 1.5;
+		DamageFactor "Spinner", 1.5;
+		DamageFactor "BRocket", 1.5;
+		DamageFactor "Popper", 5.0;
 		Monster
 		+FLOORCLIP;
 		+LOOKALLAROUND;
@@ -1139,8 +1249,24 @@ class GlaakiSpawn : EECreature
 	}
 }
 
-class DholePeekDefense : PowerProtection { default { damagefactor "normal", 0.70; inventory.icon ""; Powerup.Duration 2147483646; } }
-class DholeBiteVulnerability : PowerProtection { default { damagefactor "normal", 1.75; inventory.icon ""; Powerup.Duration 2147483646; } }
+class DholePeekDefense : PowerProtection 
+{
+	default
+	{
+		damagefactor "normal", 0.70;
+		inventory.icon "";
+		Powerup.Duration 2147483646;
+	} 
+}
+class DholeBiteVulnerability : PowerProtection
+{
+	default
+	{
+		damagefactor "normal", 1.75;
+		inventory.icon "";
+		Powerup.Duration 2147483646;
+	} 
+}
 class Dhole : EECreature replaces Cyberdemon
 {
 	default
@@ -1155,8 +1281,25 @@ class Dhole : EECreature replaces Cyberdemon
 		Height 110;
 		Mass 10000;
 		scale 2.0;
-		DamageFactor "Crush", 0.15; // 1.2
+		Painchance 0;
+		DamageFactor "Crush", 0.15;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		Monster;
+		+NOPAIN;
 		+FLOORCLIP;
 		+LOOKALLAROUND;
 		+NOTARGET;
@@ -1370,6 +1513,21 @@ class DShambler : EECreature
 		Painchance "Kick", 160; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.8; // 6.4
 		DamageFactor "Eldritch", 2.5;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		MeleeDamage 4;
 		SeeSound "Shambler/Sight";
 		PainSound "Shambler/Pain";
@@ -1587,6 +1745,21 @@ class ShadowBeast : EECreature replaces BaronOfHell
 		Painchance "Fist", 216; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 256; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.8; // 6.4
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		SEESOUND "shadowbeast/sight";
 		PAINSOUND "shadowbeast/pain";
 		DEATHSOUND "shadowbeast/death";
@@ -1978,6 +2151,21 @@ class Roach : EECreature
 		PainChance 64;
 		Painchance "Fist", 96; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 160; // Kick attacks have a +150% chance of stunning an enemy
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		Mass 200;
 		BloodColor "DarkGreen";
 		SeeSound "Roach/Sight";
@@ -2176,10 +2364,26 @@ class FleshSpawn : EECreature
 		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 1.2; // 9.6
-		DamageFactor "Fire", 1.5;
-		Painchance "Fire", 255;
 		DamageFactor "Holy", 2; // Demons = +200% Holy Damage
 		Painchance "Holy", 255; // Demons = +300% Pain Chance
+
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.5;
+		Painchance "Fire", 255;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
+
 		missiletype "Fleshspawnball";
 		bloodcolor "red";
 		attacksound "flesh/melee";
@@ -2387,6 +2591,22 @@ class VulgarNew : DoomImpNew
 		Painchance "Fist", 180; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.8; // 6.4
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 2.0;
+		Painchance "Lead", 240;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		MONSTER;
 		+FLOORCLIP;
 		+DONTHARMSPECIES;
@@ -2755,6 +2975,21 @@ Class Grell : EECreature
 		DamageFactor "Melee", 2.5;
 		DamageFactor "Fist", 2.5;
 		DamageFactor "Kick", 2.5;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		seesound "grell/sight";
 		painsound "grell/pain";
 		deathsound "grell/death";
@@ -3305,9 +3540,23 @@ class Skeleton : EECreature
 		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 1.0; // 8.0
 		DamageFactor "Bonk", 2.5;
-		DamageFactor "Cricket", 2.5;
 		Painchance "Bonk", 45;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 2.5;
 		Painchance "Cricket", 45;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
+
 		Speed 10;
 		Radius 24;
 		Height 56;
@@ -3444,6 +3693,21 @@ class PurpleTentacle : EECreature
 		Painchance "Fist", 135; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 225; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.7;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		speed 10;
 		radius 20;
 		height 56;
@@ -3543,6 +3807,21 @@ class StarSpawn : EECreature replaces BaronofHell
 		Painchance "Eldritch", 150;
 		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Crush", 0.003125; // 0.025
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		meleedamage 50;
 		meleerange 64;
 		seesound "deepone/sight";
@@ -3741,10 +4020,23 @@ class SpiderGod : EECreature replaces SpiderMastermind
 		meleerange 76;
 		meleedamage 12;
 		painchance 10;
-		Painchance "Ice", 3;
-		DamageFactor "Ice", 0.3;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
 		Painchance "Fire", 33;
 		DamageFactor "Fire", 3.33;
+		Painchance "Ice", 3;
+		DamageFactor "Ice", 0.3;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		Painchance "Fist", 15; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 25; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.025; // 0.2
@@ -3995,10 +4287,23 @@ class SpiderGodling : SpiderGod
 		MeleeRange 42;
 		MeleeDamage 8;
 		Painchance 30;
-		Painchance "Ice", 9;
-		DamageFactor "Ice", 0.3;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
 		Painchance "Fire", 100;
 		DamageFactor "Fire", 3.33;
+		Painchance "Ice", 9;
+		DamageFactor "Ice", 0.3;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		Painchance "Fist", 45; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 75; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.8; // 6.4
@@ -4192,10 +4497,23 @@ class LengSpider : EECreature
 		height 56;
 		speed 12;
 		Painchance 200;
-		Painchance "Ice", 60;
-		DamageFactor "Ice", 0.3;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
 		Painchance "Fire", 255;
 		DamageFactor "Fire", 3.33;
+		Painchance "Ice", 60;
+		DamageFactor "Ice", 0.3;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Crush", 0.8;
@@ -4292,6 +4610,27 @@ class LengSpiderling : LengSpider
 		Translation 2;
 		Meleedamage 3;
 		DamageFactor "Crush", 1.0;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
+		DamageFactor "Lead", 1.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		Painchance "Fire", 255;
+		DamageFactor "Fire", 3.33;
+		Painchance "Ice", 60;
+		DamageFactor "Ice", 0.3;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
+		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Eldritch", 255;
+		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Breakfast", 25.0;
 		Painchance "Breakfast", 255;
 		-NOTARGET;
@@ -4348,7 +4687,22 @@ class Nyarlathotep : EECreature
 		DamageFactor "Crush", 0.25; // 2.0
 		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Holy", 5.0;
+
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
 		DamageFactor "Lead", 25.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 		SEESOUND "wizard/sight";
 		painsound "wizard/pain";
 		deathsound "wizard/death";
@@ -4548,6 +4902,20 @@ class NyarlathotepLesser : Nyarlathotep
 		DamageFactor "Crush", 0.25; // 2.0
 		DamageFactor "Eldritch", 2.5;
 		DamageFactor "Holy", 5.0;
+		DamageFactor "Bonk", 1.0;
+		DamageFactor "Chop", 1.0;
+		DamageFactor "Suck", 1.0;
+		DamageFactor "Cricket", 1.0;
 		DamageFactor "Lead", 25.0;
+		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Zap", 1.0;
+		DamageFactor "Dust", 1.0;
+		DamageFactor "Beats", 1.0;
+		DamageFactor "Fire", 1.0;
+		DamageFactor "Ice", 1.0;
+		DamageFactor "CherryBomb", 1.0;
+		DamageFactor "Spinner", 1.0;
+		DamageFactor "BRocket", 1.0;
+		DamageFactor "Popper", 1.0;
 	}
 }
