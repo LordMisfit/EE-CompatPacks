@@ -1959,12 +1959,12 @@ class Roach : EECreature
 				check1++;
 				if (check1 >= 3) 
 				{ 
-					A_Chase(); 
+					A_EEChase(); 
 					check1 = 0; 
 				} 
 				else 
 				{ 
-					A_Chase("Melee", null, CHF_NOPLAYACTIVE); 
+					A_EEChase("Melee", null, CHF_NOPLAYACTIVE); 
 				}
 			}
 			Loop;
@@ -1977,7 +1977,7 @@ class Roach : EECreature
 				else if (exex_monsterlevelenabledflags > 0 && CountInv("MonsterLevel") > 60) { A_SetTics(2); }
 
 				A_FaceTarget();
-				A_Chase("Melee", "Missile", CHF_NOPLAYACTIVE | CHF_DONTMOVE);
+				A_EEChase("Melee", "Missile", CHF_NOPLAYACTIVE | CHF_DONTMOVE);
 			}
 			ROAC A 0 A_Jump(192, "Stand");
 			Goto See+1;
@@ -2518,7 +2518,7 @@ class DevilImp : EECreature
 				if (exex_monsterlevelenabledflags > 0 && CountInv("MonsterLevel") > 60) { bAVOIDMELEE = 1; }
 				if (exex_monsterlevelenabledflags > 0 && CountInv("MonsterLevel") > 240) { A_SetTics(1); }
 				else if (exex_monsterlevelenabledflags > 0 && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
-				A_Chase();
+				A_EEChase();
 			}
 			loop;
 		Melee:
@@ -2723,7 +2723,7 @@ Class Grell : EECreature
 				else if (exex_monsterlevelenabledflags > 0 && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
 
 				A_FastChaseCalc(4,16);
-				if (random(1,256) <= user_fastchasechance) { A_Chase("Melee","Missile",CHF_FASTCHASE); A_FloatSetFChaseT(randompick(0,4)); } else { A_Chase(); }
+				if (random(1,256) <= user_fastchasechance) { A_EEChase("Melee","Missile",CHF_FASTCHASE); A_FloatSetFChaseT(randompick(0,4)); } else { A_EEChase(); }
 				user_painfastchase = 0;
 			}
 			GREL B 0 
@@ -2740,7 +2740,7 @@ Class Grell : EECreature
 				else if (exex_monsterlevelenabledflags > 0 && CountInv("MonsterLevel") > 120) { A_SetTics(2); }
 
 				A_FastChaseCalc(4,16);
-				if (random(1,256) <= user_fastchasechance) { A_Chase("Melee","Missile",CHF_FASTCHASE); A_FloatSetFChaseT(randompick(0,4)); } else { A_Chase(); }
+				if (random(1,256) <= user_fastchasechance) { A_EEChase("Melee","Missile",CHF_FASTCHASE); A_FloatSetFChaseT(randompick(0,4)); } else { A_EEChase(); }
 				user_painfastchase = 0;
 			}
 			Loop;
@@ -4256,5 +4256,234 @@ class LengSpiderling : LengSpider
 				A_FaceTarget();
 			}
 			goto See;
+	}
+}
+
+// :V
+class Nyarlathotep : EECreature
+{
+	default
+	{
+		//$Angled
+		//$Color 12
+		//$Category "Strange Aeons Monsters"
+		obituary "%o was smote by the hand of The Crawling Chaos.";
+		tag "Nyarlathotep, The Crawling Chaos";
+		radius 20;
+		height 80;
+		meleeDamage 3;
+		health 120000; // 4000
+		mass 150000;
+		speed 30;
+		painchance 100;
+		Painchance "Fist", 150; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 250; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Eldritch", 255;
+		Painchance "Holy", 255;
+		Painchance "Lead", 255;
+		DamageFactor "Crush", 0.25; // 2.0
+		DamageFactor "Eldritch", 2.5;
+		DamageFactor "Holy", 5.0;
+		DamageFactor "Lead", 25.0;
+		SEESOUND "wizard/sight";
+		painsound "wizard/pain";
+		deathsound "wizard/death";
+		activesound "wizard/active";
+		MONSTER;
+		+FLOAT;
+		+NOGRAVITY;
+		+NOTARGET;
+		+NOINFIGHTING;
+		+BOSS;
+		+BOSSDEATH;
+		dropitem "Backpack", 256;
+		dropitem "Backpack", 128;
+		dropitem "Backpack", 64;
+		dropitem "Backpack", 32;
+	}
+	
+	states
+	{
+		Spawn:
+			LMWZ E 10 A_Look();
+			loop;
+
+		See:
+			LMWZ EEFFEEFF 1 
+			{
+				A_EEChase("Melee","Missile",CHF_FASTCHASE);
+			}
+			loop;
+
+		Missile:
+			LMWZ E 0 A_jump(256,"wraiths","FloorShot","magic");
+			goto See;
+
+		Wraiths:
+			LMWZ EFG 10 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 200) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 160) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget();
+			}
+			TNT1 AAAAA 0 
+			{
+				A_SpawnItemEx("ShadowBeastCreature", 0, 0, random(16,48), random(0,8), random(0,8), random(0,8), random(0,359), 0);
+			}
+			LMWZ G 5
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
+			}
+			LMWZ E 5 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
+			}
+			LMWZ E 1 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(0); }
+				A_StartSound("wizard/tele");
+			}
+			Goto See;
+		FloorShot:
+			LMWZ F 10 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 200) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 160) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget();
+			}
+			LMWZ G 0 
+			{
+				A_SpawnProjectile("FloorShot", 60, 0, 0);
+			}
+			LMWZ GGG 10 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 200) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 160) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget();
+			}
+			LMWZ E 5 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
+			}
+			LMWZ E 1 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(0); }
+				A_StartSound("wizard/tele");
+			}
+			goto See;
+		Magic:
+			LMWZ E 10 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 200) { A_SetTics(5); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 160) { A_SetTics(6); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 120) { A_SetTics(7); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 80) { A_SetTics(8); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 40) { A_SetTics(9); }
+				A_FaceTarget();
+			}
+			LMWZ E 4 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_SpawnProjectile("MagicBlast", 90, 30, 0);
+				A_FaceTarget();
+			}
+			LMWZ E 4 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_SpawnProjectile("MagicBlast", 90, -30, 0);
+				A_FaceTarget();
+			}
+			LMWZ E 4 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_SpawnProjectile("MagicBlast", 55, -30, 0);
+				A_FaceTarget();
+			}
+			LMWZ E 4 bright 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(3); }
+				A_SpawnProjectile("MagicBlast", 55, 30, 0);
+				A_FaceTarget();
+			}
+			LMWZ E 5 
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 270) { A_SetTics(2); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 180) { A_SetTics(3); }
+				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
+			}
+			LMWZ E 1
+			{
+				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 240) { A_SetTics(0); }
+				A_StartSound("wizard/tele");
+			}
+			goto See;
+
+		Pain:
+			LMWZ I 3;
+			LMWZ I 5 A_EEPain();
+			LMWZ I 0 A_StartSound("wizard/tele");
+			Goto See;
+		Pain.Lead:
+			LMWZ I 3;
+			LMWZ I 5 A_EEPain();
+			LMWZ IIII 3;
+			LMWZ I 0 A_StartSound("wizard/tele");
+			Goto See;
+		Pain.Eldritch:
+		Pain.Holy:
+			LMWZ I 3;
+			LMWZ I 5 A_EEPain();
+			LMWZ IIIIIIII 3;
+			LMWZ I 0 A_StartSound("wizard/tele");
+			Goto See;
+
+		Death:
+			LMWZ J 6 A_Scream();
+			LMWZ K 6 A_NoBlocking();
+			LMWZ LMNO 6;
+			LMWZ P 0 A_BossDeath();
+			LMWZ P -1;
+			Stop;
+	}
+}
+
+class NyarlathotepLesser : Nyarlathotep
+{
+	default
+	{
+		health 12000; // 4000
+		mass 15000;
+		speed 20;
+		Alpha 0.8;
+		RenderStyle "Add";
+		painchance 200;
+		Painchance "Fist", 255; // Fist attacks have a +50% chance of stunning an enemy
+		Painchance "Kick", 255; // Kick attacks have a +150% chance of stunning an enemy
+		Painchance "Eldritch", 255;
+		Painchance "Holy", 255;
+		Painchance "Lead", 255;
+		DamageFactor "Crush", 0.25; // 2.0
+		DamageFactor "Eldritch", 2.5;
+		DamageFactor "Holy", 5.0;
+		DamageFactor "Lead", 25.0;
 	}
 }
