@@ -618,6 +618,8 @@ class UPriestBulletTracer : ZombieBulletTracer
 
 class NightmareNew : EECreature
 {
+	int wispint;
+	int wispintmax;
 	default
 	{
 		Tag "Nightmare";
@@ -637,6 +639,7 @@ class NightmareNew : EECreature
 		DamageFactor "Fist", 1.67;
 		DamageFactor "Kick", 1.67;
 		MONSTER;
+		-NOPAIN;
 		+FLOORCLIP;
 		+STEALTH;
 		+THRUSPECIES;
@@ -661,25 +664,31 @@ class NightmareNew : EECreature
 	States
 	{
 		Spawn:
-			NMRE A 0 NoDelay A_NightmarePhaseOut();
+			NMRE A 0 NoDelay 
+			{
+				A_NightmarePhaseOut();
+				wispintmax = random(3,5);
+			}
 			NMRE AABB 5 A_Look();
-			goto Spawn+1;
 			Loop;
 
 		See:
 			NMRE AABBCCDD 3
 			{
+				wispint++;
+				if (wispint >= wispintmax)
+				{
+					wispint = 0;
+					wispintmax = random(3,5);
+					if (random(1,8) <= randompick(1,1,1,2,2,3))
+					{
+						A_DynamicMusic(matktype:11);
+						A_SpawnProjectile("NightmareWisp",0,0,0); 
+					}
+				}
 				if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 45) { A_SetTics(2); }
 				A_NightmarePhaseOut();
 				A_EEChase("Melee","Missile",0,1,3,1,1);
-			}
-			NMRE D 0 
-			{
-				if (random(1,256) <= 32) 
-				{
-					A_DynamicMusic(matktype:11);
-					A_SpawnProjectile("NightmareWisp",0,0,0); 
-				}
 			}
 			Loop;
 
