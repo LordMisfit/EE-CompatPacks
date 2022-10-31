@@ -23,7 +23,6 @@ class RapidFireTrooper : EECreature
 		Painchance "Kick", 256; // Kick attacks have a +150% chance of stunning an enemy
 		MONSTER;
 		+FLOORCLIP;
-		DropItem "Clip";
 		SeeSound "grunt/sight";
 		AttackSound "grunt/attack";
 		PainSound "grunt/pain";
@@ -31,6 +30,34 @@ class RapidFireTrooper : EECreature
 		ActiveSound "grunt/active";
 		Obituary "%o was cut down by a maniac with a machinegun.";
 		Decal "BulletChip";
+	}
+	
+	void A_Drop()
+	{
+		actor player = players[0].mo;
+		int havecb = player.CountInv("CricketBat");
+		bool check1 = true;
+		
+		if (check1)
+		{
+			//Console.Printf("Check1");
+			if (havecb <= 0) 
+			{
+				A_DropItem("CricketBat",1,256);
+			}
+			else
+			{
+				if (random(1,32) <= 1) 
+				{
+					A_DropItem("CricketBat",1,256);
+				}
+				else
+				{
+					if (random(1,8) <= 1) A_DropItem("MalletAmmoBig",1,256,ADI_FULLAMMO);
+													 else A_DropItem("MalletAmmo",1,256,ADI_FULLAMMO);
+				}
+			}
+		}
 	}
 	
 	States 
@@ -74,7 +101,7 @@ class RapidFireTrooper : EECreature
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
 				A_StartSound ("grunt/attack");
 
-				if (bullet_tracer_mode == 0)
+				if (exex_bulletstracers == 0)
 				{
 					A_CustomBulletAttack(user_shotaccuracy, user_shotzaccuracy, 1, random(1,5) * 3, "BulletPuff", 0, CBAF_NORANDOM);
 				}
@@ -99,7 +126,12 @@ class RapidFireTrooper : EECreature
 		Death:
 			RFTR H 5;
 			RFTR I 5 A_Scream();
-			RFTR J 5 A_Fall();
+			RFTR J 5
+			{
+				A_Fall();
+				A_NoBlocking();
+				A_Drop();
+			}
 			RFTR K 5;
 			RFTR L -1;
 			Stop;
@@ -108,7 +140,12 @@ class RapidFireTrooper : EECreature
 			RFTR M 5;
 			RFTR N 5 A_XScream();
 			RFTR N 5;
-			RFTR P 5 A_Fall();
+			RFTR P 5
+			{
+				A_Fall();
+				A_NoBlocking();
+				A_Drop();
+			}
 			RFTR QRS 5;
 			RFTR T 5;
 			RFTR U -1;
@@ -157,12 +194,52 @@ class UndeadHunter : EECreature
 		painsound "undeadhunter/pain";
 		deathsound "undeadhunter/death";
 		seesound "undeadhunter/activate";
-		dropitem "Shotgun", 256;
 		Species "Leng People";
 		MONSTER;
 		+FLOORCLIP;
 		+DONTHARMSPECIES;
 		+DONTHARMCLASS;
+	}
+	
+	void A_Drop()
+	{
+		actor player = players[0].mo;
+		int havescr = player.CountInv("Scrambler");
+		int havebla = player.CountInv("Blunderaxe");
+		bool check1;
+		if (player.CountInv("PlayingDoom1") > 0)
+		{
+			//Console.Printf("PD1");
+			if (havescr <= 0) 
+			{
+				//Console.Printf("havescr0");
+				if (random(1,32) <= 1) A_DropItem("Scrambler",1,256);
+				else check1 = true;
+			}
+			else check1 = true;
+		}
+		else check1 = true;
+		
+		if (check1)
+		{
+			//Console.Printf("Check1");
+			if (havebla <= 0) 
+			{
+				A_DropItem("Blunderaxe",1,256);
+			}
+			else
+			{
+				if (random(1,8) <= 1) 
+				{
+					A_DropItem("Blunderaxe",1,256);
+				}
+				else
+				{
+					if (random(1,8) <= 1) A_DropItem("BlunderAmmoBig",1,256,ADI_FULLAMMO);
+													 else A_DropItem("BlunderAmmo",1,256,ADI_FULLAMMO);
+				}
+			}
+		}
 	}
 	
 	states
@@ -200,7 +277,7 @@ class UndeadHunter : EECreature
 				A_StartSound("shotguy/attack");
 				if (GetCVar("dvds_shotgunnerspread") == 0) { user_pelletsfired = 3; } else { user_pelletsfired = 7; }
 	
-				if (bullet_tracer_mode == 0) // Hitscan
+				if (exex_bulletstracers == 0) // Hitscan
 				{
 					A_CustomBulletAttack(22.4, 5.68, user_pelletsfired, random(1,5) * 3, "BulletPuff", 0, 1);
 				}
@@ -230,7 +307,11 @@ class UndeadHunter : EECreature
 		Death:
 			DEHU H 5;
 			DEHU I 5 A_Scream();
-			DEHU J 5 A_NoBlocking();
+			DEHU J 5
+			{
+				A_NoBlocking();
+				A_Drop();
+			}
 			DEHU KLM 5;
 			DEHU N -1;
 			stop;
@@ -238,7 +319,11 @@ class UndeadHunter : EECreature
 		XDeath:
 			DEHU O 5 A_XScream();
 			DEHU P 5 A_StartSound("undeadhunter/xdeath");
-			DEHU Q 5 A_NoBlocking();
+			DEHU Q 5 
+			{
+				A_NoBlocking();
+				A_Drop();
+			}
 			DEHU RSTUV 5;
 			DEHU W -1;
 			stop;
@@ -281,10 +366,6 @@ class UndeadPriest : EECreature
 		Painchance "Chop", 88;
 		Painchance "Fist", 105; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 175; // Kick attacks have a +150% chance of stunning an enemy
-		dropitem "Shell", 96;
-		dropitem "Shell", 128;
-		dropitem "Shotgun", 128;
-		dropitem "Shotgun", 192;
 		decal "BulletChip";
 		painsound "undeadhunter/pain";
 		deathsound "undeadhunter/death";
@@ -294,6 +375,55 @@ class UndeadPriest : EECreature
 		+FLOORCLIP;
 		+DONTHARMSPECIES;
 		+DONTHARMCLASS;
+	}
+	
+	void A_Drop()
+	{
+		actor player = players[0].mo;
+		int havescr = player.CountInv("Scrambler");
+		int havebla = player.CountInv("Blunderaxe");
+		bool check1;
+		if (player.CountInv("PlayingDoom1") > 0)
+		{
+			//Console.Printf("PD1");
+			if (havescr <= 0) 
+			{
+				//Console.Printf("havescr0");
+				if (random(1,32) <= 1) 
+				{
+					A_DropItem("Scrambler",1,192);
+					A_DropItem("Scrambler",1,192);
+				}
+				else check1 = true;
+			}
+			else check1 = true;
+		}
+		else check1 = true;
+		
+		if (check1)
+		{
+			//Console.Printf("Check1");
+			if (havebla <= 0) 
+			{
+				A_DropItem("Blunderaxe",1,192);
+				A_DropItem("Blunderaxe",1,192);
+			}
+			else
+			{
+				if (random(1,8) <= 1) 
+				{
+					A_DropItem("Blunderaxe",1,192);
+					A_DropItem("Blunderaxe",1,192);
+				}
+				else
+				{
+					if (random(1,8) <= 1) A_DropItem("BlunderAmmoBig",1,128,ADI_FULLAMMO);
+													 else A_DropItem("BlunderAmmo",1,128,ADI_FULLAMMO);
+					if (random(1,8) <= 1) A_DropItem("BlunderAmmoBig",1,96,ADI_FULLAMMO);
+													 else A_DropItem("BlunderAmmo",1,96,ADI_FULLAMMO);
+				}
+			}
+		}
 	}
 	
 	states
@@ -348,7 +478,7 @@ class UndeadPriest : EECreature
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
 
 				A_StartSound("UndeadPriest/Shoot",CHAN_6);
-				if (bullet_tracer_mode == 0) // Hitscan
+				if (exex_bulletstracers == 0) // Hitscan
 				{
 					A_CustomBulletAttack(7, 7, user_pelletsfired, random(2,3) * random(1,5), "BulletPuff", 0, 1);
 				}
@@ -382,7 +512,7 @@ class UndeadPriest : EECreature
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
 
 				A_StartSound("UndeadPriest/Shoot2",CHAN_7);
-				if (bullet_tracer_mode == 0) // Hitscan
+				if (exex_bulletstracers == 0) // Hitscan
 				{
 					A_CustomBulletAttack(7, 7, user_pelletsfired, random(2,3) * random(1,5), "BulletPuff", 0, 1);
 				}
@@ -415,7 +545,11 @@ class UndeadPriest : EECreature
 			UNDP H 6;
 			UNDP I 6 A_Scream();
 			UNDP JK 6;
-			UNDP L 6 A_NoBlocking();
+			UNDP L 6 
+			{
+				A_NoBlocking();
+				A_Drop();
+			}
 			UNDP M 6;
 			UNDP N -1;
 			Stop;
@@ -423,7 +557,11 @@ class UndeadPriest : EECreature
 		XDeath:
 			UNDP O 5 A_XScream();
 			UNDP P 5;
-			UNDP R 5 A_NoBlocking();
+			UNDP R 5
+			{
+				A_NoBlocking();
+				A_Drop();
+			}
 			UNDP STUVW 5;
 			UNDP X -1;
 			Stop;
