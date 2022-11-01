@@ -36,6 +36,7 @@ class RapidFireTrooper : EECreature
 	{
 		actor player = players[0].mo;
 		int havecb = player.CountInv("CricketBat");
+		int haveaj = player.CountInv("AppleJack");
 		bool check1 = true;
 		
 		if (check1)
@@ -43,18 +44,34 @@ class RapidFireTrooper : EECreature
 			//Console.Printf("Check1");
 			if (havecb <= 0) 
 			{
-				A_DropItem("CricketBat",1,256);
+				if (random(1,8) <= 1) A_DropItem("AppleJack",1,256);
+												 else A_DropItem("CricketBat",1,256);
+			}
+			else
+			if (haveaj <= 0) 
+			{
+				if (random(1,8) <= 1) A_DropItem("CricketBat",1,256);
+												 else A_DropItem("AppleJack",1,256);
 			}
 			else
 			{
-				if (random(1,32) <= 1) 
+				if (random(1,8) <= 1) 
 				{
-					A_DropItem("CricketBat",1,256);
+					if (random(1,2) <= 1) A_DropItem("AppleJack",1,256);
+													 else A_DropItem("CricketBat",1,256);
 				}
 				else
 				{
-					if (random(1,8) <= 1) A_DropItem("MalletAmmoBig",1,256,ADI_FULLAMMO);
-													 else A_DropItem("MalletAmmo",1,256,ADI_FULLAMMO);
+					if (random(1,2) <= 1) 
+					{
+						if (random(1,8) <= 1) A_DropItem("JackAmmoBig",1,256,ADI_FULLAMMO);
+														 else A_DropItem("JackAmmo",1,256,ADI_FULLAMMO);
+					}
+					else
+					{
+						if (random(1,8) <= 1) A_DropItem("MalletAmmoBig",1,256,ADI_FULLAMMO);
+														 else A_DropItem("MalletAmmo",1,256,ADI_FULLAMMO);
+					}
 				}
 			}
 		}
@@ -116,7 +133,7 @@ class RapidFireTrooper : EECreature
 				else if (exex_monsterlevelenabledflags && CountInv("MonsterLevel") > 90) { A_SetTics(4); }
 			}
 			TNT1 A 0 A_MonsterRefire(40,"See");
-			Goto Missile+2;
+			Goto Missile+1;
 
 		Pain: 
 			RFTR G 3;
@@ -3985,21 +4002,21 @@ Class Grell : EECreature
 		DamageFactor "Melee", 2.5;
 		DamageFactor "Fist", 2.5;
 		DamageFactor "Kick", 2.5;
-		DamageFactor "Bonk", 1.0;
-		DamageFactor "Chop", 1.0;
-		DamageFactor "Suck", 1.0;
+		DamageFactor "Bonk", 2.5;
+		DamageFactor "Chop", 0.4;
+		DamageFactor "Suck", 2.5;
 		DamageFactor "Cricket", 1.0;
-		DamageFactor "Lead", 1.0;
-		DamageFactor "Breakfast", 1.0;
+		DamageFactor "Lead", 0.4;
+		DamageFactor "Breakfast", 2.5;
 		DamageFactor "Zap", 1.0;
-		DamageFactor "Dust", 1.0;
-		DamageFactor "Beats", 1.0;
-		DamageFactor "Fire", 1.0;
-		DamageFactor "Ice", 1.0;
-		DamageFactor "CherryBomb", 1.0;
-		DamageFactor "Spinner", 1.0;
-		DamageFactor "BRocket", 1.0;
-		DamageFactor "Popper", 1.0;
+		DamageFactor "Dust", 0.4;
+		DamageFactor "Beats", 2.5;
+		DamageFactor "Fire", 1.5;
+		DamageFactor "Ice", 1.5;
+		DamageFactor "CherryBomb", 1.25;
+		DamageFactor "Spinner", 1.25;
+		DamageFactor "BRocket", 1.25;
+		DamageFactor "Popper", 2.5;
 		seesound "grell/sight";
 		painsound "grell/pain";
 		deathsound "grell/death";
