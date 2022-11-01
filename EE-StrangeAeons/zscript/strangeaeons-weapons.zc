@@ -1,11 +1,3 @@
-class ScepterOfSoulsUses : PlaceholderItem 
-{ 
-	default
-	{
-		+INVENTORY.KEEPDEPLETED;
-		Inventory.MaxAmount 2147483647;
-	}
-}
 class ScepterOfSouls : DinahWeapon
 {
 	int sceptenergy;
