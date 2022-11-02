@@ -204,6 +204,8 @@ class UndeadHunter : EECreature
 		Painchance "CherryBomb", 105;
 		DamageFactor "Chop", 1.25;
 		Painchance "Chop", 88;
+		DamageFactor "Lead", 2.5;
+		Painchance "Lead", 175;
 		Painchance "Fist", 105; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 175; // Kick attacks have a +150% chance of stunning an enemy
 		activesound "shotguy/active";
@@ -381,6 +383,8 @@ class UndeadPriest : EECreature
 		Painchance "CherryBomb", 105;
 		DamageFactor "Chop", 1.25;
 		Painchance "Chop", 88;
+		DamageFactor "Lead", 2.5;
+		Painchance "Lead", 175;
 		Painchance "Fist", 105; // Fist attacks have a +50% chance of stunning an enemy
 		Painchance "Kick", 175; // Kick attacks have a +150% chance of stunning an enemy
 		decal "BulletChip";
