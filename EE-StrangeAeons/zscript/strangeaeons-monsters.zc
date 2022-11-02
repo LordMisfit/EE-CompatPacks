@@ -2581,10 +2581,11 @@ class ShadowBeastBallFire : EEEffectProjectile
 			{
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
+					actor player = players[0].mo;
 					A_StatusEffectChecker(8);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
-						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						player.player.poisoncount += random(7,random(10,11));
 					}
 				}
 				return resolvestate(null);
@@ -2623,10 +2624,11 @@ class ShadowBeastBall1 : EEEffectProjectile
 			{
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
 				{
+					actor player = players[0].mo;
 					A_StatusEffectChecker(8);
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
 					{
-						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,105)); // Poison for 2-3 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						player.player.poisoncount += random(7,random(10,11));
 					}
 				}
 				return resolvestate(null);
@@ -3737,6 +3739,7 @@ class VulgarShotNew : EEEffectProjectile
 		Tag "Vulgar Poison Blast";
 		DamageType "Poison";
 		DamageFunction (4 * random(1,8));
+		PoisonDamage 32;
 		Radius 8;
 		Height 16;
 		Speed 10;
@@ -3753,19 +3756,6 @@ class VulgarShotNew : EEEffectProjectile
 			FVUL AAABBB 1 Bright;
 			loop;
 		Death:
-			TNT1 A 0 Bright
-			{
-				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE) 
-				{
-					A_StatusEffectChecker(4);
-					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict)
-					{
-						ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,210)); // Poison for 4-6 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-					}
-				}
-				return resolvestate(null);
-			}
-		Death2:
 			FVUL CDEF 4 Bright;
 			stop;
 	}
@@ -4183,15 +4173,44 @@ Class GrellBall : EEEffectProjectile
 				if (IsPointerEqual(AAPTR_MASTER, AAPTR_PLAYER1) == TRUE)
 				{
 					A_StatusEffectChecker(4);
+					actor player = players[0].mo;
 					if (random(1,user_ailmentmaxchance) <= 3 && user_canafflict > 0)
 					{
 						user_random = random(1,3);
-						if (user_random == 1) { ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(140,280)); } // Deceleratle for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-						else if (user_random == 2) { ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(140,280)); } // Poison for 4-8 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						if (user_random == 1)
+						{
+							// Slow for 4-8 seconds [tics]
+							if (!player.CountInv("PowerSlow"))
+							{
+								player.SetInventory("PowerSlow",1);
+								let SlowItem = PowerSlow(player.FindInventory("PowerSlow"));
+								if (SlowItem) SlowItem.EffectTics = random(140,280);
+							}
+							else
+							{
+								let SlowItem = PowerSlow(player.FindInventory("PowerSlow"));
+								if (SlowItem) SlowItem.EffectTics += random(140,280);
+							}
+						} 
+						else if (user_random == 2)
+						{
+							player.player.poisoncount += random(14,28);
+						} 
 						else if (user_random == 3) 
-						{ 
-							ACS_NamedExecuteAlways("BuffTimer",0,8,15,random(70,140)); // Deceleratle for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
-							ACS_NamedExecuteAlways("BuffTimer",0,8,16,random(70,140)); // Poison for 2-4 seconds [tics] (do not ignore God/Invuln/Mercy-Invuln)
+						{
+							// Slow for 4-8 seconds [tics]
+							if (!player.CountInv("PowerSlow"))
+							{
+								player.SetInventory("PowerSlow",1);
+								let SlowItem = PowerSlow(player.FindInventory("PowerSlow"));
+								if (SlowItem) SlowItem.EffectTics = random(70,140);
+							}
+							else
+							{
+								let SlowItem = PowerSlow(player.FindInventory("PowerSlow"));
+								if (SlowItem) SlowItem.EffectTics += random(70,140);
+							}
+							player.player.poisoncount += random(7,14);
 						}
 					}
 				}
