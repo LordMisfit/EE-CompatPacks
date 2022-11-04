@@ -4604,6 +4604,12 @@ class Skeleton : EECreature
 		DamageFactor "Spinner", 1.0;
 		DamageFactor "BRocket", 1.0;
 		DamageFactor "Popper", 1.0;
+		DamageFactor "Dashing", 1.5;
+		DamageFactor "DashingBG", 2.25;
+		DamageFactor "DashingSD", 3.0;
+		Painchance "Dashing", 135;
+		Painchance "DashingBG", 90;
+		Painchance "DashingSD", 45;
 
 		Speed 10;
 		Radius 24;
@@ -4670,13 +4676,57 @@ class Skeleton : EECreature
 			goto See;
 
 		Death:
-			SKLT M 0 A_Jump(248,"FakeDeath");
+			SKLT M 0 
+			{
+				int chance = 248;
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
 		Death.Cricket:
 		Death.Bonk:
-			SKLT M 0 A_Jump(124,"FakeDeath");
-		//XDeath:
+			SKLT M 0
+			{
+				int chance = 124;
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
+		Death.Dashing:
+			SKLT M 0
+			{
+				int chance = 216;
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
+		Death.DashingBG:
+			SKLT M 0
+			{
+				int chance = 54;
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
+		Death.DashingSD:
+			SKLT M 0
+			{
+				int chance = random(18,19);
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
+		XDeath:
+			SKLT M 0
+			{
+				int chance = 128;
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
 		Death.Massacre:
 		Death.SilentMassacre:
+		Death.InstantDeath:
 		RealDeath:
 			TNT1 AAAAA 0 a_spawnitem ("brownbonespray");
 			TNT1 AAAA 0 a_spawnitemex("brownhipbone",0,0,0,random(-10,10),random(-10,10),10);

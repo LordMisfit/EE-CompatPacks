@@ -114,6 +114,7 @@ class FakeLengSpider : EEBaseZSC
 	}
 }
 
+/*
 class AmmoSphere : PowerupGiver
 {
 	default
@@ -136,6 +137,7 @@ class AmmoSphere : PowerupGiver
 			loop;
 	}
 }
+*/
 
 //SPHERE ITEM
 class MutantSphere : CustomInventoryExt
