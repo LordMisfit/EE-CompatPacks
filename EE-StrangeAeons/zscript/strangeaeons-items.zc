@@ -121,8 +121,8 @@ class StoneTablet6 : StoneTabletBase
 		//$Category Strange Aeons Decorations
 		Tag "Stone Tablet [6]";
 		Scale 0.125;
-		Height 27;
-		Radius 12;
+		Height 36;
+		Radius 24;
 		Inventory.PickupMessage "You found a \cdStone Tablet\c-.";
 	}
 	

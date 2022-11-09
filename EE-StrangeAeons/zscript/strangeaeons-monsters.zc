@@ -1187,6 +1187,10 @@ class DemonWizard : EECreature
 		ActiveSound "DWizard/Active";
 		Obituary "%o couldn't grasp the power of the Demon Wizard.";
 		Tag "Demon Wizard";
+		DropItem "PikeAmmo", 32;
+		DropItem "PikeAmmo", 8;
+		DropItem "PikeAmmoBig", 4;
+		DropItem "PikeAmmoBig", 1;
 	}
 	
 	States
@@ -1350,19 +1354,45 @@ class GlaakiPeekDefense : PowerProtection
 {
 	default
 	{
-		damagefactor "normal", 0.40;
+		damagefactor "normal", 1.00;
 		inventory.icon "";
 		Powerup.Duration 2147483646;
-	} 
+	}
+	
+	override void ModifyDamage(int damage, Name damageType, out int newdamage, bool passive, Actor inflictor, Actor source, int flags)
+	{
+		actor player = players[0].mo;
+		let MiscItem = PlayerStatItem(Player.FindInventory("PlayerStatItem"));
+		if (passive && damage > 0)
+		{
+			double TOTALFactor = 0.4;
+			if (damageType == "Suck") TOTALFactor = 1.0;
+			newdamage = max(0, ApplyDamageFactors(GetClass(), damageType, damage, damage * TOTALFactor));
+			if (dydudebug_defensebuffs) Console.Printf("(%s) TOTALFactor: %.8f, damage: %d [%d]", GetClassName(), TOTALFactor, newdamage, damage);
+		}
+	}
 }
 class GlaakiBiteVulnerability : PowerProtection 
 {
 	default
 	{
-		damagefactor "normal", 2.5;
+		damagefactor "normal", 1.0;
 		inventory.icon "";
 		Powerup.Duration 2147483646; 
 	} 
+	
+	override void ModifyDamage(int damage, Name damageType, out int newdamage, bool passive, Actor inflictor, Actor source, int flags)
+	{
+		actor player = players[0].mo;
+		let MiscItem = PlayerStatItem(Player.FindInventory("PlayerStatItem"));
+		if (passive && damage > 0)
+		{
+			double TOTALFactor = 2.5;
+			if (damageType == "Suck") TOTALFactor = 1.0;
+			newdamage = max(0, ApplyDamageFactors(GetClass(), damageType, damage, damage * TOTALFactor));
+			if (dydudebug_defensebuffs) Console.Printf("(%s) TOTALFactor: %.8f, damage: %d [%d]", GetClassName(), TOTALFactor, newdamage, damage);
+		}
+	}
 }
 class GlaakiSpawn : EECreature
 {
@@ -2492,6 +2522,7 @@ class ShadowBeastSpread : EEProjectile
 
 class ShadowBeastCreature : EESpawnedItem
 {
+	int linger;
 	default
 	{
 		Tag "Shadow Beast Spirit";
@@ -2506,6 +2537,12 @@ class ShadowBeastCreature : EESpawnedItem
 		+NOGRAVITY;
 	}
 	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		linger = (64 - randompick(5,45));
+	}
+	
 	states
 	{
 		Spawn:
@@ -2513,15 +2550,16 @@ class ShadowBeastCreature : EESpawnedItem
 			TNT1 A 0 A_StartSound("shadowbeast/spiritsit");
 			Goto See;
 		See:
-			TNT1 A 0 A_Jump(60, 5);
-			TNT1 A 0 A_Jump(60, 15);
-			TNT1 A 0 A_Jump(60, 25);
-			TNT1 A 0 A_Jump(60, 35);
-			TNT1 A 0 A_Jump(60, 45);
-			BDSP ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 2 A_Chase();
-			Goto Death;
+			BDSP ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 2 
+			{
+				A_Chase();
+				linger--;
+				if (linger <= 0) return resolvestate("Death");
+				return resolvestate(null);
+			}
+			loop;
 		Melee:
-			BDSP AB 2 A_CustomMeleeAttack((5 * random(1,8)), "", "", "Magic");
+			BDSP AB 2 A_CustomMeleeAttack((random(2,3) * random(1,8)), "", "", "Zap");
 			Goto See;
 		Death:
 			TNT1 A 0 A_StartSound("shadowbeast/spiritdth");
@@ -2919,21 +2957,21 @@ class Roach : EECreature
 		Painchance "Kick", 160; // Kick attacks have a +150% chance of stunning an enemy
 		DamageFactor "Fist", 2.0;
 		DamageFactor "Kick", 2.0;
-		DamageFactor "Bonk", 0.03125;
-		DamageFactor "Chop", 0.03125;
-		DamageFactor "Suck", 0.03125;
-		DamageFactor "Cricket", 0.03125;
-		DamageFactor "Lead", 0.03125;
-		DamageFactor "Breakfast", 0.03125;
-		DamageFactor "Zap", 0.03125;
-		DamageFactor "Dust", 0.03125;
-		DamageFactor "Beats", 0.03125;
-		DamageFactor "Fire", 0.03125;
-		DamageFactor "Ice", 0.03125;
-		DamageFactor "CherryBomb", 0.03125;
-		DamageFactor "Spinner", 0.03125;
-		DamageFactor "BRocket", 0.03125;
-		DamageFactor "Popper", 0.03125;
+		DamageFactor "Bonk", 0.05;
+		DamageFactor "Chop", 0.05;
+		DamageFactor "Suck", 0.05;
+		DamageFactor "Cricket", 0.05;
+		DamageFactor "Lead", 0.05;
+		DamageFactor "Breakfast", 0.05;
+		DamageFactor "Zap", 0.05;
+		DamageFactor "Dust", 0.05;
+		DamageFactor "Beats", 0.05;
+		DamageFactor "Fire", 0.25;
+		DamageFactor "Ice", 0.05;
+		DamageFactor "CherryBomb", 0.625;
+		DamageFactor "Spinner", 0.625;
+		DamageFactor "BRocket", 0.625;
+		DamageFactor "Popper", 0.05;
 		Mass 200;
 		BloodColor "DarkGreen";
 		SeeSound "Roach/Sight";
@@ -3038,6 +3076,14 @@ class Roach : EECreature
 			ROAC HHHH 3;
 			Goto See;
 
+		Death.Fist:
+		Death.Kick:
+			ROAC I 0 A_Jump(255, "XDeath");
+			goto Death;
+		Death.SpectralLow:
+		Death.Sigil:
+			ROAC I 0 A_Jump(248, "XDeath");
+			goto Death;
 		Death:
 			ROAC I 8 A_ScreamAndUnblock();
 			ROAC JKL 6;
@@ -3067,7 +3113,7 @@ class Roach : EECreature
 			ROAC H 1 A_FreezeDeathChunks;
 			wait;
 	}
-
+	
 	void RoachLook()
 	{
 		if(Args[0] == 1)
@@ -3088,17 +3134,17 @@ class Roach : EECreature
 
 	override void Tick()
 	{
-		super.tick(); //Call original in case of another override
+		super.tick(); // Call original in case of another override
 		
 		healint1 = 10 - (Skill / 2);
 		if (paintics1 > 0)
 		{
-			paintics1--;
+			if (!IsFrozen()) paintics1--;
 			healint1 /= 4;
 		}
 		if (paintics2 > 0)
 		{
-			paintics2--;
+			if (!IsFrozen()) paintics2--;
 			paintics1 = 0;
 			healint1 *= 4;
 		}
@@ -3109,18 +3155,18 @@ class Roach : EECreature
 		bool regendebug = false;
 		int healamt = 0;
 		int	healmax = User_MaxHP;
-		if (health > 0)
+		if (health > 0 && !IsFrozen())
 		{
 			if (regendebug) Console.Printf("\cyHealTimer1: %d / %d\c-, \cxHealTimer2: %d / %d\c-", level.maptime % healint1, healint1, level.maptime % healint2, healint2);
 			if (health < User_MaxHP && level.maptime % healint1 == 0) 
 			{
-				healamt += randompick(1,2,2,2,2,2,2,2,2,3) + (CountInv("MonsterLevel") / randompick(20,15,15,15,15,15,15,15,15,10));
+				healamt += randompick(1,2,2,2,2,2,2,2,2,3) + (CountInv("MonsterLevel") / randompick(40,30,30,30,30,30,30,30,30,20));
 				if (regendebug) Console.Printf("Roach Regen [first value < MaxHP]: %d, healint1: %d", healamt, healint1);
 			}
 			if (health >= User_MaxHP && level.maptime % healint2 == 0) 
 			{
 				healmax = User_MaxHP * 2;
-				healamt += randompick(0,0,1,1,1,1,2,2) + (CountInv("MonsterLevel") / randompick(50,50,40,40,40,40,30,30));
+				healamt += randompick(0,0,1,1,1,1,2,2) + (CountInv("MonsterLevel") / randompick(100,100,80,80,80,80,60,60));
 				if (regendebug) Console.Printf("Roach Regen [first value > MaxHP]: %d, healint2: %d", healamt, healint2);
 			}
 			if (regendebug && healamt > 0) Console.Printf("Roach Regen [legendary]: %d", healamt);
@@ -4678,7 +4724,18 @@ class Skeleton : EECreature
 		Death:
 			SKLT M 0 
 			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
 				int chance = 248;
+				if (random(1,256) <= chance) return resolvestate("FakeDeath");
+				return resolvestate(null);
+			}
+			goto RealDeath;
+		Death.SpectralLow:
+		Death.Sigil:
+			SKLT M 0 
+			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
+				int chance = 8;
 				if (random(1,256) <= chance) return resolvestate("FakeDeath");
 				return resolvestate(null);
 			}
@@ -4687,6 +4744,7 @@ class Skeleton : EECreature
 		Death.Bonk:
 			SKLT M 0
 			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
 				int chance = 124;
 				if (random(1,256) <= chance) return resolvestate("FakeDeath");
 				return resolvestate(null);
@@ -4695,6 +4753,7 @@ class Skeleton : EECreature
 		Death.Dashing:
 			SKLT M 0
 			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
 				int chance = 216;
 				if (random(1,256) <= chance) return resolvestate("FakeDeath");
 				return resolvestate(null);
@@ -4703,6 +4762,7 @@ class Skeleton : EECreature
 		Death.DashingBG:
 			SKLT M 0
 			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
 				int chance = 54;
 				if (random(1,256) <= chance) return resolvestate("FakeDeath");
 				return resolvestate(null);
@@ -4711,6 +4771,7 @@ class Skeleton : EECreature
 		Death.DashingSD:
 			SKLT M 0
 			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
 				int chance = random(18,19);
 				if (random(1,256) <= chance) return resolvestate("FakeDeath");
 				return resolvestate(null);
@@ -4719,6 +4780,7 @@ class Skeleton : EECreature
 		XDeath:
 			SKLT M 0
 			{
+				if (health <= (SpawnHealth() + Stamina * -1)) return resolvestate("RealDeath");
 				int chance = 128;
 				if (random(1,256) <= chance) return resolvestate("FakeDeath");
 				return resolvestate(null);
