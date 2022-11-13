@@ -401,6 +401,8 @@ class PopcornGunNew : Circus2Weapon
 		Scale 0.75;
 	}
 	
+	
+	
 	States 
 	{
 		Spawn: 
@@ -422,93 +424,280 @@ class PopcornGunNew : Circus2Weapon
 			}
 			loop;
 		Fire:
+			PGUN A 0 A_Jump (200,"FirePhase2");
 			PGUN A 0
 			{
 				A_CheckIPState1();
-				A_ConfirmIPAttack(361,0,6,8);
+				A_ConfirmIPAttack(361,0,1,16);
 			}
-			PGUN A 0 A_Jump (200,"FirePhase2");
 			PGUN A 4
 			{
 				A_StartSound("POPFIRE");
-				A_FireProjectile("Popcorn1",-1,false,4,1,0,0);
-				A_FireProjectile("Popcorn2",0,false,6,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn1",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn1",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn1",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn1",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),false,frandom(-6,6),frandom(-1,1),0,frandom(-1,1));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn1",-1,false,4,1,0,0);
+					A_FireProjectile("Popcorn2",0,false,6,1,0,0);
+				}
 				
 				if (!A_CheckInfiniteAmmo()) A_TakeInventory("PopcornPiece",1);
 			}
 			PGUN B 2 
 			{
-				A_FireProjectile("Popcorn3",1,0,5,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn3",frandom(1,-1),0,frandom(-6,6),frandom(-1,1),0,frandom(1,-1));
+					A_FireProjectile("Popcorn3",frandom(1,-1),0,frandom(-6,6),frandom(-1,1),0,frandom(1,-1));
+					A_FireProjectile("Popcorn3",frandom(1,-1),0,frandom(-6,6),frandom(-1,1),0,frandom(1,-1));
+					A_FireProjectile("Popcorn3",frandom(1,-1),0,frandom(-6,6),frandom(-1,1),0,frandom(1,-1));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn3",1,0,5,1,0,0);
+				}
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase2:
 			PGUN A 0 A_Jump (144,"FirePhase3");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN A 2
 			{
 				A_StartSound("POPFIRE");
-				A_FireProjectile("Popcorn11",-1,0,4,2,0,0);
-				A_FireProjectile("Popcorn2",-4,false,5,1,0,0);
-				A_FireProjectile("Popcorn1",2,0,4,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn11",frandom(-1,1),0,frandom(-4,4),frandom(-2,2),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-4,4),false,frandom(-5,5),frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn1",frandom(-2,2),0,frandom(-4,4),frandom(-1,1),0,frandom(-2,2));
+					A_FireProjectile("Popcorn11",frandom(-1,1),0,frandom(-4,4),frandom(-2,2),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-4,4),false,frandom(-5,5),frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn1",frandom(-2,2),0,frandom(-4,4),frandom(-1,1),0,frandom(-2,2));
+					A_FireProjectile("Popcorn11",frandom(-1,1),0,frandom(-4,4),frandom(-2,2),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-4,4),false,frandom(-5,5),frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn1",frandom(-2,2),0,frandom(-4,4),frandom(-1,1),0,frandom(-2,2));
+					A_FireProjectile("Popcorn11",frandom(-1,1),0,frandom(-4,4),frandom(-2,2),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-4,4),false,frandom(-5,5),frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn1",frandom(-2,2),0,frandom(-4,4),frandom(-1,1),0,frandom(-2,2));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn11",-1,0,4,2,0,0);
+					A_FireProjectile("Popcorn2",-4,false,5,1,0,0);
+					A_FireProjectile("Popcorn1",2,0,4,1,0,0);
+				}
 				
 				if (!A_CheckInfiniteAmmo()) A_TakeInventory("PopcornPiece",1);
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase3:
 			PGUN A 0 A_Jump (128,"FirePhase4");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN A 4 
 			{
 				A_StartSound("POPFIRE");
-				A_FireProjectile("Popcorn3",-2,0,3,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn3",frandom(2,-2),0,frandom(-3,3),frandom(-1,1),0,frandom(2,-2));
+					A_FireProjectile("Popcorn3",frandom(2,-2),0,frandom(-3,3),frandom(-1,1),0,frandom(2,-2));
+					A_FireProjectile("Popcorn3",frandom(2,-2),0,frandom(-3,3),frandom(-1,1),0,frandom(2,-2));
+					A_FireProjectile("Popcorn3",frandom(2,-2),0,frandom(-3,3),frandom(-1,1),0,frandom(2,-2));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn3",-2,0,3,1,0,0);
+				}
 			}
 			PGUN B 2 
 			{
-				A_FireProjectile("Popcorn2",-2,false,4,-2,0,0);
-				A_FireProjectile("Popcorn2",4,0,0,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn2",frandom(-2,2),false,frandom(-4,4),frandom(-2,2),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",frandom(-4,4),0,0,frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn2",frandom(-2,2),false,frandom(-4,4),frandom(-2,2),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",frandom(-4,4),0,0,frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn2",frandom(-2,2),false,frandom(-4,4),frandom(-2,2),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",frandom(-4,4),0,0,frandom(-1,1),0,frandom(-4,4));
+					A_FireProjectile("Popcorn2",frandom(-2,2),false,frandom(-4,4),frandom(-2,2),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",frandom(-4,4),0,0,frandom(-1,1),0,frandom(-4,4));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn2",-2,false,4,-2,0,0);
+					A_FireProjectile("Popcorn2",4,0,0,1,0,0);
+				}
 				
 				if (!A_CheckInfiniteAmmo()) A_TakeInventory("PopcornPiece",1);
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase4:
 			PGUN A 0 A_Jump (96,"FirePhase5");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN A 0 
 			{
 				A_StartSound("POPFIRE");
-				A_FireProjectile("Popcorn2",-3,0,4,1,0,0);
-				A_FireProjectile("Popcorn3",3,0,0,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn2",frandom(-3,3),0,frandom(-4,4),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn3",frandom(-3,3),0,0,frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn2",frandom(-3,3),0,frandom(-4,4),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn3",frandom(-3,3),0,0,frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn2",frandom(-3,3),0,frandom(-4,4),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn3",frandom(-3,3),0,0,frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn2",frandom(-3,3),0,frandom(-4,4),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn3",frandom(-3,3),0,0,frandom(-1,1),0,frandom(-3,3));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn2",-3,0,4,1,0,0);
+					A_FireProjectile("Popcorn3",3,0,0,1,0,0);
+				}
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase5:
 			PGUN A 0 A_Jump (96,"FirePhase6");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN A 2 
 			{
-				A_FireProjectile("Popcorn1",3,0,5,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn1",frandom(-3,3),0,frandom(-5,5),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn1",frandom(-3,3),0,frandom(-5,5),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn1",frandom(-3,3),0,frandom(-5,5),frandom(-1,1),0,frandom(-3,3));
+					A_FireProjectile("Popcorn1",frandom(-3,3),0,frandom(-5,5),frandom(-1,1),0,frandom(-3,3));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn1",3,0,5,1,0,0);
+				}
 			}
 			PGUN B 1 
 			{
 				A_StartSound("POPFIRE");
-				A_FireProjectile("Popcorn2",0,0,0,1,0,0);
-				A_FireProjectile("Popcorn3",-2,false,0,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn2",0,0,0,frandom(-1,1),0,0);
+					A_FireProjectile("Popcorn3",frandom(-2,2),false,0,frandom(-1,1),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",0,0,0,frandom(-1,1),0,0);
+					A_FireProjectile("Popcorn3",frandom(-2,2),false,0,frandom(-1,1),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",0,0,0,frandom(-1,1),0,0);
+					A_FireProjectile("Popcorn3",frandom(-2,2),false,0,frandom(-1,1),0,frandom(-2,2));
+					A_FireProjectile("Popcorn2",0,0,0,frandom(-1,1),0,0);
+					A_FireProjectile("Popcorn3",frandom(-2,2),false,0,frandom(-1,1),0,frandom(-2,2));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn2",0,0,0,1,0,0);
+					A_FireProjectile("Popcorn3",-2,false,0,1,0,0);
+				}
 				
 				if (!A_CheckInfiniteAmmo()) A_TakeInventory("PopcornPiece",1);
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase6:
 			PGUN A 0 A_Jump (64,"FirePhase7");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN A 4 
 			{
 				A_StartSound("POPFIRE");
-				A_FireProjectile("Popcorn3",-1,0,4,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn3",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn3",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn3",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn3",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn3",-1,0,4,1,0,0);
+				}
 			}
 			PGUN A 2 
 			{
-				A_FireProjectile("Popcorn2",1,0,4,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("Popcorn2",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+					A_FireProjectile("Popcorn2",frandom(-1,1),0,frandom(-4,4),frandom(-1,1),0,frandom(-1,1));
+				}
+				else
+				{
+					A_FireProjectile("Popcorn2",1,0,4,1,0,0);
+				}
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase7:
 			PGUN A 0 A_Jump (64,"FirePhase8");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN B 1
 			{
-				A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+				}
+				else
+				{
+					A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
+				}
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhase8:
 			PGUN A 0 A_Jump (128,"FirePhaseEnd");
+			PGUN A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(361,0,1,16);
+			}
 			PGUN A 1
 			{
-				A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
+				if (invoker.IPAttackCheck)
+				{
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+					A_FireProjectile("BurntPopcorn1",0,0,frandom(-5,5),frandom(-1,1),0,0);
+				}
+				else
+				{
+					A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
+				}
+				invoker.A_CheckIPModeOnUse();
 			}
 		FirePhaseEnd:
 			PGUN A 0
