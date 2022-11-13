@@ -50,6 +50,9 @@ class PopcornGunNew : Circus2Weapon
 			}
 			loop;
 		Fire:
+			PGUN A 0
+			{
+			}
 			PGUN A 0 A_Jump (200,"FirePhase2");
 			PGUN A 4
 			{
@@ -126,7 +129,9 @@ class PopcornGunNew : Circus2Weapon
 				A_FireProjectile("BurntPopcorn1",0,0,5,1,0,0);
 			}
 		FirePhaseEnd:
-			PGUN A 0;
+			PGUN A 0
+			{
+			}
 			Goto Ready;
 	}
 }
@@ -171,6 +176,9 @@ class GoreBalloonNew : Circus2Weapon
 			}
 			Loop;
 		Fire: 
+			BLND A 0
+			{
+			}
 			BLND A 1 
 			{
 			}
@@ -239,6 +247,9 @@ class ClownGrenadeNew : Circus2Weapon
 			}
 			loop;
 		Fire: 
+			GHND A 0
+			{
+			}
 			GHND I 4
 			{
 				A_FireProjectile("CGrenade",0,1,0,1,0,0);
@@ -297,10 +308,29 @@ class GutFlingerNew : Circus2Weapon
 			loop;
 		Fire:
 			CCCC A 1 A_JumpIfNoAmmo("FireNoAmmo");
+			CCCC A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(321,0,3,20);
+			}
 			CCCC B 1
 			{
 				A_StartSound("GUTFIRE");
-				A_FireProjectile("FlyingGut",0,1,5.0,1,0,0);
+				string type = "FlyingGut";
+				if (invoker.IPAttackCheck) type = "FlyingGutNoHurt";
+				A_FireProjectile(type,0,false,5.0,1,0,0);
+				double p1 = frandompick(7.5,7.5,7.5,7.5,15.0);
+				double p2 = frandompick(7.5,7.5,7.5,7.5,15.0);
+				if (invoker.IPAttackCheck) 
+				{
+					A_FireProjectile(type,p1,false,5.0,1,0,p2);
+					A_FireProjectile(type,p1,false,5.0,1,0,-p2);
+					A_FireProjectile(type,-p1,false,5.0,1,0,p2);
+					A_FireProjectile(type,-p1,false,5.0,1,0,-p2);
+				}
+
+				invoker.A_CheckIPModeOnUse();
+				if (!A_CheckInfiniteAmmo()) A_TakeInventory("ClownSouls",1);
 			}
 			CCCC E 1;
 			CCCC EDCB 3;
@@ -311,16 +341,34 @@ class GutFlingerNew : Circus2Weapon
 		AltFire:
 			CCCC A 1
 			{
-				if (CountInv("ClownSouls") <= 0)
-				{
-					return resolvestate("AltFireNoAmmo");
-				}
+				if (CountInv("ClownSouls") <= 0) return resolvestate("AltFireNoAmmo");
 				return resolvestate(null);
+			}
+			CCCC A 0
+			{
+				A_CheckIPState1();
+				A_ConfirmIPAttack(321,0,3,20);
 			}
 			CCCC B 1
 			{
+				string type = "FlyingGut";
+				if (invoker.IPAttackCheck) type = "FlyingGutNoHurt";
 				A_StartSound("GUTFIRE");
-				A_FireProjectile("FlyingGut",frandom(-(A_GetHitScanXSpread(16)),(A_GetHitScanXSpread(16))),1,5.0,1,0,frandom(-(A_GetHitScanYSpread(16)),(A_GetHitScanYSpread(16))));
+				double rand = frandom(-(A_GetHitScanXSpread(16)),(A_GetHitScanXSpread(16)));
+				double rand2 = frandom(-(A_GetHitScanXSpread(16)),(A_GetHitScanXSpread(16)));
+				double p1 = frandompick(7.5,7.5,7.5,7.5,15.0) + rand;
+				double p2 = frandompick(7.5,7.5,7.5,7.5,15.0) + rand2;
+				A_FireProjectile(type,rand,false,5.0,1,0,rand2);
+				if (invoker.IPAttackCheck) 
+				{
+					A_FireProjectile(type,p1,false,5.0,1,0,p2);
+					A_FireProjectile(type,p1,false,5.0,1,0,-p2);
+					A_FireProjectile(type,-p1,false,5.0,1,0,p2);
+					A_FireProjectile(type,-p1,false,5.0,1,0,-p2);
+				}
+
+				invoker.A_CheckIPModeOnUse();
+				if (!A_CheckInfiniteAmmo()) A_TakeInventory("ClownSouls",1);
 			}
 			CCCC E 1;
 			CCCC E 1;
@@ -377,6 +425,9 @@ class GasRocketLauncherNew : Circus2Weapon
 			}
 			loop;
 		Fire:
+			PRCK A 0
+			{
+			}
 			PRCK G 0 
 			{
 				A_FireProjectile("RevRocket2",0,5,4,1,0,0);
@@ -386,6 +437,9 @@ class GasRocketLauncherNew : Circus2Weapon
 			PRCK BCDEFG 4;
 			Goto Ready;
 		AltFire:
+			PRCK A 0
+			{
+			}
 			PRCK G 0 
 			{
 				if (CountInv("ClownSouls") <= 4)
