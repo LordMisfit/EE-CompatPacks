@@ -751,18 +751,18 @@ ACTOR TinyBingo : Bingo //4179
 } 
 actor RevTrail
 {
-    PROJECTILE
-    RENDERSTYLE ADD
-    +NOCLIP
-    Scale 0.5
-    ALPHA 0.4
-    States
-    {
-    Spawn:
-        RAIN B 3
-        LITE EEDDCCBBAA 2 Bright
-        Stop
-    }
+	PROJECTILE
+	RENDERSTYLE ADD
+	+NOCLIP
+	Scale 0.5
+	ALPHA 0.4
+	States
+	{
+		Spawn:
+			RAIN B 3
+			LITE EEDDCCBBAA 2 Bright
+			Stop
+	}
 }
 actor RFlame
 {
@@ -4069,6 +4069,7 @@ ACTOR GasRocketLauncher : Weapon //30203
 			Goto Ready 
 	}
 } 
+/*
 actor RevRocket
 {
 	Radius 8
@@ -4123,6 +4124,7 @@ actor RevRocket
 			Stop
 	}
 }
+*/
 ACTOR PopcornGun : Weapon //30204
 {
 	//$NotAngled
