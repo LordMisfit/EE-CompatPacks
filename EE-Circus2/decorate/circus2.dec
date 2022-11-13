@@ -1043,6 +1043,7 @@ actor GoreBalloon666Berserk : GoreBalloon666
 			Stop
 	}
 }
+
 actor GoreBalloon666NoHurt : EEProjectile
 {
 	Tag "Gore Balloon"
@@ -1105,6 +1106,274 @@ actor GoreBalloon666NoHurt : EEProjectile
 			BOON G 0 A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
 			BOON G 1 A_SpawnProjectile("FlyingGutNoHurt", 0, 0, 45, CMF_AIMOFFSET|CMF_TRACKOWNER)
 			BOON G 0 A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180))
+			Stop
+	}
+}
+
+actor GoreBalloon666IP : EEProjectile
+{
+	Tag "Gore Balloon"
+	Radius 8
+	Height 6
+	Speed 13
+	Damage (finaldamagedealt) // 6
+	scale 1
+	+SEEKERMISSILE +FloatBob 
+	PROJECTILE
+	ALPHA 0.8
+	SeeSound ""
+	DeathSound "pop1"
+	States
+	{
+		Spawn:
+			BOON A 0 NoDelay
+			{
+				finaldamagedealt = 6 * random(1,8);
+			}
+			BOON A 4 A_SeekerMissile (30,40)
+			BOON A 4 A_SpawnProjectile("Blood", 24, 0, 0, CMF_AIMOFFSET)
+			Goto Spawn
+		Death:
+			BOON B 2 A_Scream
+			BOON C 2 A_Fall
+			BOON C 0 
+			{
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON D 1 
+			{
+				A_SpawnProjectile("BSplatter", 0, 0, 45, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("BSplatter", 0, 0, 135, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("BSplatter", 0, 0, 215, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("BSplatter", 0, 0, 305, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON D 1 
+			{
+				A_TossGib;
+			}
+			BOON E 1 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 225, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 135, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 45, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 315, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON C 0
+			{
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON E 1 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON E 1 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 0, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON E 0 
+			{
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON F 1 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 0, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON F 1 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON F 0 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 30, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 120, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 210, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 300, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON C 0 
+			{
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON F 0 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 0, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 12, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON C 0 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON F 1 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON F 1 
+			{
+				A_SpawnProjectile("BSplatter", 4, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("BSplatter", 4, 0, 0, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("BSplatter", 4, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("BSplatter", 4, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON F 0 
+			{
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON G 1 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 60, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 150, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 240, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 4, 0, 330, CMF_AIMOFFSET|CMF_TRACKOWNER);
+
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 0, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON G 0 
+			{
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON G 1 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON G 0 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 300, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 30, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 120, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 8, 0, 210, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON G 0 
+			{
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck3", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON G 0 A_Jump (240,2) 
+			BOON G 0 
+			{
+				A_SpawnProjectile("GoreWorm", 16, 0, 0, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("GoreWorm", 16, 0, 90, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("GoreWorm", 16, 0, 180, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("GoreWorm", 16, 0, 270, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON C 0 
+			{
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON G 0 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON G 0 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON G 0 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON G 0 
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON G 1
+			{
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+				A_TossGib;
+			}
+			BOON G 0 
+			{
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck2", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
+			BOON G 1 
+			{
+				A_SpawnProjectile("FlyingGutNoHurt", 0, 0, 45, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 0, 0, 135, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 0, 0, 215, CMF_AIMOFFSET|CMF_TRACKOWNER);
+				A_SpawnProjectile("FlyingGutNoHurt", 0, 0, 305, CMF_AIMOFFSET|CMF_TRACKOWNER);
+			}
+			BOON G 0 
+			{
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+				A_SpawnProjectile("BloodSpeck1", 8, 0, random(-180, 180), CMF_AIMDIRECTION|CMF_TRACKOWNER, random(-180, 180));
+			}
 			Stop
 	}
 }
