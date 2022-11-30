@@ -24,10 +24,13 @@ STEP_FLATSAUGZEN = "0000:0001:"
 									 "FLOOR0_8:FLOOR0_9:FLOOR5_5:FLOOR5_6:FLOOR6_1:FLOOR7_4:"
 									 "GATE2:"
 									 "GRASROC1:GRASROC2:GRASROC3:GRASROC4:GRASROC5:GRASS2:GRASS3:GRASS4:GRASS5:GRNROCK:"
+									 "LAVA1:LAVA2:LAVA3:LAVA4:"
 									 "MFLR8_5:MFLR8_6:MFLR8_7:MFLR8_8:MFLR8_9:"
+									 "NUKAGE1:NUKAGE2:NUKAGE3:"
 									 "RESORT:"
-									 "RROCK14:RROCK19:"
+									 "RROCK05:RROCK06:RROCK07:RROCK08:RROCK14:RROCK19:"
 									 "SAND:"
+									 "SLIME05:SLIME06:SLIME07:SLIME08:SLIME09:SLIME10:SLIME11:SLIME12:SLIME13:"
 									 "STEP1B:STEP2B"
 									 "TEKFLAT1:"
 									 "TLITE6_7:TLITE6_8:TLITE6_9:TLITESB:TLITESR:";
@@ -152,17 +155,41 @@ STEP_GRASS4 = "step/grass";
 STEP_GRASS5 = "step/grass";
 STEP_GRNROCK = "step/grass";
 
+STEP_LAVA1 = "step/lava";
+STEP_LAVA2 = "step/lava";
+STEP_LAVA3 = "step/lava";
+STEP_LAVA4 = "step/lava";
+
 STEP_MFLR8_5 = "step/metal/b";
 STEP_MFLR8_6 = "step/metal/b";
 STEP_MFLR8_7 = "step/metal/b";
 STEP_MFLR8_8 = "step/metal/b";
 STEP_MFLR8_9 = "step/tile/b";
 
+STEP_NUKAGE1 = "step/slime";
+STEP_NUKAGE2 = "step/slime";
+STEP_NUKAGE3 = "step/slime";
+
 STEP_RESORT = "step/hard";
+STEP_RROCK05 = "step/default";
+STEP_RROCK06 = "step/default";
+STEP_RROCK07 = "step/default";
+STEP_RROCK08 = "step/default";
 STEP_RROCK14 = "step/grass";
 STEP_RROCK19 = "step/grass";
 
-STEP_SAND = "step/sand";
+STEP_SAND = "step/dirt";
+
+STEP_SLIME05 = "step/slimy";
+STEP_SLIME06 = "step/slimy";
+STEP_SLIME07 = "step/slimy";
+STEP_SLIME08 = "step/slimy";
+STEP_SLIME09 = "step/metal/b";
+STEP_SLIME10 = "step/metal/b";
+STEP_SLIME11 = "step/metal/b";
+STEP_SLIME12 = "step/metal/b";
+STEP_SLIME13 = "step/hard";
+
 STEP_STEP1B = "step/metal/b";
 STEP_STEP2B = "step/metal/b";
 
