@@ -1,16 +1,5 @@
 // DECORATIONS
 
-actor DeadHellWarrior : DeadMarine 25220
-{
-	//$Category Decoration
-	States 
-	{
-		Spawn:  
-			HWAR T -1 
-			Stop 
-	}
-}
-
 GibsSeveredHand
 {
 	//$Category Decoration
