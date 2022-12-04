@@ -2343,6 +2343,8 @@ class BeefyNew : EECreature
 		MONSTER;
 		+FLOORCLIP;
 		+DONTHARMSPECIES;
+		+DONTHARMCLASS;
+		Species "Beefy";
 		SeeSound "BEEFSEE";
 		PainSound "GHS2PAN";
 		DeathSound "GHS2PAN";
@@ -2352,8 +2354,6 @@ class BeefyNew : EECreature
 		HitObituary "%o was scratched by beefy the clown.";
 		MissileHeight 32;
 		MissileType "BeefyBall1";
-		Species "Beefy";
-
 		DropItem "ClownSouls", 20;
 		dropitem "GreenArmor", 2;
 		dropitem "BlueArmor", 2;
