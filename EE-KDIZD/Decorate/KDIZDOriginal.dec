@@ -18,7 +18,7 @@ pickup Bomb
 	Scale 0.4
 	Radius 16
 	Height 32
-	PickupMessage "You picked up a Seismic Bomb."
+	PickupMessage "You picked up a Seismic Bomb." // "\c[gold]Holy yikes on a bagel! This 'Seismic Bomb' looks like it could wreck a solid wall of stone!"
 }
 
 // MONSTERS
