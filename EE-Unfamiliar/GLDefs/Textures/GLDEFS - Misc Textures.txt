@@ -1,4 +1,0 @@
-brightmap texture WHITE { map "brightmaps/textures/unfam/WHITE.png" disablefullbright }
-brightmap texture FIREBLU1 { map "brightmaps/textures/unfam/WHITE.png" disablefullbright }
-brightmap texture FIREBLU2 { map "brightmaps/textures/unfam/WHITE.png" disablefullbright }
-brightmap texture TPWHITE { map "brightmaps/textures/unfam/WHITE.png" disablefullbright }
