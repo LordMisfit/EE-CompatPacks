@@ -1,6 +1,0 @@
-version "4.1"
-
-#include "zscript/strangeaeons-original.zc"
-#include "zscript/strangeaeons-items.zc"
-#include "zscript/strangeaeons-monsters.zc"
-#include "zscript/strangeaeons-weapons.zc"

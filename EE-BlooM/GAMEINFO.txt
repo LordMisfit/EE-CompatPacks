@@ -1,3 +1,0 @@
-STARTUPTYPE = "Hexen"
-STARTUPTITLE = "==> BlooM - Explosive Expedition Compatibility Pack <=="
-STARTUPCOLORS = "00 00 00", "FF 00 00"

@@ -1,6 +1,0 @@
-version "4.7"
-
-#include "zscript/circus2.zc"
-#include "zscript/circus2monsters.zc"
-#include "zscript/circus2weapons.zc"
-#include "zscript/circus2decor.zc"
