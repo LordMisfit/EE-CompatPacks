@@ -1,0 +1,300 @@
+Model GreenCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR1.md3"    // Model index, model file
+   Skin 0 "CAR1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex ELEC B 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model GreenCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR.md2"    // Model index, model file
+   Skin 0 "CAR2.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1            // Scale values
+   ZOffset -2.0
+   
+   FrameIndex ELEC C 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model BlueCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR1.md3"    // Model index, model file
+   Skin 0 "CAR1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1             // Scale values
+   ZOffset 0.0
+   
+   FrameIndex ELEC B 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+Model BlueCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR.md2"    // Model index, model file
+   Skin 0 "CAR2.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1            // Scale values
+   ZOffset -2.0
+   
+   FrameIndex ELEC C 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+Model RedCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR1.md3"    // Model index, model file
+   Skin 0 "CAR1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1             // Scale values
+   ZOffset 0.0
+   
+   FrameIndex ELEC B 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+Model RedCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR.md2"    // Model index, model file
+   Skin 0 "CAR2.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1            // Scale values
+   ZOffset -2.0
+   
+   FrameIndex ELEC C 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+Model GrayCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR1.md3"    // Model index, model file
+   Skin 0 "CAR1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1             // Scale values
+   ZOffset 0.0
+   
+   FrameIndex ELEC B 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+
+Model GrayCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR.md2"    // Model index, model file
+   Skin 0 "CAR2.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1            // Scale values
+   ZOffset -2.0
+   
+   FrameIndex ELEC C 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+Model RandomCarSP     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR1.md3"    // Model index, model file
+   Skin 0 "CAR1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1             // Scale values
+   ZOffset 0.0
+   
+   FrameIndex ELEC B 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+Model FuckedUpCar     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "CAR.md2"    // Model index, model file
+   Skin 0 "CAR2.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.1 1.1 1.1            // Scale values
+   ZOffset -2.0
+   
+   FrameIndex ELEC C 0 0         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+
+Model LightPosts3     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "lightpost.md3"    // Model index, model file
+   Skin 0 "lightpost.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.3 1.3 1.3            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex PSTE B 0 0        // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE F 0 1         // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE G 0 2        // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE H 0 3      // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE I 0 4         // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE J 0 5         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+Model LightPostsOff     // Name of actor in DECORATE
+{
+   Path "models/Cars"    // Path to model in PK3
+   Model 0 "lightpost.md3"    // Model index, model file
+   Skin 0 "lightpost.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.3 1.3 1.3            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex PSTE B 0 0        // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE F 0 1         // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE G 0 2        // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE H 0 3      // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE I 0 4         // The sprite lump, sprite frame, model index, frame number
+   FrameIndex  PSTE J 0 5         // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+
+
+
+Model SignStop     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "stopsign.md3"    // Model index, model file
+   Skin 0 "stopsign1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 30.3 30.3 30.3            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex RUBL F 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+
+
+Model Skybox_HellBuildings6     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity1.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.2 1.4 2.4            // Scale values
+   ZOffset -10.0
+   
+   FrameIndex TXSB H 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model Skybox_HellBuildings7     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity2.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.5 1.5 2.5            // Scale values
+   ZOffset -10.0
+   
+   FrameIndex TXSB I 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+
+Model Skybox_HellBuildings1     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity3.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.0 1.0 2.0           // Scale values
+   ZOffset -10.0
+   
+   FrameIndex TXSB C 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+Model Skybox_HellBuildings2     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity4.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.0 1.0 2.0            // Scale values
+   ZOffset -10.0
+   
+   FrameIndex TXSB D 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model Skybox_HellBuildings3     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity3.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.4 1.4 2.4           // Scale values
+   ZOffset -10.0
+   
+   FrameIndex TXSB E 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+Model Skybox_HellBuildings4     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity3.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.0 1.0 1.0            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex TXSB F 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model Skybox_HellBuildings5     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity4.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.0 1.0 1.0           // Scale values
+   ZOffset 0.0
+   
+   FrameIndex TXSB g 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+
+Model Skybox_HellBuildings6     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "helcity3.md3"    // Model index, model file
+   Skin 0 "helcity1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 1.8 1.8 1.8            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex TXSB H 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model RubbleSuspendLarge     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "rubble1.md3"    // Model index, model file
+   Skin 0 "rubble1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 2.0 2.0 2.0            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex RUBL D 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model RubbleSuspendSmall     // Name of actor in DECORATE
+{
+   Path "models"    // Path to model in PK3
+   Model 0 "rubble1.md3"    // Model index, model file
+   Skin 0 "rubble1.png"     // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.0 4.0 4.0            // Scale values
+   ZOffset 0.0
+   
+   FrameIndex RUBL D 0 0        // The sprite lump, sprite frame, model index, frame number
+}
+
+
+

@@ -1,0 +1,593 @@
+DoomEdNums
+{
+	1312 = Trashcan1
+	1313 = Trashcan2
+	1314 = Trashcan3
+	1315 = TrashBag
+	1384 = Trashcan6
+	1443 = FlowerPot
+	1539 = TabbleLight
+	4799 = FoodDonuts
+	4700 = FoodCofee
+	4701 = FoodSalad1
+	4702 = FoodSalad2
+	4703 = FoodLobster
+	4704 = FoodShank
+	4705 = FoodPork
+	4706 = FoodCheese
+	4707 = FoodPizza
+	4708 = FoodPizzaSlice
+	4710 = FoodShank2
+	4711 = FoodFish1
+	4712 = FoodBaguette
+	4713 = FoodChickenLegs
+	4714 = FoodShrimp
+	4715 = FoodChocolate
+	4716 = FoodPuding
+	4717 = FoodBanana
+	4718 = FoodTurkey
+	4719 = FoodChicken
+	4720 = FoodHotDog
+	4721 = FoodSteak
+	4722 = FoodRamen
+	4723 = FoodSushiBig
+	4724 = FoodSushiSmall
+	4725 = FoodBurger
+	4726 = FoodFries
+	4727 = FoodPineApple
+	4728 = FoodLunch
+	4729 = FoodAplle
+	4730 = FoodCake
+}
+
+clearepisodes
+Episode MAP01 {}
+map MAP01 "Hangar"
+{
+//titlepatch "CWILV00"
+next = "MAP02"
+secretnext = "MAP02"
+sky1 = "TSKY1", 0.1
+//cluster = 1
+//par = 60
+music = EDMU01
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+ExitPic = "inter1"
+Gravity = 500
+}
+
+
+map MAP02 "Nukage Processing"
+{
+//titlepatch "CWILV01"
+next = "MAP03"
+secretnext = "MAP03"
+sky1 = "TSKY1", 0.1
+//cluster = 1
+//par = 90
+music = EDMU02
+intermusic = MAPINT
+ExitPic = "inter1"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+
+map MAP03 "Communications Center"
+{
+//titlepatch "CWILV02"
+next = "MAP04"
+secretnext = "MAP04"
+sky1 = "TSKY1", 0.1
+//cluster = 1
+//par = 120
+music = EDMU03
+intermusic = MAPINT
+ExitPic = "inter1"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+CheckSwitchRange
+}
+
+map MAP04 "Life Support Facility"
+{
+//titlepatch "CWILV03"
+next = "MAP05"
+secretnext = "MAP06"
+sky1 = "TSKY1", 0.1
+//cluster = 1
+//par = 120
+music = EDMU04
+intermusic = MAPINT
+ExitPic = "inter1"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP05 "Marine HQ"
+{
+//titlepatch "CWILV04"
+next = "MAP06"
+secretnext = "MAP06"
+sky1 = "TSKY1", 0.1
+//cluster = 1
+music = EDMU05
+intermusic = MAPINT
+ExitPic = "inter1"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP06 "Nuclear Power Plant"
+{
+//titlepatch "CWILV05"
+next = "MAP07"
+secretnext = "MAP07"
+sky1 = "TSKY1", 0.1
+//cluster = 2
+//par = 150
+//sucktime 1
+music = EDMU06
+intermusic = MAPINT
+ExitPic = "inter1"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP07 "Staging Area"
+{
+//titlepatch "CWILV06"
+next = "MAP08"
+secretnext = "MAP08"
+sky1 = "TSKY1", 0.1
+//cluster = 2
+//par = 120
+Map07special
+music = EDMU07
+intermusic = MAPINT
+ExitPic = "inter4"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP08 "Lab Complex Entrance"
+{
+//titlepatch "CWILV07"
+next = "MAP09"
+secretnext = "MAP09"
+sky1 = "TSKY1", 0.1
+//cluster = 2
+//par = 120
+music = EDMU08
+intermusic = MAPINT
+ExitPic = "inter4"
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP09 "Bio Labs"
+{
+//titlepatch "CWILV08"
+next = "MAP10"
+secretnext = "MAP10"
+sky1 = "TSKY1", 0.1
+ExitPic = "inter4"
+//cluster = 2
+//par = 270
+music = EDMU09
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP10 "Portal Testing Labs"
+{
+//titlepatch "CWILV09"
+next = "MAP11"
+secretnext = "MAP11"
+sky1 = "TSKY1", 0.1
+//cluster = 3
+//par 90
+ExitPic = "inter1"
+music = EDMU10
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+Gravity = 500
+}
+
+map MAP11 lookup "The Air Base"
+{
+//titlepatch "CWILV10"
+next = "MAP12"
+secretnext = "MAP12"
+sky1 = "SUNRISE1"
+//cluster = 4
+//par = 210
+ExitPic = "inter2"
+music = EDMU11
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP12 lookup "Return to Earth"
+{
+//titlepatch "CWILV10"
+next = "MAP13"
+secretnext = "MAP13"
+sky1 = "SUNRISE1"
+//cluster = 4
+//par = 210
+ExitPic = "inter2"
+music = EDMU11
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP13 lookup "Dead Cargo"
+{
+//titlepatch "CWILV11"
+next = "MAP14"
+secretnext = "MAP14"
+sky1 = "DESERT1"
+//cluster = 4
+//par = 150
+ExitPic = "inter2"
+music = EDMU12
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP14 lookup "Industrial District"
+{
+//titlepatch "CWILV12"
+next = "MAP15"
+secretnext = "MAP15"
+sky1 = "DESERT2"
+//cluster = 4
+//par = 150
+ExitPic = "inter2"
+music = EDMU13
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP15 lookup "Roadblocks"
+{
+//titlepatch "CWILV13"
+next = "MAP16"
+secretnext = "MAP16"
+sky1 = "DESERT3"
+//cluster = 5
+//par = 150
+ExitPic = "inter2"
+music = EDMU14
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+
+map MAP16 lookup "Warzone"
+{
+//titlepatch "CWILV13"
+next = "MAP17"
+secretnext = "MAP17"
+sky1 = "SKY2RED"
+//cluster = 5
+//par = 150
+ExitPic = "inter2"
+music = EDMU14
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP17 lookup "Twisted Neighborhood"
+{
+//titlepatch "CWILV14"
+next = "MAP18"
+secretnext = "MAP18"
+sky1 = "SKY2RED"
+//cluster = 5
+//par = 210
+ExitPic = "inter2"
+music = EDMU15
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+
+map MAP18 lookup "Dead Streets"
+{
+//titlepatch "CWILV15"
+next = "MAP19"
+secretnext = "MAP40"
+sky1 = "SKY2NI", 0.1
+//cluster = 5
+//par = 150
+ExitPic = "inter5"
+music = EDMU16
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP19 lookup "Final Destination"
+{
+//titlepatch "CWILV16"
+next = "MAP20"
+secretnext = "MAP20"
+sky1 = "SKY2NIE", 0.1
+//cluster = 5
+//par = 420
+ExitPic = "inter5"
+music = EDMU17
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP20 lookup "Downtown Assault"
+{
+//titlepatch "CWILV17"
+next = "MAP21"
+secretnext = "MAP21"
+sky1 = "SKY2MO", 0.1
+//cluster = 6
+//par = 150
+ExitPic = "inter5"
+music = EDMU18
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP21 lookup "Eye of the Storm"
+{
+//titlepatch "CWILV17"
+next = "MAP22"
+secretnext = "MAP22"
+sky1 = "SKY2MO", 0.1
+//cluster = 6
+//par = 150
+ExitPic = "inter5"
+music = EDMU18
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP22 lookup "The Counter-Offensive"
+{
+//titlepatch "CWILV18"
+next = "MAP23"
+secretnext = "MAP23"
+sky1 = "SKY3", 0.2
+//cluster = 7
+//par = 210
+ExitPic = "inter3"
+music = EDMU19
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP23 lookup "The Tower"
+{
+//titlepatch "CWILV19"
+next = "MAP24"
+secretnext = "MAP24"
+sky1 = "SKY3", 0.2
+//cluster = 7
+//par = 150
+ExitPic = "inter3"
+music = EDMU20
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP24 lookup "Into the Black Jungle"
+{
+//titlepatch "CWILV20"
+next = "MAP25"
+secretnext = "MAP25"
+sky1 = "SKY3", 0.2
+//cluster = 8
+//par = 240
+ExitPic = "inter3"
+music = EDMU22
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP25 lookup "Stronghold"
+{
+//titlepatch "CWILV24"
+next = "MAP26"
+secretnext = "MAP26"
+sky1 = "SKY3", 0.2
+//cluster = 9
+//par = 150
+ExitPic = "inter3"
+music = EDMU23
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP26 lookup "House of the Hell Nobles"
+{
+//titlepatch "CWILV23"
+next = "MAP27"
+secretnext = "MAP27"
+sky1 = "SKY3", 0.2
+//cluster = 9
+//par = 150
+ExitPic = "inter3"
+music = EDMU25
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP27 lookup "Necropois (WIP)"
+{
+//titlepatch "CWILV26"
+next = "MAP28"
+secretnext = "MAP28"
+sky1 = "SKY3", 0.2
+//cluster = 9
+//par = 330
+ExitPic = "inter3"
+music = EDMU17
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP28 lookup "City of Dis"
+{
+//titlepatch "CWILV25"
+next = "MAP29"
+secretnext = "MAP29"
+sky1 = "SKY3", 0.2
+//cluster = 9
+//par = 300
+ExitPic = "inter3"
+music = EDMU24
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+
+map MAP29 lookup "Impious Cathedral"
+{
+//titlepatch "CWILV21"
+next = "MAP30"
+secretnext = "MAP30"
+sky1 = "SKY3", 0.2
+//cluster = 8
+//par = 150
+ExitPic = "inter3"
+music = EDMU26
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP30 lookup "Sacrificial Grounds"
+{
+//titlepatch "CWILV27"
+next = "MAP31"
+secretnext = "MAP31"
+sky1 = "SKY3", 0.2
+//cluster = 10
+//par = 420
+ExitPic = "inter3"
+music = EDMU28
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+
+map MAP31 lookup "Peak of the Gods"
+{
+//titlepatch "CWILV26"
+next = "MAP32"
+secretnext = "MAP32"
+sky1 = "SKY3", 0.2
+//cluster = 9
+//par = 330
+ExitPic = "inter3"
+intermusic = MAPINT
+music = EDMU21
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+OutsideFog = "80 00 00"
+}
+
+
+map MAP32 lookup "Devil's Domain"
+{
+//titlepatch "CWILV29"
+next = "EndGame3"
+secretnext = "EndGame3"
+sky1 = "FIRESK00"
+//cluster = 10
+ExitPic = "inter3"
+//par = 180
+allowmonstertelefrags
+music = EDMU29
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}
+
+map MAP40 lookup "Hollywood Holocaust"
+{
+//titlepatch "CWILV15"
+next = "MAP41"
+secretnext = "MAP41"
+sky1 = "SKY2NI", 0.2
+//cluster = 5
+//par = 200
+music = "STALKER"
+}
+
+
+map MAP41 lookup "Red Light District"
+{
+next = "MAP19"
+secretnext = "MAP42"
+sky1 = "SKY2NI", 0.2
+//cluster = 5
+intermusic = MAPINT
+//par = 200
+music = "DTOLL"
+}
+
+
+map MAP42 lookup "Wolfenstein"
+{
+//titlepatch "CWILV15"
+next = "MAP19"
+secretnext = "MAP19"
+sky1 = "SKY2WOLF"
+//cluster = 65
+//par = 200
+music = "DUTY"
+intermusic = MAPINT
+FALLINGDAMAGE
+MONSTERFALLINGDAMAGE
+}

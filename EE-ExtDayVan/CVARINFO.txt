@@ -1,0 +1,6 @@
+//server int bd_disablewaterripples2 = 1;
+
+
+
+
+

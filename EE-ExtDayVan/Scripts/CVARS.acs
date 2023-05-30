@@ -1,0 +1,257 @@
+#library "CVARS"
+#include "zcommon.acs"
+
+script "BDInitialize" enter
+{	
+	if (GetCvar("bd_disablemapenhancements") == 0) 
+	{ 
+		ReplaceTextures("FLOOR5_3", "METAL52");
+		ReplaceTextures("FLOOR5_2", "METAL52");
+		ReplaceTextures("FLAT5", "METAL53");
+		ReplaceTextures("FLOOR0_1", "METAL54");
+		ReplaceTextures("FLOOR0_3", "METAL55");
+		ReplaceTextures("FLOOR3_3", "METAL56");
+		ReplaceTextures("TLITE6_5", "LITGEN7B");
+		ReplaceTextures("TLITE6_6", "LITGEN9C");
+		ReplaceTextures("FLAT2", "FLAT2B");
+		ReplaceTextures("GRNLITE1", "GRNLIT1B");
+}
+
+SCRIPT "BDInitiate" OPEN
+{
+	ReplaceTextures ("DSAND1", "SANDS1");
+	ReplaceTextures ("DSAND3", "SANDS1");
+	ReplaceTextures ("DSAND4", "SANDS1");
+	ReplaceTextures ("DSAND5", "SANDS1");
+	ReplaceTextures ("ETEX34", "SANDS1");
+	ReplaceTextures ("WALL81", "SANDS1");
+	ReplaceTextures ("ECEIL13", "SANDS1");
+	ReplaceTextures ("ECEIL15", "SANDS1");
+	ReplaceTextures ("GROUND20", "DESERT01");
+	ReplaceTextures ("SLUDGE01", "SLIME08");
+	ReplaceTextures ("DBRAIN1", "LFALL01");//Revilution Lava
+	ReplaceTextures ("LFALL1", "LFALL01");
+	ReplaceTextures ("LAVA1", "LAVAFL");
+	ReplaceTextures ("LAVA2", "LAVAFL");
+	ReplaceTextures ("LAVA3", "LAVAFL");
+	ReplaceTextures ("LAVA4", "LAVAFL");
+	ReplaceTextures ("LAVA01", "LAVAFL");
+	ReplaceTextures ("LAVA02", "LAVAFL");
+	ReplaceTextures ("LAVA03", "LAVAFL");
+	ReplaceTextures ("LAVA04", "LAVAFL");
+	ReplaceTextures ("LAVFALL1", "LFALL01");//Sunlust Lava
+	ReplaceTextures ("BLODGR1", "LFALL01");//AV Lava
+	ReplaceTextures ("SLMFALL1", "CRFAL01");//CRAPFALLS
+	ReplaceTextures ("SLMFALL2", "CRFAL01");//CRAPFALLS
+	ReplaceTextures ("SLMFALL3", "CRFAL01");//CRAPFALLS
+	
+	// Replaces similar textures so the flat checking scripts have less stuff
+	ReplaceTextures ("NUKAGE3", "NUKAGE1");
+	ReplaceTextures ("NUKAGE2", "NUKAGE1");
+	ReplaceTextures ("SLIME04", "SLIME01");
+	ReplaceTextures ("SLIME03", "SLIME01");
+	ReplaceTextures ("SLIME02", "SLIME01");
+	ReplaceTextures ("SLIME08", "SLIME05");
+	ReplaceTextures ("SLIME06", "SLIME05");
+	ReplaceTextures ("SLIME07", "SLIME05");
+	ReplaceTextures ("BLOOD3", "BLOOD1");
+	ReplaceTextures ("BLOOD2", "BLOOD1");
+}
+
+Script "BDCHeckJanitor" (VOID)
+{
+	if (GetCvar("bd_lowgraphicsmode") == 1) { GiveInventory("LowGraphicsMode", 1); }
+	if (GetCvar("zdoombrutaljanitor") == 0) { GiveInventory("LowGraphicsMode", 1); }
+	if (GameType() == GAME_NET_DEATHMATCH) { GiveInventory("LowGraphicsMode", 1); }
+}
+
+Script "BDCHeckJanitor2" (VOID)
+{
+	if (GetCvar("bd_infinitecasings") == 0) { GiveInventory("LowGraphicsMode", 1); }
+}
+
+Script "BDCHeckJanitor3" (VOID)//Making limbs not bounce with explosives
+{
+	if (GetCvar("bd_lowgraphicsmode") == 1) { SetActorState(0, "NoColision", 1); }
+	if (GetCvar("zdoombrutaljanitor") == 0) { SetActorState(0, "NoColision", 1); }
+}
+
+Script "BDCHeckJanitor4" (VOID)
+{
+	if (GetCvar("isrunningzandronum") == 1)
+	{
+		if (GetCvar("bd_bloodamount") < 2) { SetActorState(0,"Vanish"); }
+	}
+	if (GetCvar("isrunningzandronum") == 0)
+	{
+		if (GetCvar("zdoombrutalblood") < 2) { SetActorState(0,"Vanish"); }
+	}
+}
+
+Script "BDCHeckClassicMonsters" (VOID)
+{
+	if (GetCvar("bd_classicmonsters") == 1) { SetActorState(0,"ReplaceVanilla"); }
+}
+
+Script "BDCheckDecorations" (VOID)
+{
+	if (GetCvar("bd_disabledecorations") == 1) { SetActorState(0,"Vanilla"); }
+}
+
+Script "BDDisableMapEnhancements" (VOID)
+{
+	if (GetCvar("bd_disablemapenhancements") == 1) { SetActorState(0,"Vanilla"); }
+}
+
+
+Script "BDDisableNewGuns" (VOID)
+{
+	if (GetCvar("bd_disablenewguns") == 1) { SetActorState(0,"Vanilla"); }
+}
+
+
+
+Script "CheckIfDM" (VOID)
+{
+	if (GameType() == GAME_NET_DEATHMATCH) GiveInventory("DMGame", 1);
+	Delay(1);
+	if (GameType() == GAME_NET_DEATHMATCH) SetActorState(0,"DM"); 
+}
+
+Script "BDCheckStuff" (VOID)
+{
+	if (GetCvar("bd_nobulletpenetration") == 0) { TakeInventory("nopenetration", 1);}
+	if (GetCvar("bd_nobulletpenetration") == 1) { GiveInventory("nopenetration", 1);}
+	if (GetCvar("bd_shotgunstrap") == 1) { GiveInventory("useshotgunstrap", 1);}
+	if (GetCvar("zdoombd_shotgunstrap") == 1) { GiveInventory("useshotgunstrap", 1);}
+	if (GetCvar("bd_disablenewenemies") == 1) { GiveInventory("nonewenemies", 1);}
+}
+
+/*
+Script "BDCheckWaterRipples" (VOID)
+{
+	if (GetCvar("bd_disablewaterripples2") > 0) { GiveInventory("Clip", 10); }
+}
+*/
+
+Script "BDDisableFriendlyMarines" (VOID)
+{
+	if (GetCvar("bd_disablefriendlymarines") > 0) { GiveInventory("Clip", 10); }
+}
+
+Script "BDShootableAmmo" (VOID)
+{
+	if (GetCvar("bd_shootablerocketammo") < 1) { GiveInventory("Clip", 10); }
+}
+
+Script "BDFootsteps" (VOID)
+{
+	if (GetCvar("bd_footstepsounds") == 0) { GiveInventory("FootStepDisabled", 1); }
+}
+
+Script "DemonRuneCheck" (VOID)
+{
+	if (GetCvar("bd_disabledemonspheres") == 1) { SetACtorState(0, "Cancels"); }
+}
+
+Script "CheckRocketBackblast" (VOID)
+{
+	if (GetCvar("bd_rocketbackblast") == 0) { SetACtorState(0, "Disappear"); }
+}
+
+Script "CheckVoxels" (VOID)
+{
+	if (GetCvar("bd_voxeldec") == 0) { SetACtorState(0, "Disappear"); }
+}
+
+Script "BD_CheckBloodIntensity" (VOID)
+{
+	if (GetCvar("isrunningzandronum") == 1)
+	{
+		if (GetCvar("bd_bloodamount") == 0) { SetActorState(0,"LowBlood"); }
+		if (GetCvar("bd_bloodamount") == 1) { SetActorState(0,"LowBlood"); }
+		if (GetCvar("bd_bloodamount") == 3) { SetActorState(0,"LotsOfBlood"); }
+		if (GetCvar("bd_bloodamount") >= 4) { SetActorState(0,"AbsurdBlood"); }
+	}
+	
+	if (GetCvar("isrunningzandronum") == 0)
+	{
+		if (GetCvar("zdoombrutalblood") == 0) { SetActorState(0,"LowBlood"); }
+		if (GetCvar("zdoombrutalblood") == 1) { SetActorState(0,"LowBlood"); }
+		if (GetCvar("zdoombrutalblood") == 3) { SetActorState(0,"LotsOfBlood"); }
+		if (GetCvar("zdoombrutalblood") == 4) { SetActorState(0,"AbsurdBlood"); }
+	}
+	
+	if (GetCvar("isrunningzandronum") == 1)
+	{
+		if (GetCvar("bd_bloodamount") >= 5)
+		{
+			SetActorState(0,"AbsurdBlood"); 
+			GiveInventory("AnimuGore", 1);
+		}
+	}
+
+	if (GetCvar("isrunningzandronum") == 0)
+	{
+		if (GetCvar("zdoombrutalblood") >= 5)
+		{
+			SetActorState(0,"AbsurdBlood"); 
+			GiveInventory("AnimuGore", 1);
+		}
+	}
+}
+
+Script "BD_CheckBloodExtra1" (VOID)
+{
+	if (GetCvar("bd_morebloodmist") >= 1)
+	{
+		SetActorState(0,"AbsurdBlood"); 
+	}
+}
+
+
+Script "BD_CheckIfLowBlood" (VOID)
+{
+	if (GetCvar("bd_bloodamount") == 1) { SetActorState(0,"Vanish"); }
+	if (GetCvar("bd_bloodamount") == 0) { SetActorState(0,"Vanish"); }
+}
+
+
+
+script "BD_CheckIfOverLiquid" (void) //Water Small Splash
+{
+	if (CheckActorFloorTexture(0, "FWATER1")) GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FWATER2")) GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FWATER3")) GiveInventory("IsOverWater", 1);
+	if (CheckActorFloorTexture(0, "FWATER4")) GiveInventory("IsOverWater", 1);
+	
+  if (CheckActorFloorTexture(0, "NUKAGE1")) GiveInventory("IsOverNukage", 1);
+  if (CheckActorFloorTexture(0, "NUKAGE2")) GiveInventory("IsOverNukage", 1);
+  if (CheckActorFloorTexture(0, "NUKAGE3")) GiveInventory("IsOverNukage", 1);
+  if (CheckActorFloorTexture(0, "NUKAGE4")) GiveInventory("IsOverNukage", 1);
+	
+  	
+  if (CheckActorFloorTexture(0, "SLIME01")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME02")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME03")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME04")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME05")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME06")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME07")) GiveInventory("IsOverSlime", 1);
+  if (CheckActorFloorTexture(0, "SLIME08")) GiveInventory("IsOverSlime", 1);
+  
+  if (CheckActorFloorTexture(0, "SLIME09")) GiveInventory("IsOverLava", 1);
+  if (CheckActorFloorTexture(0, "SLIME10")) GiveInventory("IsOverLava", 1);
+  if (CheckActorFloorTexture(0, "SLIME11")) GiveInventory("IsOverLava", 1);
+  if (CheckActorFloorTexture(0, "SLIME12")) GiveInventory("IsOverLava", 1);
+  
+  if (CheckActorFloorTexture(0, "LAVA1")) GiveInventory("IsOverLava", 1);
+  if (CheckActorFloorTexture(0, "LAVA2")) GiveInventory("IsOverLava", 1);
+  if (CheckActorFloorTexture(0, "LAVA3")) GiveInventory("IsOverLava", 1);
+  if (CheckActorFloorTexture(0, "LAVA4")) GiveInventory("IsOverLava", 1);
+	
+  if (CheckActorFloorTexture(0, "BLOOD1")) GiveInventory("IsOverBlood", 1);
+  if (CheckActorFloorTexture(0, "BLOOD2")) GiveInventory("IsOverBlood", 1);
+  if (CheckActorFloorTexture(0, "BLOOD3")) GiveInventory("IsOverBlood", 1);
+  if (CheckActorFloorTexture(0, "BLOOD4")) GiveInventory("IsOverBlood", 1);
+}

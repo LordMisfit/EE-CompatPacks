@@ -1,0 +1,71 @@
+[default]
+
+
+//Evac Center scene
+
+//Arriving at the evac center
+EDAYTXT01 = "Look, it's that Wyck girl who's been crushing those things! Hey, can\n"
+"you give us a hand here? We need to evacuate some other civilians, and\n"
+"there's a huge group of those demonic monsters coming!";
+
+EDAYTXT02 = "Watch out! There they come!";
+
+//Kills the cyberdemon
+EDAYTXT03 = "Thanks Miss Wyck! If it's not a problem, could you go inside and talk to the Captain?\n"
+						"He's looking for stray Marines and others willing to fight to assemble a squad for a\n"
+						"mission, and civilian or not, someone like you could be a big help to them! Good luck!";
+
+//Talk to the captain
+EDAYTXT04 = "...proceed with your orders and evacuate all civilians from this area immediately. \n"
+"You have ten hours to reach a safe distance from the city, over.";
+
+EDAYTXT05 = "You have to listen to me! This is not going to work! All I am asking you is \n"
+"just one infantry platoon, over!";
+
+EDAYTXT06 = "You have your orders Charlie Five, Command over and out.";
+
+EDAYTXT07 = "Okay, then fuck you Goddammit!";
+
+EDAYTXT08 = "(sighs) They refuse to deploy more units, they want to nuke the entire fucking city! \n"
+"They don't understand, that portal can't be destroyed, it's some sort of organic thing! \n"
+"We destroyed it with cruise missiles, three times, and it always rebuilds itself!";
+
+EDAYTXT09 = "Our only hope is to capture that thing, get into the other side, and \n"
+"shut it down from there.. And this is a difficult enough task without having the \n"
+"portal surrounded by a nuclear wasteland.";
+
+EDAYTXT10 = "I have watched these... things. And I understand their modus operandi. Their hordes are\n"
+"attacking San Francisco now because they are attracted by large populations, they focus\n"
+"their main forces on big battles and don't consider small groups like us a threat";
+
+EDAYTXT11 = "You must help us! I know that a small unit can sneak into the city without attracting \n"
+"much attention. You must go to downtown Los Angeles and secure the portal. If you have,\n"
+"success I will be able to convince HQ to deploy more troops here to assist us. \n";
+
+EDAYTXT12 = "I can spare a small squad to go with you. We got plenty of supplies, take whatever \n"
+"you need and go!";
+
+EDAYTXT13 = "Alright, here is the situation: All roads to downtown are blocked, we need to\n"
+"find an alternative route. We also had to abandon several armored vehicles\n " 
+"when we were retreating, and these things seems to know how to drive them.\n"
+"So don't forget to bring some rockets with us.";
+
+EDAYTXT14 = "The air force still got some birds dropping bombs around here, but we can't exactly \n"
+"count on them. After we cross the next street, we are pretty much on our on.\n"
+"There are no friendlies, no civilians, if you see anything moving, you destroy it!\n";
+
+EDAYTXT15 = "Take everything you can carry, because we have a long walk until we reach downtown.\n"
+"Let's move!";
+
+EDAYTXT51 = "Attention all marine units, we are under attack by a non-human enemy force!\n"
+"Everyone report to your combat stations. This is not a drill! \n"
+"I repeat, this is not a drill, goddammit! \n";
+
+EDAYTXT52 = "Attention all marine units, this is command. We are barricaded in the\n"
+"Command Center and have been trying to send distress signals to Earth. Anyone out there\n"
+"still alive report to our position. We got ammo and food. Godspeed. \n";
+
+EDAYTXT53 = "Attention marines, we have been trying to send distress signals over the last\n"
+"two hours, but nobody is responding, all we get is radio static, seems like no help.\n"
+" is coming. We are moving up to the portal testing labs, storm the place,\n"
+"secure the portals, and try to make a way to home. Command HQ over and out.\n";

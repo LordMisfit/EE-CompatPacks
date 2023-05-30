@@ -1,0 +1,241 @@
+#library "ACS"
+#include "zcommon.acs"
+
+// Makes colored sectors
+script 1541 ENTER
+{
+	Sector_SetColor (350, 255, 170, 160);
+	Sector_SetColor (351, 255, 170, 160);
+	Sector_SetColor (352, 255, 170, 160);
+	Sector_SetColor (353, 255, 170, 160);
+	Sector_SetColor (354, 255, 170, 160);
+	Sector_SetColor (355, 255, 170, 160);
+	Sector_SetColor (356, 255, 170, 160);
+	Sector_SetColor (357, 255, 170, 160);
+	Sector_SetColor (358, 255, 170, 160);
+	Sector_SetColor (359, 255, 170, 160);
+	
+	
+	Sector_SetColor (360, 255, 150, 150);
+	Sector_SetColor (361, 255, 150, 150);
+	Sector_SetColor (362, 255, 150, 150);
+	Sector_SetColor (363, 255, 150, 150);
+	Sector_SetColor (364, 255, 150, 150);
+	Sector_SetColor (365, 255, 150, 150);
+	Sector_SetColor (366, 255, 150, 150);
+	Sector_SetColor (367, 255, 150, 150);
+	Sector_SetColor (368, 255, 150, 150);
+	Sector_SetColor (369, 255, 150, 150);
+	
+	
+	Sector_SetColor (370, 255, 200, 160);
+	
+	
+	//
+	
+	Sector_SetFade (350, 225, 80, 40);
+	Sector_SetFade (351, 225, 80, 40);
+	Sector_SetFade (352, 225, 80, 40);
+	Sector_SetFade (353, 225, 80, 40);
+	Sector_SetFade (354, 225, 80, 40);
+	Sector_SetFade (355, 225, 80, 40);
+	Sector_SetFade (356, 225, 80, 40);
+	Sector_SetFade (357, 225, 80, 40);
+	Sector_SetFade (358, 225, 80, 40);
+	Sector_SetFade (359, 225, 80, 40);
+	
+	
+	Sector_SetFade (360, 255, 100, 100);
+	Sector_SetFade (361, 255, 100, 100);
+	Sector_SetFade (362, 255, 100, 100);
+	Sector_SetFade (363, 255, 100, 100);
+	Sector_SetFade (364, 255, 100, 100);
+	Sector_SetFade (365, 255, 100, 100);
+	Sector_SetFade (366, 255, 100, 100);
+	Sector_SetFade (367, 255, 100, 100);
+	Sector_SetFade (368, 255, 100, 100);
+	Sector_SetFade (369, 255, 100, 100);
+	Sector_SetFade (370, 255, 200, 160);
+}
+
+
+//A generic script for destroying computer screens
+// IF argument 1, is a big monitor.
+// If argument 2, is one of these large silver computers.
+// If argument 3, is one of these small monitors.
+script 41 (int arg1, int arg2, int arg3)
+{
+	SetLineTexture(arg1,SIDE_FRONT,TEXTURE_BOTTOM,"MONITR3C");
+	SetLineTexture(arg1,SIDE_BACK,TEXTURE_TOP,"MONITR3C");
+	SetLineTexture(arg1,SIDE_BACK,TEXTURE_BOTTOM,"MONITR3C");
+	SetLineTexture(arg1,SIDE_FRONT,TEXTURE_TOP,"MONITR3C");
+	
+	SetLineTexture(arg2,SIDE_FRONT,TEXTURE_BOTTOM,"COMPG0");
+	SetLineTexture(arg2,SIDE_BACK,TEXTURE_TOP,"COMPG0");
+	SetLineTexture(arg2,SIDE_BACK,TEXTURE_BOTTOM,"COMPG0");
+	SetLineTexture(arg2,SIDE_FRONT,TEXTURE_TOP,"COMPG0");
+	
+	SetLineTexture(arg2,SIDE_FRONT,TEXTURE_BOTTOM,"SPACOM5");
+	SetLineTexture(arg3,SIDE_BACK,TEXTURE_TOP,"SPACOM5");
+	SetLineTexture(arg3,SIDE_BACK,TEXTURE_BOTTOM,"SPACOM5");
+	SetLineTexture(arg3,SIDE_FRONT,TEXTURE_TOP,"SPACOM5");
+}
+
+//Same as script above, but for middle textures
+script 42 (int arg1, int arg2, int arg3)
+{
+	SetLineTexture(arg1,SIDE_BACK,TEXTURE_MIDDLE,"MONITR3C");
+	SetLineTexture(arg2,SIDE_BACK,TEXTURE_MIDDLE,"COMPG0");
+	SetLineTexture(arg3,SIDE_BACK,TEXTURE_MIDDLE,"SPACOM5");
+	SetLineTexture(arg1,SIDE_FRONT,TEXTURE_MIDDLE,"MONITR3C");
+	SetLineTexture(arg2,SIDE_FRONT,TEXTURE_MIDDLE,"COMPG0");
+	SetLineTexture(arg3,SIDE_FRONT,TEXTURE_MIDDLE,"SPACOM5");
+}
+
+
+//A generic script for destroying computer monitors
+//It doesn't needs a middle texture version because its never used
+script 43 (int arg1, int arg2, int arg3)
+{
+	SetLineTexture(arg1,SIDE_FRONT,TEXTURE_BOTTOM,"MONITR1B");
+	SetLineTexture(arg1,SIDE_BACK,TEXTURE_TOP,"MONITR1B");
+	SetLineTexture(arg1,SIDE_BACK,TEXTURE_BOTTOM,"MONITR1B");
+	SetLineTexture(arg1,SIDE_FRONT,TEXTURE_TOP,"MONITR1B");
+}
+
+//Generic Breaking Glass 1
+script 31 (int atag0,int atag1,int atid1)
+{
+	SetLineTexture(atag1,SIDE_FRONT,TEXTURE_MIDDLE,"CRKGLS3");
+	SetLineTexture(atag1,SIDE_BACK,TEXTURE_MIDDLE,"CRKGLS3");
+	SpawnSpot("BrokenWindowSpawn", atid1, 0, 0);
+}
+	
+//Generic Breaking Glass 2
+script 32 (int atag0,int atag1,int atid1)
+{
+	SetLineTexture(atag1,SIDE_FRONT,TEXTURE_MIDDLE,"CRKGLS4");
+	SetLineTexture(atag1,SIDE_BACK,TEXTURE_MIDDLE,"CRKGLS4");
+	SpawnSpot("BrokenWindowSpawn", atid1, 0, 0);
+}
+	
+script 1532 (int atag0,int atag1,int atid1)
+{
+	SetLineTexture(atag1,SIDE_FRONT,TEXTURE_MIDDLE,"CRKGLS4");
+	SetLineTexture(atag1,SIDE_BACK,TEXTURE_MIDDLE,"CRKGLS4");
+	SpawnSpot("BrokenWindowSpawn", atid1, 0, 0);
+	SpawnSpot("BDECParticle25", atid1, 0, 0);
+}
+	
+script 33 (void)
+{
+	//Let's write the Boss's name here.
+	setfont("BIGFONT");
+	HudMessageBold(s:"-= BOSS =-"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.09, 0.1, 0.1);
+	
+	
+	//How much health the boss currently has.
+	setfont("SMALLFONT");
+	int	bosshealth = GetActorProperty(0, APROP_Health);
+	HudMessageBold(d:bosshealth; HUDMSG_PLAIN, 0, CR_WHITE, 1.43, 0.15, 0.1, 0.1);
+	
+	//Just a divider
+	HudMessageBold(s:"/"; HUDMSG_PLAIN, 0, CR_WHITE, 1.5, 0.15, 0.05, 1.0);
+	
+	
+	//The boss's max health.
+	int	bossmaxhealth = GetActorProperty(0, APROP_SpawnHealth);
+	HudMessageBold(d:bossmaxhealth; HUDMSG_PLAIN, 0, CR_WHITE, 1.57, 0.15, 0.1, 0.1);
+	delay(1);
+	
+	
+	//Check if the boss still is alive. If yes, repeat the script, if not, it ends here.
+	if (GetActorProperty(0, APROP_Health) > 1)	restart;
+	else { }
+}
+
+script "EdayTXT01" (void)
+{
+	setfont("SmallFOnt");
+	SetHudSize(640, 400, FALSE);
+	HudMessageBold(s:"Marine:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 100.1, 340.0, 8.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT01"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 100.1, 360.0, 8.0, 0.01, 0.05);
+	Delay(500);
+	HudMessageBold(s:"Marine:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 100.1, 340.0, 5.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT02"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 100.1, 360.0, 5.0, 0.01, 0.05);
+	Delay(200);
+	Thing_Activate(5);
+	Thing_Destroy(4, 1, 0);
+	Floor_lowerTolowest(2, 999);
+	Thing_SetGoal (5, 6, 1, 0);
+}
+
+script "EdayTXT02" (void)
+{
+	setfont("SmallFOnt");
+	SetHudSize(640, 400, FALSE);
+	HudMessageBold(s:"Marine:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 100.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT03"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 100.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(200);
+	Ceiling_RaiseToNearest(1, 100);
+}
+
+script "EdayTXT03" (void)
+{
+	setfont("SmallFOnt");
+	SetHudSize(640, 400, FALSE);
+	HudMessageBold(s:"Radio:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT04"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT05"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Radio:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 4.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT06"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 4.0, 0.01, 0.05);
+	Delay(200);
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 3.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT07"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 3.0, 0.01, 0.05);
+}
+
+script "EdayTXT04" (void)
+{
+	setfont("SmallFOnt");
+	SetHudSize(640, 400, FALSE);
+	
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT08"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT09"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 8.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT10"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 8.0, 0.01, 0.05);
+	Delay(400);
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT11"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Captain:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 3.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT12"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 3.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Enter the storage room to exit the level."; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 100.1, 100.0, 3.0, 0.01, 0.05);
+	Ceiling_RaiseToNearest(7, 100);
+}
+
+script "EdayTXT05" (void)
+{
+	setfont("SmallFOnt");
+	SetHudSize(640, 400, FALSE);
+	
+	HudMessageBold(s:"Marine:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 8.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT13"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 8.0, 0.01, 0.05);
+	Delay(400);
+	HudMessageBold(s:"Marine:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 6.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT14"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 6.0, 0.01, 0.05);
+	Delay(300);
+	HudMessageBold(s:"Marine:"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_GREEN, 80.1, 340.0, 4.0, 0.01, 0.05);
+	HudMessageBold(l:"EDAYTXT15"; HUDMSG_LOG | HUDMSG_TYPEON, 0, CR_WHITE, 80.1, 360.0, 4.0, 0.01, 0.05);
+	Delay(70);
+	Ceiling_RaiseToNearest(34, 100);
+	Floor_RaiseToNearest(35, 100);
+	Thing_Activate(33);
+}
