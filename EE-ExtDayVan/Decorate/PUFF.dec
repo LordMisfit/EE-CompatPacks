@@ -4,7 +4,7 @@ ACTOR MeleePuff: BulletPuff
 	RenderStyle "Translucent"
 	alpha 0.5
 	Scale 1.5
-	DamageType Melee
+	DamageType "Melee"
 	+NOBLOCKMAP
 	+NOGRAVITY
 	+NOEXTREMEDEATH
@@ -27,88 +27,88 @@ ACTOR MeleePuff: BulletPuff
 
 ACTOR FatalityPuff: MeleePuff
 {
-DamageType Fatality
-Decal "Crack"
-  states
-  {
-  Spawn:
-  XDeath:
-  Melee:
-  Death:
-    TNT1 A 0 A_PlaySound("player/cyborg/fist")
-	EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-    TNT1 A 0
-    stop
-  }
+	DamageType "Fatality"
+	Decal "Crack"
+	states
+	{
+		Spawn:
+		XDeath:
+		Melee:
+		Death:
+			TNT1 A 0 A_PlaySound("player/cyborg/fist")
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			TNT1 A 0
+			stop
+	}
 }
 
 ACTOR KickPuff: MeleePuff
 {
-DamageType Kick
-  states
-  {
-  Spawn:
-    PUFF A 0 A_PlaySound("player/cyborg/fist")
-	TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-    EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-    stop
-  Death:
-    PUFF A 0 A_PlaySound("player/cyborg/fist")
-	TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-    EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-    stop
-  Melee:
-    PUFF A 0 A_PlaySound("player/cyborg/fist")
-	TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-    EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-    stop
-  XDeath:
-    PUFF A 0 A_PlaySound("player/cyborg/fist")
-	TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-    EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-    stop
-  }
+	DamageType "Kick"
+	states
+	{
+		Spawn:
+			PUFF A 0 A_PlaySound("player/cyborg/fist")
+			TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			stop
+		Death:
+			PUFF A 0 A_PlaySound("player/cyborg/fist")
+			TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			stop
+		Melee:
+			PUFF A 0 A_PlaySound("player/cyborg/fist")
+			TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			stop
+		XDeath:
+			PUFF A 0 A_PlaySound("player/cyborg/fist")
+		TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			stop
+	}
 }
 
 ACTOR SuperKickPuff: KickPuff
 {
-DamageType Kick
--NOEXTREMEDEATH
-+EXTREMEDEATH
-Decal "Crack"
+	DamageType "Kick"
+	-NOEXTREMEDEATH
+	+EXTREMEDEATH
+	Decal "Crack"
 }
 
 ACTOR SmashingPuff: MeleePuff
 {
-DamageType ExplosiveImpact
--NOEXTREMEDEATH
-Decal "Crack"
-  states
-  {
-  Spawn:
-  XDeath:
-  Melee:
-  Death:
-  TNT1 A 1
-	TNT1 A 0 A_PlaySound("player/cyborg/fist")
-	    EXPL A 0 Radius_Quake (4, 24, 0, 15, 0)
-	    EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-    TNT1 A 10
-    stop
-  }
+	DamageType "ExplosiveImpact"
+	-NOEXTREMEDEATH
+	Decal "Crack"
+	states
+	{
+		Spawn:
+		XDeath:
+		Melee:
+		Death:
+			TNT1 A 1
+			TNT1 A 0 A_PlaySound("player/cyborg/fist")
+			EXPL A 0 Radius_Quake (4, 24, 0, 15, 0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			TNT1 A 10
+			stop
+	}
 }
 
 
 ACTOR UberPunchPuff: SmashingPuff
 {
-DamageType SuperPunch
+	DamageType "SuperPunch"
 }
 
 ACTOR FatalitySmashingPuff: SmashingPuff
 {
-DamageType Fatality
-+NOEXTREMEDEATH
--EXTREMEDEATH
+	DamageType "Fatality"
+	+NOEXTREMEDEATH
+	-EXTREMEDEATH
 }
 
 ACTOR HitPuff Replaces BulletPuff
@@ -125,54 +125,53 @@ ACTOR HitPuff Replaces BulletPuff
 	+DONTSPLASH
 	-EXPLODEONWATER
 	Gravity 0.01
-	DamageType Bullet
+	DamageType "Bullet"
 	Decal "BulletDecalNew1"
   states
   {
-  Spawn:
-    TNT1 A 0
-	TNT1 A 0 A_SpawnItemEx ("RicoChet",0,0,-5,0,0,0,0,SXF_NOCHECKPOSITION,0)
-  Melee:
-	TNT1 A 1
-	stop
-	
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_SpawnItemEx ("RicoChet",0,0,-5,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		Melee:
+			TNT1 A 1
+			stop
   }
 }
 
 
 ACTOR HitPuffTracer : HitPuff
 {
-+NOGRAVITY
+	+NOGRAVITY
 }
 
 actor shotpuff : HitPuff
 {
-DamageType SSG
+	DamageType "SSG"
 }
 
 
 actor revopuff : HitPuff
 {
-DamageType explosiveimpact
+	DamageType "ExplosiveImpact"
 }
 
 actor Shotgunpuff : HitPuff
 {
-DamageType Shotgun
+	DamageType "Shotgun"
 }
 
 
 actor Shotgunpuff2 : HitPuff
 {
-DamageType Shotgun
-+BLOODLESSIMPACT
+	DamageType "Shotgun"
+	+BLOODLESSIMPACT
 }
 
 actor RailgunPuff2: Hitpuff
 {
-DamageType Railgun
-Radius 2
-Height 2
+	DamageType "Railgun"
+	Radius 2
+	Height 2
 }
 
 

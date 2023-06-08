@@ -372,7 +372,7 @@ Actor SpawnedFlamers
 {
 +NOCLIP
 +NOGRAVITY
-    DamageType Flames
+    DamageType "Flames"
 states
 	{
 	Spawn:

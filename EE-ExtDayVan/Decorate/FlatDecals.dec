@@ -10,7 +10,7 @@ ACTOR DetectFloorBullet : EEBaseZSC
 	damage 0
 	RenderStyle "Translucent"
 	Alpha 0.70
-	DamageType Blood
+	DamageType "Blood"
 	+MISSILE
 	+CLIENTSIDEONLY
 	+NOTELEPORT
@@ -45,7 +45,7 @@ ACTOR DetectCeilBullet : EEBaseZSC
 	 damage 0
 	 RenderStyle "Translucent"
 	 Alpha 0.70
-	DamageType Blood
+	DamageType "Blood"
    +MISSILE
    +CLIENTSIDEONLY
    +NOTELEPORT
@@ -83,7 +83,7 @@ ACTOR DetectFloorCraterNoSplashes : EEBaseZSC
  Renderstyle Shaded
  StencilColor "Black"
  Alpha 0.70
-	DamageType Blood
+	DamageType "Blood"
    +MISSILE
    +CLIENTSIDEONLY
    +NOTELEPORT
@@ -121,7 +121,7 @@ ACTOR DetectFloorCrater : EEBaseZSC
  Renderstyle Shaded
  StencilColor "Black"
  Alpha 0.9
-	DamageType Blood
+	DamageType "Blood"
    +MISSILE
    +CLIENTSIDEONLY
    +NOTELEPORT
@@ -160,7 +160,7 @@ ACTOR DetectCeilCrater : EEBaseZSC
  Renderstyle Shaded
  StencilColor "Black"
  Alpha 0.9
-	DamageType Blood
+	DamageType "Blood"
    +MISSILE
    +CLIENTSIDEONLY
    +NOTELEPORT
@@ -207,7 +207,7 @@ ACTOR DetectFloorCraterSmall : EEBaseZSC
  Renderstyle Shaded
  StencilColor "Black"
  Alpha 0.9
-	DamageType Blood
+	DamageType "Blood"
    +MISSILE
    +CLIENTSIDEONLY
    +NOTELEPORT
@@ -245,7 +245,7 @@ ACTOR DetectCeilCraterSmall : EEBaseZSC
 	Renderstyle Shaded
 	StencilColor "Black"
 	Alpha 0.9
-	DamageType Blood
+	DamageType "Blood"
 	+MISSILE
 	+CLIENTSIDEONLY
 	+NOTELEPORT

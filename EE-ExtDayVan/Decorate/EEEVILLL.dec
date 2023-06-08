@@ -936,7 +936,7 @@ Idle:
 
 ACTOR EvilMarineCheckFront: EEFastProjectile
 {
-	DamageType None
+	DamageType "None"
 	Damage (random (0, 0))
 	+THRUACTORS
 	Radius 2

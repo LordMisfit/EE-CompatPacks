@@ -4456,7 +4456,7 @@ ACTOR NaziDogBite : BaronBallNew
 {
 	Radius 24
 	Height 16
-	DamageType Normal
+	DamageType "Normal"
 	Projectile 
 	+RANDOMIZE
 	+FORCEXYBILLBOARD

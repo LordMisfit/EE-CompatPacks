@@ -294,7 +294,7 @@ ACTOR ShortRailPuff	: BulletPuff
 	+NOGRAVITY
 	+NOEXTREMEDEATH
 	+PUFFONACTORS
-	Damagetype SSG
+	Damagetype "SSG"
 	states
 	{
 		Spawn:
