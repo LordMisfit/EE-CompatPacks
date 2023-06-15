@@ -3945,7 +3945,7 @@ ACTOR HookColision
 {
 	Radius 2
 	Height 50
-	DamageType HangingHook
+	DamageType "HangingHook"
 	Projectile 
     Damage 0
 	+MISSILE
@@ -4211,7 +4211,7 @@ actor DeletusVeryLarge
 	+NOTARGET
 Radius 10
 Height 10
-DamageType Deletus
+DamageType "Deletus"
 +NOGRAVITY +NOTELEPORT +NODAMAGETHRUST
 +THRUGHOST +NORADIUSDMG +NOEXTREMEDEATH
 +FORCERADIUSDMG -BLOODSPLATTER +BLOODLESSIMPACT 
