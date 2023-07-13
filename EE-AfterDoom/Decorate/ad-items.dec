@@ -1,0 +1,16 @@
+Actor HeavyArmored : BasicArmorPickup 12453
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage "Picked up the heavy armor"
+	Inventory.Icon "HEVAB0"
+	Armor.Savepercent 50
+	Armor.Saveamount 100
+	States
+	{
+		Spawn:
+			HEVA B 6
+			HEVA A 6 bright
+			loop
+	}
+}

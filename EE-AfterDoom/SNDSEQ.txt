@@ -1,0 +1,39 @@
+:PuertaInfernal
+	Door 3
+	playrepeat      CNpuerta/puertainfernal
+	stopsound       CNpuerta/golpeinfernal
+end
+
+:Rocaspared
+	Door 4
+	playuntildone	CNpuerta/rocasrotas
+	nostopcutoff
+end
+
+:Puertacarne
+	Door 5
+	playuntildone	CNpuerta/carne
+	playrepeat      CNpuerta/carne
+	stopsound       CNpuerta/carnegolpe
+end
+
+:nosonido
+	Door 6
+	playuntildone	Ally/Active
+	playrepeat      Ally/Active
+	stopsound       CNpuerta/golpeinfernal
+end
+
+:nosonido2
+	Door 8
+	playuntildone	Ally/Active
+	playrepeat      Ally/Active
+	stopsound       Ally/Active
+end
+
+
+:ascensorinfernal
+	Door 7
+	playrepeat      CNpuerta/ascensorinfernal
+	stopsound       CNpuerta/golpeinfernal
+end

@@ -1,0 +1,312 @@
+ACTOR staticRotten_Apocalipsis 10884
+{
+	tag "Rotten Apocalipsis"
+	Health 8000
+	Radius 40
+	Height 160
+	Mass 6666
+	PainChance 0
+	DamageFactor "Bum", 0.0
+	scale 1.7
+	damagefactor "Avoid", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "TeleportRemover", 0.0
+	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
+	+SEEINVISIBLE
+	+NOINFIGHTING
+	+LOOKALLAROUND
+	+NOPAIN
+	+TELESTOMP
+	+MOVEWITHSECTOR
+	+JUMPDOWN
+	+NOTIMEFREEZE
+	+DONTHARMSPECIES
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Tag "Rotten Apocalipsis"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RPOK A -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_Mother 10883
+{
+	Health 8000
+	Tag "Rotten Mother Demon"
+	Radius 40
+	Height 105
+	Mass 10000
+	PainChance 6
+	+NOINFIGHTING
+	+NOBLOCKMONST
+	+LOOKALLAROUND
+	+FLOAT
+	+NOGRAVITY
+	+BOSS
+	+NORADIUSDMG
+	+NOTARGET
+	+NOFEAR
+	+NOTIMEFREEZE
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ROTH A -1
+			Loop
+	}
+}
+
+ACTOR staticKronos 10882
+{
+	+NOICEDEATH
+	Game Doom
+	Health 2500
+	Radius 100
+	Height 150
+	damagefactor "Crush", 30.0
+	Mass 6666
+	scale 2
+	DamageFactor "Fire", 0.0
+	DamageFactor "onda", 0.0
+	tag "Kronos"
+	Species "Icon"
+	+DONTFALL
+	+FLOAT 
+	+NOGRAVITY
+	+BOSS
+	+FLOORCLIP
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	+TELESTOMP 
+	+THRUSPECIES
+	damagefactor "Blood", 0.0
+	States
+	{
+		Spawn:
+			KRON D -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_God 10881
+{
+	+NOICEDEATH
+	+NOTELEPORT
+	Game Doom
+	Health 35000
+	Radius 160
+	Height 840
+	damagefactor "Crush", 30.0
+	Scale 4.8
+	Mass 996000
+	DamageFactor "Inferno", 0.0
+	DamageFactor "Fire", 0.0
+	DamageFactor "onda", 0.0
+	tag "Rotten Icon of Sin" 
+	Species "Icon"
+	
+	//MinMissileChance 200
+	DeathHeight 0
+	BurnHeight 0
+	+MOVEWITHSECTOR
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	+TELESTOMP 
+	+THRUSPECIES
+	damagefactor "Blood", 0.0
+	States
+	{
+		Spawn:
+			RPRM A -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_Cacodemon 10800
+{
+		Health 250
+		Radius 31
+		Height 56
+		Mass 400
+		+FLOAT 
+		+NOGRAVITY
+		Tag "Rotten Cacodemon"
+		DamageFactor "Bum", 0.0
+		Species "Icon"
+	
+	States
+	{
+		Spawn:
+			RAB1 A -1
+			Loop
+	}
+}
+
+ACTOR staticRotten_imp 10799
+{
+		Health 60
+		Radius 20
+		Height 56
+		Mass 100
+		+FLOORCLIP
+		Tag "Rotten imp"
+		DamageFactor "Bum", 0.0
+		Species "Icon"
+
+	States
+	{
+		Spawn:
+			RROO A -1
+			Loop
+	}
+}
+
+Actor staticRotten_Abortion 10798
+{
+	Health 25
+	Radius 14
+	Height 28
+	Mass 20
+	+NoGravity
+	+Float
+	tag "Rotten Abortion"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RALN ABCB 8  
+			Loop
+	}
+}
+
+ACTOR staticRotten_Mancubus 10797
+{
+	Health 400
+	Radius 38
+	Height 64
+	Mass 1000
+	+FLOORCLIP
+	+BOSSDEATH
+	tag "Rotten Mancubus"
+	MeleeRange 128
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RATT A -1
+			Loop
+	}
+}
+
+ACTOR staticFLESHGOLEM 10796
+{
+	Health 1700
+	Radius 30
+	Height 80
+	Mass 1000
+	tag "FLESHGOLEM"
+	+BOSS 
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	States
+	{
+		Spawn:
+			GOLW A -1
+			Loop
+	}
+}
+
+ACTOR staticcolgadogritona 10795
+{
+	Radius 10
+	Height 36
+	Health 20  
+	Mass 999999
+	BloodColor "Red"  
+	Speed 0
+	tag "Zombieman"
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	+DONTFALL
+	States
+	{
+		Spawn:
+			KOLJ I -1
+			Loop
+	}
+}
+
+ACTOR colgadosinarma 22224
+{
+	Radius 20
+	Height 56
+	Mass 999999
+	Speed 0
+	tag "Zombieman"
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			COLG E -1 A_Look
+			Loop
+	}
+}
+
+ACTOR staticcolgadoconarma 10794
+{
+	Health 20
+	Radius 20
+	Height 56
+	Mass 999999
+	BloodColor "Red"
+	Speed 0
+	REACTIONTIME 1
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	tag "Zombieman"
+	DropItem "Clip"
+	States
+	{
+		Spawn:
+			COLJ E -1
+			Loop
+	}
+}

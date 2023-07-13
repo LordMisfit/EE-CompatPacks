@@ -1,0 +1,42 @@
+Actor PSXBloodyChain 32701
+{
+	Radius 16
+	Height 88
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+	Spawn:
+		BLCH A -1
+		Stop
+	}
+}
+
+ACTOR Godhand 30868
+{
+	Radius 267
+	Height 1246
+	+FORCEYBILLBOARD
+	-SOLID
+	+FLOORCLIP
+	States
+	{
+		Spawn:
+			GODH A -1
+			Stop
+	}
+}
+
+ACTOR Eclipse_Red 31666
+{
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			ZRCL A -1 Bright
+			Stop
+	}
+}

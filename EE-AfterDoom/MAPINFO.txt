@@ -1,0 +1,147 @@
+map titlemap "welcome"
+{
+	next = "map34" 
+	sky1 = "SKY5" 
+	music = "D_DM2TTL"
+}
+
+map map33 "Knee Deep in Hell"
+{
+    Author = "by 00_Zombie_00"
+	levelnum = 33
+	titlepatch = "WILV00"
+	next = "map34" 
+	sky1 = "SKY5" 
+	cluster = 0
+	par = 1800
+	music = "D_E1M8"
+	
+}
+
+map map34 "The shores of underworld"
+{
+    Author = "by 00_Zombie_00"
+	levelnum = 34
+	titlepatch = "WILV00"
+	next = "map35" 
+	sky1 = "SKY44424"
+	cluster = 0
+	par = 2800
+	music = "NOSOUND"
+}
+
+map map35 "Inferno City"
+{
+    Author = "by 00_Zombie_00"
+	levelnum = 35
+	titlepatch = "WILV00"
+	next = "map36" 
+	sky1 = "SKY44424"
+	cluster = 0
+	par = 2200
+	music = "NOSOUND"
+}
+
+map map36 "Icon of Sin is dead"
+{
+    Author = "by 00_Zombie_00"
+	levelnum = 36
+	titlepatch = "WILV00"
+	next = "map37" 
+	sky1 = "RSKY67"
+	cluster = 0
+	par = 2200
+	music = "D_OPENI"
+}
+
+map map37 "Deep darkness of hell"
+{
+    Author = "by 00_Zombie_00 & Salahmander2"
+	levelnum = 37
+	titlepatch = "WILV00"
+	next = "map38" 
+	sky1 = "ESTECIEL"
+	sky2 = "RSKY67"
+	cluster = 0
+	par = 2200
+	music = "D_E1M1"
+}
+
+map map38 "The Fallen Absolution"
+{
+	Author = "by 00_Zombie_00 & ZombieMad"
+	next = "map39" 
+	music = "DOOM64"
+	levelnum = 38
+	cluster = 0
+	sky1 = CNHADES1
+	par = 1800
+	Fade = "006b5d"
+	OutsideFog = "006b5d"
+	fogdensity = 25
+	outsidefogdensity = 40
+}
+
+map map39 "Hate Never Dies"
+{
+	Author = "by 00_Zombie_00"
+	next = "map40" 
+	music = "DARK64"
+	levelnum = 39
+	cluster = 0
+	sky1 = CNHADES1
+	par = 1800
+}	
+	
+map map40 "CAST"
+{
+	Author = "by 00_Zombie_00 & Salahmander2"
+	next = "EndGameC" 
+	music = "d_dm2int"
+	levelnum = 40
+	cluster = 0
+	sky1 = CNHADES1
+	par = 1800
+}	
+	
+episode map33
+{
+   name = "Knee Deep in Hell"
+   key = "k"
+}
+
+episode map34
+{
+   name = "The shores of underworld"
+   key = "m"
+}
+
+episode map35
+{
+   name = "Inferno City"
+   key = "m"
+}
+
+episode map36
+{
+   name = "Icon of Sin is dead"
+   key = "m"
+}
+
+episode map37
+{
+   name = "Deep darkness of hell"
+   key = "m"
+}
+
+episode map38
+{
+   name = "The Fallen Absolution"
+   key = "m"
+}
+
+episode map39
+{
+   name = "Hate Never Dies"
+   key = "m"
+}

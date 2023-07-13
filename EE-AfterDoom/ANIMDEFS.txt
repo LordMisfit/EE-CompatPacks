@@ -1,0 +1,69 @@
+warp texture LAVA1
+warp texture LAVA2
+warp texture LAVA3
+warp texture LAVA4
+warp texture FWATER1
+warp texture FWATER2
+warp texture FWATER3
+warp texture FWATER4
+warp texture VLOOD1
+warp texture VLOOD2
+warp texture VLOOD3
+warp texture BLOOD1
+warp texture BLOOD2
+warp texture BLOOD3
+warp texture SFLR6_1
+warp texture SFLR6_4
+warp texture SFLR7_4
+warp texture SFLR7_1
+warp texture COSO1
+warp texture COSO2
+warp texture NUKAGE1
+warp texture NUKAGE2
+warp texture NUKAGE3
+warp texture SLIME01
+warp texture SLIME02
+warp texture SLIME03
+warp texture SLIME04
+warp texture SLIME05
+warp texture SLIME06
+warp texture SLIME07
+warp texture SLIME08
+warp texture SLIME09
+warp texture FFLR6_1
+warp texture FFLR6_4
+warp texture RTRI6_4
+warp texture H2_DECO4
+warp texture SLIPGATE
+warp texture TILE0243
+warp texture RTILE099
+
+texture UACA001
+
+pic 1 tics 5
+pic 2 tics 5
+pic 3 tics 5
+pic 4 tics 5
+
+texture PORTA01
+
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+pic 5 tics 2
+pic 6 tics 2
+pic 7 tics 2
+pic 8 tics 2
+pic 9 tics 2
+pic 10 tics 2
+pic 11 tics 2
+pic 12 tics 2
+pic 13 tics 2
+pic 14 tics 2
+pic 15 tics 2
+pic 16 tics 2
+pic 17 tics 2
+pic 18 tics 2
+pic 19 tics 2
+pic 20 tics 2

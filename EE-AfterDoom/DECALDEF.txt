@@ -1,0 +1,11 @@
+Decal FallenBall
+{
+Pic PLASMA1
+Shade "00 00 00"
+X-Scale 0.5
+Y-Scale 0.5
+RandomFlipX
+RandomFlipY
+}
+
+Generator FallenShot FallenBall

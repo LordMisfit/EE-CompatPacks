@@ -1,0 +1,496 @@
+apoka/sight APOKAALE
+tiro/tira DSRLAUNC
+calibre/balas DSDSHTGN
+RocketExplosion1 DSBAREX1
+RocketExplosion2 DSBAREX2
+RocketExplosion3 DSBAREX3
+
+$random bum/bom	{ RocketExplosion1 RocketExplosion2 RocketExplosion3 }
+$limit bum/bom 0
+$limit RocketExplosion1 0
+$limit RocketExplosion2 0
+$limit RocketExplosion3 0
+
+hielo/llama HIELOLLA
+
+risaa/see RISA01
+risab/see RISA02
+viola/see VIOLA1
+
+monster/falsit dsfalsit
+monster/falpai dsfalpai
+monster/faldth dsfaldth
+monster/falact dsfalact
+monster/falwng dsfalwng
+weapons/firmfi dsfirmfi
+weapons/firex5 dsfirex5
+
+$Random Forgotten/Attack { FRGOATK1 FRGOATK2 FRGOATK3 }
+FRGOATK1	FRGOATK1
+FRGOATK2	FRGOATK2
+FRGOATK3	FRGOATK3
+$Random Forgotten/Active { FRGOACT1 FRGOACT2 FRGOACT3 }
+FRGOACT1	FRGOACT1
+FRGOACT2	FRGOACT2
+FRGOACT3	FRGOACT3
+FRGOACT4	FRGOACT4
+$Random Forgotten/Pain { FRGOPAI1 FRGOPAI2 FRGOPAI3 }
+FRGOPAI1	FRGOPAI1
+FRGOPAI2	FRGOPAI2
+FRGOPAI3	FRGOPAI3
+$Random Forgotten/Death { FRGODEA1 FRGODEA2 FRGODEA3 }
+FRGODEA1	FRGODEA1
+FRGODEA2	FRGODEA2
+FRGODEA3	FRGODEA3
+
+Hitler/see DSHITLER
+Hitler/active DSHITLER
+
+gritofan/sight DSPHNSIT
+gritofan/pain DSPHNSIT
+gritofan/death DSPHNSIT
+gritofan/active DSPHNSIT
+gritofan/melee DSPHNSIT
+
+brain/spit NOSOUND
+
+Inferno/Alert	INFRALRT
+Inferno/Walk	INFRWALK
+Inferno/Die		INFRDEAD
+Inferno/Active	INFRACTV
+Apocalypse/Meteor COMETLNC
+Apocalypse/Death COMETEXP
+Meteor/Call DFATTACK
+weapons/firmfi dsfirmfi
+weapons/firex3 dsfirex3
+weapons/firbfi dsfirbfi
+weapons/hellex dshellex
+weapons/justfi dsjustfi
+monster/bomb FIREBALL
+monster/firebeamdeath IMPFIRE2
+monster/firebeamstart DARKFLAM
+pyro/explosion DSPIPEX1
+Glyph/Start FLAMESTR
+harvester/ghost shghscrm
+
+Infdem/see BE-SPOT1
+Infdem/active BE-GROWL
+Infdem/pain BE-PAIN1
+Infdem/death DYING
+
+//Ranged Marine's Sight
+$random Ally/Site { See1 See2 }
+See1	NOSOUND
+See2	NOSOUND
+//Marine Pain
+Ally/Pain ALLYPAIN
+//Marine Death
+Ally/Death ALLYDIE 
+//Marine Active (Searching etc)
+Ally/Active NOSOUND
+//Melee Marine Swing
+Ally/Fist ALFistGo
+//Melee Marine Punch Impact
+Ally/PunchImpact ALYPUNCH
+//Melee Marine Charge Ready
+Ally/PunchChargeReady KNUXCRAK
+//Melee Marine Charge Jump
+Ally/PunchChargeJump ALYPCHRG
+
+//Pistol Marine
+ALPist/Fire1 AL10PSF1
+ALPist/Fire2 AL10PSF2
+$random ALPist/FIRE { ALPist/Fire1 ALPist/Fire2 }
+$Limit ALPist/FIRE 0
+
+//Machinegun Marine
+$random ALMG/Fire {ALMG1 ALMG2 ALMG3}
+ALMG1 ALMGFIR1
+ALMG2 ALMGFIR2
+ALMG3 ALMGFIR3
+
+//Minigun Marine
+ALMini/ALMinigun ALMINIGN
+
+//Chainsaw Marine
+ALCSaw/Sight ALYSAWS
+
+//Super Shotgun Marine
+ALSSG/Fire	ALLYSSG
+
+//Bombardier (Seeker Missile Launcher) Ready to Fire
+Ally/SeekerReady ALYBRDY
+//Heat-Seeking Missile Fire
+Ally/Seeker   ALLYSEEK
+//Heat-Seeking Missile Explode
+Seeker/Explode SEEKXPLD
+
+//Grenadier Marine
+//Fire
+Ally/Grenfire	ALGFIRE
+//Open
+Ally/Reload1	ALGOPEN
+//Load
+Ally/Reload2	ALGLOAD
+//Close
+Ally/Reload3	ALGCLOS
+//Grenade Bounce
+Ally/GrenadeBounce ALGBOIN
+//Grenade Explode
+Ally/GrenadeBang ALGRNEX
+
+//BFG-10K
+//Fire Start
+BFG10kMarine/ShotStart	ABFG10K1
+//BFG-10K Attack Sound
+marine/bfg10kx			ALGRNEX
+//Fire End
+BFG10kMarine/ShotEnd	ABFG10K2
+
+//Flamethrower
+Marine/Flamer			ALFLAMER
+Marine/Scorch			ALSCORCH
+Marine/FlameReady		ALLYPAI3
+weapons/flmridle		ALFIMDLE
+weapons/onfire			ALFLAME
+
+//Sniper
+Marine/SniperFire			ALSNPRFI
+Marine/SniperReload			ALSNPRRE
+Marine/SniperBulletloop		ALSNPRFL
+//Sniper Bullet Impact
+$Random Marine/SniperFleshHit { SNPRFHT1 SNPRFHT2 SNPRFHT3 }
+SNPRFHT1	ALSRFHT1
+SNPRFHT2	ALSRFHT2
+SNPRFHT3	ALSRFHT3
+$Volume Marine/SniperFleshHit 0.4
+
+$Random Marine/SniperWallHit { SNPRWHT1 SNPRWHT2 SNPRWHT3 SNPRWHT4 }
+SNPRWHT1	ALSRWHT1
+SNPRWHT2	ALSRWHT2
+SNPRWHT3	ALSRWHT3
+SNPRWHT4	ALSRWHT4
+$Volume Marine/SniperWallHit 0.4
+
+iconsin/scream        CLOVERFI
+
+iconsin/expdeth       NukeBoom
+
+iconsin/ballexplod    SINFBEXP
+iconsin/balllaunch    SINFBLAU
+
+// UTNT PyroCannon sounds
+
+PyroCannon/Hit		PYRCHIT
+PyroCannon/Flare	PYRCFLAR
+
+Flamethrower/Flame	FMTRFLAM
+
+$Limit PyroCannon/Explosion	0
+$Limit PyroCannon/Flare		0
+
+Flamethrower/Fire	FMTRFIRE
+Flamethrower/Hit	FMTRHIT
+
+CrowbarHit DSCBAR
+
+Steam/Loop	STEMLOOP
+Steam/Fire	STEMFIRE
+
+fem/sight FEMZSIT
+fem/pain FEMZPAIN
+fem/death FEMZDHT
+fem/active FEMZACT
+fem/death2 FEMZDT2
+fem/death1 FEMZDHT
+fem/sight1 FEMZSIT
+fem/sight2 FEMZSI2
+$random	fem/death { fem/death1 fem/death2 }
+$random	fem/sight { fem/sight1 fem/sight2 }
+mom/pain DSRECTPN
+
+KnifeHit DSKNIFE
+
+TOILET1      TOILET1
+BREAK1       BREAK1
+
+NIGHTMAR DSPESADI
+$ambient 999 NIGHTMAR point periodic 16.0 1.0
+
+Ambient/fuego		fuego
+$ambient 998 Ambient/fuego Point Continuous 1.0
+
+lavahex DSLAVA2
+$ambient 997 lavahex point periodic 4.0 1.0
+
+lavaHD DSUNDERW
+$ambient 996 lavaHD point periodic 3.0 1.0
+
+burbuja DSBUBBLE
+$ambient 995 burbuja point periodic 5.0 1.0
+
+lava3HD DSLAVA1
+$ambient 994 lava3HD point periodic 25.0 1.0
+
+ladycry DSCOTROC
+$ambient 993 ladycry point periodic 30.0 1.0
+
+rocashex DSROCKS
+$ambient 992 rocashex point periodic 15.0 1.0
+
+zombi1 MOANER_4
+$ambient 991 zombi1 point periodic 15.0 1.0
+
+zombi2 MOANER_3
+$ambient 990 zombi2 point periodic 15.0 1.0
+
+zombi3 MOANER_2
+$ambient 989 zombi3 point periodic 15.0 1.0
+
+zombi4 MOANER_1
+$ambient 988 zombi4 point periodic 15.0 1.0
+
+
+Ambient/DSXCHOIR		DSXCHOIR
+$ambient 987 Ambient/DSXCHOIR Point Continuous 1.0
+
+cruje DSICEMV2
+$ambient 986 cruje point periodic 20.0 1.0
+
+fantasma DTRPAIN
+$ambient 985 fantasma point periodic 13.0 1.0
+
+fantasma2 DTRDEAD
+$ambient 984 fantasma2 point periodic 13.0 1.0
+
+motosierra CHAINSAW
+$ambient 983 motosierra point periodic 13.0 1.0
+
+corazon HEART
+$ambient 982 corazon point periodic 2.0 1.0
+
+gritoeco GRITO
+$ambient 981 gritoeco point periodic 11.0 1.0
+
+gritoeco2 GRITO2
+$ambient 980 gritoeco2 point periodic 11.0 1.0
+
+gritofan DSPHNSIT
+$ambient 979 gritofan point periodic 3.0 1.0
+
+guerra GUERRA
+$ambient 978 guerra point periodic 47.0 1.0
+
+guerra1 GUERRA1
+$ambient 977 guerra1 point periodic 145.0 1.0
+
+guerra2 GUERRA2
+$ambient 976 guerra2 point periodic 145.0 1.0
+
+guerra3 GUERRA3
+$ambient 975 guerra3 point periodic 61.0 1.0
+
+radioestatica RADIOEST
+$ambient 974 radioestatica point periodic 56.0 1.0
+
+lamento1 LAMENTO1
+$ambient 973 lamento1 point periodic 46.0 1.0
+
+lamento2 LAMENTO2
+$ambient 972 lamento2 point periodic 43.0 1.0
+
+GRITOJA GRITOJA
+$ambient 971 GRITOJA point periodic 25.0 1.0
+
+BABY1 BABY1
+$ambient 970 BABY1 point periodic 25.0 1.0
+
+BABY2 BABY2
+$ambient 969 BABY2 point periodic 15.0 1.0
+
+FANTASMA FANTASMA
+$ambient 968 FANTASMA point periodic 15.0 1.0
+
+RGRITO1 RGRITO1
+$ambient 967 RGRITO1 point periodic 15.0 1.0
+
+RGRITO2 RGRITO2
+$ambient 966 RGRITO2 point periodic 15.0 1.0
+
+RGRITO3 RGRITO3
+$ambient 965 RGRITO3 point periodic 15.0 1.0
+
+RGRITO4 RGRITO4
+$ambient 964 RGRITO4 point periodic 15.0 1.0
+
+RGRITO5 RGRITO5
+$ambient 963 RGRITO5 point periodic 15.0 1.0
+
+Ambient/MONK		MONK
+$ambient 962 Ambient/MONK Point Continuous 1.0
+
+Ambient/CARNE		CARNE
+$ambient 961 Ambient/CARNE Point Continuous 1.0
+
+Ambient/VIENTOMA		VIENTOMA
+$ambient 960 Ambient/VIENTOMA Point Continuous 1.0
+
+Ambient/MONSTER		MONSTER
+$ambient 959 Ambient/MONSTER Point Continuous 1.0
+
+Ambient/VACIO47		VACIO47
+$ambient 958 Ambient/VACIO47 Point Continuous 1.0
+
+Ambient/MAQUINA		MAQUINA
+$ambient 957 Ambient/MAQUINA Point Continuous 1.0
+
+Ambient/VIOLINRE		VIOLINRE
+$ambient 956 Ambient/VIOLINRE Point Continuous 1.0
+
+Ambient/HOLOGRAM		HOLOGRAM
+$ambient 955 Ambient/HOLOGRAM Point Continuous 1.0
+
+Ambient/COMPUTER		COMPUTER
+$ambient 954 Ambient/COMPUTER Point Continuous 1.0
+
+Ambient/COMPUTE2		COMPUTE2
+$ambient 953 Ambient/COMPUTE2 Point Continuous 1.0
+
+Ambient/CREEPY_M		CREEPY_M
+$ambient 952 Ambient/CREEPY_M Point Continuous 1.0
+
+Ambient/LIGHT_FL		LIGHT_FL
+$ambient 951 Ambient/LIGHT_FL Point Continuous 1.0
+
+Ambient/LIGHT_F2		LIGHT_F2
+$ambient 950 Ambient/LIGHT_F2 Point Continuous 1.0
+
+Ambient/LIGHT_F3		LIGHT_F3
+$ambient 949 Ambient/LIGHT_F3 Point Continuous 1.0
+
+Ambient/ALARMA1		ALARMA1
+$ambient 948 Ambient/ALARMA1 Point Continuous 1.0
+
+Ambient/ACIDO		ACIDO
+$ambient 947 Ambient/ACIDO Point Continuous 1.0
+
+Ambient/COMPUTE3		COMPUTE3
+$ambient 946 Ambient/COMPUTE3 Point Continuous 1.0
+
+Ambient/CARNE2		CARNE2
+$ambient 945 Ambient/CARNE2 Point Continuous 1.0
+
+Ambient/CARNE3		CARNE3
+$ambient 944 Ambient/CARNE3 Point Continuous 1.0
+
+Ambient/SANGRECA		SANGRECA
+$ambient 943 Ambient/SANGRECA Point Continuous 1.0
+
+Ambient/CORAZONL		CORAZONL
+$ambient 942 Ambient/CORAZONL Point Continuous 1.0
+
+Ambient/ABORTIO1		ABORTIO1
+$ambient 941 Ambient/ABORTIO1 Point Continuous 1.0
+
+Ambient/ABORTIO2		ABORTIO2
+$ambient 940 Ambient/ABORTIO2 Point Continuous 1.0
+
+Ambient/ABORTIO4		ABORTIO4
+$ambient 939 Ambient/ABORTIO4 Point Continuous 1.0
+
+Ambient/ABORTIO6		ABORTIO6
+$ambient 938 Ambient/ABORTIO6 Point Continuous 1.0
+
+Ambient/FORCES		FORCES
+$ambient 937 Ambient/FORCES Point Continuous 1.0
+
+colgado/gritona GRITONA
+fleshgolem/FLESHALE FLESHALE
+fleshgolem/FLESHDED FLESHDED
+fleshgolem/FLESHPER FLESHPER
+rottenmancubus/ROTMANVE ROTMANVE
+rottenmancubus/ROTMANMU ROTMANMU
+rottenmancubus/ROTMANPA ROTMANPA
+rottenmancubus/ROTMANAC ROTMANAC
+rottenmancubus/ROTMANCA ROTMANCA
+rottenabortion/ROTABOAC ROTABOAC
+rottenabortion/ROTABOMU ROTABOMU
+rottenabortion/ROTABOPA ROTABOPA
+rottenabortion/ROTABOAC ROTABOAC
+rottenabortion/ROTABOAT ROTABOAT
+$random Rottennobu/Death { RNOBUD1 RNOBUD2 }
+RNOBUD1  RNOBUD1
+RNOBUD2 RNOBUD2
+rottennobu/RNOBU RNOBU
+monster/plaugeBall      dsbloodx
+rottenimp/COSAPAIN COSAPAIN
+rottenimp/COSAVE COSAVE
+rottenimp/COSAMUER COSAMUER
+rottencacodemon/THINGPAIN THINGPAI
+rottencacodemon/THINGDEAD THINGDEA
+rottenmother/MOTHBUS MOTHBUS
+rottenmother/MOTHATK MOTHATK
+rottenmother/MOTHDIE MOTHDIE
+rottenmother/MOTHVE MOTHVE
+rottenmastermind/VULCANSH VULCANSH
+rottenmastermind/VULCAN2 VULCAN2
+rottenmastermind/vulcan VULCANST
+rottenmastermind/FOOTFALL FOOTFALL
+$RollOff rottenmastermind/FOOTFALL  200 2000
+rottenmastermind/FOOTMEC FOOTMEC
+apocalipsis/APOKPISA APOKPISA
+FakeDaisy/RISA01 RISA01
+Kronoshabla/KRONOSSP KRONOSSP
+UltraSecret/ULTRASEC ULTRASEC
+
+monster/arcsit dsarcsit
+
+monster/arcdth dsarcdth
+
+weapons/firbfi dsfirbfi
+weapons/hellex dshellex
+icon/thud iconthud
+
+Blood/Spit		BLDSPIT
+$limit Blood/Spit 0
+Blood/Impact	BLDIMPAC
+$limit Blood/Impact 0
+
+
+CNAmbiente/Trueno TRUENO
+CNpuerta/puertainfernal Q1DOOR2A
+CNpuerta/golpeinfernal Q1LIFT2B
+CNpuerta/rocasrotas DSROCKS
+CNpuerta/carne ADOOR3
+CNpuerta/carnegolpe ASWTCH
+CNpuerta/ascensorinfernal CRYPTLP
+
+// Thamuz
+Apocalypse/cast			apocast
+
+Thamuz/Attack			nakrula2
+Thamuz/death			nakruld2
+Thamuz/Pain				nakrulh2
+$random Thamuz/Idlesight	{ Thamuz/Idle1 Thamuz/Idle2 }
+Thamuz/Idle1			nakruls1
+Thamuz/Idle2			nakruls2
+Thamuz/death2			megad1
+
+q2weapon/bfgball			bfg_fire
+q2weapon/bfgballexplo		bfg__x1b
+q2weapon/rocketlauncherfire	rocklf1a
+q2weapon/rocketexplo		q2roklx1
+h2necromancer/magiccast		h2ncmagh
+comet/explosion			cometexp
+
+// Queen
+queen/sight quesit
+queen/pain quepain
+queen/death quedie
+queen/active queact
+//queen/scream bqegg1a
+queen/fire qbfgfire
+electricplasma/shoot		PZAPSEE	
+electricplasma/hit		PZAPHIT
+queen/hit		qbfghit
+queen/melee		quebit

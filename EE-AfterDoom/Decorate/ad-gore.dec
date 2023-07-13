@@ -1,0 +1,70 @@
+ACTOR HellstormArchonDead 32666
+{
+  scale 2 
+  Radius 22
+  Height 54
+  -SOLID
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+    GOS3 R -1
+    Stop
+  }
+}
+
+ACTOR HellKnightDead 32665
+{
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			HNKR A -1
+			Stop
+	}
+}
+
+ACTOR HellKnightDead2 32664
+{
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			HNCR A -1
+			Stop
+	}
+}
+
+ACTOR RevenantDeadX1 32663
+{
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			HKEL A -1
+			Stop
+	}
+}
+
+ACTOR RevenantDeadX2 32662
+{
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			QKEL A -1
+			Stop
+	}
+}
