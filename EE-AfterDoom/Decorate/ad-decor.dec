@@ -40,3 +40,837 @@ ACTOR Eclipse_Red 31666
 			Stop
 	}
 }
+
+
+// Blue torches with gold stand -------------------------
+ACTOR D64ShortBlueTorchGoldStand 30020
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			BTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallBlueTorchGoldStand 30021
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			BTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Blue torches with silver stand -----------------------
+ACTOR D64ShortBlueTorchSilverStand 30022
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			BTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallBlueTorchSilverStand 30023
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			BTSP ABCD 4 Bright
+			Loop
+	}
+}
+
+// Blue torches with bronze stand -----------------------
+ACTOR D64ShortBlueTorchBronzeStand 30024
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			BTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallBlueTorchBronzeStand 30025
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			BTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Cyan torches with gold stand -------------------------
+ACTOR D64ShortCyanTorchGoldStand 30026
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			CTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallCyanTorchGoldStand 30027
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			CTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Cyan torches with silver stand -----------------------
+ACTOR D64ShortCyanTorchSilverStand 30028
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			CTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallCyanTorchSilverStand 30029
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			CTST ABCD 4 Bright
+			Loop
+	}
+}
+
+// Cyan torches with bronze stand -----------------------
+ACTOR D64ShortCyanTorchBronzeStand 30030
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			CTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallCyanTorchBronzeStand 30031
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			CTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Green torches with gold stand --------------------------
+ACTOR D64ShortGreenTorchGoldStand 30032
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			GTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallGreenTorchGoldStand 30033
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			GTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Green torches with silver stand ------------------------
+ACTOR D64ShortGreenTorchSilverStand 30034
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			GTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallGreenTorchSilverStand 30035
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			GTST ABCD 4 Bright
+			Loop
+	}
+}
+
+// Green torches with bronze stand ------------------------
+ACTOR D64ShortGreenTorchBronzeStand 30036
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			GTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallGreenTorchBronzeStand 30037
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			GTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Purple torches with gold stand --------------------------
+ACTOR D64ShortPurpleTorchGoldStand 30038
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			PTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallPurpleTorchGoldStand 30039
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			PTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Purple torches with silver stand ------------------------
+
+ACTOR D64ShortPurpleTorchSilverStand 30040
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			PTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallPurpleTorchSilverStand 30041
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			PTST ABCD 4 Bright
+			Loop
+	}
+}
+
+// Purple torches with bronze stand ------------------------
+ACTOR D64ShortPurpleTorchBronzeStand 30042
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			PTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallPurpleTorchBronzeStand 30043
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			PTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Red torches with gold stand --------------------------
+ACTOR D64ShortRedTorchGoldStand 30044
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			RTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallRedTorchGoldStand 30045
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			RTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Red torches with silver stand ------------------------
+ACTOR D64ShortRedTorchSilverStand 30046
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			RTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallRedTorchSilverStand 30047
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			RTST ABCD 4 Bright
+			Loop
+	}
+}
+
+// Red torches with bronze stand ------------------------
+ACTOR D64ShortRedTorchBronzeStand 30048
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			RTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallRedTorchBronzeStand 30049
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			RTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+// White torches with gold stand --------------------------
+ACTOR D64ShortWhiteTorchGoldStand 30050
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			WTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallWhiteTorchGoldStand 30051
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			WTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// White torches with silver stand ------------------------
+ACTOR D64ShortWhiteTorchSilverStand 30052
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			WTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallWhiteTorchSilverStand 30053
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			WTST ABCD 4 Bright
+			Loop
+	}
+}
+
+// White torches with bronze stand ------------------------
+ACTOR D64ShortWhiteTorchBronzeStand 30054
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			WTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallWhiteTorchBronzeStand 30055
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			WTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Yellow torches with gold stand --------------------------
+ACTOR D64ShortYellowTorchGoldStand 30056
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			YTGS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallYellowTorchGoldStand 30057
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			YTGT ABCD 4 Bright
+			Loop
+	}
+}
+
+// Yellow torches with silver stand ------------------------
+ACTOR D64ShortYellowTorchSilverStand 30058
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			YTSS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallYellowTorchSilverStand 30059
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			YTST ABCD 4 Bright
+			Loop
+	}
+}
+
+// Yellow torches with bronze stand ------------------------
+ACTOR D64ShortYellowTorchBronzeStand 30060
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			YTBS ABCD 4 Bright
+			Loop
+	}
+}
+
+ACTOR D64TallYellowTorchBronzeStand 30061
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+		Spawn:
+			YTBT ABCD 4 Bright
+			Loop
+	}
+}
+
+Actor FX_TeleSmoke : SwitchableDecoration 30010
+{
+	Radius 6
+	Height 10
+	+FixMapThingPos
+	States
+	{
+		Active:
+			TNT1 A 0
+		Spawn:
+			TNT1 A 0 A_SpawnItemEx("FXRedGlitter",Random(-25,25),Random(-25,25),0,0,0,4,0,0)
+			TNT1 A 1 A_SpawnItemEx("FXRedSmoke",Random(-5,5),Random(-5,5),0,0,0,Random(6,7),0,64)
+			TNT1 A 1 A_SpawnItemEx("FXRedSmoke2",Random(-5,5),Random(-5,5),0,0,0,Random(6,7),0,64)
+			TNT1 A 1 A_SpawnItemEx("FXRedSmoke",Random(-5,5),Random(-5,5),0,0,0,Random(6,7),0,64)
+			TNT1 A 0 A_SpawnItemEx("FXRedGlitter2",Random(-15,15),Random(-15,15),0,0,0,4,0,0)
+			TNT1 A 1 A_SpawnItemEx("FXRedSmoke2",Random(-5,5),Random(-5,5),0,0,0,Random(6,7),0,64)
+			TNT1 A 1 A_SpawnItemEx("FXRedSmoke",Random(-5,5),Random(-5,5),0,0,0,Random(6,7),0,64)
+			TNT1 A 1 A_SpawnItemEx("FXRedSmoke2",Random(-5,5),Random(-5,5),0,0,0,Random(6,7),0,64)
+			Loop
+		Inactive:
+			TNT1 A 1
+			Loop
+	}
+}
+
+Actor FXRedSmoke
+{
+	+NoGravity
+	+NoInteraction
+	+NoBlockmap
+	+NoTeleport
+	+ForceXYBillboard
+	+BRIGHT
+	RenderStyle Translucent
+	Alpha 0.6
+	Scale 0.46
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_Jump(256,"Spawn2")
+			HSMX A 1
+			HSMX B 1 A_SetScale(0.44)
+			HSMX C 1 A_SetScale(0.42)
+			HSMX D 1 A_SetScale(0.40)
+			HSMX E 1 A_SetScale(0.38)
+			HSMX F 1 A_SetScale(0.36)
+			HSMX G 1 A_SetScale(0.34)
+			HSMX H 1 A_SetScale(0.32)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX I 1 A_SetScale(0.30)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX J 1 A_SetScale(0.28)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX K 1 A_SetScale(0.26)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX L 1 A_SetScale(0.24)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX A 1 A_SetScale(0.22)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX B 1 A_SetScale(0.20)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX C 1 A_SetScale(0.18)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX D 1 A_SetScale(0.16)
+			TNT1 A 0 A_FadeOut(0.07)
+			Stop
+		Spawn2:
+			HSMX A 1
+			HSMX L 1 A_SetScale(0.44)
+			HSMX K 1 A_SetScale(0.42)
+			HSMX J 1 A_SetScale(0.40)
+			HSMX I 1 A_SetScale(0.38)
+			HSMX H 1 A_SetScale(0.36)
+			HSMX G 1 A_SetScale(0.34)
+			HSMX F 1 A_SetScale(0.32)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX E 1 A_SetScale(0.30)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX D 1 A_SetScale(0.28)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX C 1 A_SetScale(0.26)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX D 1 A_SetScale(0.24)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX A 1 A_SetScale(0.22)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX L 1 A_SetScale(0.20)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX K 1 A_SetScale(0.18)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSMX J 1 A_SetScale(0.16)
+			TNT1 A 0 A_FadeOut(0.07)
+			Stop
+	}
+}
+
+Actor FXRedSmoke2 : FXRedSmoke
+{
+	States
+	{
+		Spawn:
+			TNT1 A 0 A_Jump(256,"Spawn2")
+			HSM2 A 1
+			HSM2 B 1 A_SetScale(0.44)
+			HSM2 C 1 A_SetScale(0.42)
+			HSM2 D 1 A_SetScale(0.40)
+			HSM2 E 1 A_SetScale(0.38)
+			HSM2 F 1 A_SetScale(0.36)
+			HSM2 G 1 A_SetScale(0.34)
+			HSM2 H 1 A_SetScale(0.32)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 I 1 A_SetScale(0.30)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 J 1 A_SetScale(0.28)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 K 1 A_SetScale(0.26)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 L 1 A_SetScale(0.24)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 A 1 A_SetScale(0.22)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 B 1 A_SetScale(0.20)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 C 1 A_SetScale(0.18)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 D 1 A_SetScale(0.16)
+			TNT1 A 0 A_FadeOut(0.07)
+			Stop
+		Spawn2:
+			HSM2 A 1
+			HSM2 L 1 A_SetScale(0.44)
+			HSM2 K 1 A_SetScale(0.42)
+			HSM2 J 1 A_SetScale(0.40)
+			HSM2 I 1 A_SetScale(0.38)
+			HSM2 H 1 A_SetScale(0.36)
+			HSM2 G 1 A_SetScale(0.34)
+			HSM2 F 1 A_SetScale(0.32)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 E 1 A_SetScale(0.30)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 D 1 A_SetScale(0.28)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 C 1 A_SetScale(0.26)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 B 1 A_SetScale(0.24)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 A 1 A_SetScale(0.22)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 L 1 A_SetScale(0.20)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 K 1 A_SetScale(0.18)
+			TNT1 A 0 A_FadeOut(0.07)
+			HSM2 J 1 A_SetScale(0.16)
+			TNT1 A 0 A_FadeOut(0.07)
+			Stop
+	}
+}
+
+Actor FXRedGlitter
+{
+	+NoGravity
+	+NoInteraction
+	+NoBlockmap
+	+NoTeleport
+	+ForceXYBillboard
+	+BRIGHT
+	RenderStyle Add
+	Scale 0.02
+	States
+	{
+		Spawn:
+			HSPX AAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_FadeOut(0.03)
+			Stop
+	}
+}
+	
+Actor FXRedGlitter2 : FXRedGlitter
+{
+	Scale 0.06
+}

@@ -310,3 +310,96 @@ ACTOR staticcolgadoconarma 10794
 			Loop
 	}
 }
+
+actor staticSinIncarnate 10793 //Phase 1
+{
+	Tag "the Icon of Sin"
+	health 8000
+	Radius 60
+	Height 320
+	mass 9000
+	Scale 1.5
+	DamageFactor "Bum", 0.0
+	Species "Icon"
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+MISSILEEVENMORE
+	+NOINFIGHTING
+	+NOBLOCKMONST
+	+NOTELEFRAG
+	+LOOKALLAROUND
+	+BOSSDEATH
+	+NOTARGET
+	+NOFEAR
+	+QUICKTORETALIATE
+	+NODAMAGETHRUST
+	+NOICEDEATH
+	+NEVERRESPAWN
+	states
+	{
+		Spawn:
+			ICOB AA -1
+			loop
+	}
+}
+
+actor staticSinReIncarnate 10792 //Phase 2
+{
+	Tag "Wrath of the Icon of Sin"
+	health 10000
+	DamageFactor "Bum", 0.0
+	Species "Icon"
+	Scale 1.5
+	
+	states
+	{
+	Spawn:
+		ICO2 BB -1
+		loop
+	}
+}
+
+Actor staticFallen 10791
+{
+	Health 40
+	Radius 24
+	Height 48
+	Mass 200
+	+NoGravity
+	+Float
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FALN ABCDB 8 Bright 
+			Loop
+	}
+}
+
+ACTOR staticZyberdemon 10790
+{
+	Health 3500
+	Radius 40
+	Height 110
+	Mass 1000
+	MinMissileChance 160
+	+MOVEWITHSECTOR
+	+JUMPDOWN
+	+NEVERTARGET
+	+NOTARGET
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZYBR A -1
+			Loop
+	}
+}
