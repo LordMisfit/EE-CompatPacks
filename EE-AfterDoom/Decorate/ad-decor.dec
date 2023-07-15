@@ -949,3 +949,16 @@ ACTOR Barril 10414
 			Stop
 	}
 }
+
+ACTOR HellGrowth 12367
+{
+	Radius 16
+	Height 56
+	+SOLID
+	States
+	{
+		Spawn:
+			HTRE A -1
+			Stop
+	}
+}

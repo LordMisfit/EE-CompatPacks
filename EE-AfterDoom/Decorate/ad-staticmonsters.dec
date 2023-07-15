@@ -645,3 +645,44 @@ ACTOR staticMeleepuppet 10778
 			Loop
 	}
 }
+
+ACTOR staticAngryFatso 10777
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	scale 1.2
+	+ALWAYSFAST
+	+FLOORCLIP
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FATT A -1
+			Loop
+	}
+}	
+
+ACTOR staticInfernalHitler 10776
+{
+	Health 1500
+	Radius 30
+	Height 600
+	Mass 5554
+	Scale 13
+	tag "InfernalHitler"
+	+ALWAYSFAST
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			HITL A -1
+			Loop
+	}
+}
