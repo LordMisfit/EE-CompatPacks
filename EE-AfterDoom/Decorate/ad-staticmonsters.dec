@@ -482,3 +482,166 @@ ACTOR staticBulltubus 10773
 			Loop
 	}
 }
+
+Actor staticForgottenOne 10784
+{
+	Health 40
+	Radius 14
+	Height 30
+	Mass 50
+	Scale 0.7
+	Species "Icon"
+	tag "ForgottenOne"
+	+FloorClip
+	+Float
+	+NoGravity
+	+NoIceDeath
+	+DontFall
+	+FloatBob
+	+NoBlood
+	States
+	{
+		Spawn:
+			FRGO AAAAAABBBBBB -1 Bright 
+			Loop
+	}
+}
+
+ACTOR staticGiantDemon 10783
+{
+	Health 1500
+	PainChance 0
+	Radius 30
+	Height 80
+	Mass 1000
+	Scale 0.5
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			QARG A -1
+	}
+}
+ACTOR staticButcher 10782
+{
+	Health 200
+	Radius 22
+	Height 44
+	Mass 1000
+	Scale 0.60
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BBUT G -1
+			Loop
+	}
+}	
+
+ACTOR staticMeleeRevenant 10781
+{
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	tag "MeleeRevenant"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZKEL A -1
+			Loop
+	}
+}
+
+ACTOR staticMeleepuffet 10780
+{
+	Health 10
+	Radius 20
+	Height 56
+	Mass 500
+	Scale 0.80
+	tag "Meleepuffet"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+NOTELESTOMP
+	+SOLID
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZKEL A -1
+			Loop
+	}
+}	
+
+ACTOR staticMeleeRebenant 10779
+{
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	tag "MeleeRebenant"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL A -1
+			Loop
+	}
+}
+
+ACTOR staticMeleepuppet 10778
+{
+	Health 10
+	Radius 20
+	Height 56
+	Mass 500
+	Scale 0.73 
+	tag "Meleepuppet"
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+NOTELESTOMP
+	+SOLID
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL A -1
+			Loop
+	}
+}

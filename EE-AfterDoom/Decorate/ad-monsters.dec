@@ -3975,3 +3975,570 @@ ACTOR Bulltubus 16555
 			Goto See
 	}
 }
+
+Actor ForgottenOneAlt : ForgottenOne 21702
+{
+	//$Category "Doom Monster pack"
+	Obituary "A Forgotten One rammed %o"
+	Health 40
+	Radius 14
+	Height 30
+	Mass 50
+	Speed 8
+	PainChance 230
+	Scale 0.7
+	PainSound "Forgotten/Pain"
+	DeathSound "Forgotten/Death"
+	ActiveSound "Forgotten/Active"
+	Damage 3
+	Monster
+	Species "Icon"
+	+FloorClip
+	+Float
+	+NoGravity
+	+NoIceDeath
+	+DontFall
+	+FloatBob
+	+NoBlood
+	States
+	{
+		Spawn:
+			FRGO A 0 Bright
+			FRGO A 0 Bright A_ChangeFlag("FloatBob", 1)
+			FRGO AAAAAABBBBBB 1 Bright A_Look
+			Loop
+		See:
+			FRGO A 0 A_ChangeFlag("FloatBob", 1)
+			FRGO AABB 3 Bright A_Chase
+			Loop
+		Missile:
+			FRGO C 0 A_ChangeFlag("FloatBob", 0)
+			FRGO CCDDC 2 Bright A_FaceTarget
+			FRGO D 0 Bright A_PlaySound("Forgotten/Attack")
+			FRGO D 2 Bright A_SkullAttack
+			FRGO C 2 Bright
+			FRGO C 0 Bright A_JumpIfTargetInLOS(4, 75)
+			FRGO C 0 A_Jump(24, "StopCharge")
+			FRGO DC 2 Bright
+			Goto Missile+10
+			FRGO C 0 Bright
+			Goto Missile+7
+		StopCharge:
+			FRGO C 0 A_Stop
+			Goto See
+		Pain:
+			FRGO E 0 A_ChangeFlag("FloatBob", 1)
+			FRGO E 3 Bright
+			FRGO E 3 Bright A_Pain
+			Goto See
+		Death:
+			FRGO E 0 A_ChangeFlag("FloatBob", 0)
+			FRGO E 0 A_Stop
+			FRGO EF 4 Bright
+			FRGO G 6 Bright A_Scream
+			FRGO H 6 Bright
+			FRGO I 6 Bright A_NoBlocking
+			FRGO J 6 Bright
+			Stop
+	}
+}
+
+Actor ForgottenTwo  : ForgottenOne 16996
+{
+	//$Category "Doom Monster pack"
+	Obituary "A Forgotten One rammed %o"
+	Health 5
+	Radius 14
+	Height 30
+	Mass 50
+	Speed 8
+	PainChance 230
+	Scale 0.7
+	Monster
+	PainSound "Forgotten/Pain"
+	DeathSound "Forgotten/Death"
+	ActiveSound "Forgotten/Active"
+	Damage 3
+	+NOTELESTOMP
+	+SOLID
+	+Shootable
+	+FloorClip
+	+Float
+	+NoGravity
+	+NoIceDeath
+	+DontFall
+	+FloatBob
+	+NoBlood
+	States
+	{
+		Spawn:
+			FRGO A 0 Bright
+			FRGO A 0 Bright A_ChangeFlag("FloatBob", 1)
+			FRGO AAAAAABBBBBB 1 Bright A_Look
+			Loop
+		See:
+			FRGO A 0 A_ChangeFlag("FloatBob", 1)
+			FRGO AABB 3 Bright A_Chase
+			Loop
+		Missile:
+			FRGO C 0 A_ChangeFlag("FloatBob", 0)
+			FRGO CCDDC 2 Bright A_FaceTarget
+			FRGO D 0 Bright A_PlaySound("Forgotten/Attack")
+			FRGO D 2 Bright A_SkullAttack
+			FRGO C 2 Bright
+			FRGO C 0 Bright A_JumpIfTargetInLOS(4, 75)
+			FRGO C 0 A_Jump(24, "StopCharge")
+			FRGO DC 2 Bright
+			Goto Missile+10
+			FRGO C 0 Bright
+			Goto Missile+7
+		StopCharge:
+			FRGO C 0 A_Stop
+			Goto See
+		Pain:
+			FRGO E 0 A_ChangeFlag("FloatBob", 1)
+			FRGO E 3 Bright
+			FRGO E 3 Bright A_Pain
+			Goto See
+		Death:
+			FRGO E 0 A_ChangeFlag("FloatBob", 0)
+			FRGO E 0 A_Stop
+			FRGO EF 4 Bright
+			FRGO G 6 Bright A_Scream
+			FRGO H 6 Bright
+			FRGO I 6 Bright A_NoBlocking
+			FRGO J 6 Bright
+			Stop
+	}
+}
+
+ACTOR GiantDemon 15817
+{
+	//$Category "Doom Monster pack"
+	Health 1500
+	PainChance 0
+	Speed 13
+	Radius 30
+	Height 80
+	Mass 1000
+	Scale 0.5
+	Monster
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	SeeSound "Demon/sight"
+	AttackSound "Demon/melee"
+	PainSound "Demon/pain"
+	DeathSound "Demon/death"
+	ActiveSound "Demon/active"
+	Obituary "$OB_DEMONHIT" // "%o was bit by a giant demon."
+	Species "Icon"
+	States
+	{
+		Spawn:
+			QARG AB 10 A_Look
+		See:
+			QARG AABBCCDD 2  A_Chase
+			Loop
+		Melee:
+			QARG EF 8  A_FaceTarget
+			QARG G 8  A_SargAttack
+			Goto See
+		Pain:
+			QARG H 2 
+			QARG H 2  A_Pain
+			Goto See
+		Death:
+			QARG I 8
+			QARG J 8 A_Scream
+			QARG K 4
+			QARG L 4 A_NoBlocking
+			QARG M 4
+			QARG N -1
+			Stop
+		Raise:
+			Stop
+	}
+}
+
+ACTOR Butcher 14817
+{
+	//$Category "Doom Monster pack"
+	Health 200
+	PainChance 100
+	Speed 2
+	Radius 22
+	Height 44
+	Mass 1000
+	Scale 0.60
+	Monster
+	+FLOORCLIP
+	+DONTMORPH
+	+BOSSDEATH
+	SeeSound "grunt/sight"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	ActiveSound "grunt/active"
+	Obituary "$OB_DEMONHIT" // "A butcher made mince meat out of %o."
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BBUT GHIJ 10
+			Loop
+		See:
+			BBUT AABBCCDDEEFF 2  A_Chase
+			Loop
+		Melee:
+			BBUT GH 8 A_FaceTarget
+			BBUT IJ 8 A_SargAttack
+			Goto See
+		Pain:
+			BBUT G 5
+			BBUT G 5 A_Pain
+			Goto See
+		Death:
+			BBUT P 8
+			BBUT Q 8 A_Scream
+			BBUT R 4
+			BBUT S 4 A_NoBlocking
+			BBUT U 4
+			BBUT V -1
+			Stop
+		Raise:
+			BBUT V 5
+			BBUT USRQP 5
+			Goto See
+			Stop
+	}
+}
+
+ACTOR MeleeRevenant 17001
+{
+	//$Category "Doom Monster pack"
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	Speed 15
+	PainChance 10
+	Monster
+	MeleeThreshold 196
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	SeeSound "skeleton/sight"
+	PainSound "skeleton/pain"
+	DeathSound "skeleton/death"
+	ActiveSound "skeleton/active"
+	MeleeSound "skeleton/melee"
+	HitObituary "$OB_UNDEADHIT" // "%o was punched by a revenant."
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZKEL AB 10 A_Look
+			Loop
+		See:
+			ZKEL AABBCCDDEEFF 2 A_Chase
+			Loop
+		Melee:
+			ZKEL G 1 A_FaceTarget
+			ZKEL G 6 A_SkelWhoosh
+			ZKEL H 0 A_FaceTarget
+			ZKEL H 2 A_Recoil(-3)
+			ZKEL H 0 A_FaceTarget
+			ZKEL H 2 A_Recoil(-4)
+			ZKEL H 0 A_FaceTarget
+			ZKEL H 2 A_Recoil(-4 )
+			ZKEL I 6 A_SkelFist
+			Goto See
+		Pain:
+			ZKEL L 5
+			ZKEL L 5 A_Pain
+			Goto See
+		Death:
+			ZKEL LM 7
+			ZKEL N 7 A_Scream
+			ZKEL O 7 A_NoBlocking
+			ZKEL P 7
+			ZKEL Q -1
+			Stop
+		Raise:
+			ZKEL Q 5
+			ZKEL PONML 5
+			Goto See
+	}
+}
+
+ACTOR MeleeReveman 17005
+{
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	Speed 29
+	PainChance 0
+	MeleeThreshold 196
+	scale 2.5
+	+BOSS
+	+NOBLOCKMONST
+	+NOTIMEFREEZE
+	+CANTSEEK
+	+INVULNERABLE
+	+NORADIUSDMG
+	+NODAMAGE
+	+NOPAIN
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	SeeSound "gritofan/sight"
+	PainSound "gritofan/pain"
+	DeathSound "gritofan/death"
+	ActiveSound "gritofan/active"
+	MeleeSound "gritofan/melee"
+	HitObituary "$OB_UNDEADHIT" // "%o was punched by a thing"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL A 10 A_Look  
+			Loop
+		See:
+			ZQEL AABBCCDDEEFF 2 A_Chase 
+			Loop
+		Melee:
+			ZQEL G 1 A_FaceTarget 
+			ZQEL G 6 A_SkelWhoosh 
+			ZQEL H 0 A_FaceTarget 
+			ZQEL H 2 A_Recoil(-3) 
+			ZQEL H 0 A_FaceTarget 
+			ZQEL H 2 A_Recoil(-4) 
+			ZQEL H 0 A_FaceTarget 
+			ZQEL H 2 A_Recoil(-4 ) 
+			ZQEL I 6 A_SkelFist 
+			Goto See
+		Pain:
+			ZQEL L 5  
+			ZQEL L 5 A_Pain 
+			Goto See
+		Death:
+			ZQEL LM 7  
+			ZQEL N 7 A_Scream 
+			ZQEL O 7 A_NoBlocking 
+			ZQEL P 7  
+			ZQEL Q -1  
+			Stop
+		Raise:
+			ZQEL Q 5  
+			ZQEL PONML 5  
+			Goto See
+	}
+}
+
+ACTOR Meleepuffet 16995
+{
+	//$Category "Doom Monster pack"
+	Health 10
+	Radius 20
+	Height 56
+	Mass 500
+	Speed 15
+	PainChance 1
+	MeleeThreshold 196
+	Scale 0.80
+	Monster
+	MaxStepHeight 32
+	MaxDropoffHeight 64 
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+NOTELESTOMP
+	+Shootable
+	+SOLID
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	SeeSound "skeleton/sight"
+	PainSound "skeleton/pain"
+	DeathSound "skeleton/death"
+	ActiveSound "skeleton/active"
+	MeleeSound "skeleton/melee"
+	HitObituary "$OB_UNDEADHIT" // "%o was punched by a revenant."
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZKEL AB 10 A_Look
+			Loop
+		See:
+			ZKEL AABBCCDDEEFF 2 A_Chase
+			Loop
+		Melee:
+			ZKEL G 1 A_FaceTarget
+			ZKEL G 6 A_SkelWhoosh
+			ZKEL H 0 A_FaceTarget
+			ZKEL H 2 A_Recoil(-3)
+			ZKEL H 0 A_FaceTarget
+			ZKEL H 2 A_Recoil(-4)
+			ZKEL H 0 A_FaceTarget
+			ZKEL H 2 A_Recoil(-4 )
+			ZKEL I 6 A_SkelFist
+			Goto See
+		Pain:
+			ZKEL L 5
+			ZKEL L 5 A_Pain
+			Goto See
+		Death:
+			ZKEL LM 7
+			ZKEL N 7 A_Scream
+			ZKEL O 7 A_NoBlocking
+			ZKEL P 7
+			ZKEL Q 40
+			Stop
+		Raise:
+			ZKEL Q 5
+			ZKEL PONML 5
+			Goto See
+	}
+}
+
+ACTOR MeleeRebenant 16999
+{
+	//$Category "Doom Monster pack"
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	Speed 15
+	PainChance 10
+	Monster
+	MeleeThreshold 196
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+Shootable
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	SeeSound "skeleton/sight"
+	PainSound "skeleton/pain"
+	DeathSound "skeleton/death"
+	ActiveSound "skeleton/active"
+	MeleeSound "skeleton/melee"
+	HitObituary "$OB_UNDEADHIT" // "%o was punched by a revenant."
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL AB 10 A_Look 
+			Loop
+		See:
+			ZQEL AABBCCDDEEFF 2 A_Chase
+			Loop
+		Melee:
+			ZQEL G 1 A_FaceTarget
+			ZQEL G 6 A_SkelWhoosh
+			ZQEL H 0 A_FaceTarget
+			ZQEL H 2 A_Recoil(-3)
+			ZQEL H 0 A_FaceTarget
+			ZQEL H 2 A_Recoil(-4)
+			ZQEL H 0 A_FaceTarget
+			ZQEL H 2 A_Recoil(-4 )
+			ZQEL I 6 A_SkelFist
+			Goto See
+		Pain:
+			ZQEL L 5
+			ZQEL L 5 A_Pain
+			Goto See
+		Death:
+			ZQEL LM 7
+			ZQEL N 7 A_Scream
+			ZQEL O 7 A_NoBlocking
+			ZQEL P 7
+			ZQEL Q -1
+			Stop
+		Raise:
+			ZQEL Q 5
+			ZQEL PONML 5
+			Goto See
+	}
+}
+
+ACTOR Meleepuppet 16997
+{
+	//$Category "Doom Monster pack"
+	Health 10
+	Radius 20
+	Height 56
+	Mass 500
+	Speed 15
+	PainChance 1
+	MeleeThreshold 196
+	Scale 0.73
+	Monster
+	MaxStepHeight 32
+	MaxDropoffHeight 64  
+	+MOVEWITHSECTOR
+	+SLIDESONWALLS
+	+JUMPDOWN
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+NOTELESTOMP
+	+Shootable
+	+SOLID
+	+MISSILEMORE 
+	+FLOORCLIP
+	+ALWAYSFAST
+	SeeSound "skeleton/sight"
+	PainSound "skeleton/pain"
+	DeathSound "skeleton/death"
+	ActiveSound "skeleton/active"
+	MeleeSound "skeleton/melee"
+	HitObituary "$OB_UNDEADHIT" // "%o was punched by a revenant."
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ZQEL AB 10 A_Look 
+			Loop
+		See:
+			ZQEL AABBCCDDEEFF 2 A_Chase
+			Loop
+		Melee:
+			ZQEL G 1 A_FaceTarget
+			ZQEL G 6 A_SkelWhoosh
+			ZQEL H 0 A_FaceTarget
+			ZQEL H 2 A_Recoil(-3)
+			ZQEL H 0 A_FaceTarget
+			ZQEL H 2 A_Recoil(-4)
+			ZQEL H 0 A_FaceTarget
+			ZQEL H 2 A_Recoil(-4 )
+			ZQEL I 6 A_SkelFist
+			Goto See
+		Pain:
+			ZQEL L 5
+			ZQEL L 5 A_Pain
+			Goto See
+		Death:
+			ZQEL LM 7
+			ZQEL N 7 A_Scream
+			ZQEL O 7 A_NoBlocking
+			ZQEL P 7
+			ZQEL Q 40
+			Stop
+		Raise:
+			ZQEL Q 5
+			ZQEL PONML 5
+			Goto See
+	}
+}
