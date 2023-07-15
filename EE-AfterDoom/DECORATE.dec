@@ -4,504 +4,6 @@
 #include "decorate/ad-monsters.dec"
 #include "decorate/ad-staticmonsters.dec"
 
-ACTOR risaa 16980
-{
-	Radius 0
-	Height 0
-	Mass 0
-	Speed 0
-	+FLOORCLIP
-	+INVISIBLE
-	SeeSound "risaa/see"
-	States
-	{
-		Spawn:
-			TNT1 AB 10 A_Look
-			Loop
-		See:
-			TNT1 AB 2 A_Chase
-			Loop
-  }
-}
-
-ACTOR risab 16981
-{
-	Radius 0
-	Height 0
-	Mass 0
-	Speed 0
-	+FLOORCLIP
-	+INVISIBLE
-	SeeSound "risab/see"
-	States
-	{
-		Spawn:
-			TNT1 AB 10 A_Look
-			Loop
-		See:
-			TNT1 AB 2 A_Chase
-			Loop
-	}
-}
-
-ACTOR VIOLA 16982
-{
-	Radius 0
-	Height 0
-	Mass 0
-	Speed 0
-	+INVISIBLE
-	+NoGravity
-	+Float
-	SeeSound "viola/see"
-	States
-	{
-		Spawn:
-			TNT1 AB 10 A_Look
-			Loop
-		See:
-			TNT1 AB 2 A_Chase
-			Loop
-  }
-}
-
-Actor TimeFreezeSphereSp : PowerupGiver 15500
-{
-  +NoGravity
-  +Inventory.AutoActivate
-  +INVENTORY.BIGPOWERUP
-  Inventory.MaxAmount 0
-  Powerup.Type "TimeFreezer"
-  Powerup.Color GoldMap
-  Inventory.PickupMessage "Time freeze!"
-  States
-  {
-  Spawn:
-    TIME ABCD 6 Bright
-    Loop
-  }
-}
-
-ACTOR Baronmuerto 10419
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    HFR1 A -1
-    Stop
-  }
-}
-
-ACTOR Baronmuerto2 10418
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    PIPI A -1
-    Stop
-  }
-}
-
-ACTOR demonmuerto 10417
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    DEMM A -1
-    Stop
-  }
-}
-
-ACTOR demonmuerto2 10416
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    DEMN A -1
-    Stop
-  }
-}
-
-ACTOR demonmuerto3 10415
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    DEMB A -1
-    Stop
-  }
-}
-
-ACTOR Barril 10414
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    CAPU A -1
-    Stop
-  }
-}
-
-
-ACTOR demonmuerto4 10433
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    DEMC A -1
-    Stop
-  }
-}
-
-ACTOR demonmuerto5 10434
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    DEMZ A -1
-    Stop
-  }
-}
-
-ACTOR demonmuerto6 10437
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    DEMX A -1
-    Stop
-  }
-}
-
-ACTOR cybermuerto 10438
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    XYVE A -1
-    Stop
-  }
-}
-
-ACTOR fatsomuerto 10439
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    FOFO T -1
-    Stop
-  }
-}
-
-ACTOR revemuerto 10440
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    ZKEL Q -1
-    Stop
-  }
-}
-
-ACTOR zarania 10441
-{
-  Radius 20
-  Height 4
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  States
-  {
-  Spawn:
-    ZPID S -1
-    Stop
-  }
-}
-
-Actor fCorpseBurning 16340
-{
-	+SOLID
-	Radius 8
-	Height 100
-
-	States
-	{
-	Spawn:
-		WBRN ABCDEFG 4 Bright
-		Loop
-	}
-}
-
-Actor CorpsePile 30003
-{
-Radius 24
-Height 60
-+SOLID
-States
-{
-Spawn:
-	PILE A -1
-	Stop
-}
-}
-
-Actor fCorpseImpaled1 16720
-{
-	+SOLID
-	Radius 8
-	Height 100
-
-	States
-	{
-	Spawn:
-		CACA A -1
-		Stop
-	}
-}
-
-Actor fCorpseImpaled2 16721
-{
-	+SOLID
-	Radius 8
-	Height 100
-
-	States
-	{
-	Spawn:
-		CACA B -1
-		Stop
-	}
-}
-
-Actor fCorpseImpaled3 16722
-{
-	+SOLID
-	Radius 8
-	Height 100
-
-	States
-	{
-	Spawn:
-		CACA C -1
-		Stop
-	}
-}
-
-Actor fCorpseImpaled4 16723
-{
-	+SOLID
-	Radius 8
-	Height 100
-
-	States
-	{
-	Spawn:
-		CACA D -1
-		Stop
-	}
-}
-
-Actor fCorpseImpaled5 16724
-{
-	+SOLID
-	Radius 8
-	Height 100
-
-	States
-	{
-	Spawn:
-		CACA E -1
-		Stop
-	}
-}
-
-ACTOR ImpsStick 18845
-{
-	Radius 16
-	Height 64
-	+SOLID
-	States
-	{
-	Spawn:
-		NJDG A -1
-		Stop
-	}
-}
-
-ACTOR BonePile 10410
-{
-  Radius 24
-  Height 24
-  +SOLID
-  States
-  {
-  Spawn:
-    SBON A -1
-    Stop
-  }
-}
-
-Actor BurningCorpse1 29641
-{
-+SOLID
-Radius 8
-Height 108
-States
-{
-Spawn:
-BAVE ABCD 4 Bright
-Loop
-Inactive:
-ALVE A 1
-Loop
-}
-}
-
-Actor BurningCorpse2 29642
-{
-+SOLID
-Radius 8
-Height 108
-States
-{
-Spawn:
-BAV2 ABCD 4 Bright
-Loop
-Inactive:
-ALV2 A 1 A_StopSoundEx("SoundSlot7")
-Loop
-}
-}
-
-ACTOR HangedMarine1 17506
-{
-  Game Doom
-  Radius 22
-  Height 54
-  -SOLID
-  +NOGRAVITY
-  +SPAWNCEILING
-  States
-  {
-  Spawn:
-    HMAR A -1
-    Stop
-  }
-}
-
-ACTOR HangedMarine2 17505
-{
-  Game Doom
-  Radius 22
-  Height 55
-  -SOLID
-  +NOGRAVITY
-  +SPAWNCEILING
-  States
-  {
-  Spawn:
-    HMAR B -1
-    Stop
-  }
-}
-
-ACTOR HangedMarine3 17507
-{
-  Game Doom
-  Radius 22
-  Height 54
-  -SOLID
-  +NOGRAVITY
-  +SPAWNCEILING
-  States
-  {
-  Spawn:
-    HMAR C -1
-    Stop
-  }
-}
-
-ACTOR VACA 17508
-{
-SCALE 0.7
-  Game Doom
-  Radius 22
-  Height 54
-  -SOLID
-  +NOGRAVITY
-  +SPAWNCEILING
-  States
-  {
-  Spawn:
-    VACA A -1
-    Stop
-  }
-}
-
-ACTOR BACA 17509
-{
-SCALE 0.7
-  Game Doom
-  Radius 22
-  Height 54
-  -SOLID
-  +NOGRAVITY
-  +SPAWNCEILING
-  States
-  {
-  Spawn:
-    BACA B -1
-    Stop
-  }
-}
-
 Actor ForgottenOneAlt : ForgottenOne 21702
 {
 	//$Category "Doom Monster pack"
@@ -1363,7 +865,7 @@ ACTOR InfernalHitler 15818
   PainSound "grunt/pain"
   DeathSound "cyber/death"
   ActiveSound "Hitler/active"
-  Obituary "Doomguy stood in awe of the Infernal Hitler."
+  Obituary "%o stood in awe of the Infernal Hitler."
   Species "Icon"
   States
   {
@@ -6188,507 +5690,435 @@ actor SpiralFire50
 
 ACTOR Guardian 12346
 {
-//$Category "Doom Monster pack"
-  Health 1200
-  Speed 25
-  Radius 30
-  Height 100
-  Mass 5000
-  Damage 15
-  BloodColor "Red"
-  Monster
-  PainChance 4
-  REACTIONTIME 8
-  tag "Guardian"
-  +BOSS
-  +FLOORCLIP
-  +DONTMORPH
-  +NOTARGET
-  damagefactor "Inferno", 0
-  SeeSound "Infdem/see"
-  PainSound "Infdem/pain"
-  DeathSound "Infdem/death"
-  ActiveSound "Infdem/active"
-  Obituary "%o was sent to burn in the fires of hell for an eternity."
-
-  States
-  {
-  Spawn:
-    OOOI A 5 A_Look
-    Loop
-  See:
-    OOOI A 0 A_Hoof
-    OOOI A 0 Radius_Quake(10,5,0,10,0)
-    OOOI A 6 A_Chase
-    OOOI B 6 A_Chase
-    OOOI C 0 A_Hoof
-    OOOI C 0 Radius_Quake(10,5,0,10,0)
-    OOOI C 6 A_Chase
-    OOOI D 6 A_Chase
-    Goto See
-  Missile:
-    OOOI A 1 A_Jump(128,35,43,52,61,71,81,94,107,115,124,133,143,153,166,179,187,196,205,215,225,238)
-    OOOI A 1 A_Jump(256,1,6,8,32)
-    OOOI A 2 Bright A_FaceTarget
-	OOOI G 2 Bright A_SpawnItemEx("FirePuff",-24,0,96,0,0,5,128)
-	OOOI G 2 Bright A_SpawnItemEx("FirePuff",-24,0,96,0,0,5,128)
-	OOOI G 2 Bright A_SpawnItemEx("FirePuff",-24,0,96,0,0,5,128)
-    OOOI G 15 Bright A_CustomMissile("MeteorBolt",32,0,0,0,0)
-	Goto See
-	OOOI A 2 Bright A_FaceTarget
-    OOOI H 15 Bright A_CustomMissile("InfernoBomb",70,0,0,0,0)
-    Goto See
-	OOOI B 20 Bright A_FaceTarget
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,0,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,20,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,40,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,60,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,80,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-20,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-40,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-60,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-80,2,0)
-	OOOI C 0 Radius_Quake(20,35,0,40,0)
-    OOOI C 20 Bright
-	OOOI B 20 Bright A_FaceTarget
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,0,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,20,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,40,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,60,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,80,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-20,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-40,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-60,2,0)
-	OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-80,2,0)
-	OOOI C 0 Radius_Quake(20,35,0,40,0)
-    OOOI C 20 Bright
-    Goto See
-	OOOI A 2 Bright A_FaceTarget
-    OOOI I 15 Bright A_CustomMissile("FireGlyphLineSpawner1",32,0,0,0,0)
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 10 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-	OOOI E 2 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
-	OOOI F 8 Bright A_FaceTarget
-	OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
-    OOOI F 10 Bright
-    Goto See
-  Pain:
-    OOOI A 0 A_Pain
-	Goto See
-  Death:
-    OOOI J 5
-    OOOI K 5 A_FaceTarget
-    OOOI L 5 A_Scream
-    OOOI MNOPQ 5
-    OOOI R 10
-    OOOI S 5
-    OOOI T 5 A_NoBlocking
-    OOOI UV 5
-	OOOI W 5
-	OOOI W 5
-	OOOI W 150
-	OOOI W 25
-	OOOI W 25 
-	OOOI W 25 
-    OOOI W -1
-    Stop
-  }
+	//$Category "Doom Monster pack"
+	Health 1200
+	Speed 25
+	Radius 30
+	Height 100
+	Mass 5000
+	Damage 15
+	BloodColor "Red"
+	Monster
+	PainChance 4
+	REACTIONTIME 8
+	tag "Guardian"
+	+BOSS
+	+FLOORCLIP
+	+DONTMORPH
+	+NOTARGET
+	damagefactor "Inferno", 0
+	SeeSound "Infdem/see"
+	PainSound "Infdem/pain"
+	DeathSound "Infdem/death"
+	ActiveSound "Infdem/active"
+	Obituary "%o was sent to burn in the fires of hell for an eternity."
+	
+	States
+	{
+		Spawn:
+			OOOI A 5 A_Look
+			Loop
+		See:
+			OOOI A 0 A_Hoof
+			OOOI A 0 Radius_Quake(10,5,0,10,0)
+			OOOI A 6 A_Chase
+			OOOI B 6 A_Chase
+			OOOI C 0 A_Hoof
+			OOOI C 0 Radius_Quake(10,5,0,10,0)
+			OOOI C 6 A_Chase
+			OOOI D 6 A_Chase
+			Goto See
+		Missile:
+			OOOI A 1 A_Jump(128,35,43,52,61,71,81,94,107,115,124,133,143,153,166,179,187,196,205,215,225,238)
+			OOOI A 1 A_Jump(256,1,6,8,32)
+			OOOI A 2 Bright A_FaceTarget
+			OOOI G 2 Bright A_SpawnItemEx("FirePuff",-24,0,96,0,0,5,128)
+			OOOI G 2 Bright A_SpawnItemEx("FirePuff",-24,0,96,0,0,5,128)
+			OOOI G 2 Bright A_SpawnItemEx("FirePuff",-24,0,96,0,0,5,128)
+			OOOI G 15 Bright A_CustomMissile("MeteorBolt",32,0,0,0,0)
+			Goto See
+			OOOI A 2 Bright A_FaceTarget
+			OOOI H 15 Bright A_CustomMissile("InfernoBomb",70,0,0,0,0)
+			Goto See
+			OOOI B 20 Bright A_FaceTarget
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,0,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,20,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,40,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,60,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,80,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-20,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-40,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-60,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-80,2,0)
+			OOOI C 0 Radius_Quake(20,35,0,40,0)
+			OOOI C 20 Bright
+			OOOI B 20 Bright A_FaceTarget
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,0,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,20,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,40,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,60,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,80,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-20,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-40,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-60,2,0)
+			OOOI B 0 Bright A_CustomMissile("FireBeam",0,0,-80,2,0)
+			OOOI C 0 Radius_Quake(20,35,0,40,0)
+			OOOI C 20 Bright
+			Goto See
+			OOOI A 2 Bright A_FaceTarget
+			OOOI I 15 Bright A_CustomMissile("FireGlyphLineSpawner1",32,0,0,0,0)
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 10 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,-32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+			OOOI E 2 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",120,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",90,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("LavaBall",60,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",60,32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",90,-32,0,0,0)
+			OOOI F 8 Bright A_FaceTarget
+			OOOI F 0 Bright A_CustomMissile("DemonMeteor",120,32,0,0,0)
+			OOOI F 10 Bright
+			Goto See
+		Pain:
+			OOOI A 0 A_Pain
+			Goto See
+		Death:
+			OOOI J 5
+			OOOI K 5 A_FaceTarget
+			OOOI L 5 A_Scream
+			OOOI MNOPQ 5
+			OOOI R 10
+			OOOI S 5
+			OOOI T 5 A_NoBlocking
+			OOOI UV 5
+			OOOI W 5
+			OOOI W 5
+			OOOI W 150
+			OOOI W 25
+			OOOI W 25 
+			OOOI W 25 
+			OOOI W -1
+			Stop
+	}
 }
 
 ACTOR staticInfernoDemon 10775
 {
-
-  Health 5000
-  Radius 65
-  Height 200
-  Mass 5000
-  BloodColor "Red"
-  Scale 2
-  tag "InfernoDemon"
-  +MISSILEMORE
-  +MISSILEEVENMORE
-  +BOSS
-  +FLOORCLIP
-  +TELESTOMP
-  +DONTMORPH
-  +NOTARGET
-  +NOICEDEATH
-  damagefactor "Inferno", 0
-  Species "Icon"
-
-  States
-  {
-  Spawn:
-    OOOI A -1
-    Loop
-  }
+	Health 5000
+	Radius 65
+	Height 200
+	Mass 5000
+	BloodColor "Red"
+	Scale 2
+	tag "InfernoDemon"
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+BOSS
+	+FLOORCLIP
+	+TELESTOMP
+	+DONTMORPH
+	+NOTARGET
+	+NOICEDEATH
+	damagefactor "Inferno", 0
+	Species "Icon"
+	
+	States
+	{
+		Spawn:
+			OOOI A -1
+			Loop
+	}
 }
 
 ACTOR staticGuardian 10774
 {
-
-  Health 1200
-  Radius 30
-  Height 100
-  Mass 5000
-  BloodColor "Red"
-  tag "Guardian"
-  +BOSS
-  +FLOORCLIP
-  +DONTMORPH
-  +NOTARGET
-  damagefactor "Inferno", 0
-
-  States
-  {
-  Spawn:
-    OOOI A -1
-    Loop
-  }
-}	
-
-ACTOR Bulltubus 16555
-{
-//$Category "Doom Monster pack"
-  Health 600
-  Radius 48
-  Height 64
-  Mass 1000
-  Speed 8
-  PainChance 80
-  Monster
-  +FLOORCLIP
-  +BOSSDEATH
-  SeeSound "fatso/sight"
-  PainSound "fatso/pain"
-  DeathSound "fatso/death"
-  ActiveSound "fatso/active"
-  Obituary "Doomguy stood in awe of the Bulltubus"
-  Species "Icon"
-  States
-  {
-  Spawn:
-    FOFO AB 15 A_Look
-    Loop
-  See:
-    FOFO AABBCCDDEEFF 4 A_Chase
-    Loop
-  Missile:
-    FOFO G 20  A_FatRaise
-    FOFO G 4 Bright A_SPosAttack
-	FOFO I 5 Bright A_SPosAttack
-    FOFO H 4 Bright A_SPosAttack
-	FOFO I 5 Bright A_SPosAttack
-    FOFO H 1 Bright A_SpidRefire
-    Goto Missile+1
-  Pain:
-    FOFO J 3
-    FOFO J 3 A_Pain
-    Goto See
-  Death:
-    FOFO K 6
-    FOFO L 6 A_Scream
-    FOFO M 6 A_NoBlocking
-    FOFO NOPQRS 6
-    FOFO T -1 A_BossDeath
-    Stop
-  Raise:
-    FOFO R 5
-    FOFO QPONMLK 5
-    Goto See
-  }
-}
-
-ACTOR staticBulltubus 10773
-{
-
-  Health 600
-  Radius 48
-  Height 64
-  Mass 1000
-  +FLOORCLIP
-  +BOSSDEATH
-  Species "Icon"
-  States
-  {
-  Spawn:
-    FOFO A -1
-    Loop
-  }
+	Health 1200
+	Radius 30
+	Height 100
+	Mass 5000
+	BloodColor "Red"
+	tag "Guardian"
+	+BOSS
+	+FLOORCLIP
+	+DONTMORPH
+	+NOTARGET
+	damagefactor "Inferno", 0
+	
+	States
+	{
+		Spawn:
+			OOOI A -1
+			Loop
+	}
 }	
 
 ACTOR Korazon 19989
 {
-  Health 20
-  Radius 10
-  Height 22
-  Mass 2000
-  BloodColor "Red"
-  Scale 0.7
-  +SOLID
-  +SHOOTABLE
-  +ACTIVATEMCROSS
-  +DONTGIB
-  +NOICEDEATH
-  +OLDRADIUSDMG
-  +NOGRAVITY
-  DeathSound "world/barrelx"
-  Obituary "$OB_BARREL" // "%o went boom."
-  States
-  {
-  Spawn:
-    CORA ABC 6
-    Loop
-  Death:
-    CORX A 5 
-    CORX B 5  A_Scream
-    CORX C 5 
-    CORX D 5  A_Explode
-    CORX E 5 
-    CORX F 5  A_BarrelDestroy
-    CORX G 5 A_Respawn
-    Wait
-  }
+	Health 20
+	Radius 10
+	Height 22
+	Mass 2000
+	BloodColor "Red"
+	Scale 0.7
+	+SOLID
+	+SHOOTABLE
+	+ACTIVATEMCROSS
+	+DONTGIB
+	+NOICEDEATH
+	+OLDRADIUSDMG
+	+NOGRAVITY
+	DeathSound "world/barrelx"
+	Obituary "$OB_BARREL" // "%o went boom."
+	States
+	{
+		Spawn:
+			CORA ABC 6
+			Loop
+		Death:
+			CORX A 5 
+			CORX B 5 A_Scream
+			CORX C 5 
+			CORX D 5 A_Explode
+			CORX E 5 
+			CORX F 5 A_BarrelDestroy
+			CORX G 5 A_Respawn
+			Wait
+	}
 }
 
 ACTOR crucificado1 19010
 {
 	States
 	{
-	Spawn:
-		CRUX A -1
-		Stop
+		Spawn:
+			CRUX A -1
+			Stop
 	}
 }
 
@@ -6696,9 +6126,9 @@ ACTOR crucificado2 19011
 {
 	States
 	{
-	Spawn:
-		CRUX B -1
-		Stop
+		Spawn:
+			CRUX B -1
+			Stop
 	}
 }
 
@@ -6706,22 +6136,22 @@ ACTOR crucificado3 19012
 {
 	States
 	{
-	Spawn:
-		CRUX C -1
-		Stop
+		Spawn:
+			CRUX C -1
+			Stop
 	}
 }
 
 ACTOR suero 19013
 {
-+SOLID
-  Radius 16
-  Height 56
+	+SOLID
+	Radius 16
+	Height 56
 	States
 	{
-	Spawn:
-		SUER A -1
-		Stop
+		Spawn:
+			SUER A -1
+			Stop
 	}
 }
 
@@ -6729,9 +6159,9 @@ ACTOR ciudadano 19014
 {
 	States
 	{
-	Spawn:
-		HORR B -1
-		Stop
+		Spawn:
+			HORR B -1
+			Stop
 	}
 }
 
@@ -6739,177 +6169,137 @@ ACTOR ciudadano2 19015
 {
 	States
 	{
-	Spawn:
-		HORR C -1
-		Stop
+		Spawn:
+			HORR C -1
+			Stop
 	}
 }
 
 ACTOR AMBIENSOUNDPESADILLA 14001
 {
-  Radius 16
-  Height 56
+	Radius 16
+	Height 56
 }
 
 ACTOR fuego 14003
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR lavahex 14004
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR lavaHD 14005
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR burbuja 14006
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR lava3HD 14007
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR ladycry 14020
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR rocashex 14009
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR zombi1 14010
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR zombi2 14011
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR zombi3 14012
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR zombi4 14013
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR choir 14014
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR cruje 14015
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR fantasma 14016
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR fantasma2 14017
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 
 ACTOR motosierra 14021
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR corazon 14022
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR gritoeco 14023
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR gritoeco2 14024
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR gritofan 14025
 {
-  Radius 16
-  Height 56
-  
-  
+	Radius 16
+	Height 56
 }
 
 ACTOR fkullTree1 28999
@@ -6920,121 +6310,38 @@ ACTOR fkullTree1 28999
 	+SOLID
 	States
 	{
-	Spawn:
-		TRES A -1
-		Stop
+		Spawn:
+			TRES A -1
+			Stop
 	}
 }
 
-ACTOR BelphegorCloney 13112
-{ 
-	//$Category "Doom Monster pack"
-	Health 1500 
-	Speed 8
-	Radius 24
-	Height 77
-	PainChance 50
-	Mass 1000
-	Meleedamage 15 
-	Scale 1.1
-	BloodColor "7D 9D 59"
-	SeeSound "baron/sight"
-	PainSound "baron/pain"
-	DeathSound "baron/death"
-	ActiveSound "baron/active"
-	MeleeSound "baron/melee"
-	REACTIONTIME 8 
-	MONSTER 
-	+NOTARGET
-	+FLOORCLIP 
-	Obituary "%o was incinerated by a Belphegor." 
-	HitObituary "the last thing %o saw was the Belphegor's abs." 
-	Species "Icon"
-	States 
-	{ 
-		Spawn: 
-			IOOO AB 10 A_Look 
-			Loop 
-		See: 
-			IOOO AABBCCDD 3 A_Chase 
-			Loop 
-		Missile: 
-			IOOO E 8 A_FaceTarget 
-			IOOO F 8 A_FaceTarget 
-			IOOO G 8 A_BruisAttack 
-			IOOO F 8 A_FaceTarget 
-			IOOO G 8 A_BruisAttack 
-			IOOO F 8 A_FaceTarget 
-			IOOO G 8 A_BruisAttack 
-			Goto See 
-		Melee: 
-			IOOO EF 8 A_FaceTarget 
-			IOOO G 8 A_BruisAttack 
-			Goto See 
-		Pain: 
-			IOOO H 2 
-			IOOO H 2 A_Pain 
-			Goto See 
-		Death: 
-			IOOO I 8 
-			IOOO J 8 A_Scream 
-			IOOO K 8 
-			IOOO L 8 A_NoBlocking 
-			IOOO MN 8  
-			IOOO O -1 
-			Stop 
-		Raise: 
-			IOOO ONMLKJI 8 
-			Goto See 
-	} 
-}
-
-ACTOR staticBelphegorCloney 10772
-{ 
-
-   Health 1500 
-   Radius 24
-   Height 77
-   Mass 1000
-   Scale 1.1
-   BloodColor "7D 9D 59"
-    +NOTARGET
-	+FLOORCLIP 
-   Species "Icon"
-   States 
-   { 
-   Spawn: 
-      IOOO A -1
-      Loop 
-   } 
-}	  
-
 ACTOR Eclipse 30666
 {
-  Radius 22
-  Height 54
-  -SOLID
-  +NOGRAVITY
-  States
-  {
-  Spawn:
-    ZCLI A -1 Bright
-    Stop
-  }
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			ZCLI A -1 Bright
+			Stop
+	}
 }
 
 ACTOR CandleAD 30667
 {
-  Radius 12
-  Height 12
-  +NOGRAVITY
-  +NOBLOCKMAP
-  States
-  {
-  Spawn:
-    ZZZN GHI 4 Bright
-    Loop
-  }
+	Radius 12
+	Height 12
+	+NOGRAVITY
+	+NOBLOCKMAP
+	States
+	{
+		Spawn:
+			ZZZN GHI 4 Bright
+			Loop
+	}
 }
 
 ACTOR CandleAD2 30668

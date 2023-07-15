@@ -446,3 +446,39 @@ ACTOR staticCyberdemon3 10785
 			Loop
 	}
 }
+
+ACTOR staticBelphegorCloney 10772
+{ 
+	Health 1500 
+	Radius 24
+	Height 77
+	Mass 1000
+	Scale 1.1
+	BloodColor "7D 9D 59"
+	+NOTARGET
+	+FLOORCLIP 
+	Species "Icon"
+	States 
+	{ 
+		Spawn: 
+			IOOO A -1
+			Loop 
+	} 
+}	  
+
+ACTOR staticBulltubus 10773
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	+FLOORCLIP
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FOFO A -1
+			Loop
+	}
+}

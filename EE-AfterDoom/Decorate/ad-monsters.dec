@@ -3860,3 +3860,118 @@ ACTOR Cyberdemon3 31322
 		Stop
 	}
 }
+
+ACTOR BelphegorCloney 13112
+{ 
+	//$Category "Doom Monster pack"
+	Health 1500 
+	Speed 8
+	Radius 24
+	Height 77
+	PainChance 50
+	Mass 1000
+	Meleedamage 15 
+	Scale 1.1
+	BloodColor "7D 9D 59"
+	SeeSound "baron/sight"
+	PainSound "baron/pain"
+	DeathSound "baron/death"
+	ActiveSound "baron/active"
+	MeleeSound "baron/melee"
+	REACTIONTIME 8 
+	MONSTER 
+	+NOTARGET
+	+FLOORCLIP 
+	Obituary "%o was incinerated by a Belphegor." 
+	HitObituary "the last thing %o saw was the Belphegor's abs." 
+	Species "Icon"
+	States 
+	{ 
+		Spawn: 
+			IOOO AB 10 A_Look 
+			Loop 
+		See: 
+			IOOO AABBCCDD 3 A_Chase 
+			Loop 
+		Missile: 
+			IOOO E 8 A_FaceTarget 
+			IOOO F 8 A_FaceTarget 
+			IOOO G 8 A_BruisAttack 
+			IOOO F 8 A_FaceTarget 
+			IOOO G 8 A_BruisAttack 
+			IOOO F 8 A_FaceTarget 
+			IOOO G 8 A_BruisAttack 
+			Goto See 
+		Melee: 
+			IOOO EF 8 A_FaceTarget 
+			IOOO G 8 A_BruisAttack 
+			Goto See 
+		Pain: 
+			IOOO H 2 
+			IOOO H 2 A_Pain 
+			Goto See 
+		Death: 
+			IOOO I 8 
+			IOOO J 8 A_Scream 
+			IOOO K 8 
+			IOOO L 8 A_NoBlocking 
+			IOOO MN 8  
+			IOOO O -1 
+			Stop 
+		Raise: 
+			IOOO ONMLKJI 8 
+			Goto See 
+	} 
+}
+
+ACTOR Bulltubus 16555
+{
+	//$Category "Doom Monster pack"
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	Speed 8
+	PainChance 80
+	Monster
+	+FLOORCLIP
+	+BOSSDEATH
+	SeeSound "fatso/sight"
+	PainSound "fatso/pain"
+	DeathSound "fatso/death"
+	ActiveSound "fatso/active"
+	Obituary "%o stood in awe of the Bulltubus"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			FOFO AB 15 A_Look
+			Loop
+		See:
+			FOFO AABBCCDDEEFF 4 A_Chase
+			Loop
+		Missile:
+			FOFO G 20 A_FatRaise
+			FOFO G 4 Bright A_SPosAttack
+			FOFO I 5 Bright A_SPosAttack
+			FOFO H 4 Bright A_SPosAttack
+			FOFO I 5 Bright A_SPosAttack
+			FOFO H 1 Bright A_SpidRefire
+			Goto Missile+1
+		Pain:
+			FOFO J 3
+			FOFO J 3 A_Pain
+			Goto See
+		Death:
+			FOFO K 6
+			FOFO L 6 A_Scream
+			FOFO M 6 A_NoBlocking
+			FOFO NOPQRS 6
+			FOFO T -1 A_BossDeath
+			Stop
+		Raise:
+			FOFO R 5
+			FOFO QPONMLK 5
+			Goto See
+	}
+}

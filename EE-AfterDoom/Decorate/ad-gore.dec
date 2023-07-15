@@ -312,3 +312,408 @@ ACTOR empalado11 15328
 			Stop
 	}
 }
+
+ACTOR Baronmuerto 10419
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			HFR1 A -1
+			Stop
+	}
+}
+
+ACTOR Baronmuerto2 10418
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			PIPI A -1
+			Stop
+	}
+}
+
+ACTOR demonmuerto 10417
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			DEMM A -1
+			Stop
+	}
+}
+
+ACTOR demonmuerto2 10416
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			DEMN A -1
+			Stop
+	}
+}
+
+ACTOR demonmuerto3 10415
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			DEMB A -1
+			Stop
+	}
+}
+
+ACTOR demonmuerto4 10433
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			DEMC A -1
+			Stop
+	}
+}
+
+ACTOR demonmuerto5 10434
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			DEMZ A -1
+			Stop
+	}
+}
+
+ACTOR demonmuerto6 10437
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			DEMX A -1
+			Stop
+	}
+}
+
+ACTOR cybermuerto 10438
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			XYVE A -1
+			Stop
+	}
+}
+
+ACTOR fatsomuerto 10439
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			FOFO T -1
+			Stop
+	}
+}
+
+ACTOR revemuerto 10440
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			ZKEL Q -1
+			Stop
+	}
+}
+
+ACTOR zarania 10441
+{
+	Radius 20
+	Height 4
+	+NOBLOCKMAP
+	+MOVEWITHSECTOR
+	States
+	{
+		Spawn:
+			ZPID S -1
+			Stop
+	}
+}
+
+Actor fCorpseBurning 16340
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+	Spawn:
+		WBRN ABCDEFG 4 Bright
+		Loop
+	}
+}
+
+Actor CorpsePile 30003
+{
+	Radius 24
+	Height 60
+	+SOLID
+	States
+	{
+		Spawn:
+			PILE A -1
+			Stop
+	}
+}
+
+Actor fCorpseImpaled1 16720
+{
+	+SOLID
+	Radius 8
+	Height 100
+	
+	States
+	{
+		Spawn:
+			CACA A -1
+			Stop
+	}
+}
+
+Actor fCorpseImpaled2 16721
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+		Spawn:
+			CACA B -1
+			Stop
+	}
+}
+
+Actor fCorpseImpaled3 16722
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+		Spawn:
+			CACA C -1
+			Stop
+	}
+}
+
+Actor fCorpseImpaled4 16723
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+		Spawn:
+			CACA D -1
+			Stop
+	}
+}
+
+Actor fCorpseImpaled5 16724
+{
+	+SOLID
+	Radius 8
+	Height 100
+
+	States
+	{
+		Spawn:
+			CACA E -1
+			Stop
+	}
+}
+
+ACTOR ImpsStick 18845
+{
+	Radius 16
+	Height 64
+	+SOLID
+	States
+	{
+		Spawn:
+			NJDG A -1
+			Stop
+	}
+}
+
+ACTOR BonePile 10410
+{
+	Radius 24
+	Height 24
+	+SOLID
+	States
+	{
+		Spawn:
+			SBON A -1
+			Stop
+	}
+}
+
+Actor BurningCorpse1 29641
+{
+	+SOLID
+	Radius 8
+	Height 108
+	States
+	{
+		Spawn:
+			BAVE ABCD 4 Bright
+			Loop
+		Inactive:
+			ALVE A 1
+			Loop
+	}
+}
+
+Actor BurningCorpse2 29642
+{
+	+SOLID
+	Radius 8
+	Height 108
+	States
+	{
+		Spawn:
+			BAV2 ABCD 4 Bright
+			Loop
+		Inactive:
+			ALV2 A 1 A_StopSoundEx("SoundSlot7")
+			Loop
+	}
+}
+
+ACTOR HangedMarine1 17506
+{
+	Game Doom
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			HMAR A -1
+			Stop
+	}
+}
+
+ACTOR HangedMarine2 17505
+{
+	Game Doom
+	Radius 22
+	Height 55
+	-SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			HMAR B -1
+			Stop
+	}
+}
+
+ACTOR HangedMarine3 17507
+{
+	Game Doom
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			HMAR C -1
+			Stop
+	}
+}
+
+ACTOR VACA 17508
+{
+	SCALE 0.7
+	Game Doom
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			VACA A -1
+			Stop
+	}
+}
+
+ACTOR BACA 17509
+{
+	SCALE 0.7
+	Game Doom
+	Radius 22
+	Height 54
+	-SOLID
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+		Spawn:
+			BACA B -1
+			Stop
+	}
+}
