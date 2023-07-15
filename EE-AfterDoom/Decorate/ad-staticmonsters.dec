@@ -403,3 +403,46 @@ ACTOR staticZyberdemon 10790
 			Loop
 	}
 }
+
+ACTOR staticCryocubus 10786
+{
+	Health 600
+	Radius 48
+	Height 64
+	Mass 1000
+	+ALWAYSFAST
+	+NORADIUSDMG
+	+FLOORCLIP
+	+BOSSDEATH
+	var int user_isfiring;
+	Species "Icon"
+	States
+	{
+		Spawn:
+			HIEL A -1
+			Loop
+	}
+}
+
+ACTOR staticCyberdemon3 10785
+{
+	Health 4000
+	Radius 40
+	Height 110
+	Mass 1000
+	MinMissileChance 160
+	+ALWAYSFAST
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			ANNI A -1
+			Loop
+	}
+}
