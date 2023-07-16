@@ -686,3 +686,53 @@ ACTOR staticInfernalHitler 10776
 			Loop
 	}
 }
+
+ACTOR staticInfernoDemon 10775
+{
+	Health 5000
+	Radius 65
+	Height 200
+	Mass 5000
+	BloodColor "Red"
+	Scale 2
+	tag "InfernoDemon"
+	+MISSILEMORE
+	+MISSILEEVENMORE
+	+BOSS
+	+FLOORCLIP
+	+TELESTOMP
+	+DONTMORPH
+	+NOTARGET
+	+NOICEDEATH
+	damagefactor "Inferno", 0
+	Species "Icon"
+	
+	States
+	{
+		Spawn:
+			OOOI A -1
+			Loop
+	}
+}
+
+ACTOR staticGuardian 10774
+{
+	Health 1200
+	Radius 30
+	Height 100
+	Mass 5000
+	BloodColor "Red"
+	tag "Guardian"
+	+BOSS
+	+FLOORCLIP
+	+DONTMORPH
+	+NOTARGET
+	damagefactor "Inferno", 0
+	
+	States
+	{
+		Spawn:
+			OOOI A -1
+			Loop
+	}
+}	

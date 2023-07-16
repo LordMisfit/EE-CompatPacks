@@ -921,7 +921,7 @@ Actor FXRedGlitter
 	+NoTeleport
 	+ForceXYBillboard
 	+BRIGHT
-	RenderStyle Add
+	renderstyle "Add"
 	Scale 0.02
 	States
 	{
