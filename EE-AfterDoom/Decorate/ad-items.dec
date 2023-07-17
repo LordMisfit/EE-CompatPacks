@@ -31,3 +31,46 @@ Actor TimeFreezeSphereSp : PowerupGiver 15500
 			Loop
 	}
 }
+
+ACTOR Fake_Daisy : Health 20871
+{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupMessage "Picked up a fake Daisy."
+	Inventory.PickupSound "FakeDaisy/RISA01"
+	ActiveSound "Ambient/VIENTOMA" 
+	States
+	{
+		Spawn:
+			DASY A 6 Bright
+			TNT1 A 0 A_LoopActiveSound
+			Loop
+	}
+}
+
+ACTOR Daisy_Soul : Health 24471
+{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupMessage "You have saved Daisy's soul, she will rest in peace."
+	Inventory.PickupSound "misc/p_pkup"
+	States
+	{
+		Spawn:
+			DASY A 6 Bright
+			Loop
+	}
+}
+
+ACTOR speak : Health 30874
+{
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupSound "Ally/Site"
+	States
+	{
+		Spawn:
+			BON1 ABCDCB 6
+			Loop
+	}
+}

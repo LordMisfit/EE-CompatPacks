@@ -1,3 +1,37 @@
+ACTOR Korazon 19989
+{
+	Health 20
+	Radius 10
+	Height 22
+	Mass 2000
+	BloodColor "Red"
+	Scale 0.7
+	+SOLID
+	+SHOOTABLE
+	+ACTIVATEMCROSS
+	+DONTGIB
+	+NOICEDEATH
+	+OLDRADIUSDMG
+	+NOGRAVITY
+	DeathSound "world/barrelx"
+	Obituary "$OB_BARREL" // "%o went boom."
+	States
+	{
+		Spawn:
+			CORA ABC 6
+			Loop
+		Death:
+			CORX A 5 
+			CORX B 5 A_Scream
+			CORX C 5 
+			CORX D 5 A_Explode
+			CORX E 5 
+			CORX F 5 A_BarrelDestroy
+			CORX G 5 A_Respawn
+			Wait
+	}
+}
+
 ACTOR HellstormArchonDead 32666
 {
   scale 2 
@@ -717,3 +751,18 @@ ACTOR BACA 17509
 			Stop
 	}
 }
+
+ACTOR DeadGod 30910
+{
+	Radius 170
+	Height 840
+	Scale 4.8
+	+FLOORCLIP
+	States
+	{
+		Spawn:
+			KPRM O -1
+			Loop
+	}
+}
+
