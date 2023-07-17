@@ -920,3 +920,141 @@ Actor staticThamuz 10770
 			Loop
 	}
 }	
+
+ACTOR staticApocalipsist 10789
+{
+	Health 800
+	Radius 40
+	Height 170
+	Mass 6666
+	DamageFactor "Bum", 0.0
+	scale 1.7
+	+ALWAYSFAST
+	+NOFEAR
+	+NOTIMEFREEZE
+	+NEVERTARGET
+	+NOTARGET
+	+DONTHARMSPECIES
+	+NOPAIN
+	+QUICKTORETALIATE
+	+MISSILEEVENMORE
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Tag "Apocalipsis"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			APOK A -1
+			Loop
+	}
+}
+
+ACTOR staticApocalipsis 10788
+{
+	Health 9999
+	Radius 40
+	Height 160
+	Mass 6666
+	PainChance 0
+	DamageFactor "Bum", 0.0
+	MeleeRange 1000
+	scale 1.7
+	dropitem "InvulnerabilitySphere"
+	damagefactor "Avoid", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "TeleportRemover", 0.0
+	DamageFactor "CauseSplash", 0.0
+	DamageFactor "CauseObjectsToSplashSlime", 0.0
+	DamageFactor "CauseObjectsToSplashNukage", 0.0
+	DamageFactor "CauseObjectsToSplashBlood", 0.0
+	DamageFactor "CauseObjectsToSplashLava", 0.0
+	+SEEINVISIBLE
+	+QUICKTORETALIATE
+	+LOOKALLAROUND
+	+NOPAIN
+	+TELESTOMP
+	+MOVEWITHSECTOR
+	+JUMPDOWN
+	+NOTIMEFREEZE
+	+DONTHARMSPECIES
+	+BOSS
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Tag "Apocalipsis"
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BPOK A -1
+			Loop
+	}
+}
+
+ACTOR staticBattleLord 10787
+{
+	Health 1900
+	Radius 40
+	Height 130
+	Mass 6666
+	PainChance 0
+	DamageFactor "Bum", 0.0
+	scale 1.7
+	+ALWAYSFAST
+	+NOFEAR
+	+NOTIMEFREEZE
+	+NEVERTARGET
+	+NOTARGET
+	+DONTHARMSPECIES
+	+NOPAIN
+	+QUICKTORETALIATE
+	+MISSILEEVENMORE
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			BTLO A -1
+			Loop
+	}
+}
+
+ACTOR StaticRotten_Mastermind 10886
+{
+	Health 8000
+	Radius 100
+	Height 100
+	Mass 1000
+	MinMissileChance 160
+	Scale 1.2
+	tag "Rotten Mastermind"
+	+JUMPDOWN
+	+NOINFIGHTING
+	+NEVERTARGET
+	+NOTARGET
+	+BOSS
+	+MISSILEMORE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+DONTMORPH
+	+BOSSDEATH
+	Species "Icon"
+	States
+	{
+		Spawn:
+			RPID A -1
+			Loop
+	}
+}
+

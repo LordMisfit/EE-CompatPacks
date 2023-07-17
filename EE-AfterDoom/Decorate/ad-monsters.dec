@@ -735,7 +735,7 @@ ACTOR zRotten_Cacodemon
 	}
 }
 
-ACTOR zRotten_imp
+ACTOR zRotten_Imp
 {
 		Health 60
 		Radius 20
@@ -946,7 +946,7 @@ Actor BloodSpitTrail
 }
 
 
-ACTOR Rotten_imp 30002
+ACTOR Rotten_Imp 30002
 {
 		//$Category "Doom Monster pack"
 		Health 60
@@ -3429,115 +3429,6 @@ ACTOR BattleLord 17362
 	}
 }
 
-ACTOR staticApocalipsist 10789
-{
-	Health 800
-	Radius 40
-	Height 170
-	Mass 6666
-	DamageFactor "Bum", 0.0
-	scale 1.7
-	+ALWAYSFAST
-	+NOFEAR
-	+NOTIMEFREEZE
-	+NEVERTARGET
-	+NOTARGET
-	+DONTHARMSPECIES
-	+NOPAIN
-	+QUICKTORETALIATE
-	+MISSILEEVENMORE
-	+BOSS
-	+MISSILEMORE
-	+FLOORCLIP
-	+NORADIUSDMG
-	+DONTMORPH
-	+BOSSDEATH
-	Tag "Apocalipsis"
-	Species "Icon"
-	States
-	{
-		Spawn:
-			APOK A -1
-			Loop
-	}
-}
-
-ACTOR staticApocalipsis 10788
-{
-	Health 9999
-	Radius 40
-	Height 160
-	Mass 6666
-	PainChance 0
-	DamageFactor "Bum", 0.0
-	MeleeRange 1000
-	scale 1.7
-	dropitem "InvulnerabilitySphere"
-	damagefactor "Avoid", 0.0
-	damagefactor "GibRemoving", 0.0
-	damagefactor "TeleportRemover", 0.0
-	DamageFactor "CauseSplash", 0.0
-	DamageFactor "CauseObjectsToSplashSlime", 0.0
-	DamageFactor "CauseObjectsToSplashNukage", 0.0
-	DamageFactor "CauseObjectsToSplashBlood", 0.0
-	DamageFactor "CauseObjectsToSplashLava", 0.0
-	+SEEINVISIBLE
-	+QUICKTORETALIATE
-	+LOOKALLAROUND
-	+NOPAIN
-	+TELESTOMP
-	+MOVEWITHSECTOR
-	+JUMPDOWN
-	+NOTIMEFREEZE
-	+DONTHARMSPECIES
-	+BOSS
-	+FLOORCLIP
-	+NORADIUSDMG
-	+DONTMORPH
-	+BOSSDEATH
-	Tag "Apocalipsis"
-	Species "Icon"
-	States
-	{
-		Spawn:
-			BPOK A -1
-			Loop
-	}
-}
-
-ACTOR staticBattleLord 10787
-{
-	Health 1900
-	Radius 40
-	Height 130
-	Mass 6666
-	PainChance 0
-	DamageFactor "Bum", 0.0
-	scale 1.7
-	+ALWAYSFAST
-	+NOFEAR
-	+NOTIMEFREEZE
-	+NEVERTARGET
-	+NOTARGET
-	+DONTHARMSPECIES
-	+NOPAIN
-	+QUICKTORETALIATE
-	+MISSILEEVENMORE
-	+BOSS
-	+MISSILEMORE
-	+FLOORCLIP
-	+NORADIUSDMG
-	+DONTMORPH
-	+BOSSDEATH
-	Species "Icon"
-	States
-	{
-		Spawn:
-			BTLO A -1
-			Loop
-	}
-}
-
 ACTOR Cryocubus 17004
 {
 	//$Category "Doom Monster pack"
@@ -3698,7 +3589,7 @@ ACTOR SpiderMastermind2 17321
 
 ACTOR Cyberdemon2 29322
 {
-//$Category "Doom Monster pack"
+	//$Category "Doom Monster pack"
 	Health 4000
 	Radius 40
 	Height 110
@@ -4043,7 +3934,7 @@ Actor ForgottenOneAlt : ForgottenOne 21702
 	}
 }
 
-Actor ForgottenTwo  : ForgottenOne 16996
+Actor ForgottenTwo : ForgottenOne 16996
 {
 	//$Category "Doom Monster pack"
 	Obituary "A Forgotten One rammed %o"
@@ -8017,7 +7908,7 @@ ACTOR LargeGlyphExplosion1
 	}
 }
 
-actor SpiralFire1
+actor SpiralFire1 : EEProjectile
 {
 	radius 6
 	height 8
@@ -8045,22 +7936,8 @@ actor SpiralFire1
 	}
 }
 
-actor SpiralFire2
+actor SpiralFire2 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8073,22 +7950,8 @@ actor SpiralFire2
 	}
 }
 
-actor SpiralFire3
+actor SpiralFire3 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8101,22 +7964,8 @@ actor SpiralFire3
 	}
 }
 
-actor SpiralFire4
+actor SpiralFire4 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8129,22 +7978,8 @@ actor SpiralFire4
 	}
 }
 
-actor SpiralFire5
+actor SpiralFire5 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8157,22 +7992,8 @@ actor SpiralFire5
 	}
 }
 
-actor SpiralFire6
+actor SpiralFire6 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8185,22 +8006,8 @@ actor SpiralFire6
 	}
 }
 
-actor SpiralFire7
+actor SpiralFire7 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8213,22 +8020,8 @@ actor SpiralFire7
 	}
 }
 
-actor SpiralFire8
+actor SpiralFire8 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8241,7 +8034,7 @@ actor SpiralFire8
 	}
 }
 
-actor SpiralFire9
+actor SpiralFire9 : SpiralFire1
 {
 	radius 6
 	height 8
@@ -8269,7 +8062,7 @@ actor SpiralFire9
 	}
 }
 
-actor SpiralFire10
+actor SpiralFire10 : SpiralFire1
 {
 	radius 6
 	height 8
@@ -8297,22 +8090,8 @@ actor SpiralFire10
 	}
 }
 
-actor SpiralFire11
+actor SpiralFire11 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8325,22 +8104,8 @@ actor SpiralFire11
 	}
 }
 
-actor SpiralFire12
+actor SpiralFire12 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8353,22 +8118,8 @@ actor SpiralFire12
 	}
 }
 
-actor SpiralFire13
+actor SpiralFire13 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8381,22 +8132,8 @@ actor SpiralFire13
 	}
 }
 
-actor SpiralFire14
+actor SpiralFire14 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8409,22 +8146,8 @@ actor SpiralFire14
 	}
 }
 
-actor SpiralFire15
+actor SpiralFire15 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8437,22 +8160,8 @@ actor SpiralFire15
 	}
 }
 
-actor SpiralFire16
+actor SpiralFire16 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8465,22 +8174,8 @@ actor SpiralFire16
 	}
 }
 
-actor SpiralFire17
+actor SpiralFire17 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8493,7 +8188,7 @@ actor SpiralFire17
 	}
 }
 
-actor SpiralFire18
+actor SpiralFire18 : SpiralFire1
 {
   radius 6
   height 8
@@ -8521,7 +8216,7 @@ actor SpiralFire18
   }
 }
 
-actor SpiralFire19
+actor SpiralFire19 : SpiralFire1
 {
   radius 6
   height 8
@@ -8549,7 +8244,7 @@ actor SpiralFire19
   }
 }
 
-actor SpiralFire20
+actor SpiralFire20 : SpiralFire1
 {
   radius 6
   height 8
@@ -8577,22 +8272,8 @@ actor SpiralFire20
   }
 }
 
-actor SpiralFire21
+actor SpiralFire21 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8605,22 +8286,8 @@ actor SpiralFire21
 	}
 }
 
-actor SpiralFire22
+actor SpiralFire22 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8633,22 +8300,8 @@ actor SpiralFire22
 	}
 }
 
-actor SpiralFire23
+actor SpiralFire23 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8661,22 +8314,8 @@ actor SpiralFire23
 	}
 }
 
-actor SpiralFire24
+actor SpiralFire24 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8689,22 +8328,8 @@ actor SpiralFire24
 	}
 }
 
-actor SpiralFire25
+actor SpiralFire25 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8717,22 +8342,8 @@ actor SpiralFire25
 	}
 }
 
-actor SpiralFire26
+actor SpiralFire26 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8745,22 +8356,8 @@ actor SpiralFire26
 	}
 }
 
-actor SpiralFire27
+actor SpiralFire27 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8773,22 +8370,8 @@ actor SpiralFire27
 	}
 }
 
-actor SpiralFire28
+actor SpiralFire28 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8801,22 +8384,8 @@ actor SpiralFire28
 	}
 }
 
-actor SpiralFire29
+actor SpiralFire29 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8829,22 +8398,8 @@ actor SpiralFire29
 	}
 }
 
-actor SpiralFire30
+actor SpiralFire30 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8857,22 +8412,8 @@ actor SpiralFire30
 	}
 }
 
-actor SpiralFire31
+actor SpiralFire31 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8885,22 +8426,8 @@ actor SpiralFire31
 	}
 }
 
-actor SpiralFire32
+actor SpiralFire32 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8913,22 +8440,8 @@ actor SpiralFire32
 	}
 }
 
-actor SpiralFire33
+actor SpiralFire33 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8941,22 +8454,8 @@ actor SpiralFire33
 	}
 }
 
-actor SpiralFire34
+actor SpiralFire34 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8969,22 +8468,8 @@ actor SpiralFire34
 	}
 }
 
-actor SpiralFire35
+actor SpiralFire35 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -8997,22 +8482,8 @@ actor SpiralFire35
 	}
 }
 
-actor SpiralFire36
+actor SpiralFire36 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9025,22 +8496,8 @@ actor SpiralFire36
 	}
 }
 
-actor SpiralFire37
+actor SpiralFire37 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9053,22 +8510,8 @@ actor SpiralFire37
 	}
 }
 
-actor SpiralFire38
+actor SpiralFire38 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9081,22 +8524,8 @@ actor SpiralFire38
 	}
 }
 
-actor SpiralFire39
+actor SpiralFire39 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9109,22 +8538,8 @@ actor SpiralFire39
 	}
 }
 
-actor SpiralFire40
+actor SpiralFire40 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9137,22 +8552,8 @@ actor SpiralFire40
 	}
 }
 
-actor SpiralFire41
+actor SpiralFire41 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9165,22 +8566,8 @@ actor SpiralFire41
 	}
 }
 
-actor SpiralFire42
+actor SpiralFire42 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9193,22 +8580,8 @@ actor SpiralFire42
 	}
 }
 
-actor SpiralFire43
+actor SpiralFire43 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9221,22 +8594,8 @@ actor SpiralFire43
 	}
 }
 
-actor SpiralFire44
+actor SpiralFire44 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9249,22 +8608,8 @@ actor SpiralFire44
 	}
 }
 
-actor SpiralFire45
+actor SpiralFire45 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9277,22 +8622,8 @@ actor SpiralFire45
 	}
 }
 
-actor SpiralFire46
+actor SpiralFire46 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9305,22 +8636,8 @@ actor SpiralFire46
 	}
 }
 
-actor SpiralFire47
+actor SpiralFire47 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9333,22 +8650,8 @@ actor SpiralFire47
 	}
 }
 
-actor SpiralFire48
+actor SpiralFire48 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9361,22 +8664,8 @@ actor SpiralFire48
 	}
 }
 
-actor SpiralFire49
+actor SpiralFire49 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9389,22 +8678,8 @@ actor SpiralFire49
 	}
 }
 
-actor SpiralFire50
+actor SpiralFire50 : SpiralFire1
 {
-	radius 6
-	height 8
-	speed 0
-	damage 0
-	renderstyle "Add"
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+MISSILE
-	+RIPPER
-	+BLOODLESSIMPACT
-	PROJECTILE
-	+NOTELEPORT
-	+DONTSPLASH
-	+RANDOMIZE
 	states
 	{
 		Spawn:
@@ -9927,8 +9202,6 @@ actor MastermindRottenTracerTrail
 	}
 }
 
-
-
 actor MastermindRottenTracerTrail2 : MastermindRottenTracerTrail { Alpha 0.85 }
 actor MastermindRottenTracerTrail3 : MastermindRottenTracerTrail { Alpha 0.80 }
 actor MastermindRottenTracerTrail4 : MastermindRottenTracerTrail { Alpha 0.75 }
@@ -9983,34 +9256,6 @@ ACTOR RottenExplosionparticles
 		Live:	
 			SPKS ABCDEFGHI 1 BRIGHT
 			Stop
-	}
-}
-
-ACTOR StaticRotten_Mastermind 10886
-{
-	Health 8000
-	Radius 100
-	Height 100
-	Mass 1000
-	MinMissileChance 160
-	Scale 1.2
-	tag "Rotten Mastermind"
-	+JUMPDOWN
-	+NOINFIGHTING
-	+NEVERTARGET
-	+NOTARGET
-	+BOSS
-	+MISSILEMORE
-	+FLOORCLIP
-	+NORADIUSDMG
-	+DONTMORPH
-	+BOSSDEATH
-	Species "Icon"
-	States
-	{
-		Spawn:
-			RPID A -1
-			Loop
 	}
 }
 
@@ -11266,7 +10511,7 @@ ACTOR FemaleScientist3 25006
 	}
 }
 
-ACTOR Rotten_nobu 32222
+ACTOR Rotten_Nobu 32222
 {
 	//$Category "Doom Monster pack"
 	Health 1
