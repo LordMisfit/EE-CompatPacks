@@ -1,0 +1,204 @@
+// MAPINFO for JOI-project "lost civilization" 29.10.2019
+// by Jaakko Impola
+//
+// Alterations include:
+//  New Map names
+//  Sky
+
+
+//clearepisodes
+
+gamedefaults{
+ClipMidTextures
+}
+
+defaultmap{
+	CheckSwitchRange
+	nocrouch
+	nojump
+	sky1 = "RSKY1"
+	}
+	
+map MAP01 "Mountain pass"{
+	next = MAP02
+	secretnext = MAP02
+	//sky1 = "RSKY1"
+	music = D_RUNNIN
+	par = 1000
+	cluster = 1
+}
+map MAP02 "Oceanside"{
+	next = MAP03
+	secretnext = MAP03
+	//sky1 = "RSKY1"
+	music = D_STALKS
+	cluster = 1
+}
+map MAP03 "The farmlands"{
+	next = MAP04
+	secretnext = MAP04
+	//sky1 = "RSKY1"
+	music = D_COUNTD
+	cluster = 1
+}
+map MAP04 "River valley"{
+	next = MAP05
+	secretnext = MAP05
+	//sky1 = "RSKY1"
+	music = D_BETWEE
+	cluster = 1
+}
+map MAP05 "Mountain village"{
+	next = MAP06
+	secretnext = MAP06
+	//sky1 = "DUSTSKY2"
+	//sky1 = "MISTSKY3"
+	music = D_DOOM
+	cluster = 1
+}	
+map MAP06 "The secret city"{
+	next = MAP07
+	secretnext = MAP07
+	//sky1 = "MISTSKY1"
+	music = D_THE_DA
+	cluster = 1
+}	
+map MAP07 "Lost in the forest"{
+	next = MAP08
+	secretnext = MAP08
+	//sky1 = "MISTSKY1"
+	music = D_SHAWN
+	cluster = 1
+}	
+map MAP08 "Castle"{
+	next = MAP09
+	secretnext = MAP09
+	//sky1 = "RSKY2"
+	music = D_DDTBLU
+	cluster = 1
+}	
+map MAP09 "Courtyard"{
+	next = MAP10
+	secretnext = MAP10
+	//sky1 = "DUSTSKY2"
+	music = D_IN_CIT
+	cluster = 1
+}	
+map MAP10 "Nightmare"{
+	next = MAP11
+	secretnext = MAP11
+	//sky1 = "RSKY1"
+	music = D_DEAD
+	cluster = 2
+}	
+
+map MAP11 "Nightfall"{
+	next = MAP12
+	secretnext = MAP12
+	//sky1 = "RSKY1"
+	music = D_STLKS2
+	cluster = 2
+}
+
+map MAP12 "Suburb"{
+	next = MAP13
+	secretnext = MAP13
+	//sky1 = "RSKY1"
+	music = D_THEDA2
+	cluster = 2
+}
+
+map MAP13 "City centre"{ 
+	next = MAP14
+	secretnext = MAP14
+	//sky1 = "RSKY1"
+	music = D_DOOM2
+	cluster = 2
+}
+
+map MAP14 "Downtown"{
+	next = MAP15
+	secretnext = MAP15
+	//sky1 = "RSKY1"
+	music = D_DDTBL2
+	cluster = 2
+}
+
+map MAP15 "Mansion"{
+	next = MAP16
+	secretnext = MAP31
+	//sky1 = "RSKY1"
+	music = D_RUNNI2
+	cluster = 2
+}
+
+map MAP16 "Fort"{
+	next = MAP17
+	secretnext = MAP17
+	//sky1 = "RSKY1"
+	music = D_DEAD2
+	cluster = 2
+}
+
+map MAP17 "Prison"{
+	next = MAP18
+	secretnext = MAP18
+	//sky1 = "RSKY1"
+	music = D_STLKS3
+	cluster = 2
+}
+
+map MAP18 "Laboratory"{
+	next = MAP19
+	secretnext = MAP19
+	//sky1 = "RSKY1"
+	music = D_ROMERO
+	cluster = 2
+}
+
+map MAP19 "Division"{
+	next = MAP20
+	secretnext = MAP20
+	//sky1 = "RSKY1"
+	music = D_SHAWN2
+	cluster = 2
+}
+
+map MAP20 "Ending"{
+	next = MAP21
+	secretnext = MAP21
+	//sky1 = "RSKY1"
+	music = D_MESSAG
+	cluster = 2
+}
+
+map MAP21 "Thanks for playing!"{
+	SpecialAction_ExitLevel
+	next = EndGameC
+	secretnext = EndGameC
+	//sky1 = "RSKY1"
+	music = D_COUNT2
+	cluster = 2
+}
+
+
+map MAP31 "Spiderweb arena"{
+	next = MAP16
+	secretnext = MAP16
+	//sky1 = "RSKY1"
+	music = D_DM2TTL
+	cluster = 2
+}
+
+
+clusterdef 1{
+   flat = RROCK14
+   music = D_READ_M
+   exittext = "..!"
+ }
+ 
+ clusterdef 2{
+   flat = RROCK14
+   music = D_READ_M
+   exittext = "Thanks for playing!"
+ }
