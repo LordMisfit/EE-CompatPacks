@@ -9146,10 +9146,10 @@ object TankShellMuzzle
 }
 
 
-/*object HeavyMachinegunFlash
+object HeavyMachinegunFlash
 {
-    frame HMGH { light BIGREDTORCHES }
-}*/
+	frame HMGH { light BIGREDTORCHES }
+}
 
 
 pointlight LightPost3D
