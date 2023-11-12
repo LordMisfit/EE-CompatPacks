@@ -509,13 +509,13 @@ $rolloff distantexp 1000 9000
 //Assault Rifle
 FARRIF FARRIF
 $limit FARRIF 80
-$rolloff  FARRIF 3000 6000
+$rolloff  FARRIF 1500 3000 //$rolloff  FARRIF 3000 6000
 
 
 //Heavy Machinegun
 FARHMG FARHMG
 $limit FARHMG 80
-$rolloff  FARHMG 3000 6000
+$rolloff  FARHMG 1500 3000 //$rolloff  FARHMG 3000 6000
 
 DSRIFL1 DSRIFL1
 DSRIFL2 DSRIFL2
