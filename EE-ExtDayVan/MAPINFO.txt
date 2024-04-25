@@ -561,6 +561,7 @@ next = "MAP41"
 secretnext = "MAP41"
 sky1 = "SKY2NI", 0.2
 //cluster = 5
+intermusic = MAPINT
 //par = 200
 music = "STALKER"
 }
