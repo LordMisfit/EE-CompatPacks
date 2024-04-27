@@ -921,6 +921,7 @@ Actor ExplosiveArea : EEBaseZSC 1437
 	damagefactor "Taunt", 0.0
 	damagefactor "Avoid", 0.0
 	damagefactor "Trample", 0.0
+	damagefactor "Explosive", 100.0
 	damagefactor "Kick", 100.0
 	damagefactor "Fist", 100.0
 	damagefactor "Beats", 100.0
@@ -974,6 +975,8 @@ Actor ExplosiveArea3 : ExplosiveArea 1439
 
 Actor WallDestroySpawnRubble : ExplosiveArea 5439
 {
+	height 96
+	radius 32
 	Health 30
 	//$Sprite "FLRBK0"
 	states
