@@ -9,7 +9,7 @@ Actor PSXFocusSpectre : DemonNew 3010
 	most players claimed the Nightmare Spectre was green - it was, on a brown
 	background where you commonly saw them. */
 	/*
-Actor NightmareSpectre : DemonNew // 3000
+Actor NightmareSpectre : DemonNew 3000
 {
 	Tag "Pinky Spectre (Nightmare)"
 	Health 300
