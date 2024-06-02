@@ -1,0 +1,16 @@
+#library "DAMGFLRS"
+#include "zcommon.acs"
+
+script "DamageSetLava" (int tag, int amount, int interval, int leaky)
+{
+	if (GetCvar("honte_instakill") == 1)
+	{
+		Sector_SetDamage(tag, amount, "Magma", interval, leaky);
+		delay(1);
+		restart;
+	}
+}
+script "DamageSetLava2" (int tag, int amount, int flags)
+{
+	SectorDamage(tag, amount, "Lava", "PowerIronFeet", flags);
+}

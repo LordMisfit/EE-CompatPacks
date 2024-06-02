@@ -1,0 +1,14 @@
+:Fuckyousohard
+   door 1
+   playrepeat plats/pt1_mid
+   stopsound plats/pt1_stop
+//  playrepeat doors/dr1_clos
+//  stopsound doors/dr1_clos
+	//nostopcutoff 
+	
+end
+
+:ChooChooMotherfluffy
+	   playrepeat plats/pt1_mid
+		stopsound plats/pt1_stop
+end

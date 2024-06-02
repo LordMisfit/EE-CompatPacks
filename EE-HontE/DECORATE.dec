@@ -1,0 +1,64 @@
+ACTOR HontEBossBrain: BossBrain
+{
+} 
+
+ACTOR cursedmind: BossBrain
+{
+	health 666
+	RenderStyle "Stencil"
+	StencilColor "BLACK"
+	+INVULNERABLE
+	+NODAMAGE
+	-COUNTKILL
+	-SOLID
+	+NOPAIN
+	States
+	{
+		death:
+		BBRN A 0 A_PrintBold( "Nice try..." )
+		loop
+	}
+} 
+
+ACTOR BrainCannon 6966
+{
+	health 666
+	height 8
+	radius 8
+	RenderStyle "none"
+	Monster
+	+INVULNERABLE
+	+NODAMAGE
+	-COUNTKILL
+	-SOLID
+	-SHOOTABLE
+	-PUSHABLE
+	+NOPAIN
+	+NOGRAVITY
+	+NOINFIGHTING
+	+MISSILEEVENMORE
+	+DONTHARMCLASS
+	+NOTARGET
+	+NEVERTARGET
+	States
+	{
+		spawn:
+			BBRN A 1
+			goto see
+		See:
+			BBRN A 1 A_Chase
+			Loop
+		fireballstate:
+			BBRN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 5 A_SpawnProjectile("DoomImpBall", 0, 0, random(-2,2), 0, random(-2,2), AAPTR_TARGET)
+			goto see
+	    rocketslam:
+			BBRN AAAAAAAAAAAA 5 A_SpawnProjectile("rocket", 0, 0, random(-2,2), 0, random(-2,2), AAPTR_TARGET)
+			goto see
+		plasmastorm:
+			BBRN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 5 A_SpawnProjectile("ArachnotronPlasma", 0, 0, random(-4,4), 0, random(-4,4), AAPTR_TARGET)
+			goto see
+		shitself:
+			BBRN AAAA 5 A_SpawnProjectile("BfgBall", 0, 0, random(-16,16), 0, random(-16,16), AAPTR_TARGET)
+			goto see
+	}
+} 

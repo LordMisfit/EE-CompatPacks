@@ -1,0 +1,80 @@
+map MAP33 lookup "Betray"
+{
+
+   levelnum = 33
+   titlepatch = "CWILV32"
+   next = "MAP03"
+   secretnext = "MAP03"
+   sky1 = "SKY1", 0
+   cluster = 12
+   par = 30
+   sucktime = 1
+   music = "d_read_m"
+
+}
+
+map MAP666 lookup "The Hungry"
+{
+
+   levelnum = 666
+   titlepatch = "WILV666"
+   next = "MAP01"
+   secretnext = "MAP01"
+   sky1 = "SKY1", 0
+   cluster = 13
+   par = 30
+   sucktime = 1
+   music = "Music at your base, which you can't hear"
+}
+
+cluster 13
+{
+	flat = "SP_FACE1"
+	music = "d_openin"
+	entertext = 
+	":.;:..,;:;... ..;:..;:.. :..;;..,,. .:..:.;.,.:,, ;...;.,", 
+	".:.;;;. ;;....: .,.,,:;. ;,,,.;, ;;,....,..; ;;; ;, ;,,;.", 
+	"...:;,,:, ,..;:;:.. :;,..,,:;,...: :..;:;,...: :..;.;;;..",
+	" ", 
+	",..,..;:.., .:..,:.::; ..,,.,;:.,,,:;; .:...;:., :;,..,..", 
+	":.:::.;; ,.,..:,., ,..;:..,.: ...;,.;,.; ;;:.,..;;:..,...", 
+	".:.,...;:..;. .,.,.;., :.;,;;.;..; :.,;.,.;;..;.,.,.; .,.", 
+	".;... ,:,..;.;.... .;..;;... .;..;;.. ;.;.;.;;. ;....;.;:",
+	" ", 
+	".;...;.. .;:.,..;:., ,...,,;:, .,..;:,. :;;;,..,..: .,.:,", 
+	".;;,.,..,. ;;.,..;,::;,.,.;;; ,;;,.;.,..; .,.:,..;::,...,", 
+	";.:..,..;.,.;:,..: .,.;;,. .,.,; .,.;::,. ;::, .,.::, ,.;", 
+	";,.;:;,.. .;,.. ;.,.,.,;:::, .;,.,:.,.;::, ;;,.,::, ;..,;",
+	" ", 
+	";;,.,., .;,;,.,::,., :.,.;:,.:,.,:; ,..;.;;,; ::;,,.,.,.,", 
+	":;;,.,.,., ;;,.,;,.,::: :,.,;:.,.,. ;..;;.;.:: .;;.:;....", 
+	"..... ..,.,., .,.,..:: .,.,;;; ,,.,.,::: ,.,.;: ,.,.: .,.", 
+	";:.;..;;.;.; ;: .,.,,. ::,..,., .,.,;:,.. .,;: ,.,.,.,;.,"
+	
+}
+
+
+cluster 12
+{
+	flat = "NUKAGE1"
+	entertext = 
+	"Whatever it is, looks like you've found it." 
+}
+
+
+
+/* cluster 12
+{
+	flat = "NUKAGE1"
+	entertext = 
+	"You hear noise around, but you can't understand what is it:", 
+	"waterfalls or stucked souls whispering in forbidden town.", 
+	"They were betrayed by saved people.",
+	" ", 
+	"Incoming forces also tightly stuck into this place.", 
+	"Some of people were turned to unhuman creatures", 
+	"by unknown reason. Looks like someone would not like to", 
+	"people know about secrets."
+}
+
+*/

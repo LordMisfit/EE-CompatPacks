@@ -1,0 +1,2 @@
+server int honte_instakill = 1;
+server int honte_streaminteraction = 1;

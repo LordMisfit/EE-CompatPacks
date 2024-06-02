@@ -1,0 +1,49 @@
+Texture "TCAMTEX1", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX2", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX3", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX4", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX5", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX6", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX7", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX8", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX9", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}
+
+Texture "TCAMTEX0", 256, 256
+{
+	Patch "TCAMTEX1", 0, 0
+}

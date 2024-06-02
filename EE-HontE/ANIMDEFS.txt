@@ -1,0 +1,10 @@
+cameratexture TCAMTEX1 256 256 fit 80 80
+cameratexture TCAMTEX2 256 256 fit 80 80
+cameratexture TCAMTEX3 256 256 fit 80 80
+cameratexture TCAMTEX4 256 256 fit 80 80
+cameratexture TCAMTEX5 256 256 fit 80 80
+cameratexture TCAMTEX6 256 256 fit 80 80
+cameratexture TCAMTEX7 256 256 fit 80 80
+cameratexture TCAMTEX8 256 256 fit 80 80
+cameratexture TCAMTEX9 256 256 fit 80 80
+cameratexture TCAMTEX0 256 256 fit 80 80
