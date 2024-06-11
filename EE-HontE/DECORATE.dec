@@ -1,4 +1,4 @@
-ACTOR HontEBossBrain: BossBrain
+ACTOR HontEBossBrain: BossBrainNew
 {
 } 
 
