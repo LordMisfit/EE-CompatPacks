@@ -2,7 +2,7 @@ ACTOR HontEBossBrain: BossBrain
 {
 } 
 
-ACTOR cursedmind: BossBrain
+ACTOR Cursedmind : BossBrain
 {
 	health 666
 	RenderStyle "Stencil"
@@ -14,9 +14,9 @@ ACTOR cursedmind: BossBrain
 	+NOPAIN
 	States
 	{
-		death:
-		BBRN A 0 A_PrintBold( "Nice try..." )
-		loop
+		Death:
+			BBRN A 0 A_PrintBold("Nice try..." )
+			loop
 	}
 } 
 
