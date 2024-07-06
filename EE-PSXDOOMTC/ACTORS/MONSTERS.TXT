@@ -1,4 +1,4 @@
-Actor PSXFocusSpectre : DemonNew 3010
+Actor PSXFocusSpectre : SpectreNew 3010
 {
 	Tag "Pinky Spectre"
 	RenderStyle add
@@ -8,67 +8,6 @@ Actor PSXFocusSpectre : DemonNew 3010
     subtractive blending in the real PSX version. Subtractive blending is why
 	most players claimed the Nightmare Spectre was green - it was, on a brown
 	background where you commonly saw them. */
-	/*
-Actor NightmareSpectre : DemonNew 3000
+Actor PSXNightmareSpectre : NightmareSpectre 3000
 {
-	Tag "Pinky Spectre (Nightmare)"
-	Health 300
-	RenderStyle Subtract
-	//Alpha 0.7
-	Obituary "$OB_NMSPECTREHIT"
-	States
-	{
-	CheckTarget:
-		SARG A 0 A_CheckFlag ("SHOOTABLE", "See", AAPTR_TARGET)
-		SARG A 0 A_CheckFlag ("FRIENDLY", "See", AAPTR_TARGET)
-		SARG A 0 A_PlaySound ("demon/sight", CHAN_AUTO)
-		Goto See
-	Spawn:
-		SARG AB 12 A_LookEx (LOF_NOSEESOUND, 0, 0, 0, 0, "PlaySeeSound")
-		Loop
-	PlaySeeSound:
-		SARG A 0 A_PlaySound ("demon/sight", CHAN_AUTO)
-		Goto See
-	See:
-		SARG A 2 A_Chase
-		SARG A 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG A 2 A_Chase
-		SARG A 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG B 2 A_Chase
-		SARG B 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG B 2 A_Chase
-		SARG B 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG C 2 A_Chase
-		SARG C 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG C 2 A_Chase
-		SARG C 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG D 2 A_Chase
-		SARG D 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		SARG D 2 A_Chase
-		SARG D 0 A_CheckFlag ("CORPSE", "CheckTarget", AAPTR_TARGET)
-		Loop
-	Melee:
-		SARG E 0 A_PlaySound ("demon/melee", CHAN_AUTO)
-		SARG EF 9 A_FaceTarget
-		SARG G 8 A_CustomBulletAttack (0, 0, 1, random(1,8)*4, "BulletPuff", 64, CBAF_NORANDOM)
-		Goto CheckTarget
-	Pain:
-		SARG H 2
-		SARG H 2 A_PlaySound ("demon/pain", CHAN_AUTO, 0.9)
-		Goto CheckTarget
-	Death:
-		SARG I 9
-		SARG J 9 A_PlaySound ("demon/death", CHAN_AUTO)
-		SARG K 5
-		SARG L 5 A_NoBlocking
-		SARG M 5
-		SARG N -1
-		Stop
-	Raise:
-		Stop
-	Crush:
-		POL5 A -1 A_PlaySound ("misc/crushed", CHAN_AUTO)
-		Stop
-	}
 }
-*/
