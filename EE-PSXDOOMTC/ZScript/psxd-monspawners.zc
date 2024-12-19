@@ -57,7 +57,7 @@ class PSXDMonsterSpawner : RandomSpawner2 abstract
 	}
 }
 */
-class NightmareSpectreSpawner : DDMonsterSpawner
+class NightmareSpectreSpawner : DDMonsterSpawner replaces PSXNightmareSpectre
 {
 	Default
 	{
@@ -176,7 +176,7 @@ class NightmareSpectreSpawner : DDMonsterSpawner
 	}
 }
 
-class LostSoulSpawner2 : DDMonsterSpawner replaces LostSoul
+class LostSoulSpawner2 : DDMonsterSpawner //replaces LostSoul
 {
 	Default
 	{

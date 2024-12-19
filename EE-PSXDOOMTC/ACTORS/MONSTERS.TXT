@@ -8,6 +8,6 @@ Actor PSXFocusSpectre : SpectreNew 3010
     subtractive blending in the real PSX version. Subtractive blending is why
 	most players claimed the Nightmare Spectre was green - it was, on a brown
 	background where you commonly saw them. */
-Actor PSXNightmareSpectre : NightmareSpectre 3000
+Actor PSXNightmareSpectre : NightmareSpectre //3000
 {
 }
