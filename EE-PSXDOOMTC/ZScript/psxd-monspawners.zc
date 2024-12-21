@@ -175,25 +175,3 @@ class NightmareSpectreSpawner : DDMonsterSpawner replaces PSXNightmareSpectre
 		return result;
 	}
 }
-
-class LostSoulSpawner2 : DDMonsterSpawner //replaces LostSoul
-{
-	Default
-	{
-		//$Sprite "RNMSR0"
-		Radius 16;
-		Height 56;
-	}
-
-	override Name ChooseSpawn()
-	{
-		string classname;
-		string result = "LostSoulNew";
-		if (random(1,256) <= 43)
-		{
-			classname = "LostSoulAnnoying";
-			if (CanFitHere(classname)) result = classname;
-		}
-		return result;
-	}
-}
